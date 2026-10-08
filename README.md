@@ -3,8 +3,8 @@
 Automated Instagram content for **CAAS Studios** (@prosper.builds).
 
 Every weekday at 10:00 (Cape Town time) a scheduled Claude task:
-1. takes the next item from `content/queue.json` (alternating concept websites and website tips),
-2. designs the slides and renders them to 1080×1350 JPGs,
+1. takes the next item from `content/queue.json` (rotating three formats: A vs B comparison, photo landing page, before vs after),
+2. pulls free Unsplash photos for that industry into `stock/` (via the "Fetch stock photos" GitHub workflow), designs the post from the approved examples in `posts/_examples/` and renders it to a 1080×1350 JPG,
 3. commits them to `posts/`,
 4. publishes the carousel to Instagram through Metricool.
 
