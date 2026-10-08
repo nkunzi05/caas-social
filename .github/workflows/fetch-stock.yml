@@ -1,0 +1,39 @@
+name: Fetch stock photos
+# Downloads free Unsplash photos listed in stock/requests.txt into stock/.
+# Line format:  <path under stock/>.jpg <unsplash photo id> [credit text]
+on:
+  push:
+    branches: [main]
+    paths: [stock/requests.txt]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download missing photos
+        run: |
+          set -u
+          while read -r path id credit; do
+            [ -z "${path:-}" ] && continue
+            case "$path" in \#*) continue;; esac
+            out="stock/$path"
+            [ -s "$out" ] && continue
+            mkdir -p "$(dirname "$out")"
+            echo "Fetching $id -> $out"
+            if curl -fsSL -m 60 "https://unsplash.com/photos/$id/download?force=true&w=1400" -o "$out"; then
+              echo "$path | https://unsplash.com/photos/$id | ${credit:-Unsplash}" >> stock/CREDITS.txt
+            else
+              echo "FAILED $id"; rm -f "$out"
+            fi
+          done < stock/requests.txt
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stock
+          git diff --cached --quiet && exit 0
+          git commit -m "Add stock photos"
+          git push

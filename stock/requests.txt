@@ -1,0 +1,9 @@
+# Free Unsplash photos (Unsplash License: free for commercial use, no attribution required).
+# Format: <path under stock/>.jpg <unsplash photo id>
+barbershop/hero-blowdry.jpg wJoB8D3hnzc
+barbershop/razor.jpg 1Pmp9uxK8X8
+barbershop/tools.jpg MNu0n-3BIKs
+barbershop/trim.jpg DrG4V5skbMY
+barbershop/beard.jpg fE42nRlBcG8
+barbershop/chair.jpg EW_rqoSdDes
+barbershop/interior.jpg 2seUdPQNy_I
