@@ -12,7 +12,7 @@ pip install --break-system-packages playwright pillow && python3 -m playwright i
 ## 2. Pick today's item
 Open `content/queue.json`. Take the FIRST entry in `queue` with `"status": "todo"`.
 Post folder: `posts/<YYYY-MM-DD>-<type>-<slug or tip number>` (date = today, Africa/Johannesburg).
-If a folder for today already exists and its JPGs are pushed, skip to step 5 (don't double-post).
+Duplicate guard: the queue is the source of truth. An item marked `"posted"` is never posted again. If the folder for THIS item already exists with pushed JPGs but the item is still `"todo"` (a previous run failed midway), reuse it and continue from step 5. Other posts from the same day don't matter — more than one post per day is allowed.
 
 ## 3a. Tip post (`"type": "tip"`)
 1. Write `spec.json` in the post folder:
