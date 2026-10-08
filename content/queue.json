@@ -7,16 +7,17 @@
    "industry": "watch brand",
    "post": "posts/2026-10-08-concept-orven",
    "status": "posted"
-  }
- ],
- "queue": [
+  },
   {
    "type": "concept",
    "slug": "barbershop",
    "brand": "Fade & Co.",
    "industry": "Cape Town barbershop",
-   "status": "todo"
-  },
+   "status": "posted",
+   "post": "posts/2026-10-08-concept-barbershop"
+  }
+ ],
+ "queue": [
   {
    "type": "tip",
    "number": 1,
