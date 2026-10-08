@@ -1,0 +1,45 @@
+/* CAAS Studios — "UI showcase" post style (light, photo-led, product-shot look). */
+@import url("fonts.css");
+
+:root {
+  --bg: #F1F2F5;
+  --ink: #0E1220;
+  --ink-2: #4A5163;
+  --ink-3: #6B7183;
+  --card: #FFFFFF;
+  --line: #E4E6EC;
+  --star: #F5A524;
+  --signal: #C8F25A;
+}
+
+html, body { margin: 0; }
+* { box-sizing: border-box; }
+
+.post {
+  width: 1080px; height: 1350px; overflow: hidden; position: relative;
+  background: radial-gradient(120% 80% at 50% 0%, #FAFBFC 0%, var(--bg) 70%);
+  font-family: "Schibsted Grotesk", "Helvetica Neue", sans-serif;
+  color: var(--ink);
+  display: flex; flex-direction: column; align-items: center;
+  padding: 72px 64px 56px;
+}
+.eyebrow { font-size: 17px; font-weight: 600; letter-spacing: 0.26em; color: var(--ink-3); text-transform: uppercase; }
+.q { margin: 22px 0 0; font-size: 72px; line-height: 1.02; font-weight: 800; letter-spacing: -0.04em; text-align: center; max-width: 900px; }
+.sig {
+  margin-top: auto; width: 100%; display: flex; justify-content: space-between; align-items: center;
+  font-size: 17px; font-weight: 600; color: var(--ink-3);
+}
+.sig b { color: var(--ink); font-weight: 800; letter-spacing: 0.14em; }
+
+.shadow { box-shadow: 0 2px 4px rgba(14,18,32,0.04), 0 24px 60px rgba(14,18,32,0.14); }
+.photo { background-size: cover; background-position: center; }
+.ab {
+  width: 64px; height: 64px; border-radius: 50%; background: #E3E5EB;
+  display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 800;
+}
+.stars { color: var(--star); letter-spacing: 1px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  border-radius: 14px; font-weight: 700; text-decoration: none;
+}
+svg.i { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
