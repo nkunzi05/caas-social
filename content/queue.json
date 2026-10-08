@@ -1,0 +1,248 @@
+{
+ "done": [
+  {
+   "type": "concept",
+   "slug": "orven",
+   "brand": "ORVEN",
+   "industry": "watch brand",
+   "post": "posts/2026-10-08-concept-orven",
+   "status": "posted"
+  }
+ ],
+ "queue": [
+  {
+   "type": "concept",
+   "slug": "barbershop",
+   "brand": "Fade & Co.",
+   "industry": "Cape Town barbershop",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 1,
+   "headline": "3 things every small business website needs above the fold.",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "roofing",
+   "brand": "Summit Roofing",
+   "industry": "roofing & waterproofing",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 2,
+   "headline": "Why a Facebook page isn't enough anymore.",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "restaurant",
+   "brand": "Ember Kitchen",
+   "industry": "braai & grill restaurant",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 3,
+   "headline": "Put a WhatsApp button on your site. Here's why.",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "beauty-salon",
+   "brand": "Velvet Room",
+   "industry": "beauty & nail salon",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 4,
+   "headline": "Your website is losing customers on mobile. Check these 3 things.",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "plumber",
+   "brand": "FlowRight Plumbing",
+   "industry": "24/7 plumber",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 5,
+   "headline": "What to write on your homepage (and what to cut).",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "coffee-shop",
+   "brand": "Kettle & Crumb",
+   "industry": "neighbourhood coffee shop",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 6,
+   "headline": "Photos sell. How to shoot your work with just a phone.",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "electrician",
+   "brand": "LiveWire Electrical",
+   "industry": "certified electrician",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 7,
+   "headline": "Google reviews: how to get more and show them off.",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "gym",
+   "brand": "Ironside Gym",
+   "industry": "strength gym",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 8,
+   "headline": "How fast should your website load?",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "car-wash",
+   "brand": "Gloss Bay",
+   "industry": "car wash & valet",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 9,
+   "headline": "The one page every service business forgets: pricing.",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "bakery",
+   "brand": "Rise Bakehouse",
+   "industry": "artisan bakery",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 10,
+   "headline": "Show up on Google Maps: set up your Google Business Profile.",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "landscaping",
+   "brand": "Greenline Gardens",
+   "industry": "landscaping & garden care",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 11,
+   "headline": "Your domain name matters. 3 rules for picking one.",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "photographer",
+   "brand": "Frame Nine",
+   "industry": "wedding & portrait photographer",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 12,
+   "headline": "Before and after photos are your best salesperson.",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "mechanic",
+   "brand": "Torque Auto",
+   "industry": "auto mechanic",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 13,
+   "headline": "What a website actually costs a small business in SA.",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "cleaning",
+   "brand": "Spotless Co.",
+   "industry": "home & office cleaning",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 14,
+   "headline": "Signs it's time to redo your website.",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "boutique",
+   "brand": "Atelier Nine",
+   "industry": "clothing boutique",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 15,
+   "headline": "Make it easy to book: why online booking wins customers.",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "construction",
+   "brand": "Bedrock Build",
+   "industry": "construction company",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 16,
+   "headline": "Contact forms vs WhatsApp: which gets more leads?",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "tattoo",
+   "brand": "Black Needle",
+   "industry": "tattoo studio",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 17,
+   "headline": "Trust signals: what makes a website feel legit.",
+   "status": "todo"
+  },
+  {
+   "type": "concept",
+   "slug": "real-estate",
+   "brand": "Keyline Properties",
+   "industry": "estate agency",
+   "status": "todo"
+  },
+  {
+   "type": "tip",
+   "number": 18,
+   "headline": "Your logo isn't your brand. Here's what is.",
+   "status": "todo"
+  }
+ ]
+}

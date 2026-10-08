@@ -1,0 +1,50 @@
+/* CAAS Studios — Instagram brand tokens. Every slide links this file. */
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --ink: #070B14;        /* midnight ground */
+  --paper: #D9DBE1;      /* light steel ground */
+  --signal: #C8F25A;     /* lime accent — the one loud colour */
+  --lilac: #A9B8FF;      /* secondary accent, use sparingly */
+  --muted: #AEB4C0;      /* secondary text on ink */
+  --soft: #C9CED8;       /* body text on ink */
+  --line: rgba(255, 255, 255, 0.14);
+}
+
+html, body { margin: 0; }
+
+.slide {
+  width: 1080px;
+  height: 1350px;
+  box-sizing: border-box;
+  padding: 72px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Schibsted Grotesk", "Helvetica Neue", sans-serif;
+  overflow: hidden;
+}
+.slide.ink { background: var(--ink); color: #fff; }
+.slide.paper { background: var(--paper); color: var(--ink); }
+.slide.signal { background: var(--signal); color: var(--ink); }
+
+.topbar { display: flex; justify-content: space-between; align-items: center; }
+.wordmark { font-size: 22px; font-weight: 800; letter-spacing: 0.14em; }
+.kicker { font-size: 18px; font-weight: 500; }
+.ink .kicker { color: var(--muted); }
+
+.display { margin: 0; font-weight: 800; letter-spacing: -0.045em; line-height: 0.98; }
+.footer {
+  margin-top: auto;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 18px; font-weight: 500;
+}
+.ink .footer { color: var(--muted); }
+.footer strong { font-weight: 700; }
+.ink .footer strong { color: #fff; }
+
+.label { font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: var(--signal); text-transform: uppercase; }
+.pill {
+  display: inline-block; text-decoration: none; font-size: 26px; font-weight: 700;
+  padding: 22px 38px; border-radius: 999px; border: 2px solid currentColor;
+}
+.pill.solid { background: var(--ink); color: #fff; border-color: var(--ink); }
