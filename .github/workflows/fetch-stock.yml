@@ -4,7 +4,7 @@ name: Fetch stock photos
 on:
   push:
     branches: [main]
-    paths: [stock/requests.txt]
+    paths: [stock/requests.txt, .github/workflows/fetch-stock.yml]
   workflow_dispatch:
 permissions:
   contents: write
@@ -16,6 +16,7 @@ jobs:
       - name: Download missing photos
         run: |
           set -u
+          failed=0
           while read -r path id credit; do
             [ -z "${path:-}" ] && continue
             case "$path" in \#*) continue;; esac
@@ -23,12 +24,18 @@ jobs:
             [ -s "$out" ] && continue
             mkdir -p "$(dirname "$out")"
             echo "Fetching $id -> $out"
-            if curl -fsSL -m 60 "https://unsplash.com/photos/$id/download?force=true&w=1400" -o "$out"; then
+            UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36"
+            page=$(curl -fsSL -m 60 -A "$UA" "https://unsplash.com/photos/$id" || true)
+            img=$(printf '%s' "$page" | grep -oE '<meta[^>]*og:image[^>]*>' | grep -oE 'https://images\.unsplash\.com/photo-[A-Za-z0-9_-]+' | head -1)
+            [ -z "$img" ] && img=$(printf '%s' "$page" | grep -oE 'https://images\.unsplash\.com/photo-[A-Za-z0-9_-]+' | head -1)
+            if [ -z "$img" ]; then echo "FAILED (no image url) $id"; failed=1; continue; fi
+            if curl -fsSL -m 60 -A "$UA" "$img?w=1400&q=80&fm=jpg&fit=max" -o "$out"; then
               echo "$path | https://unsplash.com/photos/$id | ${credit:-Unsplash}" >> stock/CREDITS.txt
             else
-              echo "FAILED $id"; rm -f "$out"
+              echo "FAILED (download) $id"; rm -f "$out"; failed=1
             fi
           done < stock/requests.txt
+          echo "failed=$failed" >> "$GITHUB_ENV"
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
@@ -37,3 +44,6 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "Add stock photos"
           git push
+      - name: Report failures
+        if: env.failed == '1'
+        run: exit 1
