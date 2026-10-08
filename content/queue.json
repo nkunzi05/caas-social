@@ -15,15 +15,16 @@
    "industry": "Cape Town barbershop",
    "status": "posted",
    "post": "posts/2026-10-08-concept-barbershop"
-  }
- ],
- "queue": [
+  },
   {
    "type": "tip",
    "number": 1,
    "headline": "3 things every small business website needs above the fold.",
-   "status": "todo"
-  },
+   "status": "posted",
+   "post": "posts/2026-10-08-tip-1"
+  }
+ ],
+ "queue": [
   {
    "type": "concept",
    "slug": "roofing",
