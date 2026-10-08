@@ -1,6 +1,6 @@
 name: Fetch stock photos
 # Downloads free Unsplash photos listed in stock/requests.txt into stock/.
-# Line format:  <path under stock/>.jpg <unsplash photo id> [credit text]
+# Line format:  <path under stock/>.jpg <images.unsplash.com URL or photo id> [unsplash page URL]
 on:
   push:
     branches: [main]
@@ -24,16 +24,16 @@ jobs:
             [ -s "$out" ] && continue
             mkdir -p "$(dirname "$out")"
             echo "Fetching $id -> $out"
-            UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36"
-            page=$(curl -fsSL -m 60 -A "$UA" "https://unsplash.com/photos/$id" || true)
-            img=$(printf '%s' "$page" | grep -oE '<meta[^>]*og:image[^>]*>' | grep -oE 'https://images\.unsplash\.com/photo-[A-Za-z0-9_-]+' | head -1)
-            [ -z "$img" ] && img=$(printf '%s' "$page" | grep -oE '<meta[^>]*og:image[^>]*>' | grep -oE 'https://images\.unsplash\.com/photo-[A-Za-z0-9_-]+' | head -1)
-            [ -z "$img" ] && img=$(printf '%s' "$page" | grep -oE 'https://images\.unsplash\.com/photo-[A-Za-z0-9_-]+' | head -1)
+            # $id is either a direct https://images.unsplash.com/photo-... URL or an Unsplash photo id
+            if [ "${id#https://}" != "$id" ]; then img="${id%%\?*}"; else
+              page=$(curl -fsSL -m 60 -A "Mozilla/5.0" "https://unsplash.com/photos/$id" || true)
+              img=$(printf '%s' "$page" | grep -oE 'https://images\.unsplash\.com/photo-[A-Za-z0-9_-]+' | head -1)
+            fi
             if [ -z "$img" ]; then echo "FAILED (no image url) $id"; failed=1; continue; fi
-            if curl -fsSL -m 60 -A "$UA" "$img?w=1400&q=80&fm=jpg&fit=max" -o "$out"; then
-              echo "$path | https://unsplash.com/photos/$id | ${credit:-Unsplash}" >> stock/CREDITS.txt
+            if curl -fsSL -m 60 "$img?w=1400&q=80&fm=jpg&fit=max" -o "$out"; then
+              echo "$path | $img | ${credit:-Unsplash License}" >> stock/CREDITS.txt
             else
-              echo "FAILED (download) $id"; rm -f "$out"; failed=1
+              echo "FAILED (download) $img"; rm -f "$out"; failed=1
             fi
           done < stock/requests.txt
           echo "failed=$failed" >> "$GITHUB_ENV"
