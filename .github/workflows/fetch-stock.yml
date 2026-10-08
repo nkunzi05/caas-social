@@ -27,6 +27,7 @@ jobs:
             UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36"
             page=$(curl -fsSL -m 60 -A "$UA" "https://unsplash.com/photos/$id" || true)
             img=$(printf '%s' "$page" | grep -oE '<meta[^>]*og:image[^>]*>' | grep -oE 'https://images\.unsplash\.com/photo-[A-Za-z0-9_-]+' | head -1)
+            [ -z "$img" ] && img=$(printf '%s' "$page" | grep -oE '<meta[^>]*og:image[^>]*>' | grep -oE 'https://images\.unsplash\.com/photo-[A-Za-z0-9_-]+' | head -1)
             [ -z "$img" ] && img=$(printf '%s' "$page" | grep -oE 'https://images\.unsplash\.com/photo-[A-Za-z0-9_-]+' | head -1)
             if [ -z "$img" ]; then echo "FAILED (no image url) $id"; failed=1; continue; fi
             if curl -fsSL -m 60 -A "$UA" "$img?w=1400&q=80&fm=jpg&fit=max" -o "$out"; then
