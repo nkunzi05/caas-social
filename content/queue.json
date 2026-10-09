@@ -30,16 +30,17 @@
    "industry": "barbershop",
    "post": "posts/_examples",
    "status": "approved examples (not posted)"
-  }
- ],
- "queue": [
+  },
   {
    "format": "ab",
    "slug": "roofing",
    "brand": "Summit Roofing",
    "industry": "roofing & waterproofing",
-   "status": "todo"
-  },
+   "status": "posted",
+   "post": "posts/2026-10-09-ab-roofing"
+  }
+ ],
+ "queue": [
   {
    "format": "landing",
    "slug": "restaurant",

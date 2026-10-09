@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Which quote card</title>
+<link rel="stylesheet" href="../../brand/ui.css">
+<style>
+  .row { display: flex; gap: 44px; margin-top: 64px; align-items: stretch; }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 36px; }
+  .card { width: 430px; height: 780px; border-radius: 30px; overflow: hidden; position: relative; }
+  /* A */
+  .a { background: var(--card); padding: 14px; display: flex; flex-direction: column; }
+  .a .ph { height: 400px; border-radius: 20px; position: relative; }
+  .fav { position: absolute; top: 18px; right: 18px; width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,0.92); display: flex; align-items: center; justify-content: center; color: var(--ink); }
+  .a .body { padding: 26px 14px 8px; display: flex; flex-direction: column; flex-grow: 1; }
+  .t { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; }
+  .rate { font-size: 21px; margin-top: 10px; color: var(--ink-2); }
+  .rate b { color: var(--ink); }
+  .feat { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px 12px; margin-top: 26px; font-size: 19px; color: var(--ink-2); }
+  .feat div { display: flex; align-items: center; gap: 10px; }
+  .a .foot { margin-top: auto; padding-top: 22px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
+  .price { font-size: 38px; font-weight: 800; letter-spacing: -0.03em; }
+  .price small { display: block; font-size: 18px; font-weight: 500; color: var(--ink-3); letter-spacing: 0; }
+  .a .btn { background: var(--ink); color: #fff; font-size: 21px; height: 72px; padding: 0 30px; }
+  /* B */
+  .b { color: #fff; }
+  .b .ph { position: absolute; inset: 0; }
+  .b .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,8,6,0.78) 0%, rgba(10,8,6,0.05) 38%, rgba(10,8,6,0.1) 55%, rgba(10,8,6,0.88) 100%); }
+  .b .top { position: absolute; left: 32px; right: 32px; top: 30px; }
+  .b .fav { background: rgba(255,255,255,0.18); color: #fff; top: 30px; right: 26px; backdrop-filter: blur(8px); }
+  .b .t { font-size: 34px; }
+  .b .price { font-size: 56px; margin-top: 6px; }
+  .b .price span { font-size: 22px; font-weight: 500; opacity: 0.85; letter-spacing: 0; }
+  .b .rate { color: rgba(255,255,255,0.85); }
+  .b .rate b { color: #fff; }
+  .b .bottom { position: absolute; left: 16px; right: 16px; bottom: 16px; display: flex; flex-direction: column; gap: 14px; }
+  .glass { border-radius: 22px; background: rgba(30,24,20,0.45); border: 1px solid rgba(255,255,255,0.14); backdrop-filter: blur(14px); padding: 22px 22px; }
+  .b .feat { margin-top: 0; color: rgba(255,255,255,0.92); }
+  .b .btn { background: #fff; color: var(--ink); height: 76px; font-size: 22px; width: 100%; border-radius: 20px; }
+</style></head>
+<body><div class="post">
+  <div class="eyebrow">Roofing booking</div>
+  <h1 class="q">Which quote card gets more clients?</h1>
+
+  <div class="row">
+    <div class="col">
+      <div class="card a shadow">
+        <div class="ph photo" style="background-image: url('../../stock/roofing/tiles-brown.jpg'); background-position: 50% 35%">
+          <span class="fav"><svg class="i" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>
+        </div>
+        <div class="body">
+          <div class="t">Roof Leak Repair</div>
+          <div class="rate"><span class="stars">★</span> <b>4.9</b> (194 reviews)</div>
+          <div class="feat">
+            <div><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>48h call-out</div>
+            <div><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>Free inspection</div>
+            <div><svg class="i" viewBox="0 0 24 24"><path d="M4 7h16v10H4z"/><path d="M4 11h16"/></svg>Photo report</div>
+            <div><svg class="i" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>10-yr guarantee</div>
+          </div>
+          <div class="foot">
+            <div class="price">R3,450<small>from, per job</small></div>
+            <a class="btn" href="#"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Book visit</a>
+          </div>
+        </div>
+      </div>
+      <div class="ab">A</div>
+    </div>
+
+    <div class="col">
+      <div class="card b shadow">
+        <div class="ph photo" style="background-image: url('../../stock/roofing/yellow.jpg'); background-position: 66% 50%"></div>
+        <div class="shade"></div>
+        <div class="top">
+          <div class="t">Roof Leak Repair</div>
+          <div class="price">R3,450 <span>from</span></div>
+          <div class="rate"><span class="stars">★</span> <b>4.9</b> (194)</div>
+        </div>
+        <span class="fav"><svg class="i" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>
+        <div class="bottom">
+          <div class="glass"><div class="feat">
+            <div><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>48h call-out</div>
+            <div><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>Free inspection</div>
+            <div><svg class="i" viewBox="0 0 24 24"><path d="M4 7h16v10H4z"/><path d="M4 11h16"/></svg>Photo report</div>
+            <div><svg class="i" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7.5-7 9-4-1.5-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>10-yr guarantee</div>
+          </div></div>
+          <a class="btn" href="#"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Book visit</a>
+        </div>
+      </div>
+      <div class="ab">B</div>
+    </div>
+  </div>
+
+  <div class="sig"><b>CAAS STUDIOS</b><span>Comment A or B &darr;</span></div>
+</div></body></html>
