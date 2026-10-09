@@ -14,3 +14,10 @@ roofing/team.jpg https://images.unsplash.com/photo-1635424709961-f3a150459ad4 ht
 roofing/yellow.jpg https://images.unsplash.com/photo-1635424824800-692767998d07 https://unsplash.com/photos/eFOkg4ZMiBs
 roofing/tiles-grey.jpg https://images.unsplash.com/photo-1518736346281-76873166a64a https://unsplash.com/photos/m_vEaZizd2s
 roofing/tiles-brown.jpg https://images.unsplash.com/photo-1580642866497-dde93c97492b https://unsplash.com/photos/EhIUYktUunU
+guesthouse/pool-hero.jpg https://images.unsplash.com/photo-1561501900-3701fa6a0864 https://unsplash.com/photos/MA82mPIZeGI
+guesthouse/bed.jpg https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4 https://unsplash.com/photos/p3UWyaujtQo
+guesthouse/pool-trees.jpg https://images.unsplash.com/photo-1683914791736-9b0e739565e4 https://unsplash.com/photos/Q48pAVVON0o
+guesthouse/coffee.jpg https://images.unsplash.com/photo-1601000785686-c45240e25f25 https://unsplash.com/photos/5Mlhdi6Ubbc
+guesthouse/bedroom-wood.jpg https://images.unsplash.com/photo-1731336478850-6bce7235e320 https://unsplash.com/photos/WWYF8Lts8Ho
+guesthouse/lounge.jpg https://images.unsplash.com/photo-1738407274756-25325763dd4e https://unsplash.com/photos/Vn1zfdmWLsQ
+guesthouse/cabin.jpg https://images.unsplash.com/photo-1582719388123-e03e25d06d51 https://unsplash.com/photos/hEAGekaiJ8g
