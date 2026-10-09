@@ -77,6 +77,15 @@
    "status": "todo"
   },
   {
+   "format": "monitor",
+   "slug": "bakery-editorial",
+   "brand": "Kneadwell Bakehouse",
+   "industry": "artisan bakery (editorial style)",
+   "inspiration": "https://www.siteinspire.com/website/13641-union-boulangerie",
+   "prebuilt": "posts/_inspiration/2026-10-09-bakery",
+   "status": "todo"
+  },
+  {
    "format": "before-after",
    "slug": "electrician",
    "brand": "LiveWire Electrical",

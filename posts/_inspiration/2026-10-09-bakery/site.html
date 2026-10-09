@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Kneadwell Bakehouse concept site</title>
+<link rel="stylesheet" href="../../../brand/fonts.css">
+<style>
+  /* Editorial / minimal bakery homepage. Inspiration: editorial bakery sites on siteinspire (section rhythm only, original content). */
+  :root { --cream: #F3EEE4; --ink: #1E1A16; --ink-2: #5E554B; --ink-3: #978C7E; --line: #D9D0C1; --acc: #C4532D; }
+  * { box-sizing: border-box; } html, body { margin: 0; }
+  body { width: 1280px; background: var(--cream); color: var(--ink); font-family: "Schibsted Grotesk", sans-serif; }
+  .serif { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; }
+  .photo { background-size: cover; background-position: center; }
+  .lab { font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); }
+  .pill { display: inline-flex; align-items: center; gap: 12px; border-radius: 999px; padding: 14px 24px; font-size: 16px; font-weight: 600; text-decoration: none; }
+  .pill.ink { background: var(--ink); color: var(--cream); }
+  .pill.cream { background: var(--cream); color: var(--ink); }
+  .pill.line { border: 1px solid var(--ink); color: var(--ink); }
+  .arr { width: 16px; height: 16px; }
+
+  nav { display: flex; align-items: center; padding: 34px 56px; }
+  .logo { font-size: 34px; line-height: 1; }
+  .logo small { display: block; font-family: "Schibsted Grotesk", sans-serif; font-size: 10px; letter-spacing: 0.5em; margin-top: 6px; font-weight: 600; }
+  .links { flex-grow: 1; display: flex; justify-content: center; gap: 40px; font-size: 16px; }
+  .lang { font-size: 14px; font-weight: 600; margin-right: 22px; color: var(--ink-3); } .lang b { color: var(--ink); }
+
+  .hero-t { padding: 30px 56px 46px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .hero-t h1 { margin: 0; font-size: 150px; line-height: 0.9; letter-spacing: -0.03em; }
+  .hero-t h1 em { color: var(--acc); }
+  .hero-t p { width: 300px; font-size: 17px; line-height: 1.55; color: var(--ink-2); margin: 0 0 12px; }
+  .hero-p { margin: 0 56px; height: 560px; border-radius: 6px; position: relative; overflow: hidden; }
+  .hero-p .btns { position: absolute; left: 32px; bottom: 32px; display: flex; gap: 12px; }
+  .hero-p .note { position: absolute; right: 32px; bottom: 32px; color: #fff; font-size: 15px; letter-spacing: 0.04em; background: rgba(30,26,22,0.6); backdrop-filter: blur(10px); padding: 14px 20px; border-radius: 999px; }
+
+  .values { display: grid; grid-template-columns: 360px 1fr; gap: 60px; padding: 120px 56px 100px; }
+  .values .intro { font-size: 46px; line-height: 1.08; }
+  .values ol { list-style: none; margin: 0; padding: 0; counter-reset: v; }
+  .values li { counter-increment: v; display: flex; gap: 40px; align-items: baseline; border-top: 1px solid var(--line); padding: 26px 0; font-size: 30px; }
+  .values li:last-child { border-bottom: 1px solid var(--line); }
+  .values li::before { content: "0" counter(v); font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: var(--acc); width: 30px; }
+  .values li span { margin-left: auto; font-size: 15px; color: var(--ink-3); }
+
+  .bread { padding: 40px 56px 110px; }
+  .bread .hd { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--ink); padding-bottom: 24px; }
+  .bread .hd h2 { margin: 0; font-size: 96px; line-height: 0.95; letter-spacing: -0.02em; }
+  .loaf { display: grid; grid-template-columns: 420px 1fr 180px; gap: 48px; padding: 34px 0; border-bottom: 1px solid var(--line); align-items: center; }
+  .loaf .ph { height: 250px; border-radius: 4px; }
+  .loaf h3 { margin: 0; font-size: 46px; line-height: 1; }
+  .loaf p { margin: 14px 0 0; font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 440px; }
+  .status { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+  .status i { width: 8px; height: 8px; border-radius: 50%; background: #3C8A4E; } .status.out i { background: var(--acc); }
+  .loaf .price { text-align: right; font-size: 44px; } .loaf .price small { display: block; font-family: "Schibsted Grotesk"; font-size: 13px; color: var(--ink-3); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+
+  .shops { background: var(--ink); color: var(--cream); padding: 100px 56px 110px; }
+  .shops h2 { margin: 0 0 50px; font-size: 96px; line-height: 0.95; }
+  .shops h2 em { color: #E58A62; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .shop { border: 1px solid rgba(243,238,228,0.18); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; }
+  .shop .ph { height: 240px; }
+  .shop .b { padding: 26px; }
+  .shop .num { font-size: 72px; line-height: 0.9; }
+  .shop h4 { margin: 12px 0 4px; font-size: 22px; font-weight: 600; }
+  .shop .addr { font-size: 15px; color: rgba(243,238,228,0.6); }
+  .hours { margin-top: 20px; font-size: 14px; }
+  .hours div { display: flex; justify-content: space-between; border-top: 1px solid rgba(243,238,228,0.15); padding: 9px 0; }
+  .shop .pill { margin-top: 22px; background: var(--cream); color: var(--ink); padding: 12px 20px; font-size: 15px; }
+  .shop.soon { opacity: 0.55; justify-content: center; align-items: center; text-align: center; padding: 40px; }
+  .shop.soon .num { color: #E58A62; }
+
+  .band { padding: 90px 56px; text-align: center; font-size: 22px; font-weight: 600; letter-spacing: 0.6em; border-bottom: 1px solid var(--line); }
+  .band em { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; letter-spacing: 0; font-size: 34px; color: var(--acc); }
+
+  footer { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 80px 56px 50px; }
+  footer h3 { margin: 0; font-size: 60px; line-height: 1; }
+  footer p { font-size: 16px; color: var(--ink-2); line-height: 1.5; }
+  .field { display: flex; border-bottom: 1px solid var(--ink); padding: 14px 0; margin-top: 36px; font-size: 17px; color: var(--ink-3); justify-content: space-between; align-items: center; }
+  .field b { color: var(--ink); font-weight: 600; }
+  .legal { grid-column: 1 / -1; display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-3); border-top: 1px solid var(--line); padding-top: 22px; }
+</style></head>
+<body>
+<nav>
+  <div class="logo serif">Kneadwell<small>BAKEHOUSE</small></div>
+  <div class="links"><span>Our bread</span><span>Shops</span><span>Wholesale</span><span>Journal</span></div>
+  <span class="lang"><b>EN</b> / AF</span>
+  <a class="pill ink" href="#">Order for pickup <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</nav>
+
+<section class="hero-t">
+  <h1 class="serif">Bread worth<br><em>getting up for.</em></h1>
+  <p>Slow sourdough, laminated pastry and proper rye, baked twice a day in two Cape Town kitchens.</p>
+</section>
+<section class="hero-p photo" style="background-image: url('../../../stock/bakery/loaves-tray.jpg'); background-position: 50% 45%">
+  <div class="btns">
+    <a class="pill cream" href="#">Woodstock <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="pill cream" href="#">Kalk Bay <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+  <div class="note">First loaves out at 06:30</div>
+</section>
+
+<section class="values">
+  <div><div class="lab">How we bake</div><p class="intro serif" style="margin:18px 0 0">Four rules. We&rsquo;ve never broken one.</p></div>
+  <ol>
+    <li>Stone-milled flour from the Overberg<span>Since day one</span></li>
+    <li>Forty-eight hours, every sourdough<span>No shortcuts</span></li>
+    <li>Two bakes a day, morning and noon<span>Always warm</span></li>
+    <li>When it&rsquo;s gone, it&rsquo;s gone<span>Come early</span></li>
+  </ol>
+</section>
+
+<section class="bread">
+  <div class="hd"><h2 class="serif">Today&rsquo;s<br>counter</h2><span class="lab">Updated 06:30 &middot; Woodstock</span></div>
+  <div class="loaf"><div class="ph photo" style="background-image: url('../../../stock/bakery/rack.jpg'); background-position: 50% 62%"></div>
+    <div><h3 class="serif">Country sourdough</h3><p>Dark crust, open crumb, a little sour. Our everyday loaf and the one regulars ask for by name.</p><div class="status"><i></i>Out of the oven at 06:30</div></div>
+    <div class="price serif">R68<small>800 g loaf</small></div></div>
+  <div class="loaf"><div class="ph photo" style="background-image: url('../../../stock/bakery/loaf-table.jpg'); background-position: 50% 50%"></div>
+    <div><h3 class="serif">Morning pastries</h3><p>Croissants, pain au chocolat and cardamom buns, laminated by hand the night before.</p><div class="status out"><i></i>Usually sold out by 11:00</div></div>
+    <div class="price serif">R32<small>From, each</small></div></div>
+  <div class="loaf"><div class="ph photo" style="background-image: url('../../../stock/bakery/pastries.jpg'); background-position: 50% 65%"></div>
+    <div><h3 class="serif">Weekend cakes</h3><p>Crumb cake, brioche cruffins and one seasonal tart. Whole cakes can be ordered two days ahead.</p><div class="status"><i></i>Saturdays &amp; Sundays</div></div>
+    <div class="price serif">R45<small>Per slice</small></div></div>
+</section>
+
+<section class="shops">
+  <div class="lab" style="color: rgba(243,238,228,0.55)">Visit</div>
+  <h2 class="serif">Two counters,<br><em>one starter.</em></h2>
+  <div class="cards">
+    <div class="shop"><div class="ph photo" style="background-image: url('../../../stock/bakery/shop.jpg'); background-position: 50% 55%"></div>
+      <div class="b"><div class="num serif">01</div><h4>Woodstock</h4><div class="addr">Albert Road, Woodstock</div>
+      <div class="hours"><div><span>Mon &ndash; Fri</span><span>06:30 &ndash; 15:00</span></div><div><span>Saturday</span><span>07:00 &ndash; 14:00</span></div><div><span>Sunday</span><span>07:00 &ndash; 12:00</span></div></div>
+      <a class="pill" href="#">Directions &rarr;</a></div></div>
+    <div class="shop"><div class="ph photo" style="background-image: url('../../../stock/bakery/pastries.jpg'); background-position: 50% 25%"></div>
+      <div class="b"><div class="num serif">02</div><h4>Kalk Bay</h4><div class="addr">Main Road, Kalk Bay</div>
+      <div class="hours"><div><span>Tue &ndash; Fri</span><span>07:00 &ndash; 15:00</span></div><div><span>Saturday</span><span>07:00 &ndash; 14:00</span></div><div><span>Sunday</span><span>07:00 &ndash; 13:00</span></div></div>
+      <a class="pill" href="#">Directions &rarr;</a></div></div>
+    <div class="shop soon"><div class="num serif">03</div><h4>Stellenbosch</h4><div class="addr">Opening autumn 2027</div></div>
+  </div>
+</section>
+
+<section class="band">FLOUR &nbsp;&middot;&nbsp; WATER &nbsp;&middot;&nbsp; SALT &nbsp;&middot;&nbsp; <em>time</em></section>
+
+<footer>
+  <div><h3 class="serif">The Friday loaf list</h3><p>One short email a week: what&rsquo;s baking this weekend, and first dibs on special orders.</p></div>
+  <div><div class="field">your@email.com <b>Sign up &rarr;</b></div><p style="margin-top:22px">Wholesale for caf&eacute;s and restaurants: hello@kneadwell.example</p></div>
+  <div class="legal"><span>&copy; 2026 Kneadwell Bakehouse &middot; Cape Town</span><span>Concept by CAAS Studios</span></div>
+</footer>
+</body></html>
