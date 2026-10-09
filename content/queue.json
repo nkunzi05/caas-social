@@ -63,6 +63,13 @@
    "status": "todo"
   },
   {
+   "format": "showcase",
+   "slug": "estate-agency",
+   "brand": "Harbour & Key Properties",
+   "industry": "residential estate agency",
+   "status": "todo"
+  },
+  {
    "format": "landing",
    "slug": "coffee-shop",
    "brand": "Kettle & Crumb",
@@ -81,6 +88,13 @@
    "slug": "gym",
    "brand": "Ironside Gym",
    "industry": "strength gym",
+   "status": "todo"
+  },
+  {
+   "format": "showcase",
+   "slug": "wedding-venue",
+   "brand": "Oak & Vine Estate",
+   "industry": "winelands wedding venue",
    "status": "todo"
   },
   {
@@ -105,6 +119,13 @@
    "status": "todo"
   },
   {
+   "format": "showcase",
+   "slug": "dentist",
+   "brand": "Brightside Dental",
+   "industry": "family dental practice",
+   "status": "todo"
+  },
+  {
    "format": "landing",
    "slug": "photographer",
    "brand": "Frame Nine",
@@ -126,6 +147,13 @@
    "status": "todo"
   },
   {
+   "format": "showcase",
+   "slug": "architect",
+   "brand": "Lineform Studio",
+   "industry": "residential architecture studio",
+   "status": "todo"
+  },
+  {
    "format": "landing",
    "slug": "boutique",
    "brand": "Atelier Nine",
@@ -144,6 +172,13 @@
    "slug": "tattoo",
    "brand": "Black Needle",
    "industry": "tattoo studio",
+   "status": "todo"
+  },
+  {
+   "format": "showcase",
+   "slug": "safari-lodge",
+   "brand": "Thornveld Safari Lodge",
+   "industry": "private game lodge",
    "status": "todo"
   },
   {

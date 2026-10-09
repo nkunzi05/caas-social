@@ -1,0 +1,17 @@
+/* Shared styles for the "showcase" carousel: a long homepage mockup (site.jpg, 1280 css px wide) shown as crops. */
+@import url("../../../brand/fonts.css");
+html, body { margin: 0; } * { box-sizing: border-box; }
+.s { width: 1080px; height: 1350px; overflow: hidden; position: relative; background: #121110; font-family: "Schibsted Grotesk", sans-serif; color: #fff; }
+.bg { position: absolute; inset: -60px; background-size: cover; background-position: center; filter: blur(40px) brightness(0.45) saturate(1.1); }
+.crop { position: absolute; border-radius: 22px; overflow: hidden; background-image: url('site.jpg'); background-repeat: no-repeat;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.08); }
+.label { position: absolute; font-size: 17px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255,255,255,0.72); }
+.label b { color: #fff; letter-spacing: 0.14em; font-weight: 800; }
+.swipe { position: absolute; display: inline-flex; align-items: center; gap: 14px; background: #E8C872; color: #2A2108; font-size: 30px; font-weight: 700;
+         padding: 18px 30px; border-radius: 999px; box-shadow: 0 16px 40px rgba(0,0,0,0.45); }
+.swipe svg { width: 30px; height: 30px; }
+.head { position: absolute; left: 48px; right: 48px; top: 52px; display: flex; justify-content: space-between; align-items: baseline; }
+.head h1 { margin: 0; font-size: 46px; font-weight: 800; letter-spacing: -0.03em; }
+.head h1 span { color: #E8C872; }
+.sig { position: absolute; left: 48px; right: 48px; bottom: 44px; display: flex; justify-content: space-between; align-items: center; font-size: 17px; font-weight: 600; color: rgba(255,255,255,0.7); }
+.sig b { color: #fff; font-weight: 800; letter-spacing: 0.14em; }

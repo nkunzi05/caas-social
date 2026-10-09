@@ -16,10 +16,24 @@ W, H = 1080, 1350
 
 async def render(folder: Path):
     slides = sorted(folder.glob("slide*.html"))
-    if not slides:
+    if not slides and not (folder / "site.html").exists():
         sys.exit(f"No slide*.html files in {folder}")
     async with async_playwright() as p:
         browser = await p.chromium.launch()
+        site = folder / "site.html"
+        if site.exists():
+            # "showcase" posts: render the full homepage mockup first; the slides crop site.jpg
+            sp = await browser.new_page(viewport={"width": 1280, "height": 900}, device_scale_factor=2)
+            await sp.goto(site.resolve().as_uri())
+            await sp.wait_for_load_state("networkidle")
+            await sp.wait_for_timeout(800)
+            tmp = folder / "site.png"
+            await sp.screenshot(path=str(tmp), full_page=True)
+            im = Image.open(tmp).convert("RGB")
+            im.save(folder / "site.jpg", quality=90, optimize=True)
+            tmp.unlink()
+            print(folder / "site.jpg", f"{im.width // 2}x{im.height // 2} css px")
+            await sp.close()
         page = await browser.new_page(viewport={"width": W, "height": H})
         for html in slides:
             png = html.with_suffix(".png")
