@@ -8,3 +8,9 @@ barbershop/trim.jpg https://images.unsplash.com/photo-1657105052497-f996284ffff8
 barbershop/beard.jpg https://images.unsplash.com/photo-1517832606299-7ae9b720a186 https://unsplash.com/photos/fE42nRlBcG8
 barbershop/chair.jpg https://images.unsplash.com/photo-1585747860715-2ba37e788b70 https://unsplash.com/photos/EW_rqoSdDes
 barbershop/interior.jpg https://images.unsplash.com/photo-1536520002442-39764a41e987 https://unsplash.com/photos/2seUdPQNy_I
+roofing/drill.jpg https://images.unsplash.com/photo-1635424824849-1b09bdcc55b1 https://unsplash.com/photos/Scaj0T40nFI
+roofing/shingles.jpg https://images.unsplash.com/photo-1643225523483-e2c434191bba https://unsplash.com/photos/4XMHsy4Rvi8
+roofing/team.jpg https://images.unsplash.com/photo-1635424709961-f3a150459ad4 https://unsplash.com/photos/RGkNFjRPyO0
+roofing/yellow.jpg https://images.unsplash.com/photo-1635424824800-692767998d07 https://unsplash.com/photos/eFOkg4ZMiBs
+roofing/tiles-grey.jpg https://images.unsplash.com/photo-1518736346281-76873166a64a https://unsplash.com/photos/m_vEaZizd2s
+roofing/tiles-brown.jpg https://images.unsplash.com/photo-1580642866497-dde93c97492b https://unsplash.com/photos/EhIUYktUunU
