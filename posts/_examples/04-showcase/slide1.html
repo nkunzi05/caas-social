@@ -1,11 +1,39 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Saltbush Lodge overview</title>
-<link rel="stylesheet" href="showcase.css"></head>
+<html lang="en"><head><meta charset="utf-8"><title>Saltbush Lodge cover</title>
+<link rel="stylesheet" href="showcase.css">
+<style>
+  /* Cover slide: big title, the homepage hero on a desktop monitor, white base band. */
+  .cover-bg { position: absolute; inset: -20px; background-size: cover; background-position: 50% 60%; filter: blur(6px) brightness(0.8); }
+  .cover-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,10,9,0.55) 0%, rgba(12,10,9,0.15) 38%, rgba(12,10,9,0.1) 70%, rgba(12,10,9,0.3) 100%); }
+  .top { position: absolute; left: 56px; right: 56px; top: 52px; display: flex; justify-content: space-between; font-size: 22px; font-weight: 600; }
+  .title { position: absolute; left: 0; right: 0; top: 150px; text-align: center; line-height: 0.92; letter-spacing: -0.05em; font-weight: 700; }
+  .title .l1 { font-size: 118px; font-weight: 600; color: #fff; position: relative; z-index: 3; }
+  .title .l2 { font-size: 150px; font-weight: 600; color: rgba(255,255,255,0.32); display: block; position: relative; z-index: 1; }
+  .monitor { position: absolute; left: 70px; top: 385px; width: 940px; z-index: 2; }
+  .bezel { background: #111; border-radius: 22px; padding: 14px 14px 16px; box-shadow: 0 40px 90px rgba(0,0,0,0.55), inset 0 0 0 2px #2a2a2a; position: relative; }
+  .bezel::before { content: ""; position: absolute; top: 5px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: #333; }
+  .screen { width: 912px; height: 570px; border-radius: 8px; background-image: url('site.jpg'); background-size: 912px auto; background-position: 0 0; }
+  .chin { height: 14px; background: linear-gradient(#e9e9ea, #cfcfd2); border-radius: 0 0 16px 16px; margin: 0 2px; }
+  .neck { width: 170px; height: 240px; margin: 0 auto; background: linear-gradient(90deg, #bdbdc1 0%, #f2f2f3 45%, #d6d6d9 100%); }
+  .base { position: absolute; left: 0; right: 0; bottom: 0; height: 210px; z-index: 3;
+          background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.92) 28%, #fff 45%); }
+  .base .in { position: absolute; left: 56px; right: 56px; bottom: 46px; display: flex; justify-content: space-between; align-items: flex-end; color: #12110F; }
+  .base b { display: block; font-size: 34px; font-weight: 800; letter-spacing: -0.02em; }
+  .base span { font-size: 24px; color: #55524C; }
+  .base .swipe { position: static; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+</style></head>
 <body><div class="s">
-  <div class="bg" style="background-image: url('../../../stock/guesthouse/pool-hero.jpg')"></div>
-
-  <div class="crop" style="left:500px; top:40px; width:560px; height:1260px; background-size:560px auto; background-position:0 -1019.4px; opacity:0.97;"></div>
-  <div class="crop" style="left:48px; top:64px; width:600px; height:1190px; background-size:600px auto; background-position:0 0.0px;"></div>
-  <div class="label" style="left:48px; bottom:46px"><b>CAAS STUDIOS</b> &nbsp;·&nbsp; Website concept</div>
-  <div class="swipe" style="right:48px; bottom:30px">Swipe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+  <div class="cover-bg" style="background-image: url('../../../stock/guesthouse/pool-hero.jpg')"></div>
+  <div class="cover-shade"></div>
+  <div class="top"><span>&copy; 2026 CAAS Studios</span><span>@prosper.builds</span></div>
+  <div class="title"><span class="l1">Boutique Lodge</span><span class="l2">Website</span></div>
+  <div class="monitor">
+    <div class="bezel"><div class="screen"></div></div>
+    <div class="chin"></div>
+    <div class="neck"></div>
+  </div>
+  <div class="base"><div class="in">
+    <div><b>UI/UX Design</b><span>Hospitality industry</span></div>
+    <div class="swipe">Swipe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+  </div></div>
 </div></body></html>
