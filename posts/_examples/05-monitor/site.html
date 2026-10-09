@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Saltbush Lodge concept site</title>
+<link rel="stylesheet" href="../../../brand/fonts.css">
+<style>
+  /* Full desktop homepage, 1280px wide. Rendered to site.png, then sliced into the carousel slides. */
+  :root { --ink: #12110F; --ink-2: #55524C; --ink-3: #8A867E; --paper: #F6F4EF; --line: #E4E0D7; --acc: #E8C872; --acc-ink: #2A2108; --dark: #161513; }
+  * { box-sizing: border-box; } html, body { margin: 0; }
+  body { width: 1280px; background: var(--paper); font-family: "Schibsted Grotesk", sans-serif; color: var(--ink); }
+  .photo { background-size: cover; background-position: center; }
+  .pill { display: inline-flex; align-items: center; gap: 12px; border-radius: 999px; font-weight: 600; text-decoration: none; padding: 7px 7px 7px 22px; font-size: 16px; }
+  .pill i { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-style: normal; }
+  .pill.acc { background: var(--acc); color: var(--acc-ink); } .pill.acc i { background: var(--acc-ink); color: var(--acc); }
+  .pill.dark { background: var(--ink); color: #fff; } .pill.dark i { background: var(--acc); color: var(--acc-ink); }
+  .arr { width: 15px; height: 15px; }
+  .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+  .tag::before { content: ""; width: 14px; height: 14px; border-radius: 4px; background: var(--acc); }
+  h2.sec { font-size: 52px; line-height: 1.04; letter-spacing: -0.035em; font-weight: 700; margin: 16px 0 0; }
+  svg.i { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* hero */
+  .hero { height: 820px; position: relative; color: #fff; overflow: hidden; }
+  .hero .ph { position: absolute; inset: 0; background-position: 50% 60%; }
+  .hero .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,9,8,0.55) 0%, rgba(10,9,8,0) 26%, rgba(10,9,8,0.05) 55%, rgba(10,9,8,0.78) 100%); }
+  nav { position: absolute; left: 56px; right: 56px; top: 34px; display: flex; align-items: center; gap: 40px; }
+  .logo { display: flex; align-items: center; gap: 12px; font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+  .logo b { width: 34px; height: 34px; border-radius: 10px 10px 10px 2px; background: var(--acc); display: block; }
+  .links { flex-grow: 1; display: flex; justify-content: flex-end; gap: 34px; font-size: 16px; font-weight: 500; }
+  .hero .in { position: absolute; left: 56px; right: 56px; bottom: 150px; display: flex; align-items: flex-end; justify-content: space-between; }
+  .hero h1 { margin: 0; font-size: 92px; line-height: 0.98; font-weight: 700; letter-spacing: -0.045em; }
+  .hero h1 span { color: var(--acc); }
+  .hero .stats { position: absolute; left: 56px; right: 56px; bottom: 56px; display: flex; align-items: center; gap: 28px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+  .hero .stats b { font-size: 40px; letter-spacing: -0.03em; color: #fff; font-weight: 600; text-transform: none; margin-right: 10px; }
+  .hero .stats hr { width: 120px; border: 0; border-top: 1px solid rgba(255,255,255,0.4); margin: 0; }
+  .book { display: flex; gap: 0; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(16px); border-radius: 22px; padding: 10px; align-items: center; }
+  .book div { padding: 6px 22px; border-right: 1px solid rgba(255,255,255,0.25); font-size: 14px; color: rgba(255,255,255,0.75); }
+  .book div b { display: block; color: #fff; font-size: 18px; font-weight: 600; margin-top: 2px; }
+  .book .pill { margin-left: 12px; }
+
+  /* about */
+  .about { padding: 110px 56px 100px; display: grid; grid-template-columns: 300px 1fr; gap: 40px; }
+  .about p.big { margin: 0; font-size: 44px; line-height: 1.18; letter-spacing: -0.025em; font-weight: 500; }
+  .about p.big span { color: var(--ink-3); }
+  .about .row2 { grid-column: 1 / -1; display: grid; grid-template-columns: 560px 1fr; gap: 64px; margin-top: 40px; }
+  .about .img { height: 380px; border-radius: 26px; }
+  .facts div { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--line); padding: 24px 0; font-size: 17px; color: var(--ink-2); }
+  .facts b { font-size: 46px; font-weight: 500; letter-spacing: -0.03em; color: var(--ink); }
+  .facts b em { font-style: normal; color: #C9A640; }
+
+  /* rooms */
+  .rooms { padding: 100px 56px 110px; background: #fff; text-align: center; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 54px; text-align: left; }
+  .room { border-radius: 26px; overflow: hidden; background: var(--paper); height: 560px; display: flex; flex-direction: column; position: relative; }
+  .room .ph { height: 330px; }
+  .room .b { padding: 26px 26px; display: flex; flex-direction: column; flex-grow: 1; }
+  .room h3 { margin: 0; font-size: 28px; letter-spacing: -0.02em; font-weight: 700; }
+  .room p { margin: 8px 0 0; font-size: 16px; color: var(--ink-2); line-height: 1.45; }
+  .room .f { margin-top: auto; display: flex; justify-content: space-between; align-items: center; }
+  .room .price { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; } .room .price small { font-size: 15px; font-weight: 500; color: var(--ink-3); }
+  .room.hi { background: var(--dark); color: #fff; } .room.hi p { color: rgba(255,255,255,0.7); } .room.hi .price small { color: rgba(255,255,255,0.6); }
+  .room .chip { position: absolute; top: 20px; left: 20px; background: var(--acc); color: var(--acc-ink); font-size: 14px; font-weight: 700; padding: 8px 14px; border-radius: 999px; }
+
+  /* experiences (dark) */
+  .exp { background: var(--dark); color: #fff; padding: 100px 56px 110px; text-align: center; }
+  .exp .tag { color: rgba(255,255,255,0.75); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,0.12); border-left: 1px solid rgba(255,255,255,0.12); margin-top: 54px; text-align: left; }
+  .grid > div { border-right: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); padding: 34px 32px; min-height: 230px; display: flex; flex-direction: column; }
+  .grid .ic { color: var(--acc); }
+  .grid h4 { margin: 22px 0 0; font-size: 22px; font-weight: 600; }
+  .grid p { margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.62); }
+  .grid .accent { background: var(--acc); color: var(--acc-ink); border-radius: 20px; margin: 10px; justify-content: space-between; }
+  .grid .accent b { font-size: 64px; letter-spacing: -0.04em; font-weight: 600; }
+  .grid .accent p { color: rgba(42,33,8,0.75); }
+
+  /* journey */
+  .journey { padding: 100px 56px; display: grid; grid-template-columns: 480px 1fr; gap: 56px; }
+  .journey .img { border-radius: 26px; height: 100%; min-height: 560px; }
+  .steps > div { display: grid; grid-template-columns: 60px 1fr 260px; gap: 20px; align-items: center; background: #fff; border-radius: 22px; padding: 26px 28px; margin-top: 16px; }
+  .steps .n { width: 46px; height: 46px; border-radius: 14px; background: var(--acc); display: flex; align-items: center; justify-content: center; color: var(--acc-ink); }
+  .steps h4 { margin: 0; font-size: 22px; font-weight: 600; }
+  .steps p { margin: 0; font-size: 15px; color: var(--ink-2); line-height: 1.45; }
+
+  /* cta */
+  .cta { margin: 0 56px 56px; border-radius: 30px; height: 460px; position: relative; overflow: hidden; color: #fff; }
+  .cta .ph { position: absolute; inset: 0; }
+  .cta .shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,9,8,0.9) 0%, rgba(10,9,8,0.6) 55%, rgba(10,9,8,0.25) 100%); }
+  .cta .in { position: absolute; left: 60px; top: 70px; width: 600px; }
+  .cta h2 { margin: 0; font-size: 60px; line-height: 1.02; letter-spacing: -0.04em; font-weight: 700; }
+  .cta p { font-size: 18px; color: rgba(255,255,255,0.82); line-height: 1.5; margin: 20px 0 30px; }
+  .wa { display: inline-flex; align-items: center; gap: 10px; margin-left: 14px; font-weight: 600; font-size: 16px; }
+  .wa span { width: 50px; height: 50px; border-radius: 50%; background: #25D366; display: inline-flex; align-items: center; justify-content: center; }
+  footer { padding: 0 56px 48px; display: flex; justify-content: space-between; font-size: 14px; color: var(--ink-3); }
+</style></head>
+<body>
+<section class="hero">
+  <div class="ph photo" style="background-image: url('../../../stock/guesthouse/pool-hero.jpg')"></div><div class="shade"></div>
+  <nav>
+    <div class="logo"><b></b>Saltbush Lodge</div>
+    <div class="links"><span>Rooms</span><span>Experiences</span><span>Dining</span><span>Gallery</span><span>Contact</span></div>
+    <a class="pill acc" href="#">Book a stay <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+  </nav>
+  <div class="in">
+    <h1>Wake up to<br><span>the Atlantic.</span></h1>
+    <div class="book">
+      <div>Check in<b>Fri 14 Nov</b></div>
+      <div>Check out<b>Sun 16 Nov</b></div>
+      <div style="border-right:0">Guests<b>2 adults</b></div>
+      <a class="pill dark" href="#">Check availability <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+    </div>
+  </div>
+  <div class="stats"><span><b>12</b>Ocean-view suites</span><hr><span><b>9.4</b>Guest rating</span><hr><span><b>2 min</b>To the beach</span></div>
+</section>
+
+<section class="about">
+  <div><span class="tag">About the lodge</span></div>
+  <p class="big">Saltbush Lodge is a twelve-suite hideaway on the West Coast, <span>with slow breakfasts, a heated infinity pool and the beach two minutes from your door.</span></p>
+  <div class="row2">
+    <div class="img photo" style="background-image: url('../../../stock/guesthouse/cabin.jpg')"></div>
+    <div class="facts">
+      <div>Suites<b>12</b></div>
+      <div>Breakfast<b>Included</b></div>
+      <div>Pool<b>Heated<em>+</em></b></div>
+      <div>Check-in<b>From 14:00</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms">
+  <span class="tag">Rooms &amp; suites</span>
+  <h2 class="sec">Choose Your Kind<br>of Quiet</h2>
+  <div class="cards">
+    <div class="room"><div class="ph photo" style="background-image: url('../../../stock/guesthouse/bed.jpg'); background-position: 50% 60%"></div>
+      <div class="b"><h3>Garden Suite</h3><p>King bed, private patio and an outdoor shower among the fynbos.</p>
+      <div class="f"><span class="price">R2,450 <small>/ night</small></span><a class="pill dark" href="#">View <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div></div></div>
+    <div class="room hi"><span class="chip">Most booked</span><div class="ph photo" style="background-image: url('../../../stock/guesthouse/bedroom-wood.jpg'); background-position: 60% 50%"></div>
+      <div class="b"><h3>Ocean Loft</h3><p>Floor-to-ceiling sea views, a deep bath and a reading nook.</p>
+      <div class="f"><span class="price">R3,200 <small>/ night</small></span><a class="pill acc" href="#">View <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div></div></div>
+    <div class="room"><div class="ph photo" style="background-image: url('../../../stock/guesthouse/lounge.jpg'); background-position: 50% 55%"></div>
+      <div class="b"><h3>Dune Studio</h3><p>Open-plan studio with a lounge, kitchenette and dune views.</p>
+      <div class="f"><span class="price">R2,850 <small>/ night</small></span><a class="pill dark" href="#">View <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div></div></div>
+  </div>
+</section>
+
+<section class="exp">
+  <span class="tag">The experience</span>
+  <h2 class="sec">Everything for a<br>Slow Weekend</h2>
+  <div class="grid">
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 18c3 0 3-2 6-2s3 2 6 2 3-2 6-2"/><path d="M3 13c3 0 3-2 6-2s3 2 6 2 3-2 6-2"/></svg></span><h4>Heated infinity pool</h4><p>Warm water, cold Atlantic views, open until 21:00.</p></div>
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 10h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></svg></span><h4>Breakfast till 11</h4><p>Farm eggs, sourdough and proper coffee, served slow.</p></div>
+    <div class="accent"><b>9.4</b><div><h4 style="margin:0">Guest rating</h4><p>From 380 verified stays</p></div></div>
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/></svg></span><h4>Sunset deck</h4><p>Wine from the Swartland on the deck every evening.</p></div>
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><h4>Guided coast walks</h4><p>Morning walks to the rock pools with a local guide.</p></div>
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5h8v2M3 12h18"/></svg></span><h4>Airport transfers</h4><p>Collected from Cape Town International on request.</p></div>
+  </div>
+</section>
+
+<section class="journey">
+  <div class="img photo" style="background-image: url('../../../stock/guesthouse/pool-trees.jpg'); background-position: 50% 60%"></div>
+  <div>
+    <span class="tag">Your stay</span>
+    <h2 class="sec">From Booking to<br>Barefoot</h2>
+    <div class="steps">
+      <div><span class="n"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><h4>Book direct</h4><p>Best rate, free cancellation up to 7 days before.</p></div>
+      <div><span class="n"><svg class="i" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></span><h4>Plan ahead</h4><p>We WhatsApp you to set up dinners and walks.</p></div>
+      <div><span class="n"><svg class="i" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M10 21v-6h4v6"/></svg></span><h4>Arrive easy</h4><p>Self check-in from 14:00, welcome drink at the deck.</p></div>
+      <div><span class="n"><svg class="i" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><h4>Switch off</h4><p>No TVs in the suites. Just the sea and a good book.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="ph photo" style="background-image: url('../../../stock/guesthouse/coffee.jpg'); background-position: 50% 40%"></div><div class="shade"></div>
+  <div class="in">
+    <h2>Your sunbed by<br>the pool is waiting.</h2>
+    <p>Direct bookings get late check-out and a bottle of local wine on arrival.</p>
+    <a class="pill acc" href="#">Check availability <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+    <span class="wa"><span><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></span>WhatsApp us</span>
+  </div>
+</section>
+<footer><span>&copy; 2026 Saltbush Lodge &middot; West Coast, South Africa</span><span>Concept by CAAS Studios</span></footer>
+</body></html>

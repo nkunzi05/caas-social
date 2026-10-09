@@ -63,7 +63,7 @@
    "status": "todo"
   },
   {
-   "format": "showcase",
+   "format": "monitor",
    "slug": "estate-agency",
    "brand": "Harbour & Key Properties",
    "industry": "residential estate agency",
@@ -91,7 +91,7 @@
    "status": "todo"
   },
   {
-   "format": "showcase",
+   "format": "columns",
    "slug": "wedding-venue",
    "brand": "Oak & Vine Estate",
    "industry": "winelands wedding venue",
@@ -119,7 +119,7 @@
    "status": "todo"
   },
   {
-   "format": "showcase",
+   "format": "monitor",
    "slug": "dentist",
    "brand": "Brightside Dental",
    "industry": "family dental practice",
@@ -147,7 +147,7 @@
    "status": "todo"
   },
   {
-   "format": "showcase",
+   "format": "columns",
    "slug": "architect",
    "brand": "Lineform Studio",
    "industry": "residential architecture studio",
@@ -175,7 +175,7 @@
    "status": "todo"
   },
   {
-   "format": "showcase",
+   "format": "monitor",
    "slug": "safari-lodge",
    "brand": "Thornveld Safari Lodge",
    "industry": "private game lodge",
@@ -277,6 +277,13 @@
    "slug": "landscaping",
    "brand": "Greenline Gardens",
    "industry": "landscaping & garden care",
+   "status": "todo"
+  },
+  {
+   "format": "columns",
+   "slug": "interior-design",
+   "brand": "Fold & Form Interiors",
+   "industry": "interior design studio",
    "status": "todo"
   }
  ],
