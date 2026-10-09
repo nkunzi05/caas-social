@@ -2,7 +2,7 @@
 
 Automated Instagram content for **CAAS Studios** (@prosper.builds).
 
-Every weekday at 10:00 (Cape Town time) a scheduled Claude task:
+Every day, including weekends, at about 09:47 (Cape Town time) a scheduled Claude task:
 1. takes the next item from `content/queue.json` (rotating four formats: A vs B comparison, photo landing page, before vs after, a 3-slide homepage "columns" carousel, and a single "monitor" homepage post),
 2. pulls free Unsplash photos for that industry into `stock/` (via the "Fetch stock photos" GitHub workflow), designs the post from the approved examples in `posts/_examples/` and renders it to a 1080×1350 JPG,
 3. commits them to `posts/`,
