@@ -18,3 +18,9 @@ guesthouse/coffee.jpg | https://images.unsplash.com/photo-1601000785686-c45240e2
 guesthouse/bedroom-wood.jpg | https://images.unsplash.com/photo-1731336478850-6bce7235e320 | https://unsplash.com/photos/WWYF8Lts8Ho
 guesthouse/lounge.jpg | https://images.unsplash.com/photo-1738407274756-25325763dd4e | https://unsplash.com/photos/Vn1zfdmWLsQ
 guesthouse/cabin.jpg | https://images.unsplash.com/photo-1582719388123-e03e25d06d51 | https://unsplash.com/photos/hEAGekaiJ8g
+bakery/loaves-tray.jpg | https://images.unsplash.com/photo-1612539466296-4ecf1db303e3 | https://unsplash.com/photos/yHjcZCaiKFY
+bakery/rack.jpg | https://images.unsplash.com/photo-1515182629504-727d7753751f | https://unsplash.com/photos/ZnPNZpjzi0M
+bakery/loaf-table.jpg | https://images.unsplash.com/photo-1599125816289-736f5025fc05 | https://unsplash.com/photos/v3cQex9UX7A
+bakery/baker.jpg | https://images.unsplash.com/photo-1504128668912-f893e6606db6 | https://unsplash.com/photos/qPQqZ0y-rJ0
+bakery/pastries.jpg | https://images.unsplash.com/photo-1534432182912-63863115e106 | https://unsplash.com/photos/n49BjsFf5dI
+bakery/shop.jpg | https://images.unsplash.com/photo-1536782896453-61d09f3aaf3e | https://unsplash.com/photos/gvWGbG4uiKI
