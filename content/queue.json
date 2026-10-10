@@ -1,304 +1,305 @@
 {
- "done": [
-  {
-   "type": "concept",
-   "slug": "orven",
-   "brand": "ORVEN",
-   "industry": "watch brand",
-   "post": "posts/2026-10-08-concept-orven",
-   "status": "posted"
-  },
-  {
-   "type": "concept",
-   "slug": "barbershop",
-   "brand": "Fade & Co.",
-   "industry": "Cape Town barbershop",
-   "status": "posted",
-   "post": "posts/2026-10-08-concept-barbershop"
-  },
-  {
-   "type": "tip",
-   "number": 1,
-   "headline": "3 things every small business website needs above the fold.",
-   "status": "posted",
-   "post": "posts/2026-10-08-tip-1"
-  },
-  {
-   "format": "reference",
-   "slug": "barbershop",
-   "brand": "Fade & Co.",
-   "industry": "barbershop",
-   "post": "posts/_examples",
-   "status": "approved examples (not posted)"
-  },
-  {
-   "format": "ab",
-   "slug": "roofing",
-   "brand": "Summit Roofing",
-   "industry": "roofing & waterproofing",
-   "status": "posted",
-   "post": "posts/2026-10-09-ab-roofing"
+  "done": [
+    {
+      "type": "concept",
+      "slug": "orven",
+      "brand": "ORVEN",
+      "industry": "watch brand",
+      "post": "posts/2026-10-08-concept-orven",
+      "status": "posted"
+    },
+    {
+      "type": "concept",
+      "slug": "barbershop",
+      "brand": "Fade & Co.",
+      "industry": "Cape Town barbershop",
+      "status": "posted",
+      "post": "posts/2026-10-08-concept-barbershop"
+    },
+    {
+      "type": "tip",
+      "number": 1,
+      "headline": "3 things every small business website needs above the fold.",
+      "status": "posted",
+      "post": "posts/2026-10-08-tip-1"
+    },
+    {
+      "format": "reference",
+      "slug": "barbershop",
+      "brand": "Fade & Co.",
+      "industry": "barbershop",
+      "post": "posts/_examples",
+      "status": "approved examples (not posted)"
+    },
+    {
+      "format": "ab",
+      "slug": "roofing",
+      "brand": "Summit Roofing",
+      "industry": "roofing & waterproofing",
+      "status": "posted",
+      "post": "posts/2026-10-09-ab-roofing"
+    },
+    {
+      "format": "landing",
+      "slug": "restaurant",
+      "brand": "Ember Kitchen",
+      "industry": "braai & grill restaurant",
+      "status": "posted",
+      "post": "posts/2026-10-10-landing-restaurant"
+    }
+  ],
+  "queue": [
+    {
+      "format": "before-after",
+      "slug": "beauty-salon",
+      "brand": "Velvet Room",
+      "industry": "beauty & nail salon",
+      "status": "todo"
+    },
+    {
+      "format": "ab",
+      "slug": "plumber",
+      "brand": "FlowRight Plumbing",
+      "industry": "24/7 plumber",
+      "status": "todo"
+    },
+    {
+      "format": "monitor",
+      "slug": "estate-agency",
+      "brand": "Harbour & Key Properties",
+      "industry": "residential estate agency",
+      "status": "todo"
+    },
+    {
+      "format": "landing",
+      "slug": "coffee-shop",
+      "brand": "Kettle & Crumb",
+      "industry": "neighbourhood coffee shop",
+      "status": "todo"
+    },
+    {
+      "format": "monitor",
+      "slug": "bakery-editorial",
+      "brand": "Kneadwell Bakehouse",
+      "industry": "artisan bakery (editorial style)",
+      "inspiration": "https://www.siteinspire.com/website/13641-union-boulangerie",
+      "prebuilt": "posts/_inspiration/2026-10-09-bakery",
+      "status": "todo"
+    },
+    {
+      "format": "before-after",
+      "slug": "electrician",
+      "brand": "LiveWire Electrical",
+      "industry": "certified electrician",
+      "status": "todo"
+    },
+    {
+      "format": "ab",
+      "slug": "gym",
+      "brand": "Ironside Gym",
+      "industry": "strength gym",
+      "status": "todo"
+    },
+    {
+      "format": "columns",
+      "slug": "wedding-venue",
+      "brand": "Oak & Vine Estate",
+      "industry": "winelands wedding venue",
+      "status": "todo"
+    },
+    {
+      "format": "landing",
+      "slug": "car-wash",
+      "brand": "Gloss Bay",
+      "industry": "car wash & valet",
+      "status": "todo"
+    },
+    {
+      "format": "before-after",
+      "slug": "bakery",
+      "brand": "Rise Bakehouse",
+      "industry": "artisan bakery",
+      "status": "todo"
+    },
+    {
+      "format": "ab",
+      "slug": "landscaping",
+      "brand": "Greenline Gardens",
+      "industry": "landscaping & garden care",
+      "status": "todo"
+    },
+    {
+      "format": "monitor",
+      "slug": "dentist",
+      "brand": "Brightside Dental",
+      "industry": "family dental practice",
+      "status": "todo"
+    },
+    {
+      "format": "landing",
+      "slug": "photographer",
+      "brand": "Frame Nine",
+      "industry": "wedding & portrait photographer",
+      "status": "todo"
+    },
+    {
+      "format": "before-after",
+      "slug": "mechanic",
+      "brand": "Torque Auto",
+      "industry": "auto mechanic",
+      "status": "todo"
+    },
+    {
+      "format": "ab",
+      "slug": "cleaning",
+      "brand": "Spotless Co.",
+      "industry": "home & office cleaning",
+      "status": "todo"
+    },
+    {
+      "format": "columns",
+      "slug": "architect",
+      "brand": "Lineform Studio",
+      "industry": "residential architecture studio",
+      "status": "todo"
+    },
+    {
+      "format": "landing",
+      "slug": "boutique",
+      "brand": "Atelier Nine",
+      "industry": "clothing boutique",
+      "status": "todo"
+    },
+    {
+      "format": "before-after",
+      "slug": "construction",
+      "brand": "Bedrock Build",
+      "industry": "construction company",
+      "status": "todo"
+    },
+    {
+      "format": "ab",
+      "slug": "tattoo",
+      "brand": "Black Needle",
+      "industry": "tattoo studio",
+      "status": "todo"
+    },
+    {
+      "format": "monitor",
+      "slug": "safari-lodge",
+      "brand": "Thornveld Safari Lodge",
+      "industry": "private game lodge",
+      "status": "todo"
+    },
+    {
+      "format": "landing",
+      "slug": "real-estate",
+      "brand": "Keyline Properties",
+      "industry": "estate agency",
+      "status": "todo"
+    },
+    {
+      "format": "before-after",
+      "slug": "guest-house",
+      "brand": "Stillwater Lodge",
+      "industry": "guest house & B&B",
+      "status": "todo"
+    },
+    {
+      "format": "ab",
+      "slug": "car-rental",
+      "brand": "Coastline Rentals",
+      "industry": "car rental",
+      "status": "todo"
+    },
+    {
+      "format": "landing",
+      "slug": "florist",
+      "brand": "Petal & Stem",
+      "industry": "florist",
+      "status": "todo"
+    },
+    {
+      "format": "landing",
+      "slug": "roofing",
+      "brand": "Summit Roofing",
+      "industry": "roofing & waterproofing",
+      "status": "todo"
+    },
+    {
+      "format": "before-after",
+      "slug": "restaurant",
+      "brand": "Ember Kitchen",
+      "industry": "braai & grill restaurant",
+      "status": "todo"
+    },
+    {
+      "format": "ab",
+      "slug": "beauty-salon",
+      "brand": "Velvet Room",
+      "industry": "beauty & nail salon",
+      "status": "todo"
+    },
+    {
+      "format": "landing",
+      "slug": "plumber",
+      "brand": "FlowRight Plumbing",
+      "industry": "24/7 plumber",
+      "status": "todo"
+    },
+    {
+      "format": "before-after",
+      "slug": "coffee-shop",
+      "brand": "Kettle & Crumb",
+      "industry": "neighbourhood coffee shop",
+      "status": "todo"
+    },
+    {
+      "format": "ab",
+      "slug": "electrician",
+      "brand": "LiveWire Electrical",
+      "industry": "certified electrician",
+      "status": "todo"
+    },
+    {
+      "format": "landing",
+      "slug": "gym",
+      "brand": "Ironside Gym",
+      "industry": "strength gym",
+      "status": "todo"
+    },
+    {
+      "format": "before-after",
+      "slug": "car-wash",
+      "brand": "Gloss Bay",
+      "industry": "car wash & valet",
+      "status": "todo"
+    },
+    {
+      "format": "ab",
+      "slug": "bakery",
+      "brand": "Rise Bakehouse",
+      "industry": "artisan bakery",
+      "status": "todo"
+    },
+    {
+      "format": "landing",
+      "slug": "landscaping",
+      "brand": "Greenline Gardens",
+      "industry": "landscaping & garden care",
+      "status": "todo"
+    },
+    {
+      "format": "columns",
+      "slug": "interior-design",
+      "brand": "Fold & Form Interiors",
+      "industry": "interior design studio",
+      "status": "todo"
+    }
+  ],
+  "formats": {
+    "ab": "posts/_examples/01-ab",
+    "landing": "posts/_examples/02-landing",
+    "before-after": "posts/_examples/03-before-after"
   }
- ],
- "queue": [
-  {
-   "format": "landing",
-   "slug": "restaurant",
-   "brand": "Ember Kitchen",
-   "industry": "braai & grill restaurant",
-   "status": "todo"
-  },
-  {
-   "format": "before-after",
-   "slug": "beauty-salon",
-   "brand": "Velvet Room",
-   "industry": "beauty & nail salon",
-   "status": "todo"
-  },
-  {
-   "format": "ab",
-   "slug": "plumber",
-   "brand": "FlowRight Plumbing",
-   "industry": "24/7 plumber",
-   "status": "todo"
-  },
-  {
-   "format": "monitor",
-   "slug": "estate-agency",
-   "brand": "Harbour & Key Properties",
-   "industry": "residential estate agency",
-   "status": "todo"
-  },
-  {
-   "format": "landing",
-   "slug": "coffee-shop",
-   "brand": "Kettle & Crumb",
-   "industry": "neighbourhood coffee shop",
-   "status": "todo"
-  },
-  {
-   "format": "monitor",
-   "slug": "bakery-editorial",
-   "brand": "Kneadwell Bakehouse",
-   "industry": "artisan bakery (editorial style)",
-   "inspiration": "https://www.siteinspire.com/website/13641-union-boulangerie",
-   "prebuilt": "posts/_inspiration/2026-10-09-bakery",
-   "status": "todo"
-  },
-  {
-   "format": "before-after",
-   "slug": "electrician",
-   "brand": "LiveWire Electrical",
-   "industry": "certified electrician",
-   "status": "todo"
-  },
-  {
-   "format": "ab",
-   "slug": "gym",
-   "brand": "Ironside Gym",
-   "industry": "strength gym",
-   "status": "todo"
-  },
-  {
-   "format": "columns",
-   "slug": "wedding-venue",
-   "brand": "Oak & Vine Estate",
-   "industry": "winelands wedding venue",
-   "status": "todo"
-  },
-  {
-   "format": "landing",
-   "slug": "car-wash",
-   "brand": "Gloss Bay",
-   "industry": "car wash & valet",
-   "status": "todo"
-  },
-  {
-   "format": "before-after",
-   "slug": "bakery",
-   "brand": "Rise Bakehouse",
-   "industry": "artisan bakery",
-   "status": "todo"
-  },
-  {
-   "format": "ab",
-   "slug": "landscaping",
-   "brand": "Greenline Gardens",
-   "industry": "landscaping & garden care",
-   "status": "todo"
-  },
-  {
-   "format": "monitor",
-   "slug": "dentist",
-   "brand": "Brightside Dental",
-   "industry": "family dental practice",
-   "status": "todo"
-  },
-  {
-   "format": "landing",
-   "slug": "photographer",
-   "brand": "Frame Nine",
-   "industry": "wedding & portrait photographer",
-   "status": "todo"
-  },
-  {
-   "format": "before-after",
-   "slug": "mechanic",
-   "brand": "Torque Auto",
-   "industry": "auto mechanic",
-   "status": "todo"
-  },
-  {
-   "format": "ab",
-   "slug": "cleaning",
-   "brand": "Spotless Co.",
-   "industry": "home & office cleaning",
-   "status": "todo"
-  },
-  {
-   "format": "columns",
-   "slug": "architect",
-   "brand": "Lineform Studio",
-   "industry": "residential architecture studio",
-   "status": "todo"
-  },
-  {
-   "format": "landing",
-   "slug": "boutique",
-   "brand": "Atelier Nine",
-   "industry": "clothing boutique",
-   "status": "todo"
-  },
-  {
-   "format": "before-after",
-   "slug": "construction",
-   "brand": "Bedrock Build",
-   "industry": "construction company",
-   "status": "todo"
-  },
-  {
-   "format": "ab",
-   "slug": "tattoo",
-   "brand": "Black Needle",
-   "industry": "tattoo studio",
-   "status": "todo"
-  },
-  {
-   "format": "monitor",
-   "slug": "safari-lodge",
-   "brand": "Thornveld Safari Lodge",
-   "industry": "private game lodge",
-   "status": "todo"
-  },
-  {
-   "format": "landing",
-   "slug": "real-estate",
-   "brand": "Keyline Properties",
-   "industry": "estate agency",
-   "status": "todo"
-  },
-  {
-   "format": "before-after",
-   "slug": "guest-house",
-   "brand": "Stillwater Lodge",
-   "industry": "guest house & B&B",
-   "status": "todo"
-  },
-  {
-   "format": "ab",
-   "slug": "car-rental",
-   "brand": "Coastline Rentals",
-   "industry": "car rental",
-   "status": "todo"
-  },
-  {
-   "format": "landing",
-   "slug": "florist",
-   "brand": "Petal & Stem",
-   "industry": "florist",
-   "status": "todo"
-  },
-  {
-   "format": "landing",
-   "slug": "roofing",
-   "brand": "Summit Roofing",
-   "industry": "roofing & waterproofing",
-   "status": "todo"
-  },
-  {
-   "format": "before-after",
-   "slug": "restaurant",
-   "brand": "Ember Kitchen",
-   "industry": "braai & grill restaurant",
-   "status": "todo"
-  },
-  {
-   "format": "ab",
-   "slug": "beauty-salon",
-   "brand": "Velvet Room",
-   "industry": "beauty & nail salon",
-   "status": "todo"
-  },
-  {
-   "format": "landing",
-   "slug": "plumber",
-   "brand": "FlowRight Plumbing",
-   "industry": "24/7 plumber",
-   "status": "todo"
-  },
-  {
-   "format": "before-after",
-   "slug": "coffee-shop",
-   "brand": "Kettle & Crumb",
-   "industry": "neighbourhood coffee shop",
-   "status": "todo"
-  },
-  {
-   "format": "ab",
-   "slug": "electrician",
-   "brand": "LiveWire Electrical",
-   "industry": "certified electrician",
-   "status": "todo"
-  },
-  {
-   "format": "landing",
-   "slug": "gym",
-   "brand": "Ironside Gym",
-   "industry": "strength gym",
-   "status": "todo"
-  },
-  {
-   "format": "before-after",
-   "slug": "car-wash",
-   "brand": "Gloss Bay",
-   "industry": "car wash & valet",
-   "status": "todo"
-  },
-  {
-   "format": "ab",
-   "slug": "bakery",
-   "brand": "Rise Bakehouse",
-   "industry": "artisan bakery",
-   "status": "todo"
-  },
-  {
-   "format": "landing",
-   "slug": "landscaping",
-   "brand": "Greenline Gardens",
-   "industry": "landscaping & garden care",
-   "status": "todo"
-  },
-  {
-   "format": "columns",
-   "slug": "interior-design",
-   "brand": "Fold & Form Interiors",
-   "industry": "interior design studio",
-   "status": "todo"
-  }
- ],
- "formats": {
-  "ab": "posts/_examples/01-ab",
-  "landing": "posts/_examples/02-landing",
-  "before-after": "posts/_examples/03-before-after"
- }
 }

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Ember Kitchen concept site</title>
+<link rel="stylesheet" href="../../brand/ui.css">
+<style>
+  .post { padding: 56px 48px 48px; }
+  .head { width: 100%; display: flex; justify-content: space-between; align-items: baseline; padding: 0 16px; }
+  .head .eyebrow { letter-spacing: 0.2em; }
+  .page { width: 984px; height: 1120px; margin-top: 28px; border-radius: 28px; background: #F7F7F8; overflow: hidden; display: flex; flex-direction: column; }
+  nav { height: 92px; flex-shrink: 0; display: flex; align-items: center; padding: 0 36px; gap: 36px; }
+  .logo { font-size: 24px; font-weight: 800; letter-spacing: 0.22em; line-height: 1; }
+  .logo small { display: block; font-size: 10px; font-weight: 600; letter-spacing: 0.5em; margin-top: 5px; color: var(--ink-3); }
+  .links { display: flex; gap: 30px; font-size: 15px; font-weight: 500; flex-grow: 1; justify-content: center; }
+  .pill { display: inline-flex; align-items: center; gap: 14px; border-radius: 999px; font-weight: 600; text-decoration: none; padding: 7px 7px 7px 22px; }
+  .pill i { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-style: normal; }
+  .pill.dark { background: var(--ink); color: #fff; font-size: 15px; }
+  .pill.dark i { background: #fff; color: var(--ink); }
+  .pill.light { background: #fff; color: var(--ink); font-size: 18px; padding: 8px 8px 8px 28px; }
+  .pill.light i { background: var(--ink); color: #fff; width: 46px; height: 46px; }
+  .hero { position: relative; height: 560px; margin: 0 14px; border-radius: 24px; overflow: hidden; color: #fff; flex-shrink: 0; }
+  .hero .photo { position: absolute; inset: 0; background-size: 122% auto !important; background-position: 28% 55%; }
+  .hero .shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,6,5,0.88) 0%, rgba(8,6,5,0.55) 45%, rgba(8,6,5,0.05) 80%); }
+  .hero .in { position: absolute; left: 52px; top: 64px; width: 560px; }
+  .hero h2 { margin: 0; font-size: 68px; line-height: 1; font-weight: 800; letter-spacing: -0.04em; }
+  .hero h2 span { color: #F4A259; }
+  .hero p { margin: 22px 0 30px; font-size: 20px; line-height: 1.45; color: rgba(255,255,255,0.88); max-width: 470px; }
+  .proof { display: flex; align-items: center; gap: 14px; margin-top: 38px; font-size: 16px; }
+  .proof .score { font-size: 20px; font-weight: 700; }
+  .proof .muted { color: rgba(255,255,255,0.75); font-size: 15px; display: block; margin-top: 2px; }
+  .slot { position: absolute; right: 26px; bottom: 26px; width: 330px; border-radius: 18px; padding: 12px; display: flex; gap: 16px; align-items: center; background: rgba(20,16,13,0.5); border: 1px solid rgba(255,255,255,0.16); backdrop-filter: blur(14px); }
+  .slot .th { width: 104px; height: 78px; border-radius: 12px; flex-shrink: 0; }
+  .slot b { display: block; font-size: 18px; }
+  .slot small { font-size: 12px; opacity: 0.7; display: block; }
+  .slot span { font-size: 14px; opacity: 0.85; }
+  .lower { display: flex; gap: 22px; padding: 30px 30px 28px 52px; flex-grow: 1; }
+  .about { width: 330px; display: flex; flex-direction: column; flex-shrink: 0; }
+  .steps { display: flex; align-items: center; gap: 18px; font-size: 15px; font-weight: 600; color: var(--ink-3); }
+  .steps b { color: var(--ink); border-bottom: 2px solid var(--ink); padding-bottom: 6px; }
+  .steps hr { flex-grow: 1; border: 0; border-top: 1px solid #D5D8DF; margin: 0; max-width: 90px; }
+  .about .kick { font-size: 14px; color: var(--ink-3); margin-top: auto; }
+  .about h3 { margin: 8px 0 0; font-size: 38px; line-height: 1.02; font-weight: 800; letter-spacing: -0.035em; }
+  .about p { font-size: 15px; line-height: 1.5; color: var(--ink-3); margin: 14px 0 20px; }
+  .about .pill.dark { align-self: flex-start; }
+  .tile { flex: 1; border-radius: 22px; overflow: hidden; position: relative; color: #fff; }
+  .tile .photo { position: absolute; inset: 0; }
+  .tile .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,6,5,0.75) 0%, rgba(8,6,5,0.1) 40%, rgba(8,6,5,0.85) 100%); }
+  .tile .tt { position: absolute; left: 22px; right: 22px; top: 22px; }
+  .tile h4 { margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.03em; }
+  .tile .tt p { margin: 6px 0 0; font-size: 15px; opacity: 0.85; }
+  .tile .bt { position: absolute; left: 22px; right: 22px; bottom: 20px; }
+  .tile .bt p { margin: 0 0 14px; font-size: 14px; opacity: 0.85; line-height: 1.4; }
+  .tile .pill { border: 1px solid rgba(255,255,255,0.45); color: #fff; font-size: 14px; padding: 6px 6px 6px 18px; }
+  .tile .pill i { background: #fff; color: var(--ink); width: 34px; height: 34px; }
+  .arr { width: 14px; height: 14px; }
+</style></head>
+<body><div class="post">
+  <div class="head"><span class="eyebrow">Concept 02 &mdash; Restaurant website</span><span class="eyebrow">Ember Kitchen</span></div>
+  <div class="page shadow">
+    <nav>
+      <div class="logo">EMBER<small>KITCHEN</small></div>
+      <div class="links"><span>Menu</span><span>Braai Platters</span><span>Events</span><span>Gallery</span><span>Visit</span></div>
+      <a class="pill dark" href="#">Book a table <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+    </nav>
+    <div class="hero">
+      <div class="photo" style="background-image: url('../../stock/restaurant/flames.jpg')"></div>
+      <div class="shade"></div>
+      <div class="in">
+        <h2>Real fire.<br><span>Proper braai.</span></h2>
+        <p>Steaks, boerewors and sosaties cooked over open coals every night. Book a table, we&rsquo;ll light the fire.</p>
+        <a class="pill light" href="#">Book your table <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+        <div class="proof">
+          <div><span class="score">4.8/5</span> <span class="stars">★★★★★</span><span class="muted">From 900+ diner reviews</span></div>
+        </div>
+      </div>
+      <div class="slot">
+        <div class="th" style="background-size: cover; background-image: url('../../stock/restaurant/interior.jpg'); background-position: 50% 50%"></div>
+        <div><small>/01</small><b>Tonight</b><span>Table for 4 at 19:30</span></div>
+      </div>
+    </div>
+    <div class="lower">
+      <div class="about">
+        <div class="steps"><b>01</b><hr><span>02</span><span>03</span><span>04</span></div>
+        <p style="margin-top: 22px">A neighbourhood grill house: sharing platters, slow-smoked ribs and a fire that never goes out.</p>
+        <div class="kick">/ About</div>
+        <h3>Fire First,<br>Always.</h3>
+        <a class="pill dark" href="#" style="margin-top: 22px">See the menu <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+      </div>
+      <div class="tile">
+        <div class="photo" style="background-image: url('../../stock/restaurant/steak.jpg'); background-position: 45% 60%"></div><div class="shade"></div>
+        <div class="tt"><h4>Off the Coals</h4><p>Steaks from R189.</p></div>
+        <div class="bt"><p>Aged rump, sirloin and T-bone, basted and flame-finished.</p><a class="pill" href="#">Learn more <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div>
+      </div>
+      <div class="tile">
+        <div class="photo" style="background-image: url('../../stock/restaurant/braai-coals.jpg'); background-position: 30% 50%"></div><div class="shade"></div>
+        <div class="tt"><h4>Braai Platters</h4><p>For 2 to 10 people.</p></div>
+        <div class="bt"><p>Wors, chops, sosaties and pap &mdash; from R349 for two.</p><a class="pill" href="#">Learn more <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div>
+      </div>
+    </div>
+  </div>
+  <div class="sig"><b>CAAS STUDIOS</b><span>Concept site &middot; DM &ldquo;SITE&rdquo; for yours</span></div>
+</div></body></html>
