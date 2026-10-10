@@ -30,3 +30,7 @@ restaurant/flames.jpg | https://images.unsplash.com/photo-1512719724284-dbb9ef47
 restaurant/steak.jpg | https://images.unsplash.com/photo-1556269923-e4ef51d69638 | https://unsplash.com/photos/oyUqUV1Q0Zg
 restaurant/sunset-grill.jpg | https://images.unsplash.com/photo-1752154424142-86c9c633cec1 | https://unsplash.com/photos/QrDlLRhRPWA
 restaurant/interior.jpg | https://images.unsplash.com/photo-1538333581680-29dd4752ddf2 | https://unsplash.com/photos/PK1pzUGQSjc
+beauty-salon/manicure.jpg | https://images.unsplash.com/photo-1632345031435-8727f6897d53 | https://unsplash.com/photos/gb6gtiTZKB8
+beauty-salon/pink-room.jpg | https://images.unsplash.com/photo-1658492055212-e1acbccfca5a | https://unsplash.com/photos/t91cj5p3a-o
+beauty-salon/painted-nails.jpg | https://images.unsplash.com/photo-1659391542239-9648f307c0b1 | https://unsplash.com/photos/IYa5Dnj9qWE
+beauty-salon/polish-wall.jpg | https://images.unsplash.com/photo-1619607146034-5a05296c8f9a | https://unsplash.com/photos/OpjlRo-31SI
