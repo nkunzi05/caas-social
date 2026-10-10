@@ -24,3 +24,9 @@ bakery/loaf-table.jpg | https://images.unsplash.com/photo-1599125816289-736f5025
 bakery/baker.jpg | https://images.unsplash.com/photo-1504128668912-f893e6606db6 | https://unsplash.com/photos/qPQqZ0y-rJ0
 bakery/pastries.jpg | https://images.unsplash.com/photo-1534432182912-63863115e106 | https://unsplash.com/photos/n49BjsFf5dI
 bakery/shop.jpg | https://images.unsplash.com/photo-1536782896453-61d09f3aaf3e | https://unsplash.com/photos/gvWGbG4uiKI
+restaurant/braai-coals.jpg | https://images.unsplash.com/photo-1609534751961-f396ded2af99 | https://unsplash.com/photos/9ZJOs9hmuKs
+restaurant/braai-meat.jpg | https://images.unsplash.com/photo-1613244666139-b6629daf6b96 | https://unsplash.com/photos/gH9vt0v6EHY
+restaurant/flames.jpg | https://images.unsplash.com/photo-1512719724284-dbb9ef47eac5 | https://unsplash.com/photos/Ry6vwtAJu4g
+restaurant/steak.jpg | https://images.unsplash.com/photo-1556269923-e4ef51d69638 | https://unsplash.com/photos/oyUqUV1Q0Zg
+restaurant/sunset-grill.jpg | https://images.unsplash.com/photo-1752154424142-86c9c633cec1 | https://unsplash.com/photos/QrDlLRhRPWA
+restaurant/interior.jpg | https://images.unsplash.com/photo-1538333581680-29dd4752ddf2 | https://unsplash.com/photos/PK1pzUGQSjc
