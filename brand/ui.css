@@ -1,5 +1,6 @@
 /* CAAS Studios — "UI showcase" post style (light, photo-led, product-shot look). */
 @import url("fonts.css");
+@import url("palettes.css");
 
 :root {
   --bg: #F1F2F5;
@@ -17,7 +18,7 @@ html, body { margin: 0; }
 
 .post {
   width: 1080px; height: 1350px; overflow: hidden; position: relative;
-  background: radial-gradient(120% 80% at 50% 0%, #FAFBFC 0%, var(--bg) 70%);
+  background: radial-gradient(120% 80% at 50% 0%, var(--bg-top, #FAFBFC) 0%, var(--bg) 70%);
   font-family: "Schibsted Grotesk", "Helvetica Neue", sans-serif;
   color: var(--ink);
   display: flex; flex-direction: column; align-items: center;
@@ -34,7 +35,7 @@ html, body { margin: 0; }
 .shadow { box-shadow: 0 2px 4px rgba(14,18,32,0.04), 0 24px 60px rgba(14,18,32,0.14); }
 .photo { background-size: cover; background-position: center; }
 .ab {
-  width: 64px; height: 64px; border-radius: 50%; background: #E3E5EB;
+  width: 64px; height: 64px; border-radius: 50%; background: var(--chip, #E3E5EB);
   display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 800;
 }
 .stars { color: var(--star); letter-spacing: 1px; }

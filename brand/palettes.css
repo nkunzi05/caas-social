@@ -1,0 +1,21 @@
+/* Post colour palettes. Add ONE class to the .post element, e.g. <div class="post pal-sand">.
+   No class = "cloud" (the original grey). Rotate per RUNBOOK step 4 "Colour rotation". */
+.pal-cloud    { --bg: #F1F2F5; --bg-top: #FAFBFC; --ink: #0E1220; --ink-2: #4A5163; --ink-3: #6B7183; --chip: #E3E5EB; }
+.pal-sand     { --bg: #EFE6DA; --bg-top: #FAF6F0; --ink: #1F1912; --ink-2: #5A4E40; --ink-3: #85776A; --chip: #E2D6C6; }
+.pal-sage     { --bg: #E3EAE1; --bg-top: #F5F8F3; --ink: #14201A; --ink-2: #47564C; --ink-3: #66756A; --chip: #D3DDD0; }
+.pal-blush    { --bg: #F3E4E0; --bg-top: #FBF5F3; --ink: #2A1614; --ink-2: #66504C; --ink-3: #8C6F6A; --chip: #E8D3CE; }
+.pal-sky      { --bg: #E2EBF5; --bg-top: #F5F8FC; --ink: #0E1A2B; --ink-2: #44546B; --ink-3: #607086; --chip: #D2DEEC; }
+.pal-butter   { --bg: #F4EDCF; --bg-top: #FBF8EC; --ink: #1E1A0C; --ink-2: #57502F; --ink-3: #807651; --chip: #E7DDB4; }
+
+/* Dark frames: only the background and the frame text (eyebrow, question, sig, A/B circles) go light.
+   The mockups inside keep their normal light-UI colours. */
+.pal-midnight { --bg: #0D1120; --bg-top: #1C2338; --frame-ink: #F4F5F8; --frame-ink-3: #8E96AD; --frame-chip: #262E46; }
+.pal-forest   { --bg: #0F1E17; --bg-top: #1E3328; --frame-ink: #F2F5F0; --frame-ink-3: #8DA196; --frame-chip: #22382D; }
+.pal-espresso { --bg: #1A1310; --bg-top: #2E2219; --frame-ink: #F7F1EA; --frame-ink-3: #A8988A; --frame-chip: #3A2C22; }
+:is(.pal-midnight, .pal-forest, .pal-espresso) > .q,
+:is(.pal-midnight, .pal-forest, .pal-espresso) > .sig b { color: var(--frame-ink); }
+:is(.pal-midnight, .pal-forest, .pal-espresso) > .eyebrow,
+:is(.pal-midnight, .pal-forest, .pal-espresso) > .head .eyebrow,
+:is(.pal-midnight, .pal-forest, .pal-espresso) > .sig { color: var(--frame-ink-3); }
+:is(.pal-midnight, .pal-forest, .pal-espresso) .ab { background: var(--frame-chip); color: var(--frame-ink); }
+:is(.pal-midnight, .pal-forest, .pal-espresso) .shadow { box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 24px 60px rgba(0,0,0,0.45); }

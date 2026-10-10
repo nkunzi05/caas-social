@@ -45,7 +45,9 @@
       "brand": "Ember Kitchen",
       "industry": "braai & grill restaurant",
       "status": "posted",
-      "post": "posts/2026-10-10-landing-restaurant"
+      "post": "posts/2026-10-10-landing-restaurant",
+      "palette": "cloud",
+      "accent": "#F4A259"
     }
   ],
   "queue": [
