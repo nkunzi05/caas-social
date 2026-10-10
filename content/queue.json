@@ -48,16 +48,20 @@
       "post": "posts/2026-10-10-landing-restaurant",
       "palette": "cloud",
       "accent": "#F4A259"
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "before-after",
       "slug": "beauty-salon",
       "brand": "Velvet Room",
       "industry": "beauty & nail salon",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-11-before-after-beauty-salon",
+      "palette": "blush",
+      "accent": "#F4B6C8",
+      "scheduled": "2026-10-11T09:30 SAST (made early on request)"
+    }
+  ],
+  "queue": [
     {
       "format": "ab",
       "slug": "plumber",

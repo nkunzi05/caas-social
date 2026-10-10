@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Before and after</title>
+<link rel="stylesheet" href="../../brand/ui.css">
+<style>
+  .q { font-size: 66px; }
+  .pair { display: flex; gap: 36px; margin-top: 56px; }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+  .phone { width: 452px; height: 900px; border-radius: 48px; background: #0E1220; padding: 12px; }
+  .screen { width: 100%; height: 100%; border-radius: 37px; overflow: hidden; position: relative; display: flex; flex-direction: column; }
+  .tag { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 12px; }
+  .tag .dot { width: 14px; height: 14px; border-radius: 50%; }
+
+  /* BEFORE: an average template site — not broken, just forgettable */
+  .old { background: #fff; font-family: Arial, Helvetica, sans-serif; color: #333; }
+  .old .top { display: flex; justify-content: space-between; align-items: center; padding: 40px 20px 14px; border-bottom: 1px solid #e5e5e5; }
+  .old .logo { font-size: 19px; font-weight: bold; color: #2b4c7e; }
+  .old .burger { width: 26px; display: flex; flex-direction: column; gap: 5px; }
+  .old .burger i { height: 3px; background: #555; display: block; }
+  .old .hero { height: 230px; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; }
+  .old .hero .bgp { position: absolute; inset: 0; background-size: cover; background-position: 50% 45%; filter: saturate(0.6) brightness(0.62); }
+  .old .hero h3 { position: relative; color: #fff; font-size: 22px; font-weight: normal; margin: 0; padding: 0 30px; line-height: 1.3; }
+  .old .body { padding: 18px 20px 0; font-size: 15px; line-height: 1.5; color: #555; }
+  .old .body h4 { font-size: 18px; color: #2b4c7e; margin: 0 0 8px; text-align: center; }
+  .old .body p { margin: 0 0 14px; }
+  .old .svc { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; font-size: 14px; }
+  .old .svc div { background: #f4f4f4; padding: 10px; text-align: center; }
+  .old .svc b { display: block; color: #333; }
+  .old .contact { margin: 16px 20px 0; font-size: 13px; color: #777; text-align: center; line-height: 1.5; }
+  .old .contact a { color: #2b4c7e; }
+  .old .foot { margin-top: auto; background: #2b4c7e; color: #c9d3e3; font-size: 12px; text-align: center; padding: 16px 12px 34px; line-height: 1.6; }
+  .old .more { margin: 14px auto 0; font-size: 13px; color: #fff; background: #8a9bb5; padding: 8px 18px; border-radius: 3px; }
+
+  /* AFTER: the CAAS redesign */
+  .new { color: #fff; background: #0B0A09; }
+  .new .ph { position: absolute; inset: 0; background-size: auto 70% !important; background-repeat: no-repeat; background-position: 58% 0 !important; }
+  .new .sh { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,6,5,0.6) 0%, rgba(8,6,5,0.05) 22%, rgba(8,6,5,0.25) 42%, rgba(11,10,9,0.97) 66%, #0B0A09 100%); }
+  .new .nav { position: relative; display: flex; justify-content: space-between; align-items: center; padding: 34px 26px 0; }
+  .new .logo { font-size: 17px; font-weight: 800; letter-spacing: 0.2em; }
+  .new .menu { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.18); display: flex; align-items: center; justify-content: center; }
+  .new .copy { position: relative; margin-top: auto; padding: 0 26px 26px; }
+  .new .chip { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.2); padding: 7px 14px; border-radius: 999px; backdrop-filter: blur(8px); }
+  .new h2 { margin: 16px 0 10px; font-size: 50px; line-height: 1; font-weight: 800; letter-spacing: -0.04em; }
+  .new h2 span { color: #F4B6C8; }
+  .new p { margin: 0 0 22px; font-size: 17px; line-height: 1.45; color: rgba(255,255,255,0.85); }
+  .new .cta { display: flex; gap: 10px; }
+  .new .btn { height: 62px; border-radius: 16px; font-size: 18px; }
+  .new .btn.w { background: #fff; color: var(--ink); flex: 1; }
+  .new .btn.g { width: 62px; background: rgba(255,255,255,0.16); color: #fff; border: 1px solid rgba(255,255,255,0.25); }
+</style></head>
+<body><div class="post pal-blush">
+  <div class="eyebrow">Same nail salon</div>
+  <h1 class="q">Which one would you book?</h1>
+  <div class="pair">
+    <div class="col">
+      <div class="phone shadow"><div class="screen old">
+        <div class="top"><div class="logo">Velvet Room Beauty</div><div class="burger"><i></i><i></i><i></i></div></div>
+        <div class="hero"><div class="bgp" style="background-image: url('../../stock/beauty-salon/pink-room.jpg')"></div><h3>Welcome to Velvet Room Beauty, Your One Stop Beauty Salon</h3></div>
+        <div class="body">
+          <h4>About Us</h4>
+          <p>At Velvet Room we pride ourselves on providing quality nail and beauty treatments in a relaxing environment. Our qualified therapists are passionate about what they do and we look forward to pampering you.</p>
+          <div class="svc">
+            <div><b>Manicures</b>From R180</div>
+            <div><b>Gel Overlay</b>From R280</div>
+            <div><b>Pedicures</b>From R250</div>
+            <div><b>Lash Lift</b>From R350</div>
+          </div>
+        </div>
+        <div class="contact">Appointments essential. For bookings please <a>contact us</a><br>Tue&ndash;Sat 9am&ndash;5pm</div>
+        <div class="more">Read More</div>
+        <div class="foot">Home | About | Services | Gallery | Contact<br>&copy; 2018 Velvet Room Beauty. All rights reserved.</div>
+      </div></div>
+      <div class="tag"><span class="dot" style="background: #D3D6DE"></span>Before</div>
+    </div>
+    <div class="col">
+      <div class="phone shadow"><div class="screen new">
+        <div class="ph photo" style="background-image: url('../../stock/beauty-salon/painted-nails.jpg')"></div>
+        <div class="sh"></div>
+        <div class="nav"><div class="logo">VELVET ROOM</div><div class="menu"><svg class="i" viewBox="0 0 24 24"><path d="M5 9h14M5 15h14"/></svg></div></div>
+        <div class="copy">
+          <span class="chip"><span class="stars">★</span> 4.9 &middot; Gel slot free at 15:00</span>
+          <h2>Nails that<br><span>turn heads.</span></h2>
+          <p>Gel overlays from R280. Pick your nail tech and your time, in 30 seconds.</p>
+          <div class="cta">
+            <a class="btn w" href="#"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Book a set</a>
+            <a class="btn g" href="#" aria-label="WhatsApp"><svg class="i" viewBox="0 0 24 24"><path d="M4 20l1.4-4.2A8 8 0 1 1 8.4 19z"/></svg></a>
+          </div>
+        </div>
+      </div></div>
+      <div class="tag"><span class="dot" style="background: var(--signal); box-shadow: 0 0 0 4px rgba(200,242,90,0.35)"></span>After &middot; by CAAS</div>
+    </div>
+  </div>
+  <div class="sig"><b>CAAS STUDIOS</b><span>Concept redesign &middot; DM &ldquo;SITE&rdquo; for yours</span></div>
+</div></body></html>

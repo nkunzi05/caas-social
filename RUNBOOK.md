@@ -10,6 +10,8 @@ pip install --break-system-packages playwright pillow && python3 -m playwright i
 ```
 
 ## 2. Pick the item
+**One post per day guard:** first call Metricool `getScheduledPosts` (blogId 7037975, Africa/Johannesburg) for today 00:00–23:59. If an Instagram post is already scheduled or published for today (Prosper sometimes has one made early), do NOT make another: send Prosper a one-line note ("Today's post was already scheduled: <brand>") and stop.
+
 Open `content/queue.json`. Take the FIRST entry in `queue` with `"status": "todo"`. Only that one entry — never more than one post per run.
 It names a `format` (`ab`, `landing`, `before-after`, `columns` or `monitor`), an `industry`, a made-up `brand` and a `slug`.
 Post folder: `posts/<YYYY-MM-DD>-<format>-<slug>` (date = today, Africa/Johannesburg).
