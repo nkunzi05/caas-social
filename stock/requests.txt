@@ -37,3 +37,7 @@ beauty-salon/manicure.jpg https://images.unsplash.com/photo-1632345031435-8727f6
 beauty-salon/pink-room.jpg https://images.unsplash.com/photo-1658492055212-e1acbccfca5a https://unsplash.com/photos/t91cj5p3a-o
 beauty-salon/painted-nails.jpg https://images.unsplash.com/photo-1659391542239-9648f307c0b1 https://unsplash.com/photos/IYa5Dnj9qWE
 beauty-salon/polish-wall.jpg https://images.unsplash.com/photo-1619607146034-5a05296c8f9a https://unsplash.com/photos/OpjlRo-31SI
+plumber/pipe-wall.jpg https://images.unsplash.com/photo-1676210134188-4c05dd172f89 https://unsplash.com/photos/c314Gh8dXAo
+plumber/cabinet.jpg https://images.unsplash.com/photo-1676210133055-eab6ef033ce3 https://unsplash.com/photos/wzIjLL4KB-4
+plumber/geyser.jpg https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d https://unsplash.com/photos/kxuz4YrLxSc
+plumber/toilet.jpg https://images.unsplash.com/photo-1676210134050-6f12c6898395 https://unsplash.com/photos/VAGbjhkxg6I
