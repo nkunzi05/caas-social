@@ -59,16 +59,19 @@
       "palette": "blush",
       "accent": "#F4B6C8",
       "scheduled": "2026-10-11T11:30 SAST (made early on request)"
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "ab",
       "slug": "plumber",
       "brand": "FlowRight Plumbing",
       "industry": "24/7 plumber",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-12-ab-plumber",
+      "palette": "midnight",
+      "accent": "#38B6FF"
+    }
+  ],
+  "queue": [
     {
       "format": "monitor",
       "slug": "estate-agency",
