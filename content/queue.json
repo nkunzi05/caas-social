@@ -69,16 +69,20 @@
       "post": "posts/2026-10-12-ab-plumber",
       "palette": "midnight",
       "accent": "#38B6FF"
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "monitor",
       "slug": "estate-agency",
       "brand": "Harbour & Key Properties",
       "industry": "residential estate agency",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-13-monitor-estate-agency",
+      "accent": "#D9774B",
+      "dark": "#15241E",
+      "inspiration": "https://www.siteinspire.com/website/11351-st-bernard-properties (editorial serif type mood only; live site could not be opened this run)"
+    }
+  ],
+  "queue": [
     {
       "format": "landing",
       "slug": "coffee-shop",
