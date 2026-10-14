@@ -3,6 +3,8 @@
 Each run publishes EXACTLY ONE post to Instagram (@prosper.builds) through Metricool.
 Prosper approved fully automatic posting. Follow these steps in order.
 
+**Reels only (since 2026-10-15).** Goal: grow toward 10k followers. Every post is published as an Instagram **Reel** (`reel.mp4`, made in step 5b from the designed slide/site). No more image or carousel posts. The design work (steps 3–5) is unchanged: the Reel is built from it.
+
 ## 1. Setup
 ```bash
 git clone https://github.com/nkunzi05/caas-social && cd caas-social
@@ -10,7 +12,7 @@ pip install --break-system-packages playwright pillow && python3 -m playwright i
 ```
 
 ## 2. Pick the item
-**One post per day guard:** first call Metricool `getScheduledPosts` (blogId 7037975, Africa/Johannesburg) for today 00:00–23:59. If an Instagram post is already scheduled or published for today (Prosper sometimes has one made early), do NOT make another: send Prosper a one-line note ("Today's post was already scheduled: <brand>") and stop.
+**One post per day guard:** first call Metricool `getScheduledPosts` (blogId 7037975, Africa/Johannesburg) for today 00:00–23:59. If a non-draft Instagram post is already scheduled or published for today (ignore drafts) (Prosper sometimes has one made early), do NOT make another: send Prosper a one-line note ("Today's post was already scheduled: <brand>") and stop.
 
 Open `content/queue.json`. Take the FIRST entry in `queue` with `"status": "todo"`. Only that one entry — never more than one post per run.
 It names a `format` (`ab`, `landing`, `before-after`, `columns` or `monitor`), an `industry`, a made-up `brand` and a `slug`.
@@ -34,7 +36,7 @@ Copy the approved reference for the format and adapt it to the industry. Match i
 - **landing** → `posts/_examples/02-landing/slide1.html`: "Concept NN — <Industry> website" eyebrow, full homepage mockup: nav + logo + CTA pill, big photo hero with a two-line headline (second line in a warm accent), short subline, CTA, rating line, a floating glass info card, then the lower row (about block + two dark photo tiles with "Learn more").
 - **before-after** → `posts/_examples/03-before-after/slide1.html`: "Which one would you book/hire/visit?", two phones. BEFORE = a believable average template site (plain header, dim stock photo with a generic "Welcome to …" line, an "About Us" text block, grey service boxes, "contact us" link, "Read More" button, dated © footer) — plausible but forgettable, never cartoonish. AFTER = photo-led redesign with chip, bold headline, one clear CTA + WhatsApp button. The after must clearly win.
 - **columns** and **monitor** both start from `site.html`: a full 1280px-wide desktop homepage for the business, with the same section rhythm as `posts/_examples/04-columns/site.html` (photo hero with two-line headline + accent second line + glass booking/quote bar + stat row; about statement with grey continuation + photo + facts list; 3 service/product cards with prices, middle one dark with a chip; dark features grid with one accent stat tile; 4-step "how it works" list beside a photo; photo CTA band with WhatsApp; footer "Concept by CAAS Studios"). Pick ONE accent colour that suits the industry. Copy `showcase.css`. Slides crop `site.jpg` with `background-size: <card width>px auto` and `background-position: 0 -<section offsetTop × card width/1280>px`; measure section offsets with Playwright (`section.offsetTop`) rather than guessing, and never let a crop end on a sliver of the next section. Swap every blurred background photo to this item's hero photo. Needs 6–7 photos (hero, about, 3 cards, steps, CTA).
-  - **columns** → `posts/_examples/04-columns/` (3-slide carousel): (1) overview: back column = lower half of the page, front column = top of the page, "CAAS STUDIOS · Website concept" label + "Swipe" pill; (2) close-up of the cards section with a short headline about the idea (accent on the second half); (3) "Want a site like this?" + close-up of the steps section + DM/WhatsApp CTA + 3 chips.
+  - **columns** → `posts/_examples/04-columns/` (3-slide carousel; for Reels only `site.html` + slide1 are needed, slides 2–3 are optional): (1) overview: back column = lower half of the page, front column = top of the page, "CAAS STUDIOS · Website concept" label + "Swipe" pill; (2) close-up of the cards section with a short headline about the idea (accent on the second half); (3) "Want a site like this?" + close-up of the steps section + DM/WhatsApp CTA + 3 chips.
   - **monitor** → `posts/_examples/05-monitor/` (single image): "© 2026 CAAS Studios" / "@prosper.builds" top row, big two-line title "<Industry>" (white) + "Website" (ghosted white ~32%), the site hero on the desktop monitor (`.screen` crops site.jpg from the top), white base band with "UI/UX Design" + "Concept for an invented <business type>" and the DM "SITE" pill, blurred hero photo behind. Keep the industry title to one line at 118px (≈14 characters; shrink the font if longer). Only the hero shows, but still build the full site.html so it can be reused.
 - **Inspiration from siteinspire (every other columns/monitor post):** before designing site.html, open `https://www.siteinspire.com/websites` (or a category such as `/websites/categories/minimal`), pick ONE featured site in a fitting industry or style, open its siteinspire page and the live site, and borrow only its *design language*: section rhythm, type mood (e.g. editorial serif + small sans labels), whitespace, colour temperature and UI details. Never copy its name, logo, wording, photos or exact layout. Write all content fresh for the invented business. Add `"inspiration": "<siteinspire URL>"` to the queue item. Available local fonts: Schibsted Grotesk (sans) and Instrument Serif (editorial serif, incl. italic). Reference: `posts/_inspiration/2026-10-09-bakery/`.
 - **Colour rotation (Prosper wants the colours to change from time to time):** don't let the feed look the same every day.
@@ -50,8 +52,14 @@ Copy the approved reference for the format and adapt it to the industry. Match i
 ## 5. Render and check
 `python3 tools/render.py posts/<id>` then LOOK at the JPG (Read tool). For columns/monitor, render.py first renders `site.html` to `site.jpg`, then the slides — look at site.jpg (downscaled) AND every slide. Fix and re-render if anything is clipped, overlapping, misspelled, unreadable over a photo, or leaves a big empty area.
 
+## 5b. Make the Reel
+`python3 tools/reel.py posts/<id> --hook "<hook>"` → `reel.mp4` (1080×1920, 13 s) + `reel-cover.jpg`.
+- The hook is the big line at the top for the whole video: a question that makes people stop, ≤ 45 characters, about the business (e.g. "Would you order your coffee from this site?", "Which one gets more bookings: A or B?", "Would you hire this plumber from his site?"). No hashtags or emojis in it.
+- Single-slide posts zoom over slide1; columns/monitor posts scroll the full `site.jpg`. The last 2 s are the "Want a site like this? DM SITE" end card.
+- LOOK at it: grab frames at 0.5, 3.5, 6.4, 8.8 and 12 s (`ffmpeg -ss <t> -i reel.mp4 -frames:v 1 -vf scale=300:-1 fN.png`), put them side by side and Read the strip. Fix and re-render if the hook wraps to 3+ lines, a zoomed frame cuts off a headline badly, or the end card is unreadable.
+
 ## 6. Caption
-Write `caption.txt`: a hook line (for ab: ask people to comment A or B; for before-after: "Which one would you book?"; for columns: "Swipe through a full homepage concept for …"; for monitor: "Would you book through this homepage?"), 1–2 short lines on the design idea, the CTA ("Want a site like this? DM us \"SITE\" or WhatsApp +27 665 989 442."), then 6–9 hashtags (always #caasstudios #webdesign #smallbusinesssa #capetown, plus industry/topic tags). Mention it's a concept for an invented business.
+Write `caption.txt`: a hook line (for ab: ask people to comment A or B; for before-after: "Which one would you book?"; for columns/monitor: "Would you book through this homepage?"; never say "swipe": it's a Reel), 1–2 short lines on the design idea, the CTA ("Want a site like this? DM us \"SITE\" or WhatsApp +27 665 989 442."), then 6–9 hashtags (always #caasstudios #webdesign #smallbusinesssa #capetown, plus 1–2 reach tags such as #webdesigner #uiux #websitedesign, plus industry tags). Mention it's a concept for an invented business.
 
 ## 7. Commit and push
 Mark the queue item `"status": "posted"` with `"post": "posts/<id>"` and move it to `done`.
@@ -62,10 +70,12 @@ Push MUST succeed before publishing — Metricool downloads the image from GitHu
 
 ## 8. Publish via Metricool
 - Brand (blogId): `7037975`, network `instagram`, timezone `Africa/Johannesburg`.
-- Media URL: `https://raw.githubusercontent.com/nkunzi05/caas-social/main/posts/<id>/slide1.jpg` — confirm it returns HTTP 200 first (wait up to ~2 minutes after pushing).
-- Columns posts are carousels: `media` = the 3 URLs slide1.jpg … slide3.jpg in order (check all three return 200). Instagram type stays `POST`.
-- `createScheduledPost` with `date` = now + 5 minutes, `publicationDate` = same in Africa/Johannesburg, `text` = caption, `media` = [URL], `providers` = `[{"network":"instagram"}]`, `instagramData` = `{"type":"POST"}`, `autoPublish: true`, `draft: false`.
+- Media URL: `https://raw.githubusercontent.com/nkunzi05/caas-social/main/posts/<id>/reel.mp4` — confirm it returns HTTP 200 first (wait up to ~2 minutes after pushing). Every format, columns included, is ONE video.
+- Time: peak for this account is 10:00–11:00 SAST. `date` = today 10:30 SAST if that is ≥ 5 minutes away, otherwise now + 5 minutes.
+- `createScheduledPost` with `date`, `publicationDate` = same in Africa/Johannesburg, `text` = caption, `media` = [reel URL], `providers` = `[{"network":"instagram"}]`, `instagramData` = `{"type":"REEL","showReelOnFeed":true}`, `videoCoverMilliseconds: 800`, `autoPublish: true`, `draft: false`.
+- Record `"type": "reel"` and `"hook": "<hook>"` on the queue item (commit + push that small change after publishing).
 
 ## 9. Report
-Send Prosper a short message: what was posted, the image, and anything that went wrong.
+Send Prosper a short message: what was posted, the Reel cover (`reel-cover.jpg`) and the reel.mp4, and anything that went wrong.
+Once a week (Mondays), add one line on growth: followers now vs. last Monday (Metricool `getAnalyticsDataByMetrics`, metrics IGEV01 followers, IGEV43 gained, IGEV30 avg reach per reel).
 If the queue has fewer than 6 `todo` items left, add 12 new ones: new industries and made-up brands, formats rotating ab → landing → before-after → columns, then ab → landing → before-after → monitor.
