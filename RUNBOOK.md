@@ -53,7 +53,7 @@ Copy the approved reference for the format and adapt it to the industry. Match i
 `python3 tools/render.py posts/<id>` then LOOK at the JPG (Read tool). For columns/monitor, render.py first renders `site.html` to `site.jpg`, then the slides — look at site.jpg (downscaled) AND every slide. Fix and re-render if anything is clipped, overlapping, misspelled, unreadable over a photo, or leaves a big empty area.
 
 ## 5b. Make the Reel
-`python3 tools/reel.py posts/<id> --hook "<hook>"` → `reel.mp4` (1080×1920, 13 s) + `reel-cover.jpg`.
+`python3 tools/reel.py posts/<id> --hook "<hook>"` → `reel.mp4` (1080×1920; 13 s for a slide, 20 s when the post has a full `site.html` to scroll) + `reel-cover.jpg`.
 - The hook is the big line at the top for the whole video: a question that makes people stop, ≤ 45 characters, about the business (e.g. "Would you order your coffee from this site?", "Which one gets more bookings: A or B?", "Would you hire this plumber from his site?"). No hashtags or emojis in it.
 - Single-slide posts zoom over slide1; columns/monitor posts scroll the full `site.jpg`. The last 2 s are the "Want a site like this? DM SITE" end card.
 - LOOK at it: grab frames at 0.5, 3.5, 6.4, 8.8 and 12 s (`ffmpeg -ss <t> -i reel.mp4 -frames:v 1 -vf scale=300:-1 fN.png`), put them side by side and Read the strip. Fix and re-render if the hook wraps to 3+ lines, a zoomed frame cuts off a headline badly, or the end card is unreadable.

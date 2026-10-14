@@ -1,8 +1,8 @@
 """Turn a rendered post into a 1080x1920 Instagram Reel (MP4, ~13 s, 30 fps).
 
-Usage:  python3 tools/reel.py posts/<post-id> --hook "Would you order coffee from this site?"
+Usage:  python3 tools/reel.py posts/<post-id> --hook "Would you order coffee from this site?" [--seconds 20]
         [--bg stock/<slug>/<photo>.jpg]   background photo (blurred); default = first stock photo the slide uses
-Output: posts/<post-id>/reel.mp4  (+ reel-cover.jpg, the first frame, to look at)
+Output: posts/<post-id>/reel.mp4 (13 s for a slide, 20 s for a full-site scroll; + reel-cover.jpg, the first frame, to look at)
 
 How it moves:
   * posts with site.html (columns / monitor): the full homepage scrolls top -> bottom inside a browser card.
@@ -23,9 +23,9 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 from playwright.async_api import async_playwright
 
-W, H, FPS, SECONDS = 1080, 1920, 30, 13.0
+W, H, FPS = 1080, 1920, 30
+SECONDS = 13.0                                         # single-slide reels; site scrolls default to 20 s
 CARD_X, CARD_Y, CARD_W, CARD_H = 100, 420, 880, 1100   # 4:5 like the feed slide; inside the Reels safe zone
-END_START = 10.8                                       # end card fades in from here
 ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -104,7 +104,7 @@ def slide_camera(t: float):
     return keys[-1][1:]
 
 
-def render(folder: Path, hook: str, bg: Path):
+def render(folder: Path, hook: str, bg: Path, seconds: float = 0):
     with tempfile.TemporaryDirectory() as td:
         tmp = Path(td)
         slide2x = asyncio.run(build_layers(folder, hook, bg, tmp))
@@ -114,6 +114,8 @@ def render(folder: Path, hook: str, bg: Path):
         ImageDraw.Draw(mask).rounded_rectangle((0, 0, CARD_W - 1, CARD_H - 1), 34, fill=255)
 
         site = folder / "site.jpg"
+        seconds = seconds or (20.0 if site.exists() else SECONDS)
+        end_start = seconds - 2.2                       # end card fades in from here
         if site.exists():
             src = Image.open(site).convert("RGB")
             src = src.resize((CARD_W, round(src.height * CARD_W / src.width)), Image.LANCZOS)
@@ -129,11 +131,11 @@ def render(folder: Path, hook: str, bg: Path):
              "-shortest", "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
              "-profile:v", "high", "-movflags", "+faststart", "-c:a", "aac", "-b:a", "128k", str(out)],
             stdin=subprocess.PIPE)
-        n = int(SECONDS * FPS)
+        n = int(seconds * FPS)
         for i in range(n):
             t = i / FPS
             if site.exists():
-                k = ease((t - 1.2) / (END_START - 1.0 - 1.2))
+                k = ease((t - 1.5) / (end_start - 0.8 - 1.5))
                 y = round(travel * k)
                 card = src.crop((0, y, CARD_W, y + CARD_H))
             else:
@@ -144,7 +146,7 @@ def render(folder: Path, hook: str, bg: Path):
                 card = src.resize((CARD_W, CARD_H), Image.LANCZOS, box=(x0, y0, x0 + cw, y0 + ch))
             frame = base.copy()
             frame.paste(card, (CARD_X, CARD_Y), mask)
-            a = ease((t - END_START) / 0.6)
+            a = ease((t - end_start) / 0.6)
             if a > 0:
                 e = end.copy()
                 e.putalpha(e.getchannel("A").point(lambda v: int(v * a)))
@@ -159,7 +161,7 @@ def render(folder: Path, hook: str, bg: Path):
 
 
 def default_bg(folder: Path) -> Path:
-    for f in ("site.html", "slide1.html"):
+    for f in ("slide1.html", "site.html"):
         p = folder / f
         if p.exists():
             m = re.findall(r"stock/[\w\-/]+\.jpg", p.read_text())
@@ -173,6 +175,7 @@ if __name__ == "__main__":
     ap.add_argument("folder")
     ap.add_argument("--hook", required=True)
     ap.add_argument("--bg")
+    ap.add_argument("--seconds", type=float, default=0, help="length; default 13 (slide) or 20 (site scroll)")
     a = ap.parse_args()
     folder = Path(a.folder)
-    render(folder, a.hook, Path(a.bg) if a.bg else default_bg(folder))
+    render(folder, a.hook, Path(a.bg) if a.bg else default_bg(folder), a.seconds)
