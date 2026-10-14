@@ -80,16 +80,19 @@
       "accent": "#D9774B",
       "dark": "#15241E",
       "inspiration": "https://www.siteinspire.com/website/11351-st-bernard-properties (editorial serif type mood only; live site could not be opened this run)"
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "landing",
       "slug": "coffee-shop",
       "brand": "Kettle & Crumb",
       "industry": "neighbourhood coffee shop",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-14-landing-coffee-shop",
+      "palette": "sage",
+      "accent": "#E9B949"
+    }
+  ],
+  "queue": [
     {
       "format": "monitor",
       "slug": "bakery-editorial",
