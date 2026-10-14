@@ -1,7 +1,7 @@
 # CAAS Studios — daily Instagram post runbook
 
 Each run publishes EXACTLY ONE post to Instagram (@prosper.builds) through Metricool.
-Prosper approved fully automatic posting. Follow these steps in order.
+Prosper approved fully automatic posting, **weekdays only (Mon–Fri, never on weekends)**. Follow these steps in order.
 
 **Reels only (since 2026-10-15).** Goal: grow toward 10k followers. Every post is published as an Instagram **Reel** (`reel.mp4`, made in step 5b from the designed slide/site). No more image or carousel posts. The design work (steps 3–5) is unchanged: the Reel is built from it.
 
