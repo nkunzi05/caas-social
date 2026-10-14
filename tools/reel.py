@@ -1,11 +1,12 @@
-"""Turn a rendered post into a 1080x1920 Instagram Reel (MP4, ~13 s, 30 fps).
+"""Turn a rendered post into a 1080x1920 Instagram Reel (MP4, 13–22 s, 30 fps).
 
-Usage:  python3 tools/reel.py posts/<post-id> --hook "Would you order coffee from this site?" [--seconds 20]
+Usage:  python3 tools/reel.py posts/<post-id> --hook "Would you order coffee from this site?" [--seconds 22]
         [--bg stock/<slug>/<photo>.jpg]   background photo (blurred); default = first stock photo the slide uses
-Output: posts/<post-id>/reel.mp4 (13 s for a slide, 20 s for a full-site scroll; + reel-cover.jpg, the first frame, to look at)
+Output: posts/<post-id>/reel.mp4 (22 s with a site.html, 13 s without; + reel-cover.jpg, the first frame, to look at)
 
 How it moves:
-  * posts with site.html (columns / monitor): the full homepage scrolls top -> bottom inside a browser card.
+  * posts with site.html (every format since 2026-10-14): slide1 (the post design) shows for 3 s, crossfades
+    into the full homepage, which scrolls top -> bottom.
   * single-slide posts (ab / landing / before-after): the slide is shown whole, the camera zooms (1.45x) to
     the top-left headline, drops to the lower row, pans across it, then pulls back out.
   The last ~2 s fade to an end card: "Want a site like this? DM "SITE"".
@@ -24,7 +25,8 @@ from PIL import Image, ImageDraw
 from playwright.async_api import async_playwright
 
 W, H, FPS = 1080, 1920, 30
-SECONDS = 13.0                                         # single-slide reels; site scrolls default to 20 s
+SECONDS = 13.0                                         # reels with no site.html; site scrolls default to 22 s
+INTRO = 3.0                                            # site reels: show slide1 this long, then the full-site scroll
 CARD_X, CARD_Y, CARD_W, CARD_H = 100, 420, 880, 1100   # 4:5 like the feed slide; inside the Reels safe zone
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -78,7 +80,7 @@ async def build_layers(folder: Path, hook: str, bg: Path, tmp: Path):
             await pg.screenshot(path=str(tmp / f"{name}.png"), omit_background=True)
         # Hi-res source for the zoom: the slide at 2x
         content = None
-        if not (folder / "site.jpg").exists():
+        if (folder / "slide1.html").exists():
             hp = await b.new_page(viewport={"width": 1080, "height": 1350}, device_scale_factor=2)
             await hp.goto((folder / "slide1.html").resolve().as_uri())
             await hp.wait_for_load_state("networkidle")
@@ -114,12 +116,16 @@ def render(folder: Path, hook: str, bg: Path, seconds: float = 0):
         ImageDraw.Draw(mask).rounded_rectangle((0, 0, CARD_W - 1, CARD_H - 1), 34, fill=255)
 
         site = folder / "site.jpg"
-        seconds = seconds or (20.0 if site.exists() else SECONDS)
+        seconds = seconds or (22.0 if site.exists() else SECONDS)
         end_start = seconds - 2.2                       # end card fades in from here
+        intro = None
         if site.exists():
             src = Image.open(site).convert("RGB")
             src = src.resize((CARD_W, round(src.height * CARD_W / src.width)), Image.LANCZOS)
             travel = max(src.height - CARD_H, 0)
+            if slide2x:                                 # open on the post design, then cut to the full site
+                intro = Image.open(slide2x).convert("RGB").resize((CARD_W, CARD_H), Image.LANCZOS)
+            scroll_from = INTRO + 0.8 if intro else 1.5
         else:
             src = Image.open(slide2x).convert("RGB")
             sw, sh = src.size
@@ -135,9 +141,13 @@ def render(folder: Path, hook: str, bg: Path, seconds: float = 0):
         for i in range(n):
             t = i / FPS
             if site.exists():
-                k = ease((t - 1.5) / (end_start - 0.8 - 1.5))
+                k = ease((t - scroll_from) / (end_start - 0.8 - scroll_from))
                 y = round(travel * k)
                 card = src.crop((0, y, CARD_W, y + CARD_H))
+                if intro is not None:
+                    f = ease((t - INTRO) / 0.5)      # 0.5 s crossfade slide -> site
+                    if f < 1:
+                        card = Image.blend(intro, card, f)
             else:
                 cx, cy, z = slide_camera(t)
                 cw, ch = sw / z, sh / z
@@ -175,7 +185,7 @@ if __name__ == "__main__":
     ap.add_argument("folder")
     ap.add_argument("--hook", required=True)
     ap.add_argument("--bg")
-    ap.add_argument("--seconds", type=float, default=0, help="length; default 13 (slide) or 20 (site scroll)")
+    ap.add_argument("--seconds", type=float, default=0, help="length; default 22 (site scroll) or 13 (slide only)")
     a = ap.parse_args()
     folder = Path(a.folder)
     render(folder, a.hook, Path(a.bg) if a.bg else default_bg(folder), a.seconds)

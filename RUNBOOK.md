@@ -24,13 +24,20 @@ Duplicate guard: the queue is the source of truth. An item marked `"posted"` is 
 
 ## 3. Get stock photos (free Unsplash only)
 The workspace cannot download from Unsplash directly; a GitHub workflow does it.
-1. `WebFetch https://unsplash.com/s/photos/<industry-term>?license=free` and pick 4–6 photos that fit (people at work, the space, the product). Skip photos with visible brand logos, watermarks, face masks, or anything dated or low quality.
+1. `WebFetch https://unsplash.com/s/photos/<industry-term>?license=free` and pick 6–7 photos (every post now needs a full site) that fit (people at work, the space, the product). Skip photos with visible brand logos, watermarks, face masks, or anything dated or low quality.
 2. For each pick, `WebFetch` its photo page and get the base `og:image` URL (`https://images.unsplash.com/photo-…`, cut at `?`). Use it ONLY if the page says "Free to use under the Unsplash License" (never Unsplash+).
 3. Append lines to `stock/requests.txt`: `<slug>/<name>.jpg <images.unsplash.com URL> <unsplash page URL>`. Reuse photos already in `stock/<slug>/` when the industry has a set.
 4. Commit and push. The "Fetch stock photos" workflow downloads them into `stock/<slug>/` within ~1–2 minutes. Poll with `git pull` every 15 s for up to 5 minutes. If photos don't arrive, check the latest run at `https://api.github.com/repos/nkunzi05/caas-social/actions/runs?per_page=1`; if it failed, try different photos once, then stop and report.
 5. Look at the photos (make a contact sheet and Read it) before designing.
 
-## 4. Design the slide (single 1080×1350 slide)
+## 4. Design the slide (single 1080×1350 slide) AND the full site
+**Every format gets a full website scroll (Prosper, 2026-10-14).** Besides slide1.html, EVERY post (ab, landing, before-after, columns, monitor) builds `site.html`: a full 1280px desktop homepage with the section rhythm of `posts/_examples/04-columns/site.html` (described under columns/monitor below), plus `showcase.css`. What the site is per format:
+- **landing**: the full version of the homepage in the slide (same brand, nav, hero headline, accent, photos), continued down the page.
+- **before-after**: the AFTER redesign as a full site (same headline, CTA and WhatsApp button as the after phone).
+- **ab**: the business's full site, with version B of the UI element (the bolder one) in the hero booking/quote bar.
+- **columns / monitor**: as below.
+The Reel opens on slide1 for 3 s, crossfades into site.jpg and scrolls it to the footer (step 5b). Reference: `posts/2026-10-14-landing-coffee-shop/` (landing slide + full site).
+
 Copy the approved reference for the format and adapt it to the industry. Match its quality and structure exactly:
 - **ab** → `posts/_examples/01-ab/slide1.html`: eyebrow `<INDUSTRY> BOOKING/ORDERING`, a question headline ("Which … gets more clients?"), two versions of the same real UI element for this business (A: clean light card with photo on top; B: photo-led dark card with glass panel). Both must look good; B is the bolder one. A/B circles under the cards, footer "Comment A or B ↓".
 - **landing** → `posts/_examples/02-landing/slide1.html`: "Concept NN — <Industry> website" eyebrow, full homepage mockup: nav + logo + CTA pill, big photo hero with a two-line headline (second line in a warm accent), short subline, CTA, rating line, a floating glass info card, then the lower row (about block + two dark photo tiles with "Learn more").
@@ -50,12 +57,12 @@ Copy the approved reference for the format and adapt it to the industry. Match i
 - Concept number NN for landing posts = number of `landing` posts already posted + 2.
 
 ## 5. Render and check
-`python3 tools/render.py posts/<id>` then LOOK at the JPG (Read tool). For columns/monitor, render.py first renders `site.html` to `site.jpg`, then the slides — look at site.jpg (downscaled) AND every slide. Fix and re-render if anything is clipped, overlapping, misspelled, unreadable over a photo, or leaves a big empty area.
+`python3 tools/render.py posts/<id>` then LOOK at the JPG (Read tool). Every post has a site.html now: render.py first renders `site.html` to `site.jpg`, then the slides — look at site.jpg (downscaled) AND every slide. Fix and re-render if anything is clipped, overlapping, misspelled, unreadable over a photo, or leaves a big empty area.
 
 ## 5b. Make the Reel
 `python3 tools/reel.py posts/<id> --hook "<hook>"` → `reel.mp4` (1080×1920; 13 s for a slide, 20 s when the post has a full `site.html` to scroll) + `reel-cover.jpg`.
 - The hook is the big line at the top for the whole video: a question that makes people stop, ≤ 45 characters, about the business (e.g. "Would you order your coffee from this site?", "Which one gets more bookings: A or B?", "Would you hire this plumber from his site?"). No hashtags or emojis in it.
-- Single-slide posts zoom over slide1; columns/monitor posts scroll the full `site.jpg`. The last 2 s are the "Want a site like this? DM SITE" end card.
+- Every post has a site.html, so every Reel is 22 s: slide1 for 3 s, crossfade, then the full `site.jpg` scrolls to the footer. (A post without site.html falls back to a 13 s zoom; that should not happen.) The last 2 s are the "Want a site like this? DM SITE" end card.
 - LOOK at it: grab frames at 0.5, 3.5, 6.4, 8.8 and 12 s (`ffmpeg -ss <t> -i reel.mp4 -frames:v 1 -vf scale=300:-1 fN.png`), put them side by side and Read the strip. Fix and re-render if the hook wraps to 3+ lines, a zoomed frame cuts off a headline badly, or the end card is unreadable.
 
 ## 6. Caption
