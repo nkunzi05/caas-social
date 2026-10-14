@@ -50,3 +50,9 @@ estate-agency/key-hand.jpg https://images.unsplash.com/photo-1733244766159-f58f4
 estate-agency/garden-house.jpg https://images.unsplash.com/photo-1758448756207-54505680d130 https://unsplash.com/photos/eWOgoFHlE8g
 estate-agency/kitchen-sun.jpg https://images.unsplash.com/photo-1749374848450-34bfa8600ecd https://unsplash.com/photos/89uLQTLt8Dk
 estate-agency/kitchen-wood.jpg https://images.unsplash.com/photo-1764526624453-db32c24eca55 https://unsplash.com/photos/XU_ODlSO9ac
+coffee-shop/interior.jpg https://images.unsplash.com/photo-1600093463592-8e36ae95ef56 https://unsplash.com/photos/xhKG01FN2uk
+coffee-shop/latte-croissant.jpg https://images.unsplash.com/photo-1542372147193-a7aca54189cd https://unsplash.com/photos/1k7TnX5GAww
+coffee-shop/pour.jpg https://images.unsplash.com/photo-1507915135761-41a0a222c709 https://unsplash.com/photos/X4RJG4aNi8o
+coffee-shop/counter.jpg https://images.unsplash.com/photo-1508766917616-d22f3f1eea14 https://unsplash.com/photos/f7zm5TDOi4g
+coffee-shop/latte-art.jpg https://images.unsplash.com/photo-1485808191679-5f86510681a2 https://unsplash.com/photos/jn-HaGWe4yw
+coffee-shop/iced.jpg https://images.unsplash.com/photo-1592663527359-cf6642f54cff https://unsplash.com/photos/F0Wd4djYvSA
