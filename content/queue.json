@@ -100,8 +100,11 @@
       "prebuilt": "posts/_inspiration/2026-10-09-bakery",
       "status": "posted",
       "post": "posts/2026-10-15-monitor-bakery-editorial",
-      "accent": "#C4502B",
-      "dark": "#1E1B18"
+      "accent": "#C4532D",
+      "dark": "#1E1B18",
+      "type": "reel",
+      "hook": "Would you get up early for this bakery?",
+      "metricool_id": 396587489
     }
   ],
   "queue": [
