@@ -90,9 +90,7 @@
       "post": "posts/2026-10-14-landing-coffee-shop",
       "palette": "sage",
       "accent": "#E9B949"
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "monitor",
       "slug": "bakery-editorial",
@@ -100,8 +98,13 @@
       "industry": "artisan bakery (editorial style)",
       "inspiration": "https://www.siteinspire.com/website/13641-union-boulangerie",
       "prebuilt": "posts/_inspiration/2026-10-09-bakery",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-15-monitor-bakery-editorial",
+      "accent": "#C4502B",
+      "dark": "#1E1B18"
+    }
+  ],
+  "queue": [
     {
       "format": "before-after",
       "slug": "electrician",
