@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>LiveWire Electrical concept site</title>
+<link rel="stylesheet" href="../../brand/fonts.css">
+<style>
+  /* Full desktop homepage, 1280px wide. Rendered to site.png, then sliced into the carousel slides. */
+  :root { --ink: #12110F; --ink-2: #55524C; --ink-3: #8A867E; --paper: #F5F4EE; --line: #E4E0D7; --acc: #FFC93C; --acc-ink: #1F1A06; --dark: #0F1A2E; }
+  * { box-sizing: border-box; } html, body { margin: 0; }
+  body { width: 1280px; background: var(--paper); font-family: "Schibsted Grotesk", sans-serif; color: var(--ink); }
+  .photo { background-size: cover; background-position: center; }
+  .pill { display: inline-flex; align-items: center; gap: 12px; border-radius: 999px; font-weight: 600; text-decoration: none; padding: 7px 7px 7px 22px; font-size: 16px; }
+  .pill i { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-style: normal; }
+  .pill.acc { background: var(--acc); color: var(--acc-ink); } .pill.acc i { background: var(--acc-ink); color: var(--acc); }
+  .pill.dark { background: var(--ink); color: #fff; } .pill.dark i { background: var(--acc); color: var(--acc-ink); }
+  .arr { width: 15px; height: 15px; }
+  .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+  .tag::before { content: ""; width: 14px; height: 14px; border-radius: 4px; background: var(--acc); }
+  h2.sec { font-size: 52px; line-height: 1.04; letter-spacing: -0.035em; font-weight: 700; margin: 16px 0 0; }
+  svg.i { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* hero */
+  .hero { height: 820px; position: relative; color: #fff; overflow: hidden; }
+  .hero .ph { position: absolute; inset: 0; background-position: 50% 60%; }
+  .hero .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,9,8,0.55) 0%, rgba(10,9,8,0) 26%, rgba(10,9,8,0.05) 55%, rgba(10,9,8,0.78) 100%); }
+  nav { position: absolute; left: 56px; right: 56px; top: 34px; display: flex; align-items: center; gap: 40px; }
+  .logo { display: flex; align-items: center; gap: 12px; font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+  .logo b { width: 34px; height: 34px; border-radius: 10px 10px 10px 2px; background: var(--acc); display: block; }
+  .links { flex-grow: 1; display: flex; justify-content: flex-end; gap: 34px; font-size: 16px; font-weight: 500; }
+  .hero .in { position: absolute; left: 56px; right: 56px; bottom: 150px; display: flex; align-items: flex-end; justify-content: space-between; }
+  .hero h1 { margin: 0; white-space: nowrap; font-size: 84px; line-height: 0.98; font-weight: 700; letter-spacing: -0.045em; }
+  .hero h1 span { color: var(--acc); }
+  .hero .stats { position: absolute; left: 56px; right: 56px; bottom: 56px; display: flex; align-items: center; gap: 28px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+  .hero .stats b { font-size: 40px; letter-spacing: -0.03em; color: #fff; font-weight: 600; text-transform: none; margin-right: 10px; }
+  .hero .stats hr { width: 120px; border: 0; border-top: 1px solid rgba(255,255,255,0.4); margin: 0; }
+  .book { display: flex; gap: 0; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(16px); border-radius: 22px; padding: 10px; align-items: center; }
+  .book div { white-space: nowrap; padding: 6px 20px; border-right: 1px solid rgba(255,255,255,0.25); font-size: 14px; color: rgba(255,255,255,0.75); }
+  .book div b { display: block; color: #fff; font-size: 18px; font-weight: 600; margin-top: 2px; }
+  .book .pill { margin-left: 12px; white-space: nowrap; }
+
+  /* about */
+  .about { padding: 110px 56px 100px; display: grid; grid-template-columns: 300px 1fr; gap: 40px; }
+  .about p.big { margin: 0; font-size: 44px; line-height: 1.18; letter-spacing: -0.025em; font-weight: 500; }
+  .about p.big span { color: var(--ink-3); }
+  .about .row2 { grid-column: 1 / -1; display: grid; grid-template-columns: 560px 1fr; gap: 64px; margin-top: 40px; }
+  .about .img { height: 380px; border-radius: 26px; }
+  .facts div { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--line); padding: 24px 0; font-size: 17px; color: var(--ink-2); }
+  .facts b { font-size: 46px; font-weight: 500; letter-spacing: -0.03em; color: var(--ink); }
+  .facts b em { font-style: normal; color: #B8860B; }
+
+  /* rooms */
+  .rooms { padding: 100px 56px 110px; background: #fff; text-align: center; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 54px; text-align: left; }
+  .room { border-radius: 26px; overflow: hidden; background: var(--paper); height: 560px; display: flex; flex-direction: column; position: relative; }
+  .room .ph { height: 330px; }
+  .room .b { padding: 26px 26px; display: flex; flex-direction: column; flex-grow: 1; }
+  .room h3 { margin: 0; font-size: 28px; letter-spacing: -0.02em; font-weight: 700; }
+  .room p { margin: 8px 0 0; font-size: 16px; color: var(--ink-2); line-height: 1.45; }
+  .room .f { margin-top: auto; display: flex; justify-content: space-between; align-items: center; }
+  .room .price { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; } .room .price small { font-size: 15px; font-weight: 500; color: var(--ink-3); }
+  .room.hi { background: var(--dark); color: #fff; } .room.hi p { color: rgba(255,255,255,0.7); } .room.hi .price small { color: rgba(255,255,255,0.6); }
+  .room .chip { position: absolute; top: 20px; left: 20px; background: var(--acc); color: var(--acc-ink); font-size: 14px; font-weight: 700; padding: 8px 14px; border-radius: 999px; }
+
+  /* experiences (dark) */
+  .exp { background: var(--dark); color: #fff; padding: 100px 56px 110px; text-align: center; }
+  .exp .tag { color: rgba(255,255,255,0.75); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,0.12); border-left: 1px solid rgba(255,255,255,0.12); margin-top: 54px; text-align: left; }
+  .grid > div { border-right: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); padding: 34px 32px; min-height: 230px; display: flex; flex-direction: column; }
+  .grid .ic { color: var(--acc); }
+  .grid h4 { margin: 22px 0 0; font-size: 22px; font-weight: 600; }
+  .grid p { margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.62); }
+  .grid .accent { background: var(--acc); color: var(--acc-ink); border-radius: 20px; margin: 10px; justify-content: space-between; }
+  .grid .accent b { font-size: 64px; letter-spacing: -0.04em; font-weight: 600; }
+  .grid .accent p { color: rgba(31,26,6,0.75); }
+
+  /* journey */
+  .journey { padding: 100px 56px; display: grid; grid-template-columns: 480px 1fr; gap: 56px; }
+  .journey .img { border-radius: 26px; height: 100%; min-height: 560px; }
+  .steps > div { display: grid; grid-template-columns: 60px 1fr 260px; gap: 20px; align-items: center; background: #fff; border-radius: 22px; padding: 26px 28px; margin-top: 16px; }
+  .steps .n { width: 46px; height: 46px; border-radius: 14px; background: var(--acc); display: flex; align-items: center; justify-content: center; color: var(--acc-ink); }
+  .steps h4 { margin: 0; font-size: 22px; font-weight: 600; }
+  .steps p { margin: 0; font-size: 15px; color: var(--ink-2); line-height: 1.45; }
+
+  /* cta */
+  .cta { margin: 0 56px 56px; border-radius: 30px; height: 460px; position: relative; overflow: hidden; color: #fff; }
+  .cta .ph { position: absolute; inset: 0; }
+  .cta .shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,9,8,0.9) 0%, rgba(10,9,8,0.6) 55%, rgba(10,9,8,0.25) 100%); }
+  .cta .in { position: absolute; left: 60px; top: 70px; width: 600px; }
+  .cta h2 { margin: 0; font-size: 60px; line-height: 1.02; letter-spacing: -0.04em; font-weight: 700; }
+  .cta p { font-size: 18px; color: rgba(255,255,255,0.82); line-height: 1.5; margin: 20px 0 30px; }
+  .wa { display: inline-flex; align-items: center; gap: 10px; margin-left: 14px; font-weight: 600; font-size: 16px; }
+  .wa span { width: 50px; height: 50px; border-radius: 50%; background: #25D366; display: inline-flex; align-items: center; justify-content: center; }
+  footer { padding: 0 56px 48px; display: flex; justify-content: space-between; font-size: 14px; color: var(--ink-3); }
+</style></head>
+<body>
+<section class="hero">
+  <div class="ph photo" style="background-image: url('../../stock/electrician/hardhat-wiring.jpg'); background-position: 50% 35%"></div><div class="shade"></div>
+  <nav>
+    <div class="logo"><b></b>LiveWire Electrical</div>
+    <div class="links"><span>Services</span><span>Emergencies</span><span>Certificates</span><span>Backup power</span><span>Contact</span></div>
+    <a class="pill acc" href="#">Call now <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+  </nav>
+  <div class="in">
+    <h1>No power?<br><span>We&rsquo;re on it.</span></h1>
+    <div class="book">
+      <div>Problem<b>Tripping DB</b></div>
+      <div style="border-right:0">Arrival<b>Within 60 min</b></div>
+      <a class="pill dark" href="#">Get help <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+    </div>
+  </div>
+  <div class="stats"><span><b>24/7</b>Emergency call-outs</span><hr><span><b>4.9</b>Google rating</span><hr><span><b>60 min</b>Avg. arrival</span></div>
+</section>
+
+<section class="about">
+  <div><span class="tag">About us</span></div>
+  <p class="big">LiveWire is a small team of registered electricians in Cape Town, <span>handling compliance certificates, DB board upgrades, backup power and 2am fault calls with the same care.</span></p>
+  <div class="row2">
+    <div class="img photo" style="background-image: url('../../stock/electrician/panel.jpg'); background-position: 75% 50%"></div>
+    <div class="facts">
+      <div>Years in Cape Town<b>14</b></div>
+      <div>Call-out fee<b>R450</b></div>
+      <div>Workmanship guarantee<b>12<em> mo</em></b></div>
+      <div>Quotes<b>Fixed</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms">
+  <span class="tag">What we do</span>
+  <h2 class="sec">Every Job, From One<br>Plug to the Whole House</h2>
+  <div class="cards">
+    <div class="room"><div class="ph photo" style="background-image: url('../../stock/electrician/multimeter.jpg'); background-position: 40% 50%"></div>
+      <div class="b"><h3>Compliance Certificate</h3><p>Full CoC inspection for selling or renting, issued the same day.</p>
+      <div class="f"><span class="price">R950 <small>/ from</small></span><a class="pill dark" href="#">Book <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div></div></div>
+    <div class="room hi"><span class="chip">Most booked</span><div class="ph photo" style="background-image: url('../../stock/electrician/breakers.jpg'); background-position: 50% 30%"></div>
+      <div class="b"><h3>DB Board Upgrade</h3><p>New board, earth leakage and surge protection, fitted in a day.</p>
+      <div class="f"><span class="price">R4&thinsp;800 <small>/ from</small></span><a class="pill acc" href="#">Book <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div></div></div>
+    <div class="room"><div class="ph photo" style="background-image: url('../../stock/electrician/bulbs.jpg'); background-position: 50% 40%"></div>
+      <div class="b"><h3>Lighting Installs</h3><p>Downlights, pendants and outdoor lights, neatly wired and tested.</p>
+      <div class="f"><span class="price">R650 <small>/ per point</small></span><a class="pill dark" href="#">Book <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div></div></div>
+  </div>
+</section>
+
+<section class="exp">
+  <span class="tag">Why Cape Town calls us</span>
+  <h2 class="sec">Safe Work,<br>Zero Surprises</h2>
+  <div class="grid">
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h4>24/7 emergencies</h4><p>Nights, weekends and public holidays. A real person answers.</p></div>
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><h4>Fixed quotes upfront</h4><p>You approve the price before we start. No hourly surprises.</p></div>
+    <div class="accent"><b>60 min</b><div><h4 style="margin:0">Average arrival</h4><p>From your call to an electrician at the door</p></div></div>
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h4>Registered &amp; insured</h4><p>Every job signed off by a registered electrician.</p></div>
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 11v2M8 10l-2 3h4l-2 3"/></svg></span><h4>Backup power</h4><p>Inverter and battery setups for load-shedding, from R18&thinsp;500.</p></div>
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span><h4>Clean-up included</h4><p>We leave your walls patched and your floors swept.</p></div>
+  </div>
+</section>
+
+<section class="journey">
+  <div class="img photo" style="background-image: url('../../stock/electrician/clamp-meter.jpg'); background-position: 45% 50%"></div>
+  <div>
+    <span class="tag">How a call-out works</span>
+    <h2 class="sec">From Tripped Switch<br>to Lights On</h2>
+    <div class="steps">
+      <div><span class="n"><svg class="i" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span><h4>Tell us the fault</h4><p>Call or WhatsApp a photo of your DB board.</p></div>
+      <div><span class="n"><svg class="i" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6"/></svg></span><h4>Get a fixed quote</h4><p>A clear price on WhatsApp before anyone drives out.</p></div>
+      <div><span class="n"><svg class="i" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><h4>We find and fix it</h4><p>Most faults sorted in one visit, parts on the van.</p></div>
+      <div><span class="n"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span><h4>Get it in writing</h4><p>Invoice and certificate emailed the same day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="ph photo" style="background-image: url('../../stock/electrician/portrait.jpg'); background-position: 30% 35%"></div><div class="shade"></div>
+  <div class="in">
+    <h2>Lights out?<br>We pick up at 2am.</h2>
+    <p>Call or WhatsApp us any time. Fixed quote first, electrician at your door in about an hour.</p>
+    <a class="pill acc" href="#">Call now <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+    <span class="wa"><span><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></span>WhatsApp us</span>
+  </div>
+</section>
+<footer><span>&copy; 2026 LiveWire Electrical &middot; Observatory, Cape Town</span><span>Concept by CAAS Studios</span></footer>
+</body></html>

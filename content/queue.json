@@ -105,16 +105,20 @@
       "type": "reel",
       "hook": "Would you get up early for this bakery?",
       "metricool_id": 396587489
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "before-after",
       "slug": "electrician",
       "brand": "LiveWire Electrical",
       "industry": "certified electrician",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-16-before-after-electrician",
+      "palette": "midnight",
+      "accent": "#FFC93C",
+      "dark": "#0F1A2E"
+    }
+  ],
+  "queue": [
     {
       "format": "ab",
       "slug": "gym",
