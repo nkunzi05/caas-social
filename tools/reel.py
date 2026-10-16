@@ -2,6 +2,7 @@
 
 Usage:  python3 tools/reel.py posts/<post-id> --hook "Would you order coffee from this site?" [--seconds 22]
         [--bg stock/<slug>/<photo>.jpg]   background photo (blurred); default = first stock photo the slide uses
+        [--music lofi|upbeat|chill|house|none]   soundtrack; default = picked from the post id (tools/music.py)
 Output: posts/<post-id>/reel.mp4 (22 s with a site.html, 13 s without; + reel-cover.jpg, the first frame, to look at)
 
 How it moves:
@@ -10,6 +11,7 @@ How it moves:
   * single-slide posts (ab / landing / before-after): the slide is shown whole, the camera zooms (1.45x) to
     the top-left headline, drops to the lower row, pans across it, then pulls back out.
   The last ~2 s fade to an end card: "Want a site like this? DM "SITE"".
+  Sound: an original, royalty-free track made by tools/music.py (no samples, nothing Instagram can mute).
 Needs: playwright, pillow, ffmpeg.
 """
 import argparse
@@ -23,6 +25,9 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 from playwright.async_api import async_playwright
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from music import STYLES, make_track, pick_style, write_wav  # noqa: E402
 
 W, H, FPS = 1080, 1920, 30
 SECONDS = 13.0                                         # reels with no site.html; site scrolls default to 22 s
@@ -106,7 +111,7 @@ def slide_camera(t: float):
     return keys[-1][1:]
 
 
-def render(folder: Path, hook: str, bg: Path, seconds: float = 0):
+def render(folder: Path, hook: str, bg: Path, seconds: float = 0, music: str | None = None):
     with tempfile.TemporaryDirectory() as td:
         tmp = Path(td)
         slide2x = asyncio.run(build_layers(folder, hook, bg, tmp))
@@ -131,11 +136,19 @@ def render(folder: Path, hook: str, bg: Path, seconds: float = 0):
             sw, sh = src.size
 
         out = folder / "reel.mp4"
+        if music == "none":
+            audio_in = ["-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo"]
+        else:
+            auto_style, seed = pick_style(folder.name)
+            wav = tmp / "music.wav"
+            write_wav(wav, make_track(seconds, music or auto_style, seed))
+            audio_in = ["-i", str(wav)]
+            print(f"soundtrack: {music or auto_style}")
         ff = subprocess.Popen(
             ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
-             "-r", str(FPS), "-i", "-", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",
+             "-r", str(FPS), "-i", "-", *audio_in,
              "-shortest", "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
-             "-profile:v", "high", "-movflags", "+faststart", "-c:a", "aac", "-b:a", "128k", str(out)],
+             "-profile:v", "high", "-movflags", "+faststart", "-c:a", "aac", "-b:a", "160k", str(out)],
             stdin=subprocess.PIPE)
         n = int(seconds * FPS)
         for i in range(n):
@@ -186,6 +199,7 @@ if __name__ == "__main__":
     ap.add_argument("--hook", required=True)
     ap.add_argument("--bg")
     ap.add_argument("--seconds", type=float, default=0, help="length; default 22 (site scroll) or 13 (slide only)")
+    ap.add_argument("--music", choices=(*STYLES, "none"), help="soundtrack style; default picked from the post id")
     a = ap.parse_args()
     folder = Path(a.folder)
-    render(folder, a.hook, Path(a.bg) if a.bg else default_bg(folder), a.seconds)
+    render(folder, a.hook, Path(a.bg) if a.bg else default_bg(folder), a.seconds, a.music)
