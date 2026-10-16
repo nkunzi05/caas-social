@@ -53,3 +53,11 @@ coffee-shop/pour.jpg | https://images.unsplash.com/photo-1507915135761-41a0a222c
 coffee-shop/counter.jpg | https://images.unsplash.com/photo-1508766917616-d22f3f1eea14 | https://unsplash.com/photos/f7zm5TDOi4g
 coffee-shop/latte-art.jpg | https://images.unsplash.com/photo-1485808191679-5f86510681a2 | https://unsplash.com/photos/jn-HaGWe4yw
 coffee-shop/iced.jpg | https://images.unsplash.com/photo-1592663527359-cf6642f54cff | https://unsplash.com/photos/F0Wd4djYvSA
+electrician/hardhat-wiring.jpg | https://images.unsplash.com/photo-1621905251189-08b45d6a269e | https://unsplash.com/photos/_2AlIm-F6pw
+electrician/panel.jpg | https://images.unsplash.com/photo-1660330589693-99889d60181e | https://unsplash.com/photos/GXLPLG3_Vf4
+electrician/multimeter.jpg | https://images.unsplash.com/photo-1758101755915-462eddc23f57 | https://unsplash.com/photos/PkHf7BUWbtk
+electrician/breakers.jpg | https://images.unsplash.com/photo-1544724569-5f546fd6f2b5 | https://unsplash.com/photos/kK7uPfb2YWU
+electrician/bulbs.jpg | https://images.unsplash.com/photo-1507494924047-60b8ee826ca9 | https://unsplash.com/photos/1NTFSnV-KLs
+electrician/clamp-meter.jpg | https://images.unsplash.com/photo-1553873002-785d775854c9 | https://unsplash.com/photos/NLBJ2I0lNr4
+electrician/portrait.jpg | https://images.unsplash.com/photo-1621905252507-b35492cc74b4 | https://unsplash.com/photos/zWOgsj3j0wA
+electrician/wires.jpg | https://images.unsplash.com/photo-1682345262055-8f95f3c513ea | https://unsplash.com/photos/U3GiK1u5j24
