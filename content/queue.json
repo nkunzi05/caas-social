@@ -115,7 +115,10 @@
       "post": "posts/2026-10-16-before-after-electrician",
       "palette": "midnight",
       "accent": "#FFC93C",
-      "dark": "#0F1A2E"
+      "dark": "#0F1A2E",
+      "type": "reel",
+      "hook": "Which electrician would you call at 2am?",
+      "metricool_id": 397501063
     }
   ],
   "queue": [
