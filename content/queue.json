@@ -119,16 +119,21 @@
       "type": "reel",
       "hook": "Which electrician would you call at 2am?",
       "metricool_id": 397501063
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "ab",
       "slug": "gym",
       "brand": "Ironside Gym",
       "industry": "strength gym",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-19-ab-gym",
+      "palette": "sand",
+      "accent": "#FF4D2E",
+      "dark": "#121014",
+      "ui_ref": "01"
+    }
+  ],
+  "queue": [
     {
       "format": "columns",
       "slug": "wedding-venue",

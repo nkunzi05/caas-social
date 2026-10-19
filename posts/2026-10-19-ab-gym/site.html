@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Ironside Gym concept site</title>
+<link rel="stylesheet" href="../../brand/fonts.css">
+<style>
+  /* Full desktop homepage, 1280px wide. Rendered to site.png, then sliced into the carousel slides. */
+  :root { --ink: #12110F; --ink-2: #55524C; --ink-3: #8A867E; --paper: #F5F4EE; --line: #E4E0D7; --acc: #FF4D2E; --acc-ink: #fff; --dark: #121014; }
+  * { box-sizing: border-box; } html, body { margin: 0; }
+  body { width: 1280px; background: var(--paper); font-family: "Schibsted Grotesk", sans-serif; color: var(--ink); }
+  .photo { background-size: cover; background-position: center; }
+  .pill { display: inline-flex; align-items: center; gap: 12px; border-radius: 999px; font-weight: 600; text-decoration: none; padding: 7px 7px 7px 22px; font-size: 16px; }
+  .pill i { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-style: normal; }
+  .pill.acc { background: var(--acc); color: var(--acc-ink); } .pill.acc i { background: var(--acc-ink); color: var(--acc); }
+  .pill.dark { background: var(--ink); color: #fff; } .pill.dark i { background: var(--acc); color: var(--acc-ink); }
+  .arr { width: 15px; height: 15px; }
+  .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+  .tag::before { content: ""; width: 14px; height: 14px; border-radius: 4px; background: var(--acc); }
+  h2.sec { font-size: 52px; line-height: 1.04; letter-spacing: -0.035em; font-weight: 700; margin: 16px 0 0; }
+  svg.i { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* hero */
+  .hero { height: 820px; position: relative; color: #fff; overflow: hidden; }
+  .hero .ph { position: absolute; inset: 0; background-position: 50% 60%; }
+  .hero .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,9,8,0.55) 0%, rgba(10,9,8,0) 26%, rgba(10,9,8,0.05) 55%, rgba(10,9,8,0.78) 100%); }
+  nav { position: absolute; left: 56px; right: 56px; top: 34px; display: flex; align-items: center; gap: 40px; }
+  .logo { display: flex; align-items: center; gap: 12px; font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+  .logo b { width: 34px; height: 34px; border-radius: 10px 10px 10px 2px; background: var(--acc); display: block; }
+  .links { flex-grow: 1; display: flex; justify-content: flex-end; gap: 34px; font-size: 16px; font-weight: 500; }
+  .hero .in { position: absolute; left: 56px; right: 56px; bottom: 150px; display: flex; align-items: flex-end; justify-content: space-between; }
+  .hero h1 { margin: 0; white-space: nowrap; font-size: 84px; line-height: 0.98; font-weight: 700; letter-spacing: -0.045em; }
+  .hero h1 span { color: var(--acc); }
+  .hero .stats { position: absolute; left: 56px; right: 56px; bottom: 56px; display: flex; align-items: center; gap: 28px; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+  .hero .stats b { font-size: 40px; letter-spacing: -0.03em; color: #fff; font-weight: 600; text-transform: none; margin-right: 10px; }
+  .hero .stats hr { width: 120px; border: 0; border-top: 1px solid rgba(255,255,255,0.4); margin: 0; }
+  .book { display: flex; gap: 0; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(16px); border-radius: 22px; padding: 10px; align-items: center; }
+  .book div { white-space: nowrap; padding: 6px 20px; border-right: 1px solid rgba(255,255,255,0.25); font-size: 14px; color: rgba(255,255,255,0.75); }
+  .book div b { display: block; color: #fff; font-size: 18px; font-weight: 600; margin-top: 2px; }
+  .book .pill { margin-left: 12px; white-space: nowrap; }
+
+  /* about */
+  .about { padding: 110px 56px 100px; display: grid; grid-template-columns: 300px 1fr; gap: 40px; }
+  .about p.big { margin: 0; font-size: 44px; line-height: 1.18; letter-spacing: -0.025em; font-weight: 500; }
+  .about p.big span { color: var(--ink-3); }
+  .about .row2 { grid-column: 1 / -1; display: grid; grid-template-columns: 560px 1fr; gap: 64px; margin-top: 40px; }
+  .about .img { height: 380px; border-radius: 26px; }
+  .facts div { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--line); padding: 24px 0; font-size: 17px; color: var(--ink-2); }
+  .facts b { font-size: 46px; font-weight: 500; letter-spacing: -0.03em; color: var(--ink); }
+  .facts b em { font-style: normal; color: var(--acc); }
+
+  /* rooms */
+  .rooms { padding: 100px 56px 110px; background: #fff; text-align: center; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 54px; text-align: left; }
+  .room { border-radius: 26px; overflow: hidden; background: var(--paper); height: 560px; display: flex; flex-direction: column; position: relative; }
+  .room .ph { height: 330px; }
+  .room .b { padding: 26px 26px; display: flex; flex-direction: column; flex-grow: 1; }
+  .room h3 { margin: 0; font-size: 28px; letter-spacing: -0.02em; font-weight: 700; }
+  .room p { margin: 8px 0 0; font-size: 16px; color: var(--ink-2); line-height: 1.45; }
+  .room .f { margin-top: auto; display: flex; justify-content: space-between; align-items: center; }
+  .room .price { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; } .room .price small { font-size: 15px; font-weight: 500; color: var(--ink-3); }
+  .room.hi { background: var(--dark); color: #fff; } .room.hi p { color: rgba(255,255,255,0.7); } .room.hi .price small { color: rgba(255,255,255,0.6); }
+  .room .chip { position: absolute; top: 20px; left: 20px; background: var(--acc); color: var(--acc-ink); font-size: 14px; font-weight: 700; padding: 8px 14px; border-radius: 999px; }
+
+  /* experiences (dark) */
+  .exp { background: var(--dark); color: #fff; padding: 100px 56px 110px; text-align: center; }
+  .exp .tag { color: rgba(255,255,255,0.75); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,0.12); border-left: 1px solid rgba(255,255,255,0.12); margin-top: 54px; text-align: left; }
+  .grid > div { border-right: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); padding: 34px 32px; min-height: 230px; display: flex; flex-direction: column; }
+  .grid .ic { color: var(--acc); }
+  .grid h4 { margin: 22px 0 0; font-size: 22px; font-weight: 600; }
+  .grid p { margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.62); }
+  .grid .accent { background: var(--acc); color: var(--acc-ink); border-radius: 20px; margin: 10px; justify-content: space-between; }
+  .grid .accent b { font-size: 64px; letter-spacing: -0.04em; font-weight: 600; }
+  .grid .accent p { color: rgba(255,255,255,0.85); }
+
+  /* journey */
+  .journey { padding: 100px 56px; display: grid; grid-template-columns: 480px 1fr; gap: 56px; }
+  .journey .img { border-radius: 26px; height: 100%; min-height: 560px; }
+  .steps > div { display: grid; grid-template-columns: 60px 1fr 260px; gap: 20px; align-items: center; background: #fff; border-radius: 22px; padding: 26px 28px; margin-top: 16px; }
+  .steps .n { width: 46px; height: 46px; border-radius: 14px; background: var(--acc); display: flex; align-items: center; justify-content: center; color: var(--acc-ink); }
+  .steps h4 { margin: 0; font-size: 22px; font-weight: 600; }
+  .steps p { margin: 0; font-size: 15px; color: var(--ink-2); line-height: 1.45; }
+
+  /* cta */
+  .cta { margin: 0 56px 56px; border-radius: 30px; height: 460px; position: relative; overflow: hidden; color: #fff; }
+  .cta .ph { position: absolute; inset: 0; }
+  .cta .shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,9,8,0.9) 0%, rgba(10,9,8,0.6) 55%, rgba(10,9,8,0.25) 100%); }
+  .cta .in { position: absolute; left: 60px; top: 70px; width: 600px; }
+  .cta h2 { margin: 0; font-size: 60px; line-height: 1.02; letter-spacing: -0.04em; font-weight: 700; }
+  .cta p { font-size: 18px; color: rgba(255,255,255,0.82); line-height: 1.5; margin: 20px 0 30px; }
+  .wa { display: inline-flex; align-items: center; gap: 10px; margin-left: 14px; font-weight: 600; font-size: 16px; }
+  .wa span { width: 50px; height: 50px; border-radius: 50%; background: #25D366; display: inline-flex; align-items: center; justify-content: center; }
+  footer { padding: 0 56px 48px; display: flex; justify-content: space-between; font-size: 14px; color: var(--ink-3); }
+
+  /* board style 01 details in the hero */
+  .hero { background: #08070A; }
+  .hero .ph { opacity: 0.9; }
+  .hero .glow { position: absolute; width: 760px; height: 760px; right: 60px; top: 40px; border-radius: 50%; background: radial-gradient(circle, rgba(255,77,46,0.55) 0%, rgba(255,77,46,0.18) 40%, rgba(255,77,46,0) 70%); mix-blend-mode: screen; }
+  nav.float { left: 40px; right: 40px; top: 28px; height: 70px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); backdrop-filter: blur(14px); padding: 0 10px 0 30px; }
+  nav.float .logo { font-size: 20px; font-weight: 800; letter-spacing: 0.18em; }
+  nav.float .logo i { font-style: normal; color: var(--acc); }
+  nav.float .links span { color: rgba(255,255,255,0.72); position: relative; } nav.float .links span.on { color: #fff; }
+  nav.float .links span.on::after { content: ""; position: absolute; left: 0; right: 0; bottom: -9px; height: 3px; border-radius: 3px; background: var(--acc); }
+  .hero .pre { font-size: 20px; font-weight: 800; letter-spacing: 0.3em; color: rgba(255,255,255,0.85); margin-bottom: 14px; }
+  .hero h1 { text-transform: uppercase; font-weight: 800; letter-spacing: -0.01em; font-size: 92px; line-height: 0.92; }
+  .toggle { display: inline-flex; align-items: center; gap: 16px; height: 62px; padding: 0 7px 0 26px; border-radius: 999px; background: #3A3840; color: #fff; text-decoration: none; font-size: 17px; font-weight: 700; margin-left: 12px; white-space: nowrap; }
+  .toggle b { width: 48px; height: 48px; border-radius: 50%; background: var(--acc); display: flex; align-items: center; justify-content: center; }
+  .book { background: rgba(20,18,24,0.5); }
+  .vdots { position: absolute; right: 44px; top: 300px; display: flex; flex-direction: column; gap: 10px; }
+  .vdots i { width: 3px; height: 28px; border-radius: 3px; background: rgba(255,255,255,0.25); display: block; } .vdots i.on { background: #fff; }
+  .badge { position: absolute; right: 120px; top: 150px; width: 150px; height: 150px; }
+  .badge > svg { position: absolute; inset: 0; width: 150px; height: 150px; }
+  .badge text { fill: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: 2.6px; }
+  .badge span { position: absolute; left: 42px; top: 42px; width: 66px; height: 66px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center; color: #fff; }
+</style></head>
+<body>
+<section class="hero">
+  <div class="ph photo" style="background-image: url('../../stock/gym/dark-interior.jpg'); background-position: 50% 50%"></div><div class="glow"></div><div class="shade"></div>
+  <nav class="float">
+    <div class="logo"><span><i>I</i>RONSIDE</span></div>
+    <div class="links"><span class="on">Join</span><span>Classes</span><span>Coaches</span><span>Timetable</span><span>Contact</span></div>
+    <a class="pill acc" href="#">Free week <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+  </nav>
+  <div class="vdots"><i class="on"></i><i></i><i></i></div>
+  <div class="badge"><svg viewBox="0 0 120 120"><defs><path id="c" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><text><textPath href="#c" textLength="272" lengthAdjust="spacing">NO CONTRACT &#183; FREE WEEK &#183; </textPath></text></svg><span><svg class="i" viewBox="0 0 24 24"><path d="M3 10v4M6 8v8M18 8v8M21 10v4M6 12h12"/></svg></span></div>
+  <div class="in">
+    <div><div class="pre">STRENGTH GYM &middot; WOODSTOCK</div><h1>Lift heavy.<br><span>Get coached.</span></h1></div>
+    <div class="book">
+      <div>7-day free trial<b>Then R549/month</b></div>
+      <a class="toggle" href="#"><span>Start free week</span><b><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></b></a>
+    </div>
+  </div>
+  <div class="stats"><span><b>6</b>Squat racks</span><hr><span><b>5am</b>Doors open</span><hr><span><b>0</b>Contracts</span></div>
+</section>
+
+<section class="about">
+  <div><span class="tag">About us</span></div>
+  <p class="big">Ironside is a strength gym in Woodstock, Cape Town, <span>built around barbells, real coaching on the floor and a crew that cheers your first 100&thinsp;kg deadlift.</span></p>
+  <div class="row2">
+    <div class="img photo" style="background-image: url('../../stock/gym/rack.jpg'); background-position: 55% 50%"></div>
+    <div class="facts">
+      <div>Squat racks &amp; platforms<b>6</b></div>
+      <div>Monthly membership<b>R549</b></div>
+      <div>Open every day<b>5am<em>&ndash;10pm</em></b></div>
+      <div>Lock-in contract<b>None</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms">
+  <span class="tag">Memberships</span>
+  <h2 class="sec">Pick How Hard<br>You Want to Train</h2>
+  <div class="cards">
+    <div class="room"><div class="ph photo" style="background-image: url('../../stock/gym/barbell-woman.jpg'); background-position: 30% 40%"></div>
+      <div class="b"><h3>Open Gym</h3><p>Full floor access, 5am&ndash;10pm, every day. Coach on the floor at peak times.</p>
+      <div class="f"><span class="price">R549 <small>/ month</small></span><a class="pill dark" href="#">Join <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div></div></div>
+    <div class="room hi"><span class="chip">Most popular</span><div class="ph photo" style="background-image: url('../../stock/gym/lift.jpg'); background-position: 50% 40%"></div>
+      <div class="b"><h3>Coached Strength</h3><p>3 small-group barbell sessions a week, a written programme and monthly testing.</p>
+      <div class="f"><span class="price">R899 <small>/ month</small></span><a class="pill acc" href="#">Join <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div></div></div>
+    <div class="room"><div class="ph photo" style="background-image: url('../../stock/gym/dumbbell-curl.jpg'); background-position: 50% 25%"></div>
+      <div class="b"><h3>1-on-1 Coaching</h3><p>Your own coach, form checks on video and a plan built around your goal.</p>
+      <div class="f"><span class="price">R450 <small>/ session</small></span><a class="pill dark" href="#">Join <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div></div></div>
+  </div>
+</section>
+
+<section class="exp">
+  <span class="tag">Why lifters stay</span>
+  <h2 class="sec">Strong Gym,<br>Zero Ego</h2>
+  <div class="grid">
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3 10v4M6 8v8M18 8v8M21 10v4M6 12h12"/></svg></span><h4>Real barbell kit</h4><p>Calibrated plates, deadlift platforms and bars that spin.</p></div>
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span><h4>Coach on the floor</h4><p>Ask anything, any session. Form checks are free.</p></div>
+    <div class="accent"><b>7 days</b><div><h4 style="margin:0">Free trial week</h4><p>Train every day before you pay a cent</p></div></div>
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><h4>No contracts</h4><p>Month to month. Pause or cancel on WhatsApp.</p></div>
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h4>Open 5am&ndash;10pm</h4><p>Before work, after work, and weekends too.</p></div>
+    <div><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M4 18l5-6 4 3 7-9"/></svg></span><h4>Progress tracked</h4><p>Monthly strength tests so you see the numbers climb.</p></div>
+  </div>
+</section>
+
+<section class="journey">
+  <div class="img photo" style="background-image: url('../../stock/gym/carry-barbell.jpg'); background-position: 40% 50%"></div>
+  <div>
+    <span class="tag">Your first week</span>
+    <h2 class="sec">From First Visit<br>to First PR</h2>
+    <div class="steps">
+      <div><span class="n"><svg class="i" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span><h4>Claim your free week</h4><p>Sign up online or send us a WhatsApp.</p></div>
+      <div><span class="n"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span><h4>Meet your coach</h4><p>A 30-minute intro to the racks and your goals.</p></div>
+      <div><span class="n"><svg class="i" viewBox="0 0 24 24"><path d="M3 10v4M6 8v8M18 8v8M21 10v4M6 12h12"/></svg></span><h4>Learn the big lifts</h4><p>Squat, bench and deadlift, coached step by step.</p></div>
+      <div><span class="n"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span><h4>Hit your first PR</h4><p>Ring the bell. Then pick a plan that fits.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="ph photo" style="background-image: url('../../stock/gym/led-interior.jpg'); background-position: 50% 12%"></div><div class="shade"></div>
+  <div class="in">
+    <h2>Your first week<br>is on us.</h2>
+    <p>Seven days of coached lifting, no card needed. Message us and we&rsquo;ll book your intro session.</p>
+    <a class="pill acc" href="#">Start free week <i><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+    <span class="wa"><span><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></span>WhatsApp us</span>
+  </div>
+</section>
+<footer><span>&copy; 2026 Ironside Gym &middot; Woodstock, Cape Town</span><span>Concept by CAAS Studios</span></footer>
+</body></html>
