@@ -130,7 +130,10 @@
       "palette": "sand",
       "accent": "#FF4D2E",
       "dark": "#121014",
-      "ui_ref": "01"
+      "ui_ref": "01",
+      "type": "reel",
+      "hook": "Which gym card gets you to sign up: A or B?",
+      "metricool_id": 399729888
     }
   ],
   "queue": [
