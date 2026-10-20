@@ -134,16 +134,22 @@
       "type": "reel",
       "hook": "Which gym card gets you to sign up: A or B?",
       "metricool_id": 399729888
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "columns",
       "slug": "wedding-venue",
       "brand": "Oak & Vine Estate",
       "industry": "winelands wedding venue",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-20-columns-wedding-venue",
+      "accent": "#EBB4A6",
+      "dark": "#2B1620",
+      "ui_ref": "02",
+      "type": "reel",
+      "hook": "Would you get married at this wine farm?"
+    }
+  ],
+  "queue": [
     {
       "format": "landing",
       "slug": "car-wash",
