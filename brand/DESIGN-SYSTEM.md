@@ -33,7 +33,7 @@ This file splits what stays **fixed** (so every site is still clearly CAAS-quali
 - **Process:** step rows · horizontal timeline · accordion · 3 big numbers
 - **CTA:** photo band · split with a short form · giant-type footer CTA · sticky-style booking bar
 
-### c) `type`: the pairing (must differ from the previous post)
+### c) `font`: the type pairing (must differ from the previous post)
 `sans` (Schibsted only, tight) · `serif` (Instrument Serif display + Schibsted body) · `condensed` (Anton caps display + Schibsted body) · `mixed` (Instrument Serif italic accent word inside a bold sans headline)
 
 ### d) `shape`: the radius personality (must differ from the previous post)
@@ -42,7 +42,7 @@ This file splits what stays **fixed** (so every site is still clearly CAAS-quali
 ### e) `mode`: the page tone
 `light` (paper/white) · `tinted` (a pale accent-tinted page) · `dark` (dark throughout). At most two `light` in a row.
 
-Record these on the queue item, e.g. `"layout": "bento", "sections": ["tabs","testimonial","timeline","split-form"], "type": "condensed", "shape": "sharp", "mode": "tinted"`. Posts before 2026-10-20 count as `photo-overlay` / `serif` or `sans` / `round` / `light`.
+Record these on the queue item, e.g. `"layout": "bento", "sections": ["tabs","testimonial","timeline","split-form"], "font": "condensed", "shape": "sharp", "mode": "tinted"`. (`type` stays reserved for `"reel"`.) Posts before 2026-10-20 count as `photo-overlay` / `serif` or `sans` / `round` / `light`.
 
 ## 3. Copy rules (ux-copy)
 - CTAs start with a verb and name the outcome: "Check your date", "Get a quote in 1 hour", "Book a free trial". Never "Learn more", "Submit", "Click here" or "Read more" (the deliberate BEFORE phone is the one exception).

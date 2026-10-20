@@ -31,9 +31,9 @@
       "post": "posts/_examples",
       "status": "approved examples (not posted)",
       "layout": "photo-overlay",
-      "type": "sans",
       "shape": "round",
-      "mode": "light"
+      "mode": "light",
+      "font": "sans"
     },
     {
       "format": "ab",
@@ -43,9 +43,9 @@
       "status": "posted",
       "post": "posts/2026-10-09-ab-roofing",
       "layout": "photo-overlay",
-      "type": "sans",
       "shape": "round",
-      "mode": "light"
+      "mode": "light",
+      "font": "sans"
     },
     {
       "format": "landing",
@@ -57,9 +57,9 @@
       "palette": "cloud",
       "accent": "#F4A259",
       "layout": "photo-overlay",
-      "type": "sans",
       "shape": "round",
-      "mode": "light"
+      "mode": "light",
+      "font": "sans"
     },
     {
       "format": "before-after",
@@ -72,9 +72,9 @@
       "accent": "#F4B6C8",
       "scheduled": "2026-10-11T11:30 SAST (made early on request)",
       "layout": "photo-overlay",
-      "type": "sans",
       "shape": "round",
-      "mode": "light"
+      "mode": "light",
+      "font": "sans"
     },
     {
       "format": "ab",
@@ -86,9 +86,9 @@
       "palette": "midnight",
       "accent": "#38B6FF",
       "layout": "photo-overlay",
-      "type": "sans",
       "shape": "round",
-      "mode": "light"
+      "mode": "light",
+      "font": "sans"
     },
     {
       "format": "monitor",
@@ -101,9 +101,9 @@
       "dark": "#15241E",
       "inspiration": "https://www.siteinspire.com/website/11351-st-bernard-properties (editorial serif type mood only; live site could not be opened this run)",
       "layout": "photo-overlay",
-      "type": "sans",
       "shape": "round",
-      "mode": "light"
+      "mode": "light",
+      "font": "sans"
     },
     {
       "format": "landing",
@@ -115,9 +115,9 @@
       "palette": "sage",
       "accent": "#E9B949",
       "layout": "photo-overlay",
-      "type": "sans",
       "shape": "round",
-      "mode": "light"
+      "mode": "light",
+      "font": "sans"
     },
     {
       "format": "monitor",
@@ -130,12 +130,13 @@
       "post": "posts/2026-10-15-monitor-bakery-editorial",
       "accent": "#C4532D",
       "dark": "#1E1B18",
-      "type": "serif",
       "hook": "Would you get up early for this bakery?",
       "metricool_id": 396587489,
       "layout": "editorial-split",
       "shape": "sharp",
-      "mode": "light"
+      "mode": "light",
+      "font": "serif",
+      "type": "reel"
     },
     {
       "format": "before-after",
@@ -147,12 +148,13 @@
       "palette": "midnight",
       "accent": "#FFC93C",
       "dark": "#0F1A2E",
-      "type": "sans",
       "hook": "Which electrician would you call at 2am?",
       "metricool_id": 397501063,
       "layout": "photo-overlay",
       "shape": "round",
-      "mode": "light"
+      "mode": "light",
+      "font": "sans",
+      "type": "reel"
     },
     {
       "format": "ab",
@@ -165,12 +167,13 @@
       "accent": "#FF4D2E",
       "dark": "#121014",
       "ui_ref": "01",
-      "type": "sans",
       "hook": "Which gym card gets you to sign up: A or B?",
       "metricool_id": 399729888,
       "layout": "photo-overlay",
       "shape": "round",
-      "mode": "light"
+      "mode": "light",
+      "font": "sans",
+      "type": "reel"
     },
     {
       "format": "columns",
@@ -182,22 +185,41 @@
       "accent": "#EBB4A6",
       "dark": "#2B1620",
       "ui_ref": "02",
-      "type": "serif",
       "hook": "Would you get married at this wine farm?",
       "metricool_id": 400827363,
       "layout": "photo-overlay",
       "shape": "round",
-      "mode": "light"
-    }
-  ],
-  "queue": [
+      "mode": "light",
+      "font": "serif",
+      "type": "reel"
+    },
     {
       "format": "landing",
       "slug": "car-wash",
       "brand": "Gloss Bay",
       "industry": "car wash & valet",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-20-landing-car-wash",
+      "palette": "sky",
+      "accent": "#38D9E8",
+      "dark": "#071216",
+      "ui_ref": "01",
+      "layout": "type-giant",
+      "sections": [
+        "scroller",
+        "big-numbers",
+        "testimonial",
+        "timeline",
+        "giant-cta"
+      ],
+      "shape": "sharp",
+      "mode": "tinted",
+      "hook": "Would you book your car wash on this site?",
+      "font": "condensed",
+      "type": "reel"
+    }
+  ],
+  "queue": [
     {
       "format": "before-after",
       "slug": "bakery",

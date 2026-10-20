@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Gloss Bay concept site</title>
+<link rel="stylesheet" href="../../brand/fonts.css">
+<style>
+  /* Layout: type-giant · type: condensed (Anton + Schibsted) · shape: sharp · mode: tinted · UI board 01 in the hero */
+  :root {
+    --ink: #071216; --ink-2: #33464D; --ink-3: #4F6168; --paper: #E4EDF0; --paper-2: #F3F7F8; --line: #C4D3D8;
+    --acc: #38D9E8; --acc-ink: #04252B; --dark: #071216; --dark-2: #0E1E24; --on-dark: #FFFFFF; --on-dark-2: #A9BCC2;
+    --r: 3px;
+  }
+  * { box-sizing: border-box; } html, body { margin: 0; }
+  body { width: 1280px; background: var(--paper); font-family: "Schibsted Grotesk", sans-serif; color: var(--ink); }
+  .d { font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.005em; }
+  .photo { background-size: cover; background-position: center; }
+  .caps { font-size: 13px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; }
+  .btn { display: inline-flex; align-items: center; gap: 14px; height: 52px; padding: 0 6px 0 24px; border-radius: var(--r); font-weight: 700; font-size: 16px; text-decoration: none; }
+  .btn i { width: 40px; height: 40px; border-radius: var(--r); display: flex; align-items: center; justify-content: center; font-style: normal; }
+  .btn.acc { background: var(--acc); color: var(--acc-ink); } .btn.acc i { background: var(--acc-ink); color: var(--acc); }
+  .btn.ink { background: var(--ink); color: var(--on-dark); } .btn.ink i { background: var(--acc); color: var(--acc-ink); }
+  svg.a { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* HERO */
+  .hero { position: relative; height: 900px; background: var(--dark); color: var(--on-dark); overflow: hidden; }
+  .glow { position: absolute; left: 330px; top: 300px; width: 700px; height: 560px; background: radial-gradient(closest-side, rgba(56,217,232,0.42), rgba(56,217,232,0.12) 60%, rgba(56,217,232,0) 100%); }
+  nav { position: absolute; left: 56px; right: 56px; top: 26px; height: 64px; display: flex; align-items: center; gap: 34px; padding: 0 8px 0 24px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; z-index: 3; }
+  .logo { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; display: flex; align-items: baseline; }
+  .logo b { width: 9px; height: 9px; border-radius: 50%; background: var(--acc); display: inline-block; margin-left: 3px; }
+  nav .links { flex-grow: 1; display: flex; justify-content: center; gap: 30px; font-size: 15px; color: var(--on-dark-2); font-weight: 500; }
+  nav .links span.on { color: var(--on-dark); position: relative; }
+  nav .links span.on::after { content: ""; position: absolute; left: 0; width: 18px; bottom: -8px; height: 2px; background: var(--acc); }
+  nav .btn { height: 48px; border-radius: 999px; } nav .btn i { border-radius: 50%; }
+  .hero .kick { position: absolute; left: 60px; top: 120px; color: var(--on-dark-2); }
+  .hero .kick em { font-style: normal; color: var(--acc); }
+  .giant { position: absolute; left: 50px; top: 172px; margin: 0; font-size: 296px; line-height: 0.86; color: var(--on-dark); white-space: nowrap; z-index: 1; }
+  .frame { position: absolute; left: 390px; top: 370px; width: 600px; height: 400px; border-radius: var(--r); z-index: 2; background-position: 50% 62%; box-shadow: 0 0 0 1px rgba(255,255,255,0.16), 0 40px 90px rgba(0,0,0,0.6); }
+  .frame .tagp { position: absolute; left: 16px; bottom: 16px; background: rgba(7,18,22,0.78); border: 1px solid rgba(255,255,255,0.16); padding: 10px 14px; border-radius: var(--r); font-size: 14px; }
+  .frame .tagp b { color: var(--acc); }
+  .hero .copy { position: absolute; left: 60px; top: 500px; width: 300px; z-index: 3; }
+  .hero .copy p { margin: 0 0 26px; font-size: 19px; line-height: 1.45; color: var(--on-dark); }
+  .toggle { display: inline-flex; align-items: center; gap: 0; background: rgba(255,255,255,0.12); border-radius: 999px; padding: 5px 5px 5px 24px; font-weight: 700; font-size: 16px; height: 56px; }
+  .toggle i { width: 46px; height: 46px; border-radius: 50%; background: var(--acc); color: var(--acc-ink); display: flex; align-items: center; justify-content: center; margin-left: 18px; }
+  .hero .side { position: absolute; right: 60px; top: 500px; width: 210px; text-align: right; z-index: 3; }
+  .hero .side .score { font-size: 64px; line-height: 1; }
+  .hero .side p { margin: 6px 0 0; font-size: 15px; color: var(--on-dark-2); line-height: 1.4; }
+  .badge { position: absolute; right: 80px; top: 680px; width: 140px; height: 140px; z-index: 3; }
+  .badge .core { position: absolute; inset: 44px; border-radius: 50%; background: var(--acc); color: var(--acc-ink); display: flex; align-items: center; justify-content: center; }
+  .dots { position: absolute; right: 22px; top: 380px; display: flex; flex-direction: column; gap: 10px; z-index: 3; }
+  .dots i { width: 3px; height: 22px; background: rgba(255,255,255,0.3); } .dots i.on { background: var(--acc); height: 44px; }
+  .hero .foot { position: absolute; left: 60px; bottom: 30px; display: flex; gap: 26px; color: var(--on-dark-2); z-index: 3; font-size: 14px; }
+  .hero .foot b { color: var(--on-dark); font-weight: 700; }
+
+  /* MARQUEE */
+  .ticker { background: var(--acc); color: var(--acc-ink); height: 84px; display: flex; align-items: center; gap: 34px; white-space: nowrap; overflow: hidden; padding-left: 20px; }
+  .ticker span { font-size: 40px; }
+  .ticker em { font-style: normal; font-size: 26px; }
+
+  /* SERVICES: horizontal strip */
+  .services { padding: 104px 0 100px 56px; background: var(--paper); overflow: hidden; }
+  .services .top { display: flex; align-items: flex-end; justify-content: space-between; padding-right: 56px; }
+  .services h2 { margin: 14px 0 0; font-size: 104px; line-height: 0.9; }
+  .services h2 span { color: var(--ink-3); }
+  .arrows { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; }
+  .arrows i { width: 52px; height: 52px; border: 1.5px solid var(--ink); border-radius: var(--r); display: flex; align-items: center; justify-content: center; }
+  .arrows i.f { background: var(--ink); color: var(--on-dark); }
+  .arrows .cnt { margin-right: 14px; } .arrows .cnt b { color: var(--ink); } .arrows .cnt span { color: var(--ink-3); }
+  .strip { display: flex; gap: 18px; margin-top: 48px; width: 1700px; }
+  .svc { width: 330px; flex-shrink: 0; background: var(--paper-2); border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); }
+  .svc .ph { height: 300px; position: relative; }
+  .svc .n { position: absolute; left: 14px; top: 10px; font-size: 54px; color: var(--on-dark); text-shadow: 0 2px 16px rgba(0,0,0,0.5); }
+  .svc .b { padding: 20px 22px 22px; }
+  .svc h3 { margin: 0; font-size: 34px; line-height: 1; }
+  .svc p { margin: 10px 0 18px; font-size: 15px; line-height: 1.45; color: var(--ink-2); min-height: 44px; }
+  .svc .f { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--line); padding-top: 14px; }
+  .svc .price { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; }
+  .svc .time { font-size: 14px; font-weight: 600; color: var(--ink-3); }
+  .svc.hot { background: var(--dark); color: var(--on-dark); border-color: var(--dark); }
+  .svc.hot p { color: var(--on-dark-2); } .svc.hot .time { color: var(--on-dark-2); } .svc.hot .f { border-color: rgba(255,255,255,0.16); }
+  .svc .chip { position: absolute; right: 14px; top: 16px; background: var(--acc); color: var(--acc-ink); font-size: 13px; font-weight: 800; padding: 7px 11px; border-radius: var(--r); letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* BIG NUMBERS */
+  .nums { background: var(--paper-2); display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .nums div { padding: 64px 56px 60px; border-right: 1px solid var(--line); }
+  .nums div:last-child { border-right: 0; }
+  .nums b { display: block; font-size: 150px; line-height: 0.86; }
+  .nums b small { font-size: 56px; color: var(--ink-3); margin-left: 6px; }
+  .nums p { margin: 16px 0 0; font-size: 17px; line-height: 1.45; color: var(--ink-2); max-width: 300px; }
+
+  /* TESTIMONIAL */
+  .quote { display: grid; grid-template-columns: 1fr 440px; gap: 64px; padding: 110px 56px; align-items: center; }
+  .quote blockquote { margin: 18px 0 0; font-size: 50px; line-height: 1.12; font-weight: 600; letter-spacing: -0.03em; }
+  .quote blockquote mark { background: var(--acc); color: var(--acc-ink); padding: 0 8px; }
+  .quote .who { display: flex; align-items: center; gap: 16px; margin-top: 36px; font-size: 16px; color: var(--ink-2); }
+  .quote .who b { color: var(--ink); display: block; font-size: 18px; }
+  .quote .who .av { width: 54px; height: 54px; border-radius: 50%; background: var(--dark); color: var(--acc); display: flex; align-items: center; justify-content: center; font-weight: 800; }
+  .quote .stars { margin-left: auto; font-size: 15px; font-weight: 700; color: var(--ink); }
+  .quote .img { height: 540px; border-radius: var(--r); position: relative; }
+  .quote .img .lbl { position: absolute; left: 0; bottom: 0; right: 0; background: var(--dark); color: var(--on-dark); padding: 18px 22px; display: flex; justify-content: space-between; font-size: 15px; }
+  .quote .img .lbl b { color: var(--acc); }
+
+  /* TIMELINE */
+  .how { background: var(--dark); color: var(--on-dark); padding: 104px 56px 110px; }
+  .how .caps { color: var(--acc); }
+  .how h2 { margin: 14px 0 0; font-size: 104px; line-height: 0.9; }
+  .line { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 70px; }
+  .line::before { content: ""; position: absolute; left: 0; right: 0; top: 23px; border-top: 1px dashed rgba(255,255,255,0.3); }
+  .line div { position: relative; }
+  .line .dot { width: 48px; height: 48px; border-radius: var(--r); background: var(--dark-2); border: 1.5px solid var(--acc); color: var(--acc); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .line div:first-child .dot { background: var(--acc); color: var(--acc-ink); }
+  .line h4 { margin: 26px 0 0; font-size: 22px; font-weight: 700; }
+  .line p { margin: 10px 0 0; font-size: 16px; line-height: 1.5; color: var(--on-dark-2); max-width: 250px; }
+  .how .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 70px; }
+  .how .row2 .photo { height: 300px; border-radius: var(--r); }
+
+  /* GIANT CTA */
+  .cta { background: var(--paper); padding: 96px 56px 40px; }
+  .cta .big { margin: 40px 0 0; font-size: 232px; line-height: 0.84; color: var(--ink); }
+  .cta .big span { display: inline-block; width: 56px; height: 56px; background: var(--acc); margin-left: 14px; vertical-align: baseline; }
+  .cta .row { display: flex; align-items: center; gap: 22px; margin-top: 44px; padding-bottom: 50px; border-bottom: 1px solid var(--line); }
+  .cta .row p { margin: 0 auto 0 0; font-size: 19px; line-height: 1.45; color: var(--ink-2); max-width: 470px; }
+  .wa { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; font-size: 16px; color: var(--ink); }
+  .wa span { width: 52px; height: 52px; border-radius: 50%; background: #25D366; display: inline-flex; align-items: center; justify-content: center; }
+  .info { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; padding: 30px 0 36px; font-size: 15px; color: var(--ink-2); line-height: 1.5; }
+  .info b { display: block; color: var(--ink); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 6px; }
+  footer { padding: 0 56px 40px; display: flex; justify-content: space-between; font-size: 14px; color: var(--ink-3); background: var(--paper); }
+</style></head>
+<body>
+<section class="hero">
+  <div class="glow"></div>
+  <nav>
+    <div class="logo">gloss bay<b></b></div>
+    <div class="links"><span class="on">Home</span><span>Services</span><span>Prices</span><span>Fleet</span><span>Visit</span></div>
+    <a class="btn acc" href="#">Book a bay <i><svg class="a" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+  </nav>
+  <div class="kick caps">Hand car wash &amp; valet &nbsp;<em>/</em>&nbsp; Claremont, Cape Town</div>
+  <h1 class="giant d">Gloss Bay</h1>
+  <div class="frame photo" style="background-image: url('../../stock/car-wash/foam-sports.jpg')"><div class="tagp">Snow foam wash &nbsp;<b>R220</b> &middot; 35 min</div></div>
+  <div class="copy">
+    <p>Hand washed, never brushed by a machine. Book a bay online and skip the Saturday queue.</p>
+    <span class="toggle">Book a bay <i><svg class="a" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></i></span>
+  </div>
+  <div class="side"><div class="score d">4.8</div><p>From 1,900 Google reviews. Open 7 days, 07:30 – 18:00.</p></div>
+  <div class="badge"><svg viewBox="0 0 140 140" width="140" height="140"><defs><path id="c" d="M70,70 m-56,0 a56,56 0 1,1 112,0 a56,56 0 1,1 -112,0"/></defs><text font-family="Schibsted Grotesk" font-size="13" font-weight="700" letter-spacing="3.6" fill="#fff"><textPath href="#c">SCROLL TO EXPLORE · NO QUEUE · </textPath></text></svg><div class="core"><svg class="a" viewBox="0 0 24 24" style="width:22px;height:22px"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div></div>
+  <div class="dots"><i class="on"></i><i></i><i></i><i></i></div>
+  <div class="foot"><span><b>12</b> wash bays</span><span><b>40 min</b> average full wash</span><span><b>Free</b> coffee while you wait</span></div>
+</section>
+
+<div class="ticker d"><span>Hand wash</span><em>&#10022;</em><span>Snow foam</span><em>&#10022;</em><span>Clay &amp; wax</span><em>&#10022;</em><span>Interior valet</span><em>&#10022;</em><span>Ceramic coat</span><em>&#10022;</em><span>Fleet accounts</span><em>&#10022;</em><span>Hand wash</span></div>
+
+<section class="services">
+  <div class="top">
+    <div><span class="caps" style="color: var(--ink-3)">Services &amp; prices</span><h2 class="d">Pick your shine.<br><span>Pay when it's done.</span></h2></div>
+    <div class="arrows"><span class="cnt"><b>01</b> <span>/ 05</span></span><i><svg class="a" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></i><i class="f"><svg class="a" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></div>
+  </div>
+  <div class="strip">
+    <div class="svc"><div class="ph photo" style="background-image: url('../../stock/car-wash/droplets.jpg'); background-position: 50% 45%"><span class="n d">01</span></div>
+      <div class="b"><h3 class="d">Express wash</h3><p>Hand wash, rinse and dry. In and out before your coffee's cold.</p><div class="f"><span class="price">R120</span><span class="time">20 min</span></div></div></div>
+    <div class="svc hot"><div class="ph photo" style="background-image: url('../../stock/car-wash/wheel-wash.jpg'); background-position: 50% 60%"><span class="n d">02</span><span class="chip">Most booked</span></div>
+      <div class="b"><h3 class="d">Full valet</h3><p>Snow foam outside, vacuum and wipe-down inside, tyres dressed.</p><div class="f"><span class="price">R450</span><span class="time">1 h 30</span></div></div></div>
+    <div class="svc"><div class="ph photo" style="background-image: url('../../stock/car-wash/interior.jpg'); background-position: 50% 92%"><span class="n d">03</span></div>
+      <div class="b"><h3 class="d">Interior deep clean</h3><p>Seats shampooed, leather fed, every vent and cup holder done.</p><div class="f"><span class="price">R650</span><span class="time">2 h</span></div></div></div>
+    <div class="svc"><div class="ph photo" style="background-image: url('../../stock/car-wash/wax-hood.jpg'); background-position: 85% 50%"><span class="n d">04</span></div>
+      <div class="b"><h3 class="d">Clay &amp; wax</h3><p>Decontaminate the paint, then a hand-applied carnauba wax.</p><div class="f"><span class="price">R890</span><span class="time">3 h</span></div></div></div>
+    <div class="svc"><div class="ph photo" style="background-image: url('../../stock/car-wash/tire-brush.jpg'); background-position: 50% 40%"><span class="n d">05</span></div>
+      <div class="b"><h3 class="d">Ceramic coat</h3><p>Two-year coating that keeps the gloss and sheds the rain.</p><div class="f"><span class="price">R4,500</span><span class="time">1 day</span></div></div></div>
+  </div>
+</section>
+
+<section class="nums">
+  <div><b class="d">40<small>min</small></b><p>Average full wash. We text you on WhatsApp when it's ready.</p></div>
+  <div><b class="d">7<small>days</small></b><p>Open every day, 07:30 to 18:00, public holidays too.</p></div>
+  <div><b class="d">R0</b><p>For a redo. Not spotless when you collect? We wash it again, free.</p></div>
+</section>
+
+<section class="quote">
+  <div>
+    <span class="caps" style="color: var(--ink-3)">What drivers say</span>
+    <blockquote>&ldquo;Dropped the bakkie at eight, had a coffee, and by nine it looked <mark>newer than the day I bought it.</mark>&rdquo;</blockquote>
+    <div class="who"><span class="av">TM</span><div><b>Thabo M.</b>Full valet, Claremont</div><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; &nbsp;4.8 / 5</span></div>
+  </div>
+  <div class="img photo" style="background-image: url('../../stock/car-wash/tire-brush.jpg'); background-position: 50% 45%"><div class="lbl"><span>Tyres and rims, every wash</span><b>Included</b></div></div>
+</section>
+
+<section class="how">
+  <span class="caps">How it works</span>
+  <h2 class="d">Book. Drop. Collect.</h2>
+  <div class="line">
+    <div><span class="dot d">1</span><h4>Book a bay online</h4><p>Pick a service and a time slot. No account, no app.</p></div>
+    <div><span class="dot d">2</span><h4>Drop your keys</h4><p>Hand them over at the desk and grab a free coffee.</p></div>
+    <div><span class="dot d">3</span><h4>We wash by hand</h4><p>Two-bucket method, clean mitts for every car.</p></div>
+    <div><span class="dot d">4</span><h4>Collect and pay</h4><p>We WhatsApp you when it's ready. Pay by card or tap.</p></div>
+  </div>
+</section>
+
+<section class="cta">
+  <span class="caps" style="color: var(--ink-3)">Saturdays fill up by Thursday</span>
+  <h2 class="big d">Book a bay<span></span></h2>
+  <div class="row">
+    <p>Choose your service and time online. Your first wash comes with a free tyre shine.</p>
+    <a class="btn ink" href="#">Book a bay <i><svg class="a" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+    <span class="wa"><span><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></span>WhatsApp us</span>
+  </div>
+  <div class="info">
+    <div><b>Find us</b>Off Main Road, Claremont, Cape Town</div>
+    <div><b>Open</b>Mon – Sun, 07:30 – 18:00</div>
+    <div><b>Fleet accounts</b>Monthly invoicing for 5+ vehicles</div>
+  </div>
+</section>
+<footer><span>&copy; 2026 Gloss Bay Car Wash &amp; Valet &middot; Claremont, Cape Town</span><span>Concept by CAAS Studios</span></footer>
+</body></html>
