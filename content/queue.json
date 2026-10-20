@@ -29,7 +29,11 @@
       "brand": "Fade & Co.",
       "industry": "barbershop",
       "post": "posts/_examples",
-      "status": "approved examples (not posted)"
+      "status": "approved examples (not posted)",
+      "layout": "photo-overlay",
+      "type": "sans",
+      "shape": "round",
+      "mode": "light"
     },
     {
       "format": "ab",
@@ -37,7 +41,11 @@
       "brand": "Summit Roofing",
       "industry": "roofing & waterproofing",
       "status": "posted",
-      "post": "posts/2026-10-09-ab-roofing"
+      "post": "posts/2026-10-09-ab-roofing",
+      "layout": "photo-overlay",
+      "type": "sans",
+      "shape": "round",
+      "mode": "light"
     },
     {
       "format": "landing",
@@ -47,7 +55,11 @@
       "status": "posted",
       "post": "posts/2026-10-10-landing-restaurant",
       "palette": "cloud",
-      "accent": "#F4A259"
+      "accent": "#F4A259",
+      "layout": "photo-overlay",
+      "type": "sans",
+      "shape": "round",
+      "mode": "light"
     },
     {
       "format": "before-after",
@@ -58,7 +70,11 @@
       "post": "posts/2026-10-11-before-after-beauty-salon",
       "palette": "blush",
       "accent": "#F4B6C8",
-      "scheduled": "2026-10-11T11:30 SAST (made early on request)"
+      "scheduled": "2026-10-11T11:30 SAST (made early on request)",
+      "layout": "photo-overlay",
+      "type": "sans",
+      "shape": "round",
+      "mode": "light"
     },
     {
       "format": "ab",
@@ -68,7 +84,11 @@
       "status": "posted",
       "post": "posts/2026-10-12-ab-plumber",
       "palette": "midnight",
-      "accent": "#38B6FF"
+      "accent": "#38B6FF",
+      "layout": "photo-overlay",
+      "type": "sans",
+      "shape": "round",
+      "mode": "light"
     },
     {
       "format": "monitor",
@@ -79,7 +99,11 @@
       "post": "posts/2026-10-13-monitor-estate-agency",
       "accent": "#D9774B",
       "dark": "#15241E",
-      "inspiration": "https://www.siteinspire.com/website/11351-st-bernard-properties (editorial serif type mood only; live site could not be opened this run)"
+      "inspiration": "https://www.siteinspire.com/website/11351-st-bernard-properties (editorial serif type mood only; live site could not be opened this run)",
+      "layout": "photo-overlay",
+      "type": "sans",
+      "shape": "round",
+      "mode": "light"
     },
     {
       "format": "landing",
@@ -89,7 +113,11 @@
       "status": "posted",
       "post": "posts/2026-10-14-landing-coffee-shop",
       "palette": "sage",
-      "accent": "#E9B949"
+      "accent": "#E9B949",
+      "layout": "photo-overlay",
+      "type": "sans",
+      "shape": "round",
+      "mode": "light"
     },
     {
       "format": "monitor",
@@ -102,9 +130,12 @@
       "post": "posts/2026-10-15-monitor-bakery-editorial",
       "accent": "#C4532D",
       "dark": "#1E1B18",
-      "type": "reel",
+      "type": "serif",
       "hook": "Would you get up early for this bakery?",
-      "metricool_id": 396587489
+      "metricool_id": 396587489,
+      "layout": "editorial-split",
+      "shape": "sharp",
+      "mode": "light"
     },
     {
       "format": "before-after",
@@ -116,9 +147,12 @@
       "palette": "midnight",
       "accent": "#FFC93C",
       "dark": "#0F1A2E",
-      "type": "reel",
+      "type": "sans",
       "hook": "Which electrician would you call at 2am?",
-      "metricool_id": 397501063
+      "metricool_id": 397501063,
+      "layout": "photo-overlay",
+      "shape": "round",
+      "mode": "light"
     },
     {
       "format": "ab",
@@ -131,9 +165,12 @@
       "accent": "#FF4D2E",
       "dark": "#121014",
       "ui_ref": "01",
-      "type": "reel",
+      "type": "sans",
       "hook": "Which gym card gets you to sign up: A or B?",
-      "metricool_id": 399729888
+      "metricool_id": 399729888,
+      "layout": "photo-overlay",
+      "shape": "round",
+      "mode": "light"
     },
     {
       "format": "columns",
@@ -145,9 +182,12 @@
       "accent": "#EBB4A6",
       "dark": "#2B1620",
       "ui_ref": "02",
-      "type": "reel",
+      "type": "serif",
       "hook": "Would you get married at this wine farm?",
-      "metricool_id": 400827363
+      "metricool_id": 400827363,
+      "layout": "photo-overlay",
+      "shape": "round",
+      "mode": "light"
     }
   ],
   "queue": [
