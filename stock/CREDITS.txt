@@ -68,3 +68,10 @@ gym/carry-barbell.jpg | https://images.unsplash.com/photo-1591741543032-bf439b4f
 gym/led-interior.jpg | https://images.unsplash.com/photo-1778828450059-f39d5bbb01af | https://unsplash.com/photos/ER28K86K4Ho
 gym/dumbbell-curl.jpg | https://images.unsplash.com/photo-1744551154623-4b5336e95c28 | https://unsplash.com/photos/yqI0r1AMSsQ
 gym/rack.jpg | https://images.unsplash.com/photo-1775993699105-4d18bcac7e54 | https://unsplash.com/photos/8MCy6GeU490
+wedding-venue/couple-hill.jpg | https://images.unsplash.com/photo-1532712938310-34cb3982ef74 | https://unsplash.com/photos/IfjHaIoAoqE
+wedding-venue/aisle-lights.jpg | https://images.unsplash.com/photo-1607861884586-c7cfaed16290 | https://unsplash.com/photos/xMDo8y776uE
+wedding-venue/archway.jpg | https://images.unsplash.com/photo-1670529776180-60e4132ab90c | https://unsplash.com/photos/aRQrz0fclB8
+wedding-venue/table-roses.jpg | https://images.unsplash.com/photo-1519225421980-715cb0215aed | https://unsplash.com/photos/O38Id_cyV4M
+wedding-venue/vineyard-rows.jpg | https://images.unsplash.com/photo-1504279577054-acfeccf8fc52 | https://unsplash.com/photos/2cRXSWyMHA8
+wedding-venue/table-setting.jpg | https://images.unsplash.com/photo-1511795409834-ef04bbd61622 | https://unsplash.com/photos/aEnH4hJ_Mrs
+wedding-venue/toast.jpg | https://images.unsplash.com/photo-1527529482837-4698179dc6ce | https://unsplash.com/photos/ULHxWq8reao
