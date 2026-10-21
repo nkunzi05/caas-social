@@ -86,3 +86,5 @@ car-wash/droplets.jpg https://images.unsplash.com/photo-1611239179213-d972da5409
 car-wash/tire-brush.jpg https://images.unsplash.com/photo-1708805282683-50a060eba80f https://unsplash.com/photos/8k_T1EwTySs
 car-wash/interior.jpg https://images.unsplash.com/photo-1605437241278-c1806d14a4d9 https://unsplash.com/photos/U4IaoKF5aj4
 car-wash/wax-hood.jpg https://images.unsplash.com/photo-1632823469850-2f77dd9c7f93 https://unsplash.com/photos/dlJelFmdpOc
+bakery/kneading.jpg https://images.unsplash.com/photo-1649675602947-81a41c1ba4af https://unsplash.com/photos/zqg6ctfkYuo
+bakery/display-case.jpg https://images.unsplash.com/photo-1755689910361-4793707c160f https://unsplash.com/photos/awg4ajonoVE
