@@ -242,7 +242,8 @@
       "mode": "light",
       "post": "posts/2026-10-21-before-after-bakery",
       "type": "reel",
-      "hook": "Which bakery site would you order from?"
+      "hook": "Which bakery site would you order from?",
+      "metricool_id": 401869662
     }
   ],
   "queue": [

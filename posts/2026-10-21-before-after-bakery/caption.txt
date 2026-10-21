@@ -1,4 +1,4 @@
-Which one would you book your morning loaf from: before or after? 🥖
+Which one would you order from: before or after?
 
 Same bakery, two websites. The before is the template every bakery has. The after puts the real info in a bento grid: today's hours, the price of a loaf, the rating, and one button to pre-order for tomorrow, with WhatsApp right next to it.
 
