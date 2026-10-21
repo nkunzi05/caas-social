@@ -218,16 +218,34 @@
       "font": "condensed",
       "type": "reel",
       "metricool_id": 400842225
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "before-after",
       "slug": "bakery",
       "brand": "Rise Bakehouse",
       "industry": "artisan bakery",
-      "status": "todo"
-    },
+      "status": "posted",
+      "palette": "espresso",
+      "accent": "#2547C4",
+      "dark": "#1C1814",
+      "ui_ref": "02",
+      "layout": "bento",
+      "sections": [
+        "menu-list",
+        "bento-features",
+        "founder-quote",
+        "faq-accordion",
+        "split-form"
+      ],
+      "font": "mixed",
+      "shape": "soft",
+      "mode": "light",
+      "post": "posts/2026-10-21-before-after-bakery",
+      "type": "reel",
+      "hook": "Which bakery site would you order from?"
+    }
+  ],
+  "queue": [
     {
       "format": "ab",
       "slug": "landscaping",

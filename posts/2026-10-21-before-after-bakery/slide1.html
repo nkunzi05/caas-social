@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Rise Bakehouse before and after</title>
+<link rel="stylesheet" href="../../brand/ui.css">
+<style>
+  .q { font-size: 62px; }
+  .pair { display: flex; gap: 36px; margin-top: 56px; }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+  .phone { width: 452px; height: 866px; border-radius: 48px; background: #0E1220; padding: 12px; }
+  .screen { width: 100%; height: 100%; border-radius: 37px; overflow: hidden; position: relative; display: flex; flex-direction: column; }
+  .tag { color: var(--frame-ink, var(--ink)); font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 12px; }
+  .tag .dot { width: 14px; height: 14px; border-radius: 50%; }
+
+  /* BEFORE: an average template site, not broken, just forgettable */
+  .old { background: #fff; font-family: Arial, Helvetica, sans-serif; color: #333; }
+  .old .top { display: flex; justify-content: space-between; align-items: center; padding: 40px 20px 14px; border-bottom: 1px solid #e5e5e5; }
+  .old .logo { font-size: 19px; font-weight: bold; color: #7a4a26; }
+  .old .burger { width: 26px; display: flex; flex-direction: column; gap: 5px; }
+  .old .burger i { height: 3px; background: #555; display: block; }
+  .old .hero { height: 230px; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; }
+  .old .hero .bgp { position: absolute; inset: 0; background-size: cover; background-position: 50% 50%; filter: saturate(0.6) brightness(0.6); }
+  .old .hero h3 { position: relative; color: #fff; font-size: 22px; font-weight: normal; margin: 0; padding: 0 30px; line-height: 1.3; }
+  .old .body { padding: 18px 20px 0; font-size: 15px; line-height: 1.5; color: #555; }
+  .old .body h4 { font-size: 18px; color: #7a4a26; margin: 0 0 8px; text-align: center; }
+  .old .body p { margin: 0 0 14px; }
+  .old .svc { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; font-size: 14px; }
+  .old .svc div { background: #f4f4f4; padding: 10px; text-align: center; }
+  .old .svc b { display: block; color: #333; }
+  .old .contact { margin: 16px 20px 0; font-size: 13px; color: #6b6b6b; text-align: center; line-height: 1.5; }
+  .old .contact a { color: #7a4a26; }
+  .old .foot { margin-top: auto; background: #7a4a26; color: #ecdccd; font-size: 12px; text-align: center; padding: 16px 12px 34px; line-height: 1.6; }
+  .old .more { margin: 14px auto 0; font-size: 13px; color: #fff; background: #8c6e58; padding: 8px 18px; border-radius: 3px; }
+
+  /* AFTER: the CAAS redesign (bento hero, mobile) */
+  .new { --p: #FBF7F0; --p2: #F2EBDF; --i: #1B1712; --i2: #4A433B; --acc: #2547C4; --acc2: #F4C64E; --dk: #1C1814;
+         background: var(--p); color: var(--i); padding: 0 16px 18px; }
+  .new .nav { display: flex; justify-content: space-between; align-items: center; padding: 38px 6px 14px; border-bottom: 1px solid #E2D8C8; }
+  .new .logo { font-size: 21px; font-weight: 800; letter-spacing: -0.03em; }
+  .new .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: var(--acc); }
+  .new .logo .it { font-size: 24px; }
+  .new .menu { width: 44px; height: 44px; border-radius: 50%; background: var(--p2); display: flex; align-items: center; justify-content: center; }
+  .new .head { padding: 18px 6px 16px; }
+  .new .caps { font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6259; }
+  .new h2 { margin: 10px 0 8px; font-size: 46px; line-height: 0.98; font-weight: 800; letter-spacing: -0.045em; }
+  .new h2 .it { font-size: 54px; }
+  .new p { margin: 0; font-size: 16px; line-height: 1.4; color: var(--i2); }
+  .new .bento { display: grid; grid-template-columns: 1.15fr 1fr; grid-template-rows: 172px 172px; gap: 8px; }
+  .new .t { border-radius: 14px; position: relative; overflow: hidden; }
+  .new .ph { grid-row: 1 / 3; background-position: 50% 40%; }
+  .new .ph .lab { position: absolute; left: 10px; right: 10px; bottom: 10px; background: var(--p); border-radius: 10px; padding: 9px 11px; font-size: 13px; color: var(--i2); clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+  .new .ph .lab b { display: block; color: var(--i); font-size: 15px; }
+  .new .rate { background: var(--dk); color: #fff; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; }
+  .new .rate .n { font-size: 56px; font-weight: 800; letter-spacing: -0.05em; line-height: 0.9; }
+  .new .rate .n .it { color: var(--acc2); font-size: 34px; }
+  .new .rate span { font-size: 13px; color: #C9BFB2; }
+  .new .rate .st { color: var(--acc2); font-size: 14px; letter-spacing: 2px; }
+  .new .hrs { background: var(--acc); color: #fff; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; }
+  .new .hrs .caps { color: #fff; }
+  .new .hrs b { white-space: nowrap; font-size: 26px; letter-spacing: -0.03em; line-height: 1; }
+  .new .hrs span { font-size: 13px; }
+  .new .cta { display: flex; gap: 10px; margin-top: auto; }
+  .new .btn { height: 58px; border-radius: 999px; font-size: 17px; }
+  .new .btn.b { background: var(--acc); color: #fff; flex: 1; }
+  .new .btn.g { width: 58px; background: #25D366; color: #fff; padding: 0; }
+  .new .btn.g svg { fill: #fff; stroke: none; width: 26px; height: 26px; }
+  .new .club { display: flex; align-items: center; gap: 10px; margin: 14px 4px 14px; font-size: 13px; color: var(--i2); }
+  .new .club .av { display: flex; } .new .club .av i { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--p); margin-left: -9px; background-size: cover; background-position: center; }
+  .new .club .av i:first-child { margin-left: 0; }
+  .new .club b { color: var(--i); }
+</style></head>
+<body><div class="post pal-espresso">
+  <div class="eyebrow">Same bakery</div>
+  <h1 class="q">Which one would you order from?</h1>
+  <div class="pair">
+    <div class="col">
+      <div class="phone shadow"><div class="screen old">
+        <div class="top"><div class="logo">Rise Bakehouse</div><div class="burger"><i></i><i></i><i></i></div></div>
+        <div class="hero"><div class="bgp" style="background-image: url('../../stock/bakery/display-case.jpg'); background-position: 50% 75%"></div><h3>Welcome to Rise Bakehouse, Your Local Artisan Bakery</h3></div>
+        <div class="body">
+          <h4>About Us</h4>
+          <p>Rise Bakehouse is a family-owned bakery offering a wide variety of breads, pastries and cakes. We use only the finest ingredients and we look forward to serving you.</p>
+          <div class="svc">
+            <div><b>Breads</b>From R34</div>
+            <div><b>Pastries</b>From R30</div>
+            <div><b>Cakes</b>From R390</div>
+            <div><b>Catering</b>On request</div>
+          </div>
+        </div>
+        <div class="contact">To place an order please <a>contact us</a><br>Mon&ndash;Sat 7am&ndash;3pm</div>
+        <div class="more">Read More</div>
+        <div class="foot">Home | About | Products | Gallery | Contact<br>&copy; 2019 Rise Bakehouse. All rights reserved.</div>
+      </div></div>
+      <div class="tag"><span class="dot" style="background: #D3D6DE"></span>Before</div>
+    </div>
+    <div class="col">
+      <div class="phone shadow"><div class="screen new">
+        <div class="nav"><div class="logo">rise <span class="it">bakehouse</span></div><div class="menu"><svg class="i" viewBox="0 0 24 24"><path d="M5 9h14M5 15h14"/></svg></div></div>
+        <div class="head">
+          <span class="caps">Sourdough &amp; pastry &middot; Sea Point</span>
+          <h2>Warm <span class="it">loaves</span><br>by half past six.</h2>
+          <p>Pre-order by 8pm. Your loaf waits on the counter.</p>
+        </div>
+        <div class="bento">
+          <div class="t ph photo" style="background-image: url('../../stock/bakery/rack.jpg')"><div class="lab"><b>Country loaf &middot; R72</b>per loaf &middot; 2-day ferment</div></div>
+          <div class="t rate"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="n">4.9<span class="it"> /5</span></div><span>640 Google reviews</span></div>
+          <div class="t hrs"><span class="caps">Open today</span><b>06:30&ndash;15:00</b><span>Croissants from R30</span></div>
+        </div>
+        <div class="club"><div class="av"><i style="background-image:url('../../stock/bakery/baker.jpg');background-position:62% 20%"></i><i style="background-image:url('../../stock/bakery/pastries.jpg')"></i><i style="background-image:url('../../stock/bakery/shop.jpg')"></i></div><span><b>1,800 regulars</b> on the Friday list</span></div>
+        <div class="cta">
+          <a class="btn b" href="#">Pre-order for tomorrow</a>
+          <a class="btn g" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+        </div>
+      </div></div>
+      <div class="tag"><span class="dot" style="background: var(--signal); box-shadow: 0 0 0 4px rgba(200,242,90,0.35)"></span>After &middot; by CAAS</div>
+    </div>
+  </div>
+  <div class="sig"><b>CAAS STUDIOS</b><span>Concept redesign &middot; DM &ldquo;SITE&rdquo; for yours</span></div>
+</div></body></html>

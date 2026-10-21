@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Rise Bakehouse concept site</title>
+<link rel="stylesheet" href="../../brand/fonts.css">
+<style>
+  /* Layout: bento · font: mixed (bold sans + Instrument Serif italic accent word) · shape: soft · mode: light · UI board 02 (hairline rules, avatar stack, clipped-corner card, rotating badge) */
+  :root {
+    --ink: #1B1712; --ink-2: #4A433B; --ink-3: #6B6259; --paper: #FBF7F0; --paper-2: #F2EBDF; --line: #E2D8C8;
+    --acc: #2547C4; --acc-ink: #FFFFFF; --acc-2: #F4C64E; --acc-2-ink: #1B1712; --acc-soft: #E3E8F8;
+    --dark: #1C1814; --on-dark: #FFFFFF; --on-dark-2: #C9BFB2; --wa: #25D366;
+    --r: 14px; --r-sm: 10px;
+  }
+  * { box-sizing: border-box; } html, body { margin: 0; }
+  body { width: 1280px; background: var(--paper); font-family: "Schibsted Grotesk", sans-serif; color: var(--ink); }
+  .photo { background-size: cover; background-position: center; }
+  .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: var(--acc); letter-spacing: -0.01em; }
+  .caps { font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); }
+  .btn { display: inline-flex; align-items: center; gap: 12px; height: 54px; padding: 0 24px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none; white-space: nowrap; }
+  .btn.acc { background: var(--acc); color: var(--acc-ink); }
+  .btn.ink { background: var(--ink); color: var(--on-dark); }
+  .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+  .wa { width: 54px; height: 54px; border-radius: 50%; background: var(--wa); display: inline-flex; align-items: center; justify-content: center; flex: none; }
+  .wa svg { width: 26px; height: 26px; fill: var(--on-dark); }
+  svg.a { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  section { padding: 104px 56px; }
+  h2 { margin: 14px 0 0; font-size: 60px; line-height: 1.02; font-weight: 800; letter-spacing: -0.035em; }
+  h2 .it { font-size: 1.12em; }
+
+  /* NAV: split, hairline */
+  nav { height: 84px; margin: 0 56px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; border-bottom: 1px solid var(--line); }
+  nav .links { display: flex; gap: 28px; font-size: 15px; font-weight: 500; color: var(--ink-2); }
+  .logo { font-size: 26px; font-weight: 800; letter-spacing: -0.03em; }
+  .logo .it { font-size: 30px; }
+  nav .right { display: flex; justify-content: flex-end; align-items: center; gap: 22px; font-size: 15px; font-weight: 500; color: var(--ink-2); }
+  nav .btn { height: 46px; padding: 0 20px; font-size: 15px; }
+
+  /* HERO: bento */
+  .hero { padding: 28px 56px 0; position: relative; }
+  .bento { display: grid; grid-template-columns: 500px 300px 1fr; grid-template-rows: 290px 290px 210px; gap: 16px; }
+  .tile { border-radius: var(--r); position: relative; overflow: hidden; }
+  .t-head { grid-column: 1; grid-row: 1 / 3; background: var(--paper-2); padding: 40px 40px 36px; display: flex; flex-direction: column; }
+  .t-head h1 { margin: 22px 0 18px; font-size: 76px; line-height: 0.98; font-weight: 800; letter-spacing: -0.045em; }
+  .t-head h1 .it { font-size: 88px; }
+  .t-head p { margin: 0; font-size: 19px; line-height: 1.45; color: var(--ink-2); max-width: 400px; }
+  .t-head .ctas { display: flex; gap: 10px; align-items: center; margin-top: auto; }
+  .t-photo { grid-column: 2; grid-row: 1 / 3; background-position: 50% 40%; }
+  .clip { position: absolute; left: 14px; right: 14px; bottom: 14px; background: var(--paper); padding: 14px; display: flex; gap: 12px; align-items: center;
+          clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%); border-radius: var(--r-sm) 0 var(--r-sm) var(--r-sm); }
+  .clip .th { width: 52px; height: 52px; border-radius: var(--r-sm); flex: none; }
+  .clip b { display: block; font-size: 15px; }
+  .clip span { font-size: 14px; color: var(--ink-2); }
+  .t-rate { grid-column: 3; grid-row: 1; background: var(--dark); color: var(--on-dark); padding: 30px 32px; display: flex; flex-direction: column; justify-content: space-between; }
+  .t-rate .n { font-size: 96px; font-weight: 800; letter-spacing: -0.05em; line-height: 0.9; }
+  .t-rate .n .it { color: var(--acc-2); font-size: 70px; }
+  .t-rate p { margin: 0; font-size: 16px; color: var(--on-dark-2); line-height: 1.4; }
+  .t-rate .stars { color: var(--acc-2); font-size: 20px; letter-spacing: 3px; }
+  .t-pastry { grid-column: 3; grid-row: 2; background-position: 50% 55%; }
+  .t-pastry .lab { position: absolute; left: 16px; top: 16px; background: var(--paper); color: var(--ink); font-size: 14px; font-weight: 700; padding: 8px 14px; border-radius: 999px; }
+  .t-hours { grid-column: 1; grid-row: 3; background: var(--acc); color: var(--acc-ink); padding: 30px 36px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .t-hours .big { font-size: 46px; font-weight: 800; letter-spacing: -0.035em; line-height: 1; }
+  .t-hours .caps { color: var(--acc-ink); opacity: 1; }
+  .t-hours p { margin: 8px 0 0; font-size: 16px; line-height: 1.4; }
+  .t-hours .live { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; font-weight: 700; background: var(--acc-ink); color: var(--acc); padding: 8px 14px; border-radius: 999px; }
+  .t-hours .live i { width: 9px; height: 9px; border-radius: 50%; background: var(--acc); }
+  .t-club { grid-column: 2 / 4; grid-row: 3; background: var(--paper-2); padding: 30px 36px; display: flex; align-items: center; gap: 28px; }
+  .avs { display: flex; flex: none; }
+  .avs i { width: 58px; height: 58px; border-radius: 50%; border: 3px solid var(--paper-2); margin-left: -16px; background-size: cover; background-position: center; }
+  .avs i:first-child { margin-left: 0; }
+  .t-club .txt { flex: 1; }
+  .t-club b { display: block; font-size: 22px; letter-spacing: -0.02em; }
+  .t-club span { font-size: 16px; color: var(--ink-2); }
+  .badge { position: absolute; left: 492px; top: 400px; width: 128px; height: 128px; z-index: 4; }
+
+  /* MENU: typographic list */
+  .menu .top { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--line); padding-bottom: 36px; }
+  .menu .top p { margin: 0; max-width: 340px; font-size: 17px; line-height: 1.5; color: var(--ink-2); }
+  .menu .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 56px; margin-top: 44px; }
+  .menu h3 { margin: 0 0 10px; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 40px; letter-spacing: -0.01em; }
+  .row { display: flex; align-items: baseline; gap: 10px; padding: 16px 0; border-bottom: 1px dashed var(--line); }
+  .row b { font-size: 18px; font-weight: 600; }
+  .row .dots { flex: 1; }
+  .row .p { font-size: 18px; font-weight: 700; }
+  .row .u { font-size: 14px; color: var(--ink-3); }
+  .row small { display: block; font-size: 14px; color: var(--ink-3); margin-top: 3px; font-weight: 400; }
+  .tagp { display: inline-block; margin-left: 8px; font-size: 13px; font-weight: 700; background: var(--acc-2); color: var(--acc-2-ink); padding: 3px 10px; border-radius: 999px; vertical-align: 3px; }
+
+  /* CRAFT: bento features */
+  .craft { background: var(--paper-2); }
+  .craft .grid { margin-top: 48px; display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 250px 250px; gap: 16px; }
+  .f { border-radius: var(--r); padding: 30px; position: relative; overflow: hidden; background: var(--paper); }
+  .f .num { font-size: 84px; font-weight: 800; letter-spacing: -0.05em; line-height: 0.9; }
+  .f .num small { font-size: 28px; letter-spacing: -0.02em; }
+  .f h4 { margin: 0 0 8px; font-size: 22px; letter-spacing: -0.02em; }
+  .f p { margin: 0; font-size: 16px; line-height: 1.45; color: var(--ink-2); }
+  .f.btm { display: flex; flex-direction: column; justify-content: space-between; }
+  .f.ph { padding: 0; }
+  .f.k { grid-column: 2 / 4; grid-row: 1; background-position: 50% 45%; }
+  .f.dark { background: var(--dark); color: var(--on-dark); } .f.dark p { color: var(--on-dark-2); }
+  .f.dark .num { color: var(--acc-2); }
+  .f.blue { background: var(--acc); color: var(--acc-ink); } .f.blue p { color: var(--acc-ink); }
+  .f.case { grid-column: 4; grid-row: 1 / 3; background-position: 40% 70%; }
+  .f.case .lab, .f.k .lab { position: absolute; left: 16px; bottom: 16px; background: var(--paper); color: var(--ink); font-size: 14px; font-weight: 700; padding: 9px 14px; border-radius: 999px; }
+  .f.wide { grid-column: 2 / 4; grid-row: 2; display: flex; gap: 26px; align-items: center; }
+  .f.wide .ic { width: 64px; height: 64px; border-radius: 50%; background: var(--acc-soft); color: var(--acc); flex: none; display: flex; align-items: center; justify-content: center; }
+  .f.wide .ic svg { width: 28px; height: 28px; }
+
+  /* BAKER */
+  .baker { display: grid; grid-template-columns: 520px 1fr; gap: 72px; align-items: center; }
+  .baker .pic { height: 560px; border-radius: var(--r); background-position: 40% 40%; }
+  .baker blockquote { margin: 22px 0 30px; font-family: "Instrument Serif", serif; font-size: 50px; line-height: 1.08; letter-spacing: -0.015em; }
+  .baker blockquote em { color: var(--acc); }
+  .baker .who { display: flex; gap: 14px; align-items: center; font-size: 16px; color: var(--ink-2); }
+  .baker .who b { color: var(--ink); font-size: 17px; display: block; }
+  .baker .facts { display: flex; gap: 40px; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .baker .facts div { font-size: 15px; color: var(--ink-2); }
+  .baker .facts b { display: block; font-size: 30px; color: var(--ink); letter-spacing: -0.03em; }
+
+  /* FAQ */
+  .faq { display: grid; grid-template-columns: 400px 1fr; gap: 80px; padding-top: 24px; }
+  .faq .q { border-top: 1px solid var(--line); padding: 26px 0; display: flex; justify-content: space-between; gap: 20px; }
+  .faq .q:last-child { border-bottom: 1px solid var(--line); }
+  .faq .q b { font-size: 21px; letter-spacing: -0.015em; }
+  .faq .q p { margin: 10px 0 0; font-size: 16px; line-height: 1.5; color: var(--ink-2); max-width: 600px; }
+  .faq .pm { width: 44px; height: 44px; border-radius: 50%; flex: none; display: flex; align-items: center; justify-content: center; background: var(--paper-2); color: var(--ink); font-size: 22px; font-weight: 500; }
+  .faq .q.open .pm { background: var(--acc); color: var(--acc-ink); }
+  .faq aside p { font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 18px 0 26px; }
+
+  /* SPLIT CTA with form */
+  .cta { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-top: 24px; }
+  .cta .left { border-radius: var(--r); background-position: 50% 60%; position: relative; min-height: 600px; }
+  .cta .addr { position: absolute; left: 20px; right: 20px; bottom: 20px; background: var(--paper); border-radius: var(--r-sm); padding: 22px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; font-size: 15px; color: var(--ink-2); }
+  .cta .addr b { display: block; color: var(--ink); font-size: 16px; margin-bottom: 2px; }
+  .cta .form { background: var(--dark); color: var(--on-dark); border-radius: var(--r); padding: 48px 48px; }
+  .cta .form h2 { color: var(--on-dark); font-size: 64px; }
+  .cta .form h2 .it { color: var(--acc-2); }
+  .cta .form > p { font-size: 17px; color: var(--on-dark-2); margin: 14px 0 28px; }
+  .fld { display: block; margin-bottom: 14px; }
+  .fld span { display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-dark-2); margin-bottom: 8px; }
+  .fld div { height: 54px; border-radius: var(--r-sm); background: var(--paper); color: var(--ink-3); font-size: 16px; display: flex; align-items: center; padding: 0 18px; }
+  .chips { display: flex; gap: 8px; margin: 4px 0 24px; flex-wrap: wrap; }
+  .chips i { font-style: normal; height: 44px; display: inline-flex; align-items: center; padding: 0 18px; border-radius: 999px; font-size: 15px; font-weight: 600; background: var(--dark); color: var(--on-dark); box-shadow: inset 0 0 0 1.5px var(--on-dark-2); }
+  .chips i.on { background: var(--acc-2); color: var(--acc-2-ink); box-shadow: none; }
+  .cta .send { display: flex; gap: 10px; }
+  .cta .send .btn { flex: 1; justify-content: center; height: 58px; font-size: 17px; }
+  .cta .send .wa { width: 58px; height: 58px; }
+
+  footer { margin: 0 56px; padding: 30px 0 40px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: var(--ink-3); }
+  footer .logo { font-size: 20px; color: var(--ink); }
+  footer .logo .it { font-size: 23px; }
+</style></head>
+<body>
+<nav>
+  <div class="links"><span>Bread</span><span>Pastries</span><span>Cakes</span><span>Visit</span></div>
+  <div class="logo">rise <span class="it">bakehouse</span></div>
+  <div class="right"><span>Sea Point, Cape Town</span><a class="btn ink" href="#">Pre-order for tomorrow <svg class="a" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+</nav>
+
+<div class="hero">
+  <div class="bento">
+    <div class="tile t-head">
+      <span class="caps">Sourdough &amp; pastry &middot; Sea Point</span>
+      <h1>Warm <span class="it">loaves</span><br>by half past six.</h1>
+      <p>Baked overnight. Pre-order by 8pm and your loaf waits on the counter.</p>
+      <div class="ctas">
+        <a class="btn acc" href="#">Pre-order for tomorrow <svg class="a" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="wa" href="#" aria-label="WhatsApp us"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+      </div>
+    </div>
+    <div class="tile t-photo photo" style="background-image:url('../../stock/bakery/rack.jpg')">
+      <div class="clip"><div class="th photo" style="background-image:url('../../stock/bakery/loaves-tray.jpg')"></div><div><b>Country loaf &middot; R72</b><span>per loaf &middot; 2-day ferment</span></div></div>
+    </div>
+    <div class="tile t-rate">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="n">4.9<span class="it"> /5</span></div>
+      <p>from 640 Google reviews.<br>&ldquo;The cardamom bun is worth the queue.&rdquo;</p>
+    </div>
+    <div class="tile t-pastry photo" style="background-image:url('../../stock/bakery/loaf-table.jpg')"><span class="lab">Croissants from R30</span></div>
+    <div class="tile t-hours">
+      <div><div class="caps">Open today</div><div class="big">06:30&ndash;15:00</div><p>Sundays until 13:00</p></div>
+      <span class="live"><i></i>Ovens on</span>
+    </div>
+    <div class="tile t-club">
+      <div class="avs"><i style="background-image:url('../../stock/bakery/baker.jpg');background-position:62% 20%"></i><i style="background-image:url('../../stock/bakery/pastries.jpg')"></i><i style="background-image:url('../../stock/bakery/shop.jpg')"></i></div>
+      <div class="txt"><b>Join 1,800 regulars on the Friday list</b><span>One WhatsApp a week: what&rsquo;s coming out of the oven on Saturday.</span></div>
+      <a class="btn ghost" href="#">Join the list</a>
+    </div>
+  </div>
+  <svg class="badge" viewBox="0 0 128 128" aria-hidden="true">
+    <defs><path id="c" d="M64 64 m-48 0 a48 48 0 1 1 96 0 a48 48 0 1 1 -96 0"/></defs>
+    <circle cx="64" cy="64" r="64" fill="var(--ink)"/>
+    <text font-family="Schibsted Grotesk" font-size="13.5" font-weight="700" letter-spacing="2.6" fill="var(--on-dark)"><textPath href="#c">BAKED OVERNIGHT &#183; SEA POINT &#183; SINCE 2019 &#183;</textPath></text>
+    <circle cx="64" cy="64" r="14" fill="var(--acc-2)"/>
+  </svg>
+</div>
+
+<section class="menu">
+  <div class="top">
+    <div><span class="caps">The counter</span><h2>Tonight&rsquo;s bake, <span class="it">priced</span><br>before you walk in.</h2></div>
+    <p>Out of the oven between 4am and 6:30am. Pre-order to skip the queue.</p>
+  </div>
+  <div class="cols">
+    <div><h3>Bread</h3>
+      <div class="row"><div><b>Country loaf</b><span class="tagp">Most ordered</span><small>White and rye, 2-day ferment</small></div><span class="dots"></span><span class="p">R72</span><span class="u">/ loaf</span></div>
+      <div class="row"><div><b>Seeded rye</b><small>Sunflower, flax, pumpkin</small></div><span class="dots"></span><span class="p">R78</span><span class="u">/ loaf</span></div>
+      <div class="row"><div><b>Baguette</b><small>Out at 6:30 and 11:00</small></div><span class="dots"></span><span class="p">R34</span><span class="u">each</span></div>
+      <div class="row"><div><b>Olive focaccia</b><small>Kalamata, rosemary, salt</small></div><span class="dots"></span><span class="p">R58</span><span class="u">/ slab</span></div>
+    </div>
+    <div><h3>Pastry</h3>
+      <div class="row"><div><b>Butter croissant</b><small>Laminated over 3 days</small></div><span class="dots"></span><span class="p">R30</span><span class="u">each</span></div>
+      <div class="row"><div><b>Cardamom bun</b><span class="tagp">Sells out by 10</span><small>Swedish-style knot</small></div><span class="dots"></span><span class="p">R36</span><span class="u">each</span></div>
+      <div class="row"><div><b>Pain au chocolat</b><small>Two batons of dark chocolate</small></div><span class="dots"></span><span class="p">R38</span><span class="u">each</span></div>
+      <div class="row"><div><b>Almond croissant</b><small>Twice-baked, frangipane</small></div><span class="dots"></span><span class="p">R44</span><span class="u">each</span></div>
+    </div>
+    <div><h3>Cakes to order</h3>
+      <div class="row"><div><b>Carrot &amp; walnut</b><small>Cream cheese icing</small></div><span class="dots"></span><span class="p">R420</span><span class="u">/ 20 cm</span></div>
+      <div class="row"><div><b>Lemon olive oil</b><small>Glazed, serves 10</small></div><span class="dots"></span><span class="p">R390</span><span class="u">/ 20 cm</span></div>
+      <div class="row"><div><b>Chocolate stout</b><small>Ganache, serves 12</small></div><span class="dots"></span><span class="p">R460</span><span class="u">/ 22 cm</span></div>
+      <div class="row"><div><b>Name on top</b><small>Piped by hand</small></div><span class="dots"></span><span class="p">R40</span><span class="u">extra</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="craft">
+  <span class="caps">How we bake</span>
+  <h2>Slow dough. <span class="it">Early</span> ovens.</h2>
+  <div class="grid">
+    <div class="f dark btm"><div class="num">48<small> hrs</small></div><div><h4>Of ferment</h4><p>Every loaf rests two nights before it bakes.</p></div></div>
+    <div class="f ph k photo" style="background-image:url('../../stock/bakery/kneading.jpg')"><span class="lab">Shaped by hand, every loaf</span></div>
+    <div class="f ph case photo" style="background-image:url('../../stock/bakery/pastries.jpg')"><span class="lab">The 7am counter</span></div>
+    <div class="f blue btm"><div class="num">4<small> am</small></div><div><h4>First tray out</h4><p>Pastry goes in while Sea Point sleeps.</p></div></div>
+    <div class="f wide"><div class="ic"><svg class="a" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM17 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg></div><div><h4>Delivery before 9am</h4><p>Sea Point, Green Point and the Bo-Kaap. R35 per order, free over R300.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="baker">
+    <div class="pic photo" style="background-image:url('../../stock/bakery/baker.jpg')"></div>
+    <div>
+      <span class="caps">Head baker</span>
+      <blockquote>&ldquo;I light the oven at 2am so your loaf is still <em>warm</em> at 6:30.&rdquo;</blockquote>
+      <div class="who"><div><b>Naledi Khumalo</b>Founder and head baker, Rise Bakehouse</div></div>
+      <div class="facts"><div><b>2019</b>Opened on Regent Road</div><div><b>320</b>Loaves on a Saturday</div><div><b>6</b>Bakers on the night shift</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <aside><span class="caps">Good to know</span><h2>Before you <span class="it">order</span></h2><p>Still unsure? Send us a WhatsApp and a baker answers within the hour.</p><a class="btn ghost" href="#">WhatsApp a baker</a></aside>
+  <div>
+    <div class="q open"><div><b>How late can I pre-order for tomorrow?</b><p>Until 8pm. Pay online and your order waits on the counter with your name from 6:30am.</p></div><span class="pm">&minus;</span></div>
+    <div class="q"><div><b>How much notice do you need for a cake?</b></div><span class="pm">+</span></div>
+    <div class="q"><div><b>Do you bake anything without wheat?</b></div><span class="pm">+</span></div>
+    <div class="q"><div><b>Can caf&eacute;s and restaurants order wholesale?</b></div><span class="pm">+</span></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="left photo" style="background-image:url('../../stock/bakery/shop.jpg')">
+    <div class="addr"><div><b>Find us</b>14 Regent Road, Sea Point</div><div><b>Mon&ndash;Sat</b>06:30&ndash;15:00</div><div><b>Parking</b>Bays on Regent Road</div><div><b>Sunday</b>07:00&ndash;13:00</div></div>
+  </div>
+  <div class="form">
+    <span class="caps" style="color:var(--on-dark-2)">Pre-order</span>
+    <h2>Your loaf, <span class="it">waiting</span><br>at 6:30.</h2>
+    <p>Order by 8pm tonight. Collect tomorrow morning.</p>
+    <div class="fld"><span>Your name</span><div>Thabo M.</div></div>
+    <div class="fld"><span>WhatsApp number</span><div>082 000 0000</div></div>
+    <div class="fld"><span>What you&rsquo;d like</span><div>1 country loaf, 4 croissants</div></div>
+    <div class="chips"><i class="on">6:30&ndash;8:00</i><i>8:00&ndash;10:00</i><i>10:00&ndash;12:00</i></div>
+    <div class="send">
+      <a class="btn acc" href="#">Pre-order for tomorrow <svg class="a" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="wa" href="#" aria-label="WhatsApp us"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="logo">rise <span class="it">bakehouse</span></div><span>&copy; 2026 Rise Bakehouse &middot; Sea Point, Cape Town</span><span>Concept by CAAS Studios</span></footer>
+</body></html>
