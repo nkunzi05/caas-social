@@ -266,7 +266,10 @@
       ],
       "font": "serif",
       "shape": "sharp",
-      "mode": "tinted"
+      "mode": "tinted",
+      "type": "reel",
+      "hook": "Which garden plan would you sign up for?",
+      "metricool_id": 402891842
     }
   ],
   "queue": [
