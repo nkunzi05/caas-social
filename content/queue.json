@@ -244,16 +244,32 @@
       "type": "reel",
       "hook": "Which bakery site would you order from?",
       "metricool_id": 401869662
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "ab",
       "slug": "landscaping",
       "brand": "Greenline Gardens",
       "industry": "landscaping & garden care",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-22-ab-landscaping",
+      "palette": "butter",
+      "accent": "#D4E86A",
+      "dark": "#12301F",
+      "ui_ref": "03",
+      "layout": "split-screen",
+      "sections": [
+        "tabs",
+        "before-after-strip",
+        "timeline",
+        "map-hours",
+        "photo-band"
+      ],
+      "font": "serif",
+      "shape": "sharp",
+      "mode": "tinted"
+    }
+  ],
+  "queue": [
     {
       "format": "monitor",
       "slug": "dentist",

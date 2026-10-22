@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Greenline Gardens concept site</title>
+<link rel="stylesheet" href="../../brand/fonts.css">
+<style>
+  /* Layout: split-screen · font: serif (Instrument Serif display + Schibsted body) · shape: sharp · mode: tinted · UI board 03 (italic accent word over bold word with full stop, slide counter, dot pagination, lowercase logo with accent dot) */
+  :root {
+    --ink: #13201A; --ink-2: #384A3F; --ink-3: #4F5F55; --paper: #EEF2E7; --paper-2: #E2E9D8; --line: #C4CFBA; --white: #FFFFFF;
+    --acc: #D4E86A; --acc-ink: #0B2016; --acc-soft: #E9F2B8;
+    --dark: #12301F; --dark-2: #0B2016; --on-dark: #FFFFFF; --on-dark-2: #C9D6CB; --line-dark: rgba(255,255,255,0.16);
+    --wa: #25D366; --wa-ink: #FFFFFF; --star: #F5B83D;
+    --scrim: rgba(11,32,22,0.72); --scrim-0: rgba(11,32,22,0); --glass: rgba(11,32,22,0.78);
+    --r: 2px;
+  }
+  * { box-sizing: border-box; } html, body { margin: 0; }
+  body { width: 1280px; background: var(--paper); font-family: "Schibsted Grotesk", sans-serif; color: var(--ink); }
+  .photo { background-size: cover; background-position: center; }
+  .serif { font-family: "Instrument Serif", serif; font-weight: 400; }
+  .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+  .caps { font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); }
+  .btn { display: inline-flex; align-items: center; gap: 12px; height: 56px; padding: 0 26px; border-radius: var(--r); font-weight: 700; font-size: 16px; text-decoration: none; white-space: nowrap; }
+  .btn.acc { background: var(--acc); color: var(--acc-ink); }
+  .btn.ink { background: var(--ink); color: var(--on-dark); }
+  .btn.line { color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+  .wa { width: 56px; height: 56px; border-radius: var(--r); background: var(--wa); display: inline-flex; align-items: center; justify-content: center; flex: none; }
+  .wa svg { width: 26px; height: 26px; fill: var(--wa-ink); }
+  svg.a { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  section { padding: 104px 56px; }
+  h2 { margin: 16px 0 0; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 72px; line-height: 0.98; letter-spacing: -0.015em; }
+  h2 .it { color: var(--dark); }
+  .sub { font-size: 18px; line-height: 1.5; color: var(--ink-2); max-width: 470px; margin: 18px 0 0; }
+
+  /* NAV */
+  nav { height: 80px; padding: 0 56px; display: flex; align-items: center; gap: 34px; background: var(--dark-2); color: var(--on-dark-2); font-size: 15px; font-weight: 500; }
+  .logo { font-family: "Instrument Serif", serif; font-size: 34px; color: var(--on-dark); letter-spacing: -0.01em; margin-right: auto; line-height: 1; }
+  .logo i { font-style: normal; color: var(--acc); }
+  nav .btn { height: 48px; font-size: 15px; padding: 0 20px; }
+  nav .tel { color: var(--on-dark); font-weight: 700; }
+
+  /* HERO: split screen */
+  .hero { display: grid; grid-template-columns: 640px 640px; height: 740px; }
+  .h-copy { background: var(--dark); color: var(--on-dark); padding: 84px 56px 56px; display: flex; flex-direction: column; position: relative; }
+  .h-copy .caps { color: var(--acc); }
+  .h-copy h1 { margin: 26px 0 0; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 118px; line-height: 0.9; letter-spacing: -0.02em; }
+  .h-copy h1 .it { color: var(--acc); display: block; }
+  .h-copy p { margin: 26px 0 0; font-size: 19px; line-height: 1.5; color: var(--on-dark-2); max-width: 460px; }
+  .h-copy .ctas { display: flex; gap: 10px; margin-top: 34px; }
+  .h-copy .proof { margin-top: auto; padding-top: 22px; border-top: 1px solid var(--line-dark); display: flex; gap: 28px; font-size: 15px; color: var(--on-dark-2); }
+  .h-copy .proof b { color: var(--on-dark); }
+  .h-copy .proof .stars { color: var(--star); letter-spacing: 2px; }
+  .collage { position: relative; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; padding: 8px; background: var(--dark-2); }
+  .c1 { grid-row: 1 / 3; background-position: 40% 50%; }
+  .c2 { background-position: 50% 30%; }
+  .c3 { background-position: 50% 55%; }
+  .plan { position: absolute; left: 36px; bottom: 36px; width: 360px; background: var(--glass); backdrop-filter: blur(14px); color: var(--on-dark); padding: 24px 24px 22px; border-radius: var(--r); border-top: 3px solid var(--acc); }
+  .plan .top { display: flex; justify-content: space-between; align-items: center; }
+  .plan .cnt { font-size: 15px; font-weight: 800; color: var(--acc); letter-spacing: 0.04em; }
+  .plan .dots { display: flex; gap: 6px; } .plan .dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--on-dark-2); opacity: 0.5; display: block; }
+  .plan .dots i.on { width: 20px; border-radius: 4px; background: var(--acc); opacity: 1; }
+  .plan .acw { font-family: "Instrument Serif", serif; font-style: italic; font-size: 36px; color: var(--acc); line-height: 1; margin-top: 14px; }
+  .plan .big { font-size: 44px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+  .plan p { margin: 12px 0 16px; font-size: 15px; line-height: 1.45; color: var(--on-dark-2); }
+  .plan p b { color: var(--on-dark); }
+  .plan .row { display: flex; gap: 8px; } .plan .btn { flex: 1; justify-content: center; height: 52px; font-size: 15px; } .plan .wa { width: 52px; height: 52px; }
+
+  /* SERVICES: tabs */
+  .svc-head { display: flex; justify-content: space-between; align-items: flex-end; }
+  .tabs { display: flex; margin-top: 48px; border-bottom: 1px solid var(--line); }
+  .tab { height: 60px; padding: 0 28px; display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 600; color: var(--ink-3); border-bottom: 3px solid transparent; margin-bottom: -1px; }
+  .tab.on { color: var(--ink); border-bottom-color: var(--ink); }
+  .tab .n { font-size: 13px; font-weight: 700; color: var(--ink-3); }
+  .panel { display: grid; grid-template-columns: 560px 1fr; gap: 56px; margin-top: 40px; }
+  .panel .ph { height: 470px; border-radius: var(--r); background-position: 50% 50%; position: relative; }
+  .panel .ph .tag { position: absolute; left: 16px; bottom: 16px; background: var(--paper); color: var(--ink); font-size: 14px; font-weight: 700; padding: 10px 14px; border-radius: var(--r); }
+  .panel h3 { margin: 0; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 44px; line-height: 1.02; }
+  .panel .lead { margin: 12px 0 22px; font-size: 17px; line-height: 1.5; color: var(--ink-2); }
+  .prices { border-top: 1px solid var(--ink); }
+  .pr { display: grid; grid-template-columns: 1fr auto; align-items: baseline; padding: 17px 0; border-bottom: 1px solid var(--line); }
+  .pr b { font-size: 19px; } .pr span { display: block; font-size: 15px; color: var(--ink-3); margin-top: 4px; }
+  .pr .amt { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; text-align: right; }
+  .pr .amt small { font-size: 14px; font-weight: 500; color: var(--ink-3); letter-spacing: 0; }
+  .pr .chip { display: inline-block; margin-left: 10px; background: var(--acc); color: var(--acc-ink); font-size: 13px; font-weight: 700; padding: 4px 9px; border-radius: var(--r); vertical-align: 3px; }
+  .panel .ctas { display: flex; gap: 10px; margin-top: 26px; }
+
+  /* PROOF: before/after strip */
+  .proof-s { background: var(--dark); color: var(--on-dark); }
+  .proof-s .caps { color: var(--acc); }
+  .proof-s h2 .it { color: var(--acc); }
+  .proof-s .sub { color: var(--on-dark-2); }
+  .ba-head { display: grid; grid-template-columns: 1fr 380px; gap: 56px; align-items: end; }
+  .strip { display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: 8px; margin-top: 52px; }
+  .st { height: 420px; position: relative; border-radius: var(--r); }
+  .st .lab { position: absolute; left: 0; bottom: 0; right: 0; padding: 56px 20px 18px; background: linear-gradient(180deg, var(--scrim-0), var(--scrim) 55%); display: flex; justify-content: space-between; align-items: baseline; }
+  .st .lab b { font-size: 17px; } .st .lab span { font-size: 14px; color: var(--on-dark-2); }
+  .st .wk { position: absolute; left: 16px; top: 16px; background: var(--acc); color: var(--acc-ink); font-size: 14px; font-weight: 800; padding: 8px 12px; border-radius: var(--r); }
+  .quote { margin-top: 52px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; padding-top: 32px; border-top: 1px solid var(--line-dark); }
+  .quote p { margin: 0; font-family: "Instrument Serif", serif; font-size: 40px; line-height: 1.15; max-width: 860px; }
+  .quote .who { font-size: 15px; color: var(--on-dark-2); text-align: right; } .quote .who b { color: var(--on-dark); display: block; font-size: 17px; }
+
+  /* PROCESS: horizontal timeline */
+  .tl { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 64px; }
+  .tl::before { content: ""; position: absolute; left: 0; right: 0; top: 23px; height: 1px; background: var(--ink); }
+  .node { position: relative; }
+  .node .dot { width: 48px; height: 48px; background: var(--paper); border: 1.5px solid var(--ink); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800; border-radius: var(--r); }
+  .node.on .dot { background: var(--acc); border-color: var(--acc-ink); color: var(--acc-ink); }
+  .node .when { margin-top: 26px; }
+  .node h4 { margin: 10px 0 0; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 32px; line-height: 1.05; }
+  .node p { margin: 10px 0 0; font-size: 16px; line-height: 1.5; color: var(--ink-2); }
+
+  /* AREAS: map + hours */
+  .areas { background: var(--paper-2); display: grid; grid-template-columns: 600px 1fr; gap: 64px; align-items: center; }
+  .map { height: 520px; background: var(--dark); position: relative; border-radius: var(--r); overflow: hidden; }
+  .map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .pin { position: absolute; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--on-dark); }
+  .pin i { width: 14px; height: 14px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 0 6px var(--glass); display: block; }
+  .pin.base { background: var(--acc); color: var(--acc-ink); padding: 8px 12px; border-radius: var(--r); }
+  .sub-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+  .sub-list span { font-size: 15px; font-weight: 600; padding: 10px 14px; border: 1px solid var(--ink); border-radius: var(--r); }
+  .hours { margin-top: 34px; border-top: 1px solid var(--ink); }
+  .hours div { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 17px; }
+  .hours div b { font-weight: 700; } .hours div span { color: var(--ink-2); }
+
+  /* CTA: photo band */
+  .band { position: relative; height: 560px; padding: 0; }
+  .band .ph { position: absolute; inset: 0; background-position: 50% 45%; }
+  .band .shade { position: absolute; inset: 0; background: linear-gradient(90deg, var(--scrim) 0%, var(--scrim) 42%, var(--scrim-0) 80%); }
+  .band .in { position: relative; padding: 110px 56px; color: var(--on-dark); max-width: 760px; }
+  .band .caps { color: var(--acc); }
+  .band h2 { font-size: 84px; } .band h2 .it { color: var(--acc); display: block; }
+  .band p { font-size: 19px; line-height: 1.5; color: var(--on-dark-2); margin: 20px 0 32px; max-width: 480px; }
+  .band .ctas { display: flex; gap: 10px; }
+
+  footer { background: var(--dark-2); color: var(--on-dark-2); padding: 48px 56px; display: flex; align-items: center; gap: 40px; font-size: 15px; }
+  footer .logo { font-size: 30px; margin-right: auto; }
+  footer b { color: var(--on-dark); }
+</style></head>
+<body>
+<nav>
+  <span class="logo">greenline<i>.</i></span>
+  <span>Garden plans</span><span>Services</span><span>Our work</span><span>Areas</span>
+  <a class="btn acc" href="#">Book a free garden visit</a>
+</nav>
+
+<header class="hero">
+  <div class="h-copy">
+    <span class="caps">Southern Suburbs · Cape Town</span>
+    <h1>Your garden, <span class="it">already done.</span></h1>
+    <p>Fortnightly lawn, hedge and bed care from one team that knows your garden.</p>
+    <div class="ctas"><a class="btn acc" href="#">Book a free garden visit <svg class="a" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="wa" href="#" aria-label="WhatsApp us"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a></div>
+    <div class="proof"><span><span class="stars">★★★★★</span> <b>4.9</b> from 214 reviews</span><span><b>Same team</b> every visit</span><span><b>Fixed</b> monthly price</span></div>
+  </div>
+  <div class="collage">
+    <div class="c1 photo" style="background-image: url('../../stock/landscaping/brick-path.jpg')"></div>
+    <div class="c2 photo" style="background-image: url('../../stock/landscaping/trimmer.jpg')"></div>
+    <div class="c3 photo" style="background-image: url('../../stock/landscaping/sod.jpg')"></div>
+    <div class="plan">
+      <div class="top"><span class="cnt">02/04 · Most booked plan</span><span class="dots"><i></i><i class="on"></i><i></i><i></i></span></div>
+      <div class="acw">neat lawns,</div>
+      <div class="big">on repeat.</div>
+      <p><b>R1,450 / month.</b> Two visits: mow, edge, hedges, beds, waste removed.</p>
+      <div class="row"><a class="btn acc" href="#">Book a free garden visit</a><a class="wa" href="#" aria-label="WhatsApp us"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a></div>
+    </div>
+  </div>
+</header>
+
+<section class="svc">
+  <div class="svc-head">
+    <div><span class="caps">Services</span><h2>Lawn, hedges, beds <span class="it">and water.</span></h2></div>
+    <p class="sub">Pick a plan or a once-off job. Every price is fixed upfront.</p>
+  </div>
+  <div class="tabs">
+    <span class="tab on"><span class="n">01</span>Lawn care</span>
+    <span class="tab"><span class="n">02</span>Hedges &amp; trees</span>
+    <span class="tab"><span class="n">03</span>Garden makeovers</span>
+    <span class="tab"><span class="n">04</span>Irrigation</span>
+  </div>
+  <div class="panel">
+    <div class="ph photo" style="background-image: url('../../stock/landscaping/mowing.jpg')"><span class="tag">Striped cut, Bishopscourt</span></div>
+    <div>
+      <h3>Lawns cut, edged and fed on a schedule.</h3>
+      <p class="lead">Cut at the right height for kikuyu or buffalo, edged, clippings gone.</p>
+      <div class="prices">
+        <div class="pr"><div><b>Fortnightly care</b><span class="chip">Most booked</span><span>2 visits, mow, edge, hedges, waste removed</span></div><div class="amt">R1,450 <small>/ month</small></div></div>
+        <div class="pr"><div><b>Weekly care</b><span>4 visits, plus feeding every season</span></div><div class="amt">R2,600 <small>/ month</small></div></div>
+        <div class="pr"><div><b>Once-off clean-up</b><span>Overgrown garden back in shape in a day</span></div><div class="amt"><small>from</small> R1,200</div></div>
+        <div class="pr"><div><b>Instant lawn</b><span>Buffalo or kikuyu, laid and rolled</span></div><div class="amt">R95 <small>/ m²</small></div></div>
+      </div>
+      <div class="ctas"><a class="btn ink" href="#">Book a free garden visit</a><a class="btn line" href="#">See all prices</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="proof-s">
+  <div class="ba-head">
+    <div><span class="caps">Recent job · Constantia</span><h2>One garden, <span class="it">six weeks apart.</span></h2></div>
+    <p class="sub">Clear-out, new lawn, then fortnightly care. The Naidoo family hasn't touched a mower since.</p>
+  </div>
+  <div class="strip">
+    <div class="st photo" style="background-image: url('../../stock/landscaping/wheelbarrow.jpg'); background-position: 50% 40%"><span class="wk">Week 1</span><div class="lab"><b>Clear-out</b><span>3 loads of waste</span></div></div>
+    <div class="st photo" style="background-image: url('../../stock/landscaping/sod.jpg')"><span class="wk">Week 2</span><div class="lab"><b>New lawn laid</b><span>140 m² buffalo</span></div></div>
+    <div class="st photo" style="background-image: url('../../stock/landscaping/deck.jpg'); background-position: 50% 50%"><span class="wk">Week 6</span><div class="lab"><b>Settled and kept</b><span>Fortnightly plan</span></div></div>
+  </div>
+  <div class="quote"><p>“Same two guys every second Tuesday. They know which roses I fuss over, and the lawn has never looked this even.”</p><div class="who"><b>Priya Naidoo</b>Constantia · client since 2024</div></div>
+</section>
+
+<section class="steps">
+  <span class="caps">How it works</span>
+  <h2>Quote in a day. <span class="it">First cut</span> in five.</h2>
+  <div class="tl">
+    <div class="node on"><div class="dot">01</div><div class="when caps">Day 1</div><h4>Free garden visit</h4><p>We walk the garden with you for 30 minutes and measure the lawn.</p></div>
+    <div class="node"><div class="dot">02</div><div class="when caps">Within 24 h</div><h4>Fixed quote on WhatsApp</h4><p>One monthly price, with photos of what we'll do first.</p></div>
+    <div class="node"><div class="dot">03</div><div class="when caps">Day 5</div><h4>Clean-up visit</h4><p>Beds weeded, hedges shaped, edges cut back to sharp lines.</p></div>
+    <div class="node"><div class="dot">04</div><div class="when caps">Every 2 weeks</div><h4>Same team, same day</h4><p>A WhatsApp the day before, and photos when we leave.</p></div>
+  </div>
+</section>
+
+<section class="areas">
+  <div class="map">
+    <svg viewBox="0 0 600 520" preserveAspectRatio="none" aria-hidden="true">
+      <g fill="none" stroke="currentColor" style="color: var(--on-dark-2)" opacity="0.28" stroke-width="1.2">
+        <path d="M-10 120 C 120 90, 220 160, 330 130 S 520 70, 620 110"/><path d="M-10 250 C 140 220, 240 290, 360 250 S 520 200, 620 240"/>
+        <path d="M-10 390 C 110 370, 260 420, 380 380 S 540 340, 620 370"/><path d="M150 -10 C 170 120, 120 260, 170 530"/>
+        <path d="M330 -10 C 300 140, 360 300, 320 530"/><path d="M470 -10 C 500 160, 450 330, 490 530"/>
+      </g>
+    </svg>
+    <span class="pin" style="left: 380px; top: 66px"><i></i>Rondebosch</span>
+    <span class="pin" style="left: 250px; top: 140px"><i></i>Newlands</span>
+    <span class="pin" style="left: 400px; top: 196px"><i></i>Claremont</span>
+    <span class="pin base" style="left: 150px; top: 236px">Our yard · Wynberg</span>
+    <span class="pin" style="left: 70px; top: 330px"><i></i>Bishopscourt</span>
+    <span class="pin" style="left: 330px; top: 350px"><i></i>Constantia</span>
+    <span class="pin" style="left: 120px; top: 440px"><i></i>Tokai</span>
+  </div>
+  <div>
+    <span class="caps">Areas &amp; hours</span>
+    <h2>Twenty minutes from <span class="it">your gate.</span></h2>
+    <p class="sub">Our teams work the Southern Suburbs only, so we're never late.</p>
+    <div class="sub-list"><span>Rondebosch</span><span>Newlands</span><span>Claremont</span><span>Bishopscourt</span><span>Wynberg</span><span>Constantia</span><span>Bergvliet</span><span>Tokai</span></div>
+    <div class="hours">
+      <div><b>Garden visits</b><span>Mon – Fri, 7:00 – 16:00</span></div>
+      <div><b>Free garden visits</b><span>Sat, 8:00 – 12:00</span></div>
+      <div><b>WhatsApp replies</b><span>Within 2 hours, every day</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="ph photo" style="background-image: url('../../stock/landscaping/deck.jpg')"></div>
+  <div class="shade"></div>
+  <div class="in">
+    <span class="caps">Free, no obligation</span>
+    <h2>Walk your garden <span class="it">with us, free.</span></h2>
+    <p>Thirty minutes, a measured lawn and a fixed monthly price on WhatsApp.</p>
+    <div class="ctas"><a class="btn acc" href="#">Book a free garden visit <svg class="a" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="wa" href="#" aria-label="WhatsApp us"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a></div>
+  </div>
+</section>
+
+<footer>
+  <span class="logo">greenline<i>.</i></span>
+  <span>Garden plans · Services · Areas</span>
+  <span>Invented business</span>
+  <span><b>Concept by CAAS Studios</b> · © 2026</span>
+</footer>
+</body></html>
