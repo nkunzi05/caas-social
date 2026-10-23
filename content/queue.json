@@ -271,16 +271,35 @@
       "hook": "Which garden plan would you sign up for?",
       "metricool_id": 402894485,
       "music": "upbeat"
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "monitor",
       "slug": "dentist",
       "brand": "Brightside Dental",
       "industry": "family dental practice",
-      "status": "todo"
-    },
+      "status": "posted",
+      "accent": "#FF8A5B",
+      "dark": "#0D3B39",
+      "ui_ref": "01",
+      "layout": "inset-card",
+      "sections": [
+        "price-table",
+        "gallery-masonry",
+        "review-cards",
+        "accordion",
+        "split-form"
+      ],
+      "font": "sans",
+      "shape": "round",
+      "mode": "light",
+      "inspiration": "https://www.siteinspire.com/website/9129-deakin-dental (clinical-light mood only; live site could not be opened this run)",
+      "post": "posts/2026-10-23-monitor-dentist",
+      "type": "reel",
+      "hook": "Would you book your dentist on this site?",
+      "music": "chill"
+    }
+  ],
+  "queue": [
     {
       "format": "landing",
       "slug": "photographer",
