@@ -96,3 +96,10 @@ landscaping/brick-path.jpg https://images.unsplash.com/photo-1700689807667-82630
 landscaping/trimmer.jpg https://images.unsplash.com/photo-1689728318937-17d24bc0a65c https://unsplash.com/photos/xWAsrLw_1hk
 landscaping/deck.jpg https://images.unsplash.com/photo-1617850687395-620757feb1f3 https://unsplash.com/photos/28c3pajQlyI
 landscaping/crew.jpg https://images.unsplash.com/photo-1779636489740-6077a4198be6 https://unsplash.com/photos/BKBRtbcjlxI
+dentist/consult.jpg https://images.unsplash.com/photo-1777331903190-341a3dd0441b https://unsplash.com/photos/Bg81yWKZlMg
+dentist/office.jpg https://images.unsplash.com/photo-1629909613654-28e377c37b09 https://unsplash.com/photos/e7MJLM5VGjY
+dentist/waiting.jpg https://images.unsplash.com/photo-1762625570087-6d98fca29531 https://unsplash.com/photos/pxOQ-P97sA8
+dentist/chair.jpg https://images.unsplash.com/photo-1598256989800-fe5f95da9787 https://unsplash.com/photos/XJptUS8nbhs
+dentist/tools.jpg https://images.unsplash.com/photo-1771442873038-dda05b6ca447 https://unsplash.com/photos/98eodnv1abo
+dentist/doctor.jpg https://images.unsplash.com/photo-1758691463582-11aea602cd4a https://unsplash.com/photos/XqMo4OlBnh0
+dentist/exam.jpg https://images.unsplash.com/photo-1606811971618-4486d14f3f99 https://unsplash.com/photos/8BkF0sTC6Uo
