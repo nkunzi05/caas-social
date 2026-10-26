@@ -298,16 +298,37 @@
       "hook": "Would you book your dentist on this site?",
       "music": "chill",
       "metricool_id": 403915479
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "landing",
       "slug": "photographer",
       "brand": "Frame Nine",
       "industry": "wedding & portrait photographer",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-26-landing-photographer",
+      "number": 5,
+      "palette": "midnight",
+      "accent": "#7A2338",
+      "dark": "#231B19",
+      "ui_ref": "02",
+      "layout": "editorial-split",
+      "sections": [
+        "numbered-rows",
+        "photo-facts",
+        "pull-quote",
+        "menu-list",
+        "step-timeline",
+        "photo-band"
+      ],
+      "font": "serif",
+      "shape": "sharp",
+      "mode": "light",
+      "type": "reel",
+      "hook": "Would you book your photographer from this?",
+      "music": "chill"
+    }
+  ],
+  "queue": [
     {
       "format": "before-after",
       "slug": "mechanic",
