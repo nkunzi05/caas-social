@@ -325,7 +325,9 @@
       "mode": "light",
       "type": "reel",
       "hook": "Would you book your photographer from this?",
-      "music": "chill"
+      "music": "chill",
+      "metricool_id": 406326335,
+      "scheduled": "2026-10-26T10:30:00+02:00"
     }
   ],
   "queue": [
