@@ -328,16 +328,34 @@
       "music": "chill",
       "metricool_id": 406326335,
       "scheduled": "2026-10-26T10:30:00+02:00"
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "before-after",
       "slug": "mechanic",
       "brand": "Torque Auto",
       "industry": "auto mechanic",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-27-before-after-mechanic",
+      "palette": "sand",
+      "accent": "#F2B705",
+      "dark": "#08090A",
+      "ui_ref": "01",
+      "layout": "dark-mono",
+      "sections": [
+        "outline-cards",
+        "stat-row",
+        "numbered-process",
+        "review-cards",
+        "faq-accordion",
+        "giant-type-cta"
+      ],
+      "font": "sans",
+      "shape": "soft",
+      "mode": "dark",
+      "music": "upbeat"
+    }
+  ],
+  "queue": [
     {
       "format": "ab",
       "slug": "cleaning",
