@@ -352,7 +352,11 @@
       "font": "sans",
       "shape": "soft",
       "mode": "dark",
-      "music": "upbeat"
+      "music": "upbeat",
+      "type": "reel",
+      "hook": "Which garage would you trust with your car?",
+      "metricool_id": 407523428,
+      "scheduled": "2026-10-27T10:30:00+02:00"
     }
   ],
   "queue": [
