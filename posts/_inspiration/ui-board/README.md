@@ -1,6 +1,8 @@
 # UI inspiration board (from Prosper, 2026-10-16)
 
-Hero / landing-page styles Prosper wants the posts to draw from. Borrow the *design language and UI details* only.
+Hero / landing-page styles Prosper wants the posts to draw from.
+
+**Since 2026-10-28 (Prosper): headers and hero sections take their theme from 01 and 03 together** (dark stage, focal subject floating on a matching dark ground with a coloured glow, pill nav, italic-over-bold headline, counter/arrows/dots, rotating badge). 02 stays only as a reference for lower sections. Borrow the *design language and UI details* only.
 Never copy their names, logos, wording, artwork or exact layout. Every business stays invented, with fresh copy and our own Unsplash photos.
 
 ## 01-dark-neon-agency.jpg: dark hero with a glowing focal object

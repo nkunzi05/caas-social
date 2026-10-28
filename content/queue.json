@@ -357,16 +357,35 @@
       "hook": "Which garage would you trust with your car?",
       "metricool_id": 407523428,
       "scheduled": "2026-10-27T10:30:00+02:00"
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "ab",
       "slug": "cleaning",
       "brand": "Spotless Co.",
       "industry": "home & office cleaning",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-28-ab-cleaning",
+      "palette": "sage",
+      "accent": "#2348D9",
+      "dark": "#0B1430",
+      "ui_ref": "03+01",
+      "layout": "bento",
+      "sections": [
+        "menu-list",
+        "big-testimonial",
+        "bento-steps",
+        "faq-accordion",
+        "booking-bar"
+      ],
+      "font": "condensed",
+      "shape": "round",
+      "mode": "tinted",
+      "music": "lofi",
+      "type": "reel",
+      "hook": "Which one makes you book a cleaner: A or B?"
+    }
+  ],
+  "queue": [
     {
       "format": "columns",
       "slug": "architect",
