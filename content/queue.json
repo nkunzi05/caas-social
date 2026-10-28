@@ -382,7 +382,9 @@
       "mode": "tinted",
       "music": "lofi",
       "type": "reel",
-      "hook": "Which one makes you book a cleaner: A or B?"
+      "hook": "Which one makes you book a cleaner: A or B?",
+      "metricool_id": 408657331,
+      "scheduled": "2026-10-28T10:30:00+02:00"
     }
   ],
   "queue": [
