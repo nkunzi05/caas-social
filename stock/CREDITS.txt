@@ -115,3 +115,11 @@ mechanic/oil-change.jpg | https://images.unsplash.com/photo-1643700973089-baa86a
 mechanic/tools-box.jpg | https://images.unsplash.com/photo-1637640125496-31852f042a60 | https://unsplash.com/photos/OegFhZfw6Ok
 mechanic/suv-garage.jpg | https://images.unsplash.com/photo-1625047509168-a7026f36de04 | https://unsplash.com/photos/iFQpqbLMOFU
 mechanic/under-car.jpg | https://images.unsplash.com/photo-1643701079732-3b1c7a797e3d | https://unsplash.com/photos/FHrxSBfNzLw
+cleaning/mop-living.jpg | https://images.unsplash.com/photo-1758273238415-01ec03d9ef27 | https://unsplash.com/photos/2NcTLdFHpH8
+cleaning/office-vacuum.jpg | https://images.unsplash.com/photo-1781637590564-01c65dbf2039 | https://unsplash.com/photos/CVcIMnH_7so
+cleaning/desk-spray.jpg | https://images.unsplash.com/photo-1627905646269-7f034dcc5738 | https://unsplash.com/photos/-9gPKrsbGmc
+cleaning/vacuum-dog.jpg | https://images.unsplash.com/photo-1778062868373-e3cb41963ae5 | https://unsplash.com/photos/vhuwdhibmlg
+cleaning/stairs-caddy.jpg | https://images.unsplash.com/photo-1646980241033-cd7abda2ee88 | https://unsplash.com/photos/FhsFUo-Wfc0
+cleaning/kitchen.jpg | https://images.unsplash.com/photo-1757387240036-d7eb9b096c40 | https://unsplash.com/photos/nTqR3B3dp-Q
+cleaning/ottoman.jpg | https://images.unsplash.com/photo-1686178827149-6d55c72d81df | https://unsplash.com/photos/5TXz228u4eo
+cleaning/spray-bottles.jpg | https://images.unsplash.com/photo-1528740561666-dc2479dc08ab | https://unsplash.com/photos/uooMllXe6gE
