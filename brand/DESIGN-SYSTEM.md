@@ -54,3 +54,14 @@ Record these on the queue item, e.g. `"layout": "bento", "sections": ["tabs","te
 - Run `python3 tools/a11y_check.py posts/<id>`: zero FAIL lines before publishing. Then look at every "check by eye" line in the render and confirm a shade or scrim sits behind it.
 - No meaning by colour alone: a "Most booked" chip has words, not just colour.
 - Real `<img>` tags (if any) have alt text. Buttons are `<a>` or `<button>` with text.
+
+## 5. SEO hero rules (every site, Prosper 2026-10-28)
+The hero text must always be search-optimised, written the way a local customer searches:
+- **One `<h1>` per page, in the hero**, containing the main service + the area: "Home & office cleaning in Cape Town", "Emergency plumber in Durbanville", "Family dentist in Rondebosch". Never a slogan-only H1 ("Your weekend, handed back."); a slogan can sit beside it as an eyebrow or italic accent, but the keyword phrase is the H1.
+- **Subline (≤ 20 words)** repeats the service in natural words, adds a second keyword (e.g. "homes, flats and offices") and one concrete trust/price fact ("Fixed prices from R480 per visit").
+- **Eyebrow** names the business + category + city ("Spotless Co. · Cleaning service in Cape Town").
+- **Nav links** use service words ("Home cleaning", "Office cleaning", "Prices"), not "Services/About".
+- **`<title>`** = "<Service> in <City> | <Brand>" (≤ 60 chars) and a **`<meta name="description">`** of 140–160 chars with service, area, price/proof and a call to action.
+- **H2s** carry secondary keywords where it reads naturally ("Cleaning prices in Cape Town", "Book a cleaner in Cape Town this week").
+- Giant decorative words (board 04/07 style) and marquee bands are `aria-hidden` or CSS-generated so they don't compete with the H1.
+- Images that carry meaning use real `<img alt="…">` with a descriptive alt when they're `<img>` tags.

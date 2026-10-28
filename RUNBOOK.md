@@ -57,6 +57,8 @@ Copy the approved reference for the format and adapt it to the industry. Match i
   - *columns / monitor:* the frame comes from the blurred hero photo, so vary the site's accent and its dark-section colour (navy, forest, aubergine, espresso…) instead.
   - Record it on the queue item: `"palette": "<name>"`, `"accent": "<hex>"`. After rendering, check every frame label (eyebrow, question, sig, A/B circles) is readable on the chosen background.
 - Link `../../brand/ui.css` (adjust the relative path for the folder depth) and `stock/<slug>/…` photos with relative paths. Fonts come from `brand/fonts.css` (local files).
+- **SEO hero text, always (Prosper, 2026-10-28):** follow `brand/DESIGN-SYSTEM.md` §5 on every site: one H1 in the hero with the service + suburb/city keyword phrase (never a slogan-only H1), a keyword subline with a price or trust fact, `<title>` "<Service> in <City> | <Brand>" and a 140–160 character meta description. The design-system audit in 5a checks it.
+- **New colours every post (Prosper, 2026-10-28):** don't fall back on the same blues/greens; pick a fresh palette per post from the new boards (e.g. violet→coral gradient, charcoal + red circle, black + glowing violet), never repeating the previous 3 posts' accent or hero colours.
 - Industry-fitting copy, real South African prices in Rand, services that business actually sells. Ratings/review counts may appear inside the mockup UI (it is a concept site); never in the caption as facts.
 - Footer sig: "CAAS STUDIOS" left; right side per format as in the references.
 - Concept number NN for landing posts = number of `landing` posts already posted + 2.
@@ -69,7 +71,7 @@ After the first render and before the Reel, run these four skills with the Skill
 1. **`design:design-critique`**: run `python3 tools/recent_sites.py posts/<id> 4 <scratch>/recent.jpg`, Read the sheet, then critique site.jpg and slide1.jpg with the skill's framework (first impression, usability, hierarchy, consistency). A hard requirement: at a glance, the new site must NOT look like any of the last 4 sites (same hero composition, same order of section types, or same card or grid pattern). If it does, redesign it (another archetype or section mix); a recolour doesn't count.
 2. **`design:ux-copy`**: review every headline, CTA, section label and price line against the copy rules in `brand/DESIGN-SYSTEM.md` §3 (verb-led, specific CTAs; one term per thing; none of the banned heading formulas; units on prices). Rewrite anything weak.
 3. **`design:accessibility-review`**: run `python3 tools/a11y_check.py posts/<id>`. It must report 0 contrast failures, no text under 13px and no pills under 44px. Then check by eye that each "check by eye" item has a shade behind it in the render.
-4. **`design:design-system`** (audit mode): confirm that site.html uses only the `:root` tokens (no stray hex values in the rules) and the fonts, gutter and must-haves in §1, and that the queue item records `layout`, `sections`, `font`, `shape` and `mode`.
+4. **`design:design-system`** (audit mode): confirm the SEO hero rules (§5: H1 keyword phrase, subline, title, meta description), that site.html uses only the `:root` tokens (no stray hex values in the rules) and the fonts, gutter and must-haves in §1, and that the queue item records `layout`, `sections`, `font`, `shape` and `mode`.
 If a skill isn't available in the run, apply the same checklist by hand (from DESIGN-SYSTEM.md) and note that in design-review.md. Never skip the checks.
 
 ## 5b. Make the Reel

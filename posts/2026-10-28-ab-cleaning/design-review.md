@@ -1,25 +1,24 @@
 # Design review: 2026-10-28-ab-cleaning (Spotless Co.)
 
-Choices (design:design-system, pick): layout `bento` (last 4: split-screen, inset-card, editorial-split, dark-mono), sections menu-list → big-testimonial → bento-steps → faq-accordion → booking-bar, font `condensed` (Anton caps + Schibsted; prev sans; Instrument Serif italic only for the hero accent word), shape `round` (prev soft), mode `tinted` (pale cobalt page, prev dark). Accent cobalt #2348D9 + mint #B9EED3 (prev mustard), dark #0B1430. Frame palette `pal-sage` (last 3: cloud, midnight, sand).
-Hero/header: Prosper asked mid-run (2026-10-28) for heroes to take their theme from boards 03 + 01. Rebuilt as a dark stage: gloved hands with a spray bottle masked so they float on the dark ground with a cobalt glow behind them, glass pill nav with mint underline, "your weekend," italic over "HANDED BACK.", 02/04 counter, outline arrows, vertical indicators, dot pagination, toggle CTA with WhatsApp knob, rotating "FREE RE-CLEAN · 24H GUARANTEE" badge. The bento tiles (version B booking card, rating, clipped-corner hours) sit under it.
+**Redesigned mid-run at Prosper's request (2026-10-28):** "make a newer design, take inspiration from the new files, change the colours, hero text SEO-optimised always." The first version (bento, cobalt/mint, pale-blue page) was pulled from Metricool before it went out.
+
+Choices (design:design-system, pick): layout `type-giant` (last 4: split-screen, inset-card, editorial-split, dark-mono), sections marquee-ticker → glow-pricing → coverflow-gallery → big-testimonial → faq-glow → word-behind-glass-cta, font `condensed` (Anton caps + Schibsted, Instrument Serif italic accent; prev sans), shape `round` (prev soft), mode `dark`. New colours: violet→magenta→coral hero gradient (#2A0F5C → #5B21B6 → #B4239F → #FF6B4A), coral accent #FF6B4A, lavender #A78BFA, violet-black page #0F0A1A. Frame palette `pal-blush` (last 3: cloud, midnight, sand).
+Boards: hero = 04 (giant "SPOTLESS" behind a tilted photo card, glass stat card with avatar stack) + 05 (vivid gradient, stepped condensed caps, 01/07 progress pill) + 01/03 (glass pill nav with underline, toggle CTA with WhatsApp knob, italic accent line). Pricing = 07/08 (ghost word + glow behind glass plan cards, glowing featured middle card with dot grid, Regular/Once-off toggle, horizon arc). Gallery = 10 (coverflow + glass caption plates + glass control bar). FAQ = 09 (dark rows with a coral glow from the left, thin +/−).
+
+## SEO hero (new standing rule, DESIGN-SYSTEM §5)
+- `<h1>`: "Home & office cleaning in Cape Town" (only H1 on the page). Eyebrow: "Spotless Co. · Cleaning service in Cape Town". Subline: "Vetted, insured cleaners for homes, flats and offices. Fixed prices from R480 per visit."
+- `<title>` "Home & Office Cleaning in Cape Town | Spotless Co." (51 chars); meta description 150 chars. Nav: Home cleaning / Office cleaning / Prices / FAQ. H2s: "Cleaning prices in Cape Town", "Book a cleaner in Cape Town this week". Giant words are aria-hidden or CSS-generated.
 
 ## 1. design:design-critique
-- recent_sites: the first version echoed recent sites in three places: the FAQ heading "Before you book" (mechanic), split-form ending (dentist "Book your check-up this week") and 4-column numbered steps (landscaping). Changed to "Keys, pets and re-cleans", a full-width booking-bar CTA and a bento of steps.
-- Hero h1 at 122px pushed the CTAs out of the tile → fixed (then replaced by the new 03+01 hero stage).
-- Hero subject vs mechanic (also dark/glow): this one is a masked subject with no frame, an italic-over-bold headline, counter/arrows/dots, and bento tiles below on a tinted page. It doesn't read as the same page.
-- Step 01 repeated the hero photo → swapped to mop-living. Step 01 number on photo → navy pill. CTA heading wrapped to 4 lines → nowrap at 132px.
-- Slide: B "/visit" wrapped and the team line squeezed → nowrap; top shade darkened so the rating line reads.
+- vs recent_sites: no other recent site has a gradient hero, a giant word behind a tilted card, glass pricing cards or a coverflow. The dark mechanic site is the nearest, but its hero is copy + a framed photo on black with a stat row/outline cards. This one doesn't look alike.
+- Found: giant word ran into the H1 → hero 960px tall, word 268px, H1 on two stepped lines (94px). Photo tag clipped by the B card → removed. B card CTA inherited section padding (.cta clash) → renamed .bcta. FAQ title left an orphan "cleaner" → accent line on its own line at 84px.
 
 ## 2. design:ux-copy
-- One primary CTA everywhere: "Book a clean" (nav, hero toggle, B card, booking bar, slide A + B). "Free re-clean" and "Products included" used the same way across site and slide (site said "Our own products" → fixed).
-- Hero support line trimmed 17 → 12 words. No banned heading formulas; labels 1–3 words; every price has a unit (per visit / per home / per month / per seat).
+- One primary CTA ("Book a clean"), plan-specific CTAs name the plan ("Book a flat clean / home clean / deep clean"). "Free re-clean" and "per visit / per home" used the same way throughout. No banned heading formulas; sublines ≤ 20 words.
 
 ## 3. design:accessibility-review
-- tools/a11y_check.py: 0 contrast failures, no text < 13px, no targets < 44px ("Ask on WhatsApp" link raised to 44px min-height).
-- Check-by-eye: B tile/card text sits on top + bottom navy shades; step 01 text on a bottom shade, number on a solid pill; hero headline sits on the dark stage (subject masked out under the copy); frame labels on sage are dark. All readable.
-- "Most booked" is a worded tag; WhatsApp buttons have aria-labels; badge and arrows aria-hidden.
+- tools/a11y_check.py: 0 contrast failures (decorative "Prices" ghost word moved to CSS content so it isn't read as text), no text < 13px, no targets < 44px.
+- Check-by-eye: hero copy sits on the dark violet end of the gradient; B card text on a solid glass body / bottom shade; coverflow captions on glass plates; FAQ text on dark rows. All readable. Slide: B card text on violet gradient, A card unchanged.
 
 ## 4. design:design-system (audit)
-- All colours are `:root` tokens (incl. --stage, --glow, --shade, --shade-2); no raw hex/rgba in the rules (grep checked; the SVG badge uses style="fill:var(--…)").
-- Fonts: Anton, Schibsted, Instrument Serif (local). Gutter 56px, sections 112px. Radius 28/18px + full pills (round).
-- Must-haves: nav CTA, CTA repeated in the end band, WhatsApp buttons, Rand prices, footer "Concept by CAAS Studios". Queue item records layout, sections, font, shape, mode.
+- All colours in `:root` (incl. named shadow/glow tokens); no raw hex/rgba in rules. Fonts local only. Gutter 56px, sections 112px, radius 28/18 + pills. Must-haves present (nav CTA, end CTA, WhatsApp, Rand prices, "Concept by CAAS Studios"). SEO §5 checked. Queue item records layout, sections, font, shape, mode, ui_ref, ui_sections.

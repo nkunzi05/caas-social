@@ -365,26 +365,32 @@
       "industry": "home & office cleaning",
       "status": "posted",
       "post": "posts/2026-10-28-ab-cleaning",
-      "palette": "sage",
-      "accent": "#2348D9",
-      "dark": "#0B1430",
-      "ui_ref": "03+01",
-      "layout": "bento",
+      "palette": "blush",
+      "accent": "#FF6B4A",
+      "dark": "#0F0A1A",
+      "ui_ref": "04+05+01+03",
+      "layout": "type-giant",
       "sections": [
-        "menu-list",
+        "marquee-ticker",
+        "glow-pricing",
+        "coverflow-gallery",
         "big-testimonial",
-        "bento-steps",
-        "faq-accordion",
-        "booking-bar"
+        "faq-glow",
+        "word-behind-glass-cta"
       ],
       "font": "condensed",
       "shape": "round",
-      "mode": "tinted",
-      "music": "lofi",
+      "mode": "dark",
+      "music": "upbeat",
       "type": "reel",
       "hook": "Which one makes you book a cleaner: A or B?",
-      "metricool_id": 408657331,
-      "scheduled": "2026-10-28T10:30:00+02:00"
+      "ui_sections": [
+        "07",
+        "08",
+        "10",
+        "09"
+      ],
+      "seo_h1": "Home & office cleaning in Cape Town"
     }
   ],
   "queue": [

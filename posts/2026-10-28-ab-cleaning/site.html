@@ -1,309 +1,290 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Spotless Co. concept site</title>
+<html lang="en"><head><meta charset="utf-8">
+<title>Home &amp; Office Cleaning in Cape Town | Spotless Co.</title>
+<meta name="description" content="Vetted, insured home and office cleaners in Cape Town. Fixed prices from R480 per visit, the same team every visit and a free re-clean within 24 hours.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../../brand/fonts.css">
 <style>
-  /* Layout: bento · font: condensed (Anton caps display + Schibsted body) · shape: round · mode: tinted
-     UI board 02 (avatar stack + hairline rules, clipped-corner info card, circular rotating-text badge, split nav) */
+  /* Layout: type-giant · font: condensed (Anton caps + Schibsted, Instrument Serif italic accent) · shape: round · mode: dark
+     Hero: boards 04 (giant word behind a tilted photo card, floating glass stat cards) + 05 (violet→coral gradient, stepped condensed caps, 01/07 progress pill) + 01/03 (glass pill nav, toggle CTA, italic accent)
+     Sections: 07/08 pricing (giant word + glow behind glass cards, featured card, toggle), 10 coverflow gallery + glass control bar, 09 FAQ glow rows */
   :root {
-    --ink: #0B1430; --ink-2: #3A4561; --ink-3: #56607A; --paper: #EAF0FB; --paper-2: #FFFFFF; --line: #CBD6EC;
-    --acc: #2348D9; --acc-ink: #FFFFFF; --acc-2: #B9EED3; --acc-2-ink: #0B2A1C; --acc-soft: #DCE5FB;
-    --dark: #0B1430; --dark-2: #16224A; --on-dark: #FFFFFF; --on-dark-2: #C3CCE3; --on-dark-line: #2C3A66;
-    --glass: rgba(11,20,48,0.62); --glass-line: rgba(255,255,255,0.18);
-    --shade: linear-gradient(180deg, rgba(11,20,48,0.72) 0%, rgba(11,20,48,0.1) 40%, rgba(11,20,48,0.2) 55%, rgba(11,20,48,0.9) 100%);
-    --shade-2: linear-gradient(180deg, rgba(11,20,48,0.78) 0%, rgba(11,20,48,0) 30%, rgba(11,20,48,0) 45%, rgba(11,20,48,0.9) 100%);
-    --stage: #0A0F1E; --stage-2: #141B33; --glow: radial-gradient(circle, rgba(35,72,217,0.55) 0%, rgba(35,72,217,0.16) 40%, rgba(35,72,217,0) 68%);
-    --glass-nav: #1A2140; --pill-2: #2A3358; --on-dark-3: #8E98B8;
-    --wa: #25D366; --wa-ink: #072B14; --star: #F2B400;
+    --ink: #FFFFFF; --ink-2: #DDD3EC; --ink-3: #B3A5C9; --paper: #0F0A1A; --paper-2: #181026; --line: #33264A;
+    --acc: #FF6B4A; --acc-ink: #1F0A04; --acc-2: #A78BFA; --acc-2-ink: #1A0B33; --violet: #5B21B6; --violet-d: #2A0F5C;
+    --dark: #0F0A1A; --card: #1C1330; --card-2: #251A3D;
+    --hero: linear-gradient(115deg, #2A0F5C 0%, #5B21B6 34%, #B4239F 66%, #FF6B4A 100%);
+    --glass: rgba(20,10,40,0.62); --glass-2: rgba(255,255,255,0.10); --glass-line: rgba(255,255,255,0.22);
+    --shade: linear-gradient(180deg, rgba(15,10,26,0) 45%, rgba(15,10,26,0.86) 100%);
+    --glow-v: radial-gradient(ellipse at 50% 100%, rgba(167,139,250,0.55) 0%, rgba(91,33,182,0.25) 40%, rgba(91,33,182,0) 72%);
+    --glow-c: radial-gradient(ellipse at 0% 50%, rgba(255,107,74,0.55) 0%, rgba(255,107,74,0.12) 38%, rgba(255,107,74,0) 62%);
+    --dots: radial-gradient(rgba(255,255,255,0.22) 1px, transparent 1.6px);
+    --word: rgba(255,255,255,0.92); --word-ghost: rgba(255,255,255,0.07);
+    --wa: #25D366; --wa-ink: #072B14; --star: #FFC24A; --white: #FFFFFF; --white-ink: #160C28;
     --r: 28px; --r-sm: 18px;
+    --sh-tilt: rgba(20,6,40,0.55);
+    --sh-card: rgba(20,6,40,0.5);
+    --glow-violet: rgba(167,139,250,0.35);
+    --glow-violet-2: rgba(167,139,250,0.6);
+    --sh-dark: rgba(0,0,0,0.5);
+    --glow-coral: rgba(255,107,74,0.35);
   }
   * { box-sizing: border-box; } html, body { margin: 0; }
   body { width: 1280px; background: var(--paper); font-family: "Schibsted Grotesk", sans-serif; color: var(--ink); }
   .photo { background-size: cover; background-position: center; }
   .disp { font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.005em; }
+  .serif { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; text-transform: none; }
   .lab { font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-3); }
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 56px; padding: 0 28px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none; white-space: nowrap; }
+  .btn.white { background: var(--white); color: var(--white-ink); }
   .btn.acc { background: var(--acc); color: var(--acc-ink); }
-  .btn.ink { background: var(--ink); color: var(--on-dark); }
-  .btn.mint { background: var(--acc-2); color: var(--acc-2-ink); }
+  .btn.line { background: var(--card); color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--glass-line); }
   .wa { width: 56px; height: 56px; border-radius: 50%; background: var(--wa); display: inline-flex; align-items: center; justify-content: center; flex: none; }
   .wa svg { width: 26px; height: 26px; fill: var(--wa-ink); }
   svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; flex: none; }
-  section { padding: 112px 56px; }
-  h2 { margin: 18px 0 0; font-size: 76px; line-height: 0.98; }
+  section { padding: 112px 56px; position: relative; }
+  h2 { margin: 18px 0 0; font-size: 80px; line-height: 0.96; font-weight: 400; }
 
-  /* HERO STAGE: boards 03 (subject on matching dark ground, italic accent word over bold word with full stop, 02/04 counter, outline arrows, dots, logo letter + accent dot)
-     and 01 (floating glass pill nav with accent underline, coloured glow behind the focal subject, toggle CTA with round knob, rotating badge, vertical indicators) */
-  .bento { padding: 20px 20px 0; display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
-  .tile { border-radius: var(--r); position: relative; overflow: hidden; }
-  .stage { grid-column: span 12; height: 700px; background: var(--stage); color: var(--on-dark); }
-  .stage .glow { position: absolute; right: -10px; top: 20px; width: 780px; height: 780px; border-radius: 50%; background: var(--glow); }
-  .stage .subj { position: absolute; right: 30px; top: 100px; width: 640px; height: 580px; background-position: 50% 62%; background-size: 150% auto; filter: brightness(0.9) contrast(1.05);
-                 -webkit-mask-image: radial-gradient(ellipse 44% 44% at 52% 54%, #000 45%, transparent 100%); mask-image: radial-gradient(ellipse 44% 44% at 52% 54%, #000 45%, transparent 100%); }
-  nav { position: absolute; z-index: 3; left: 50%; top: 26px; transform: translateX(-50%); width: 1060px; height: 68px; border-radius: 999px; background: var(--glass-nav);
-        display: flex; align-items: center; justify-content: space-between; padding: 0 8px 0 28px; }
-  .logo { font-size: 34px; letter-spacing: 0.02em; color: var(--on-dark); }
-  .logo i { font-style: normal; color: var(--acc-2); }
-  nav .links { display: flex; gap: 34px; font-size: 15px; font-weight: 600; color: var(--on-dark-2); }
+  /* HERO */
+  .hero { margin: 16px; height: 960px; border-radius: 36px; background: var(--hero); position: relative; overflow: hidden; }
+  nav { position: absolute; z-index: 5; left: 50%; top: 24px; transform: translateX(-50%); width: 980px; height: 66px; border-radius: 999px; background: var(--glass); box-shadow: inset 0 0 0 1px var(--glass-line); backdrop-filter: blur(14px);
+        display: flex; align-items: center; justify-content: space-between; padding: 0 7px 0 26px; }
+  .logo { font-size: 26px; letter-spacing: 0.03em; } .logo i { font-style: normal; color: var(--acc); }
+  nav .links { display: flex; gap: 30px; font-size: 15px; font-weight: 600; color: var(--ink-2); }
   nav .links a { color: inherit; text-decoration: none; height: 44px; display: inline-flex; align-items: center; position: relative; }
-  nav .links a.on { color: var(--on-dark); }
-  nav .links a.on::after { content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 2px; background: var(--acc-2); border-radius: 2px; }
-  nav .btn { height: 52px; padding: 0 24px; font-size: 15px; background: var(--pill-2); color: var(--on-dark); }
-  .stage .copy { position: absolute; left: 132px; top: 196px; width: 560px; z-index: 2; }
-  .stage .lab { color: var(--on-dark-2); }
-  .stage .acc { font-family: "Instrument Serif", serif; font-style: italic; font-size: 76px; line-height: 1; color: var(--acc-2); margin-top: 22px; }
-  .stage h1 { margin: 0; font-size: 132px; line-height: 0.92; white-space: nowrap; }
-  .stage .meta { display: flex; gap: 22px; margin-top: 28px; }
-  .stage .cnt { font-size: 24px; font-weight: 800; color: var(--acc-2); white-space: nowrap; }
-  .stage .cnt small { font-size: 14px; color: var(--on-dark-3); font-weight: 700; }
-  .stage .meta p { margin: 0; font-size: 18px; line-height: 1.5; color: var(--on-dark-2); max-width: 340px; }
-  .toggle { margin-top: 36px; display: inline-flex; align-items: center; height: 68px; border-radius: 999px; background: var(--pill-2); padding: 6px 6px 6px 28px; gap: 22px; color: var(--on-dark); font-weight: 700; font-size: 17px; text-decoration: none; }
-  .toggle .wa { width: 56px; height: 56px; }
-  .arr { position: absolute; top: 330px; width: 64px; height: 44px; z-index: 2; color: var(--on-dark-3); }
-  .arr svg { width: 64px; height: 44px; fill: none; stroke: currentColor; stroke-width: 1.4; }
-  .arr.l { left: 40px; } .arr.r { right: 40px; }
-  .ind { position: absolute; right: 54px; top: 230px; display: flex; flex-direction: column; gap: 8px; z-index: 2; }
-  .ind i { width: 3px; height: 24px; border-radius: 2px; background: var(--pill-2); display: block; } .ind i.on { background: var(--acc-2); height: 40px; }
-  .stage .foot { position: absolute; left: 44px; right: 44px; bottom: 30px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: var(--on-dark-3); z-index: 2; }
-  .dots { display: flex; gap: 12px; align-items: center; } .dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--pill-2); display: block; } .dots i.on { background: var(--acc-2); }
-  .soc { display: flex; gap: 20px; } .soc svg { width: 20px; height: 20px; fill: none; stroke: var(--on-dark-2); stroke-width: 1.8; }
-  .badge { position: absolute; right: 120px; bottom: 64px; width: 140px; height: 140px; z-index: 2; }
-  .t-b { grid-column: span 6; height: 320px; color: var(--on-dark); background-position: 50% 62%; }
-  .t-b .sh { position: absolute; inset: 0; background: var(--shade); }
-  .t-b .top { position: absolute; left: 28px; right: 28px; top: 24px; display: flex; justify-content: space-between; align-items: flex-start; }
-  .t-b .nm { font-size: 24px; font-weight: 800; letter-spacing: -0.01em; }
-  .t-b .rt { font-size: 15px; color: var(--on-dark); margin-top: 4px; }
-  .t-b .rt b { color: var(--on-dark); } .st { color: var(--star); }
-  .t-b .pr { text-align: right; } .t-b .pr b { font-size: 40px; font-weight: 800; letter-spacing: -0.03em; display: block; line-height: 1; }
-  .t-b .pr span { font-size: 14px; color: var(--on-dark-2); }
-  .t-b .glass { position: absolute; left: 14px; right: 14px; bottom: 14px; border-radius: 22px; background: var(--glass); border: 1px solid var(--glass-line); backdrop-filter: blur(14px); padding: 14px 14px 14px 22px; display: flex; align-items: center; gap: 18px; }
-  .t-b .feat { display: grid; grid-template-columns: auto auto; gap: 8px 20px; font-size: 14px; flex: 1; }
-  .t-b .feat div { display: flex; align-items: center; gap: 8px; }
-  .t-b .feat svg.i { width: 17px; height: 17px; }
-  .t-rate { grid-column: span 3; height: 320px; background: var(--acc-2); color: var(--acc-2-ink); padding: 32px; display: flex; flex-direction: column; }
-  .t-rate .big { font-size: 112px; line-height: 0.9; }
-  .t-rate .stars { font-size: 22px; letter-spacing: 3px; margin-top: 12px; }
-  .t-rate p { margin: auto 0 0; font-size: 16px; line-height: 1.4; }
-  .t-rate .lab { color: var(--acc-2-ink); }
-  .t-hours { grid-column: span 3; height: 320px; background: var(--paper-2); padding: 32px; display: flex; flex-direction: column;
-             clip-path: polygon(0 0, calc(100% - 56px) 0, 100% 56px, 100% 100%, 0 100%); border-radius: var(--r) 0 var(--r) var(--r); }
-  .t-hours .row { display: flex; justify-content: space-between; font-size: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
-  .t-hours .row:first-of-type { margin-top: 18px; }
-  .t-hours .row span { color: var(--ink-2); }
-  .t-hours .areas { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; }
-  .t-hours .areas span { font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); color: var(--ink-2); }
+  nav .links a.on { color: var(--ink); } nav .links a.on::after { content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 2px; border-radius: 2px; background: var(--acc); }
+  nav .btn { height: 52px; padding: 0 24px; font-size: 15px; }
+  .giant { position: absolute; left: 0; right: 0; top: 112px; text-align: center; font-size: 268px; line-height: 0.86; color: var(--word); letter-spacing: 0.01em; z-index: 1; white-space: nowrap; }
+  .card-tilt { position: absolute; z-index: 2; left: 640px; top: 196px; width: 330px; height: 440px; border-radius: 44px; transform: rotate(-7deg); background-position: 58% 50%;
+               box-shadow: 0 40px 90px var(--sh-tilt), 0 0 0 6px var(--glass-2); }
+  .card-tilt .tag { position: absolute; left: 18px; bottom: 18px; padding: 10px 16px; border-radius: 14px; background: var(--glass); backdrop-filter: blur(10px); font-size: 14px; line-height: 1.3; color: var(--ink-2); }
+  .card-tilt .tag b { display: block; color: var(--ink); font-size: 15px; }
+  .copy { position: absolute; z-index: 3; left: 64px; bottom: 56px; width: 640px; }
+  .copy .lab { color: var(--ink-2); }
+  .copy h1 { margin: 14px 0 0; font-size: 94px; line-height: 0.92; }
+  .copy h1 .l2 { display: block; padding-left: 120px; }
+  .copy h1 .l3 { display: block; font-size: 60px; line-height: 1; margin-top: 4px; color: var(--ink); }
+  .copy p { margin: 22px 0 0; font-size: 19px; line-height: 1.5; color: var(--ink-2); max-width: 470px; }
+  .toggle { margin-top: 30px; display: inline-flex; align-items: center; height: 66px; border-radius: 999px; background: var(--white); color: var(--white-ink); padding: 5px 5px 5px 28px; gap: 22px; font-weight: 700; font-size: 17px; text-decoration: none; }
+  .copy .rate { display: inline-flex; margin-left: 18px; vertical-align: middle; align-items: center; gap: 10px; font-size: 15px; color: var(--ink-2); }
+  .copy .rate b { color: var(--ink); } .st { color: var(--star); }
+  .prog { position: absolute; right: 26px; top: 120px; z-index: 4; width: 52px; padding: 16px 0; border-radius: 999px; background: var(--glass); box-shadow: inset 0 0 0 1px var(--glass-line); text-align: center; font-weight: 800; font-size: 16px; }
+  .prog i { display: block; width: 2px; height: 46px; margin: 10px auto; background: var(--glass-line); position: relative; }
+  .prog i::before { content: ""; position: absolute; left: -2px; top: 0; width: 6px; height: 16px; border-radius: 3px; background: var(--acc); }
+  .prog small { color: var(--ink-3); font-size: 15px; }
+  .stat { position: absolute; z-index: 4; left: 950px; top: 300px; width: 240px; padding: 18px 20px; border-radius: 22px; background: var(--glass); box-shadow: inset 0 0 0 1px var(--glass-line); backdrop-filter: blur(14px); }
+  .stat .n { font-size: 56px; line-height: 1; } .stat .n span { color: var(--acc); }
+  .stat .row { display: flex; align-items: center; gap: 10px; margin-top: 10px; font-size: 14px; color: var(--ink-2); }
+  .stack { display: flex; } .stack i { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--violet-d); background-size: cover; margin-left: -10px; display: block; } .stack i:first-child { margin-left: 0; }
+  /* Version B booking card (glass, photo-led) */
+  .bcard { position: absolute; z-index: 4; right: 96px; bottom: 56px; width: 380px; border-radius: 28px; overflow: hidden; box-shadow: 0 30px 70px var(--sh-card), inset 0 0 0 1px var(--glass-line); }
+  .bcard .ph { height: 150px; position: relative; background-position: 50% 62%; }
+  .bcard .ph::after { content: ""; position: absolute; inset: 0; background: var(--shade); }
+  .bcard .ph .chip { position: absolute; z-index: 1; left: 16px; top: 14px; font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 7px 12px; border-radius: 999px; background: var(--acc); color: var(--acc-ink); }
+  .bcard .ph .nm { position: absolute; z-index: 1; left: 18px; bottom: 12px; font-size: 30px; line-height: 1; }
+  .bcard .body { background: var(--glass); backdrop-filter: blur(16px); padding: 16px 18px 18px; }
+  .bcard .top { display: flex; justify-content: space-between; align-items: baseline; }
+  .bcard .pr { font-size: 36px; font-weight: 800; letter-spacing: -0.03em; } .bcard .pr span { font-size: 15px; font-weight: 500; color: var(--ink-2); letter-spacing: 0; }
+  .bcard .rt { font-size: 14px; color: var(--ink-2); } .bcard .rt b { color: var(--ink); }
+  .bcard .feat { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; font-size: 14px; color: var(--ink-2); }
+  .bcard .feat div { display: flex; align-items: center; gap: 8px; } .bcard .feat svg.i { width: 16px; height: 16px; color: var(--acc-2); }
+  .bcta { display: flex; gap: 8px; margin-top: 14px; } .bcta .btn { flex: 1; height: 52px; } .bcta .wa { width: 52px; height: 52px; }
 
-  /* MENU-LIST services */
-  .menu { display: grid; grid-template-columns: 1fr 400px; gap: 72px; align-items: start; }
-  .menu .intro { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
-  .menu .intro p { margin: 0; font-size: 18px; line-height: 1.5; color: var(--ink-2); max-width: 300px; }
-  .group { margin-top: 48px; }
-  .group .gh { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 14px; border-bottom: 2px solid var(--ink); }
-  .group .gh b { font-size: 30px; }
-  .group .gh span { font-size: 14px; color: var(--ink-3); }
-  .item { display: grid; grid-template-columns: 1fr auto; gap: 6px 24px; padding: 20px 0; border-bottom: 1px solid var(--line); }
-  .item b { font-size: 21px; font-weight: 700; }
-  .item em { font-style: normal; font-size: 21px; font-weight: 800; text-align: right; }
-  .item small { grid-column: 1; font-size: 15px; color: var(--ink-3); }
-  .item small.u { grid-column: 2; text-align: right; }
-  .item .tag { display: inline-block; margin-left: 10px; font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--acc); color: var(--acc-ink); vertical-align: 3px; }
-  .menu .side { position: relative; height: 820px; border-radius: var(--r); margin-top: 8px; background-position: 50% 60%; }
-  .menu .side .note { position: absolute; left: 18px; right: 18px; bottom: 18px; background: var(--paper-2); border-radius: var(--r-sm); padding: 20px 22px; }
-  .menu .side .note b { display: block; font-size: 18px; } .menu .side .note span { font-size: 15px; color: var(--ink-2); line-height: 1.45; display: block; margin-top: 4px; }
+  /* MARQUEE */
+  .marquee { margin: 0 16px; height: 84px; border-radius: 999px; background: var(--acc); color: var(--acc-ink); display: flex; align-items: center; gap: 34px; overflow: hidden; white-space: nowrap; font-size: 34px; padding-left: 40px; }
+  .marquee span::after { content: "✦"; margin-left: 34px; font-size: 24px; vertical-align: 6px; }
 
-  /* BIG TESTIMONIAL */
-  .quote { background: var(--dark); color: var(--on-dark); display: grid; grid-template-columns: 340px 1fr; gap: 72px; align-items: center; }
-  .quote .ph { height: 420px; border-radius: 200px 200px var(--r) var(--r); background-position: 50% 30%; }
-  .quote .mk { font-size: 150px; line-height: 0.6; color: var(--acc-2); height: 70px; }
-  .quote blockquote { margin: 0; font-size: 44px; line-height: 1.18; font-weight: 600; letter-spacing: -0.02em; }
-  .quote .who { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--on-dark-line); display: flex; justify-content: space-between; font-size: 16px; color: var(--on-dark-2); }
-  .quote .who b { color: var(--on-dark); }
+  /* PRICING (07 + 08) */
+  .pricing { text-align: center; overflow: hidden; }
+  .pricing .pill { display: inline-flex; align-items: center; gap: 10px; height: 44px; padding: 0 20px; border-radius: 999px; background: var(--card); box-shadow: inset 0 0 0 1px var(--acc-2), 0 0 30px var(--glow-violet); font-size: 15px; font-weight: 600; }
+  .pricing h2 { margin-top: 26px; font-size: 92px; }
+  .pricing h2 span { color: var(--acc-2); }
+  .seg { margin: 30px auto 0; display: inline-flex; padding: 6px; border-radius: 999px; background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
+  .seg span { height: 48px; padding: 0 26px; border-radius: 999px; display: inline-flex; align-items: center; font-size: 16px; font-weight: 700; color: var(--ink-2); }
+  .seg span.on { background: var(--violet); color: var(--ink); box-shadow: 0 0 24px var(--glow-violet-2), inset 0 0 0 1px var(--acc-2); }
+  .plans-wrap { position: relative; margin-top: 64px; }
+  .plans-wrap .ghost::before { content: "Prices"; } .plans-wrap .ghost { position: absolute; left: 0; right: 0; top: -70px; font-size: 260px; line-height: 1; color: var(--word-ghost); z-index: 0; }
+  .plans { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: left; }
+  .plan { border-radius: var(--r); background: var(--glass-2); box-shadow: inset 0 0 0 1px var(--glass-line); backdrop-filter: blur(18px); padding: 32px; position: relative; overflow: hidden; }
+  .plan.feat { background: var(--violet-d); box-shadow: inset 0 0 0 1px var(--acc-2), 0 0 60px var(--glow-violet); }
+  .plan.feat::before { content: ""; position: absolute; inset: 0; background: var(--glow-v); }
+  .plan.feat::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 120px; background-image: var(--dots); background-size: 12px 12px; opacity: 0.6; }
+  .plan > * { position: relative; z-index: 1; }
+  .plan .nm { font-size: 24px; font-weight: 800; } .plan .sub { font-size: 16px; color: var(--ink-2); margin-top: 4px; }
+  .plan .pr { margin-top: 26px; font-size: 56px; font-weight: 800; letter-spacing: -0.03em; } .plan .pr span { font-size: 20px; font-weight: 500; color: var(--ink-3); letter-spacing: 0; }
+  .plan .pr small { display: block; font-size: 15px; font-weight: 500; color: var(--ink-3); letter-spacing: 0; margin-top: 4px; }
+  .plan .btn { width: 100%; margin-top: 24px; }
+  .plan ul { list-style: none; margin: 26px 0 0; padding: 0; }
+  .plan li { display: flex; gap: 12px; align-items: center; font-size: 16px; color: var(--ink-2); padding: 9px 0; }
+  .plan li i { width: 24px; height: 24px; border-radius: 50%; background: var(--card-2); display: inline-flex; align-items: center; justify-content: center; flex: none; font-style: normal; font-size: 13px; color: var(--acc-2); }
+  .plan.feat li i { background: var(--violet); color: var(--ink); }
+  .arc { position: absolute; left: 50%; bottom: -380px; transform: translateX(-50%); width: 1400px; height: 520px; border-radius: 50%; background: var(--glow-v); z-index: 0; }
 
-  /* BENTO STEPS */
-  .tl-head { display: flex; justify-content: space-between; align-items: flex-end; }
-  .tl-head p { margin: 0; font-size: 18px; color: var(--ink-2); max-width: 340px; line-height: 1.5; }
-  .steps { margin-top: 56px; display: grid; grid-template-columns: repeat(24, 1fr); grid-template-rows: 300px 300px; gap: 16px; }
-  .sb { border-radius: var(--r); position: relative; overflow: hidden; padding: 30px; display: flex; flex-direction: column; }
-  .sb .n { font-size: 64px; line-height: 1; }
-  .sb b { display: block; font-size: 24px; letter-spacing: -0.01em; margin-top: auto; }
-  .sb p { margin: 8px 0 0; font-size: 16px; line-height: 1.45; }
-  .sb .when { align-self: flex-start; margin-top: 16px; font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; }
-  .s1 { grid-column: span 14; grid-row: span 2; color: var(--on-dark); background-position: 50% 50%; }
-  .s1 .sh { position: absolute; inset: 0; background: var(--shade-2); }
-  .s1 > * { position: relative; }
-  .s1 .n { color: var(--acc-2); background: var(--dark); align-self: flex-start; padding: 10px 18px 6px; border-radius: 999px; font-size: 48px; } .s1 p { color: var(--on-dark-2); } .s1 .when { background: var(--acc-2); color: var(--acc-2-ink); }
-  .s1 b { font-size: 34px; }
-  .s2 { grid-column: span 10; background: var(--paper-2); flex-direction: row; gap: 26px; padding: 14px 30px 14px 14px; }
-  .s2 .ph { width: 200px; border-radius: var(--r-sm); flex: none; }
-  .s2 .tx { display: flex; flex-direction: column; padding: 16px 0; }
-  .s2 .n, .s4 .n { color: var(--acc); } .s2 p, .s4 p { color: var(--ink-2); } .s2 .when, .s4 .when { background: var(--acc-soft); color: var(--acc); }
-  .s3 { grid-column: span 5; background: var(--acc); color: var(--acc-ink); }
-  .s3 .n { color: var(--acc-ink); } .s3 b { font-size: 20px; }
-  .s4 { grid-column: span 5; background: var(--paper-2); }
-  /* FAQ */
-  .faq { background: var(--paper-2); display: grid; grid-template-columns: 420px 1fr; gap: 80px; }
-  .faq h2 { font-size: 68px; }
-  .faq .lead { margin: 22px 0 0; font-size: 18px; color: var(--ink-2); line-height: 1.5; }
-  .faq .lead a { color: var(--acc); font-weight: 700; display: inline-flex; align-items: center; min-height: 44px; }
-  .qa { border-top: 1px solid var(--line); padding: 26px 0; }
-  .qa:last-child { border-bottom: 1px solid var(--line); }
-  .qa .q { display: flex; justify-content: space-between; align-items: center; font-size: 21px; font-weight: 700; }
-  .qa .q i { width: 44px; height: 44px; border-radius: 50%; background: var(--paper); display: flex; align-items: center; justify-content: center; font-style: normal; font-size: 22px; color: var(--ink); flex: none; }
-  .qa.open .q i { background: var(--acc); color: var(--acc-ink); }
-  .qa p { margin: 14px 0 0; font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 600px; }
+  /* COVERFLOW (10) */
+  .gallery { overflow: hidden; background: var(--paper-2); }
+  .gallery .head { display: flex; justify-content: space-between; align-items: flex-end; }
+  .gallery .head p { margin: 0; font-size: 18px; color: var(--ink-2); max-width: 340px; line-height: 1.5; }
+  .flow { position: relative; height: 520px; margin-top: 56px; perspective: 1400px; }
+  .fc { position: absolute; top: 50%; left: 50%; border-radius: 26px; overflow: hidden; box-shadow: 0 30px 70px var(--sh-dark), inset 0 0 0 1px var(--glass-line); }
+  .fc .cap { position: absolute; left: 12px; right: 12px; bottom: 12px; padding: 12px 16px; border-radius: 16px; background: var(--glass); backdrop-filter: blur(12px); text-align: center; }
+  .fc .cap b { display: block; font-size: 18px; } .fc .cap span { font-size: 14px; color: var(--ink-2); }
+  .fc.c0 { width: 400px; height: 500px; transform: translate(-50%,-50%); z-index: 3; }
+  .fc.c1 { width: 300px; height: 400px; transform: translate(-50%,-50%) translateX(-330px) rotateY(24deg); z-index: 2; opacity: 0.85; }
+  .fc.c2 { width: 300px; height: 400px; transform: translate(-50%,-50%) translateX(330px) rotateY(-24deg); z-index: 2; opacity: 0.85; }
+  .fc.c3 { width: 230px; height: 320px; transform: translate(-50%,-50%) translateX(-560px) rotateY(30deg); z-index: 1; opacity: 0.6; }
+  .fc.c4 { width: 230px; height: 320px; transform: translate(-50%,-50%) translateX(560px) rotateY(-30deg); z-index: 1; opacity: 0.6; }
+  .player { margin: 36px auto 0; width: 900px; height: 84px; border-radius: 999px; background: var(--glass-2); box-shadow: inset 0 0 0 1px var(--glass-line); backdrop-filter: blur(16px); display: flex; align-items: center; padding: 0 14px 0 28px; gap: 26px; }
+  .player .ctl { display: flex; gap: 8px; } .player .ctl span { width: 48px; height: 48px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--ink); }
+  .player .ctl span.on { background: var(--white); color: var(--white-ink); }
+  .player .now { flex: 1; display: flex; align-items: center; gap: 14px; height: 60px; border-radius: 16px; background: var(--card); padding: 0 16px 0 8px; }
+  .player .now i { width: 44px; height: 44px; border-radius: 10px; background-size: cover; background-position: center; }
+  .player .now b { display: block; font-size: 16px; } .player .now span { font-size: 14px; color: var(--ink-2); }
+  .player .bar { margin-left: auto; width: 160px; height: 4px; border-radius: 2px; background: var(--line); position: relative; } .player .bar::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 40%; border-radius: 2px; background: var(--acc); }
+  .player .btn { height: 56px; }
 
-  /* BOOKING-BAR CTA */
-  .cta { padding: 96px 56px 56px; }
-  .cta .box { border-radius: 36px; background: var(--acc); color: var(--acc-ink); padding: 72px 56px 56px; position: relative; overflow: hidden; }
-  .cta .box::after { content: ""; position: absolute; right: -200px; top: -220px; width: 420px; height: 420px; border-radius: 50%; background: var(--acc-2); opacity: 0.18; }
-  .cta .top { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; position: relative; z-index: 1; }
-  .cta h2 { flex: none; white-space: nowrap; font-size: 132px; margin: 0; line-height: 0.92; }
-  .cta .top p { margin: 0 0 10px; font-size: 19px; line-height: 1.5; max-width: 330px; }
-  .bar { margin-top: 48px; background: var(--paper-2); color: var(--ink); border-radius: 999px; height: 96px; padding: 0 12px 0 40px; display: flex; align-items: center; position: relative; z-index: 1; }
-  .bar .f { flex: 1; padding-right: 24px; margin-right: 24px; border-right: 1px solid var(--line); }
-  .bar .f label { display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
-  .bar .f div { margin-top: 4px; font-size: 18px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
-  .bar .tot { padding-right: 24px; } .bar .tot b { font-size: 32px; letter-spacing: -0.03em; } .bar .tot small { font-size: 14px; color: var(--ink-3); margin-left: 4px; }
-  .bar .btn { height: 72px; font-size: 18px; padding: 0 34px; }
-  .cta .foot { margin-top: 28px; display: flex; justify-content: space-between; align-items: center; font-size: 16px; font-weight: 600; position: relative; z-index: 1; }
-  .cta .foot .wa-row { display: flex; align-items: center; gap: 14px; }
-  footer { padding: 40px 56px 48px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: var(--ink-3); border-top: 1px solid var(--line); margin: 0 56px; padding-left: 0; padding-right: 0; }
-  footer .logo { font-size: 24px; color: var(--ink); }
+  /* TESTIMONIAL */
+  .quote { display: grid; grid-template-columns: 1fr 360px; gap: 64px; align-items: center; }
+  .quote blockquote { margin: 0; font-size: 46px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em; }
+  .quote blockquote em { font-family: "Instrument Serif", serif; font-weight: 400; color: var(--acc-2); }
+  .quote .who { margin-top: 30px; font-size: 16px; color: var(--ink-2); } .quote .who b { color: var(--ink); }
+  .quote .ph { height: 420px; border-radius: 210px; background-position: 50% 30%; box-shadow: 0 0 0 8px var(--card), 0 0 80px var(--glow-coral); }
+
+  /* FAQ (09) */
+  .faq .big { font-family: "Schibsted Grotesk", sans-serif; font-weight: 300; font-size: 150px; line-height: 0.9; letter-spacing: -0.05em; margin: 0; }
+  .faq .big span { display: block; margin-top: 6px; font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; font-size: 84px; letter-spacing: 0; color: var(--acc); }
+  .faq .lead { margin: 22px 0 0; font-size: 18px; color: var(--ink-2); } .faq .lead a { color: var(--acc); font-weight: 700; display: inline-flex; min-height: 44px; align-items: center; }
+  .rows { margin-top: 48px; display: flex; flex-direction: column; gap: 14px; }
+  .qa { border-radius: 22px; background: var(--paper-2); box-shadow: inset 0 0 0 1px var(--line); padding: 28px 32px; position: relative; overflow: hidden; }
+  .qa::before { content: ""; position: absolute; inset: 0; background: var(--glow-c); }
+  .qa > * { position: relative; }
+  .qa .q { display: flex; justify-content: space-between; align-items: center; font-size: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.01em; }
+  .qa .q i { font-style: normal; font-size: 34px; font-weight: 200; color: var(--acc); width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .qa p { margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: var(--ink-2); max-width: 820px; }
+
+  /* CTA: giant word behind glass bar (07) */
+  .cta { overflow: hidden; text-align: center; padding-top: 80px; }
+  .cta .ghost { font-size: 330px; line-height: 0.85; background: var(--hero); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .cta .panel { position: relative; margin: -150px auto 0; width: 1080px; border-radius: 36px; background: var(--glass-2); box-shadow: inset 0 0 0 1px var(--glass-line); backdrop-filter: blur(22px); padding: 44px 48px; text-align: left; }
+  .cta .panel h2 { margin: 0; font-size: 60px; }
+  .cta .panel h2 span { color: var(--acc); }
+  .bar { margin-top: 28px; background: var(--white); color: var(--white-ink); border-radius: 999px; height: 88px; padding: 0 10px 0 36px; display: flex; align-items: center; }
+  .bar .f { flex: 1; padding-right: 20px; margin-right: 20px; border-right: 1px solid var(--line); }
+  .bar .f label { display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--violet); }
+  .bar .f div { margin-top: 4px; font-size: 17px; font-weight: 600; }
+  .bar .tot { padding-right: 20px; font-size: 30px; font-weight: 800; letter-spacing: -0.03em; } .bar .tot small { font-size: 14px; font-weight: 500; letter-spacing: 0; color: var(--violet); }
+  .bar .btn { height: 68px; font-size: 17px; }
+  .cta .foot { margin-top: 22px; display: flex; justify-content: space-between; align-items: center; font-size: 16px; color: var(--ink-2); }
+  .cta .foot .wa-row { display: flex; align-items: center; gap: 12px; color: var(--ink); font-weight: 600; }
+
+  footer { margin: 40px 56px 0; padding: 32px 0 44px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: var(--ink-3); }
+  footer .logo { color: var(--ink); }
 </style></head>
 <body>
-<div class="bento">
-  <div class="tile stage">
-    <div class="glow"></div>
-    <div class="subj photo" style="background-image:url('../../stock/cleaning/desk-spray.jpg')"></div>
-    <nav>
-      <div class="logo disp">s<i>.</i></div>
-      <div class="links"><a class="on" href="#">Home</a><a href="#">Prices</a><a href="#">How it works</a><a href="#">Offices</a><a href="#">FAQ</a></div>
-      <a class="btn" href="#">Book a clean</a>
-    </nav>
-    <span class="arr l" aria-hidden="true"><svg viewBox="0 0 64 44"><path d="M62 22H4M22 4L4 22l18 18"/></svg></span>
-    <span class="arr r" aria-hidden="true"><svg viewBox="0 0 64 44"><path d="M2 22h58M42 4l18 18-18 18"/></svg></span>
-    <div class="ind"><i></i><i class="on"></i><i></i></div>
-    <div class="copy">
-      <div class="lab">Spotless Co. · Home &amp; office cleaning · Cape Town</div>
-      <div class="acc">your weekend,</div>
-      <h1 class="disp">Handed back.</h1>
-      <div class="meta"><span class="cnt">02<small>/04</small></span><p>Vetted, insured cleaners across Cape Town. Fixed prices, same team every visit.</p></div>
-      <a class="toggle" href="#">Book a clean <span class="wa" aria-label="WhatsApp us"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></span></a>
-    </div>
-    <svg class="badge" viewBox="0 0 140 140" aria-hidden="true">
-      <defs><path id="c" d="M70,70 m-54,0 a54,54 0 1,1 108,0 a54,54 0 1,1 -108,0"/></defs>
-      <circle cx="70" cy="70" r="69" style="fill:var(--stage);stroke:var(--pill-2)"/>
-      <text font-family="Schibsted Grotesk" font-size="13" font-weight="700" letter-spacing="3" style="fill:var(--on-dark)"><textPath href="#c">FREE RE-CLEAN · 24H GUARANTEE ·</textPath></text>
-      <path d="M70 56v28M60 74l10 10 10-10" style="fill:none;stroke:var(--acc-2);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round"/>
-    </svg>
-    <div class="foot">
-      <div class="soc"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg><svg viewBox="0 0 24 24"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"/></svg></div>
-      <div class="dots"><i></i><i class="on"></i><i></i><i></i></div>
-      <span>© 2026 Spotless Co. · 021 448 2210</span>
-    </div>
+<header class="hero">
+  <nav>
+    <div class="logo disp">Spotless<i>.</i>Co</div>
+    <div class="links"><a class="on" href="#">Home cleaning</a><a href="#">Office cleaning</a><a href="#">Prices</a><a href="#">FAQ</a></div>
+    <a class="btn white" href="#">Book a clean</a>
+  </nav>
+  <div class="giant disp" aria-hidden="true">Spotless</div>
+  <div class="card-tilt photo" style="background-image:url('../../stock/cleaning/mop-living.jpg')"></div>
+  <div class="stat"><div class="n disp">1,200<span>+</span></div><div class="row"><div class="stack"><i class="photo" style="background-image:url('../../stock/cleaning/stairs-caddy.jpg');background-position:62% 30%"></i><i class="photo" style="background-image:url('../../stock/cleaning/office-vacuum.jpg');background-position:60% 12%"></i><i class="photo" style="background-image:url('../../stock/cleaning/ottoman.jpg');background-position:30% 30%"></i></div>Cape Town homes on a regular clean</div></div>
+  <div class="prog">01<i></i><small>07</small></div>
+
+  <div class="copy">
+    <div class="lab">Spotless Co. · Cleaning service in Cape Town</div>
+    <h1 class="disp">Home &amp; office<span class="l2">cleaning</span><span class="l3 serif">in Cape Town</span></h1>
+    <p>Vetted, insured cleaners for homes, flats and offices. Fixed prices from R480 per visit.</p>
+    <a class="toggle" href="#">Book a clean <span class="wa" aria-label="WhatsApp Spotless Co."><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></span></a>
+    <span class="rate"><span class="st">★★★★★</span><span><b>4.9</b> · 386 reviews</span></span>
   </div>
 
-  <div class="tile t-b photo" style="background-image:url('../../stock/cleaning/vacuum-dog.jpg')">
-    <div class="sh"></div>
-    <div class="top">
-      <div><div class="nm">3-Bedroom Home Clean</div><div class="rt"><span class="st">★</span> <b>4.9</b> (386 reviews)</div></div>
-      <div class="pr"><b>R650</b><span>per visit</span></div>
-    </div>
-    <div class="glass">
+  <div class="bcard">
+    <div class="ph photo" style="background-image:url('../../stock/cleaning/vacuum-dog.jpg')"><span class="chip">Most booked</span><div class="nm disp">3-Bedroom Home Clean</div></div>
+    <div class="body">
+      <div class="top"><div class="pr">R650 <span>per visit</span></div><div class="rt"><span class="st">★</span> <b>4.9</b> (386)</div></div>
       <div class="feat">
         <div><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>4 hours</div>
         <div><svg class="i" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c1-3.5 3.5-5 6-5s5 1.5 6 5M15 15.5c2.5 0 4.5 1.5 5.5 4.5"/></svg>2 cleaners</div>
         <div><svg class="i" viewBox="0 0 24 24"><path d="M9 3h6v4H9zM8 7h8l1 14H7z"/></svg>Products included</div>
         <div><svg class="i" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7.5-7 9-4-1.5-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free re-clean</div>
       </div>
-      <a class="btn mint" href="#">Book a clean</a>
+      <div class="bcta"><a class="btn acc" href="#">Book a clean</a><span class="wa" aria-label="WhatsApp Spotless Co."><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></span></div>
     </div>
   </div>
-  <div class="tile t-rate">
-    <div class="lab">Google rating</div>
-    <div class="big disp" style="margin-top:18px">4.9</div>
-    <div class="stars">★★★★★</div>
-    <p><b>386 reviews</b> from homes and offices across the city.</p>
-  </div>
-  <div class="tile t-hours">
-    <div class="lab">Cleaning hours</div>
-    <div class="row"><span>Mon – Fri</span><b>07:00 – 18:00</b></div>
-    <div class="row"><span>Saturday</span><b>08:00 – 14:00</b></div>
-    <div class="areas"><span>Atlantic Seaboard</span><span>City Bowl</span><span>Southern Suburbs</span></div>
-  </div>
-</div>
+</header>
 
-<section>
-  <div class="menu">
-    <div>
-      <div class="intro">
-        <div><div class="lab">Prices</div><h2 class="disp">Priced by the room.<br>Not by surprise.</h2></div>
-        <p>The price you see is the price you pay. Products and equipment included.</p>
-      </div>
-      <div class="group">
-        <div class="gh"><b class="disp">Homes</b><span>Regular clean · weekly or fortnightly</span></div>
-        <div class="item"><b>1–2 bedroom flat</b><em>R480</em><small>3 hours · 1 cleaner</small><small class="u">per visit</small></div>
-        <div class="item"><b>3-bedroom home <span class="tag">Most booked</span></b><em>R650</em><small>4 hours · 2 cleaners</small><small class="u">per visit</small></div>
-        <div class="item"><b>Deep clean</b><em>from R1,450</em><small>Inside cupboards, oven, fridge, skirting</small><small class="u">per home</small></div>
-        <div class="item"><b>Move-out clean</b><em>from R1,850</em><small>Deposit-ready, with a photo report</small><small class="u">per home</small></div>
-      </div>
-      <div class="group">
-        <div class="gh"><b class="disp">Offices &amp; extras</b><span>After hours, keys held safely</span></div>
-        <div class="item"><b>Office clean, 3× a week</b><em>from R3,900</em><small>Up to 150 m², desks, kitchen, bathrooms</small><small class="u">per month</small></div>
-        <div class="item"><b>Couch &amp; upholstery</b><em>R280</em><small>Steam clean, dry in 4 hours</small><small class="u">per seat</small></div>
-      </div>
+<div class="marquee disp" aria-hidden="true"><span>Regular home cleans</span><span>Deep cleans</span><span>Move-out cleans</span><span>Office cleans</span><span>Couch steam cleans</span></div>
+
+<section class="pricing">
+  <span class="pill"><span class="st">★</span> Rated 4.9 on Google by 386 Cape Town clients</span>
+  <h2 class="disp">Cleaning prices<br><span>in Cape Town</span></h2>
+  <div class="seg"><span class="on">Regular clean</span><span>Once-off clean</span></div>
+  <div class="plans-wrap">
+    <div class="ghost disp" aria-hidden="true"></div>
+    <div class="plans">
+      <div class="plan"><div class="nm">Flat clean</div><div class="sub">1–2 bedroom flats</div><div class="pr">R480<span> / visit</span><small>3 hours · 1 cleaner</small></div><a class="btn line" href="#">Book a flat clean</a>
+        <ul><li><i>✓</i>Kitchen, bathroom, floors</li><li><i>✓</i>Beds made, bins out</li><li><i>✓</i>Products included</li><li><i>✓</i>Free re-clean in 24 hours</li></ul></div>
+      <div class="plan feat"><div class="nm">Home clean</div><div class="sub">3-bedroom homes · most booked</div><div class="pr">R650<span> / visit</span><small>4 hours · 2 cleaners</small></div><a class="btn white" href="#">Book a home clean</a>
+        <ul><li><i>✓</i>Everything in a flat clean</li><li><i>✓</i>Same team every visit</li><li><i>✓</i>Ironing for 30 minutes</li><li><i>✓</i>Free re-clean in 24 hours</li></ul></div>
+      <div class="plan"><div class="nm">Deep clean</div><div class="sub">Once-off, move-in or move-out</div><div class="pr">R1,450<span> / home</span><small>From · up to 3 bedrooms</small></div><a class="btn line" href="#">Book a deep clean</a>
+        <ul><li><i>✓</i>Inside oven, fridge, cupboards</li><li><i>✓</i>Skirtings, doors, windows</li><li><i>✓</i>Photo report for your landlord</li><li><i>✓</i>Free re-clean in 24 hours</li></ul></div>
     </div>
-    <div class="side photo" style="background-image:url('../../stock/cleaning/spray-bottles.jpg')">
-      <div class="note"><b>Eco products, no extra charge</b><span>Plant-based cleaners, safe around kids and pets.</span></div>
-    </div>
+  </div>
+  <div class="arc"></div>
+</section>
+
+<section class="gallery">
+  <div class="head"><div><div class="lab">Recent cleans</div><h2 class="disp">Fresh from this<br>week's cleans</h2></div><p>Real jobs across the Southern Suburbs, Atlantic Seaboard and City Bowl.</p></div>
+  <div class="flow">
+    <div class="fc c3 photo" style="background-image:url('../../stock/cleaning/spray-bottles.jpg')"></div>
+    <div class="fc c4 photo" style="background-image:url('../../stock/cleaning/desk-spray.jpg')"></div>
+    <div class="fc c1 photo" style="background-image:url('../../stock/cleaning/ottoman.jpg')"><div class="cap"><b>Couch steam clean</b><span>Claremont</span></div></div>
+    <div class="fc c2 photo" style="background-image:url('../../stock/cleaning/office-vacuum.jpg');background-position:60% 30%"><div class="cap"><b>Office clean</b><span>Woodstock</span></div></div>
+    <div class="fc c0 photo" style="background-image:url('../../stock/cleaning/kitchen.jpg')"><div class="cap"><b>Kitchen deep clean</b><span>Rondebosch · 5 hours</span></div></div>
+  </div>
+  <div class="player">
+    <div class="ctl"><span aria-label="Previous"><svg class="i" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></span><span class="on" aria-label="Pause"><svg class="i" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></svg></span><span aria-label="Next"><svg class="i" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></div>
+    <div class="now"><i class="photo" style="background-image:url('../../stock/cleaning/kitchen.jpg')"></i><div><b>Kitchen deep clean</b><span>Rondebosch · 3 of 5</span></div><div class="bar"></div></div>
+    <a class="btn acc" href="#">Book a deep clean</a>
   </div>
 </section>
 
 <section class="quote">
-  <div class="ph photo" style="background-image:url('../../stock/cleaning/stairs-caddy.jpg')"></div>
   <div>
-    <div class="mk disp">“</div>
-    <blockquote>Same two cleaners every second Friday for a year. I come home, the house smells like lemons, and I haven't touched a mop since.</blockquote>
-    <div class="who"><span><b>Thandi M.</b> · Observatory</span><span>Fortnightly 3-bedroom clean</span></div>
+    <div class="lab">Client review</div>
+    <blockquote style="margin-top:18px">Same two cleaners every second Friday for a year. I come home, the house smells like <em>lemons</em>, and I haven't touched a mop since.</blockquote>
+    <div class="who"><b>Thandi M.</b> · Observatory · fortnightly home clean</div>
   </div>
-</section>
-
-<section>
-  <div class="tl-head">
-    <div><div class="lab">How it works</div><h2 class="disp">Booked in a minute.<br>Clean by lunch.</h2></div>
-    <p>No quotes, no site visits. Pick your rooms and a date.</p>
-  </div>
-  <div class="steps">
-    <div class="sb s1 photo" style="background-image:url('../../stock/cleaning/mop-living.jpg');background-position:62% 50%"><div class="sh"></div><div class="n disp">01</div><b>Pick rooms and a date</b><p>See the fixed price before you pay. No site visit.</p><span class="when">60 seconds</span></div>
-    <div class="sb s2"><div class="ph photo" style="background-image:url('../../stock/cleaning/office-vacuum.jpg');background-position:60% 30%"></div><div class="tx"><div class="n disp">02</div><b>Meet your team</b><p>Your cleaners' names and photos on WhatsApp.</p><span class="when">Day before</span></div></div>
-    <div class="sb s3"><div class="n disp">03</div><b>We bring it all</b><p>Products, vacuum and mop.</p></div>
-    <div class="sb s4"><div class="n disp">04</div><b>Check it over</b><p>Missed a spot? We come back free.</p><span class="when">Within 24 hours</span></div>
-  </div>
+  <div class="ph photo" style="background-image:url('../../stock/cleaning/stairs-caddy.jpg')"></div>
 </section>
 
 <section class="faq">
-  <div><div class="lab">Questions</div><h2 class="disp">Keys, pets and re-cleans</h2><p class="lead">Anything else? <a href="#">Ask on WhatsApp</a>. We reply within 15 minutes.</p></div>
-  <div>
-    <div class="qa open"><div class="q">Do I need to be home during the clean?<i>−</i></div><p>No. Most clients leave a key or a gate code. Your cleaners are vetted, insured and the same people every visit.</p></div>
+  <div class="lab">Cleaning questions</div>
+  <h2 class="big">FAQ <span>before you book a cleaner</span></h2>
+  <p class="lead">Anything else? <a href="#">Ask on WhatsApp</a>&nbsp;· we reply within 15 minutes.</p>
+  <div class="rows">
+    <div class="qa"><div class="q">Do I need to be home during the clean?<i>−</i></div><p>No. Most clients leave a key or a gate code. Your cleaners are vetted, insured and the same people every visit.</p></div>
     <div class="qa"><div class="q">What if I'm not happy with a room?<i>+</i></div></div>
     <div class="qa"><div class="q">Can I skip or move a clean?<i>+</i></div></div>
     <div class="qa"><div class="q">Do you clean offices after hours?<i>+</i></div></div>
-    <div class="qa"><div class="q">Which areas do you cover?<i>+</i></div></div>
+    <div class="qa"><div class="q">Which Cape Town suburbs do you cover?<i>+</i></div></div>
   </div>
 </section>
 
-<div class="cta">
-  <div class="box">
-    <div class="top"><h2 class="disp">Book a clean<br>for this week.</h2><p>Fixed price, same team every visit, and a free re-clean if anything's missed.</p></div>
+<section class="cta">
+  <div class="ghost disp" aria-hidden="true">Spotless</div>
+  <div class="panel">
+    <h2 class="disp">Book a cleaner in Cape Town <span>this week.</span></h2>
     <div class="bar">
-      <div class="f"><label>Suburb</label><div>Observatory <svg class="i" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div></div>
-      <div class="f"><label>Home</label><div>3 bedrooms <svg class="i" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div></div>
-      <div class="f"><label>Date</label><div>Fri, 6 November <svg class="i" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div></div>
-      <div class="tot"><b>R650</b><small>per visit</small></div>
-      <a class="btn ink" href="#">Book a clean</a>
+      <div class="f"><label>Suburb</label><div>Observatory</div></div>
+      <div class="f"><label>Home</label><div>3 bedrooms</div></div>
+      <div class="f"><label>Date</label><div>Fri, 6 November</div></div>
+      <div class="tot">R650 <small>per visit</small></div>
+      <a class="btn acc" href="#">Book a clean</a>
     </div>
-    <div class="foot"><div class="wa-row"><span class="wa" aria-label="WhatsApp us"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></span>Rather chat? WhatsApp 021 448 2210</div><span>Pay after the clean · Free to move up to 24 hours before</span></div>
+    <div class="foot"><div class="wa-row"><span class="wa" aria-label="WhatsApp Spotless Co."><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></span>Rather chat? WhatsApp 021 448 2210</div><span>Pay after the clean · Free to move up to 24 hours before</span></div>
   </div>
-</div>
+</section>
 
-<footer><span class="logo disp">Spotless<i style="font-style:normal;color:var(--acc)">.</i>Co</span><span>Prices · How it works · Offices · FAQ</span><span>© 2026 Spotless Co. · Concept by CAAS Studios</span></footer>
+<footer><span class="logo disp">Spotless<i style="font-style:normal;color:var(--acc)">.</i>Co</span><span>Home cleaning · Office cleaning · Deep cleaning · Cape Town</span><span>© 2026 Spotless Co. · Concept by CAAS Studios</span></footer>
 </body></html>
