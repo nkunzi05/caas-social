@@ -128,3 +128,5 @@ architect/stone-house.jpg | https://images.unsplash.com/photo-1722421492323-eaf9
 architect/dining.jpg | https://images.unsplash.com/photo-1659720879338-160d469a3b17 | https://unsplash.com/photos/a-dining-room-table-in-front-of-a-window-1uJVd81R_dY
 architect/drafting.jpg | https://images.unsplash.com/photo-1503387762-592deb58ef4e | https://unsplash.com/photos/an-architect-working-on-a-draft-with-a-pencil-and-ruler-HtBlQdxfG9k
 architect/staircase.jpg | https://images.unsplash.com/photo-1601993957728-1e56ab70c5a8 | https://unsplash.com/photos/minimalist-concrete-staircase-with-vase-0B7ijYKaKcE
+architect/glow-house.jpg | https://images.unsplash.com/photo-1748063578185-3d68121b11ff | https://unsplash.com/photos/modern-house-exterior-glows-with-lights-4vioYQ9Nn9Y
+architect/blueprint.jpg | https://images.unsplash.com/photo-1503387837-b154d5074bd2 | https://unsplash.com/photos/person-drafting-on-blueprint--FPFq_trr2Y
