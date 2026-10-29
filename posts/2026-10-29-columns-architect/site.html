@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Residential Architects in Cape Town | Lineform Studio</title>
+<meta name="description" content="Residential architects in Cape Town for new homes, extensions and renovations, through council approval. Concept designs from R18 500. Book a free site visit.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../brand/fonts.css">
+<style>
+  /* Layout: split-screen · font: mixed (bold Schibsted headline, Instrument Serif italic accent) · shape: sharp · mode: tinted
+     Hero: boards 03 (italic accent over bold word with a full stop, logo letter + accent dot, counter, thin outline arrows, dots)
+           + 01 (glass nav with accent underline, glow behind the focal subject, toggle CTA with round knob, rotating-text badge, vertical indicators)
+           + 06 (duotone subject on a big accent circle, 01 —— 03 progress line) */
+  :root {
+    --ink: #10151F; --ink-2: #333C4B; --ink-3: #566072; --paper: #E8EDF3; --paper-2: #F7F9FC; --line: #C3CCD8;
+    --acc: #5B8CFF; --acc-ink: #08112E; --acc-2: #2147C2; --acc-soft: #D6E2FF;
+    --dark: #0B1019; --dark-2: #141B28; --dark-3: #1D2636; --dark-line: #2C3749;
+    --on-dark: #FFFFFF; --on-dark-2: #C5CEDC; --on-dark-3: #9AA6B9;
+    --wa: #25D366; --wa-ink: #072B14; --white: #FFFFFF;
+    --glass: rgba(16,22,34,0.66); --glass-line: rgba(255,255,255,0.18); --glass-2: rgba(255,255,255,0.08);
+    --glow: radial-gradient(circle at 50% 50%, rgba(91,140,255,0.55) 0%, rgba(91,140,255,0.16) 42%, rgba(91,140,255,0) 70%);
+    --duo: linear-gradient(180deg, rgba(91,140,255,0.0) 0%, rgba(33,71,194,0.35) 100%);
+    --scrim: linear-gradient(180deg, rgba(11,16,25,0) 30%, rgba(11,16,25,0.9) 100%);
+    --grid: linear-gradient(rgba(91,140,255,0.16) 1px, transparent 1px), linear-gradient(90deg, rgba(91,140,255,0.16) 1px, transparent 1px);
+    --grid-light: linear-gradient(rgba(33,71,194,0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(33,71,194,0.10) 1px, transparent 1px);
+    --sh: rgba(4,8,18,0.5);
+    --r: 3px; --glass-strong: rgba(11,16,25,0.8); --band: linear-gradient(90deg, rgba(11,16,25,0.75) 0%, rgba(11,16,25,0.2) 60%, rgba(11,16,25,0) 100%); --mask: #000; --halo: rgba(91,140,255,0.25);
+  }
+  * { box-sizing: border-box; } html, body { margin: 0; }
+  body { width: 1280px; background: var(--paper); font-family: "Schibsted Grotesk", sans-serif; color: var(--ink); }
+  .photo { background-size: cover; background-position: center; }
+  .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; letter-spacing: 0; }
+  .lab { font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 26px; border-radius: var(--r); font-weight: 700; font-size: 16px; text-decoration: none; white-space: nowrap; }
+  .btn.acc { background: var(--acc); color: var(--acc-ink); }
+  .btn.ink { background: var(--ink); color: var(--white); }
+  .btn.line { color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+  .wa { width: 54px; height: 54px; border-radius: 50%; background: var(--wa); display: inline-flex; align-items: center; justify-content: center; flex: none; }
+  .wa svg { width: 26px; height: 26px; fill: var(--wa-ink); }
+  svg.i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  section { padding: 112px 56px; position: relative; }
+  h2 { margin: 16px 0 0; font-size: 60px; line-height: 1.0; font-weight: 800; letter-spacing: -0.035em; }
+  h2 .it { font-weight: 400; color: var(--acc-2); font-size: 1.1em; letter-spacing: -0.01em; }
+
+  /* HERO: split-screen on a dark stage */
+  .hero { margin: 16px; height: 900px; background: var(--dark); position: relative; overflow: hidden; display: grid; grid-template-columns: 560px 1fr; color: var(--on-dark); border-radius: var(--r); }
+  nav { position: absolute; z-index: 6; left: 24px; right: 24px; top: 22px; height: 66px; border-radius: var(--r); background: var(--glass); box-shadow: inset 0 0 0 1px var(--glass-line); backdrop-filter: blur(14px);
+        display: flex; align-items: center; justify-content: space-between; padding: 0 7px 0 22px; }
+  .logo { font-size: 24px; font-weight: 800; letter-spacing: -0.03em; display: flex; align-items: baseline; gap: 10px; color: var(--on-dark); }
+  .logo .mk { font-size: 30px; } .logo .mk i { font-style: normal; color: var(--acc); }
+  .logo small { font-size: 14px; font-weight: 600; color: var(--on-dark-2); letter-spacing: 0; }
+  nav .links { display: flex; gap: 30px; font-size: 15px; font-weight: 600; color: var(--on-dark-2); }
+  nav .links a { color: inherit; text-decoration: none; height: 44px; display: inline-flex; align-items: center; position: relative; }
+  nav .links a.on { color: var(--on-dark); } nav .links a.on::after { content: ""; position: absolute; left: 0; width: 22px; bottom: 4px; height: 2px; background: var(--acc); }
+  nav .btn { height: 52px; font-size: 15px; }
+  .hl { position: relative; z-index: 3; padding: 176px 0 0 56px; background: var(--dark-2); }
+  .hl .eb { font-size: 14px; font-weight: 600; color: var(--on-dark-2); letter-spacing: 0.02em; display: flex; align-items: center; gap: 10px; }
+  .hl .eb::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--acc); }
+  .hl .acc-word { margin-top: 34px; font-size: 64px; line-height: 0.9; color: var(--acc); }
+  .hl h1 { margin: 6px 0 0; font-size: 70px; line-height: 0.98; font-weight: 800; letter-spacing: -0.045em; width: 470px; }
+  .hl .sub { margin: 26px 0 0; font-size: 18px; line-height: 1.5; color: var(--on-dark-2); width: 440px; }
+  .hl .sub b { color: var(--on-dark); font-weight: 700; }
+  .toggle { margin-top: 34px; display: flex; align-items: center; gap: 12px; }
+  .tg { display: inline-flex; align-items: center; height: 60px; padding: 0 6px 0 26px; gap: 18px; background: var(--white); color: var(--ink); text-decoration: none; font-weight: 700; font-size: 16px; border-radius: 999px; }
+  .tg .knob { width: 48px; height: 48px; border-radius: 50%; background: var(--acc); color: var(--acc-ink); display: flex; align-items: center; justify-content: center; }
+  .hl .proof { position: absolute; left: 56px; bottom: 44px; right: 40px; display: flex; gap: 34px; padding-top: 22px; border-top: 1px solid var(--dark-line); }
+  .hl .proof div { font-size: 14px; color: var(--on-dark-3); line-height: 1.4; }
+  .hl .proof b { display: block; font-size: 26px; color: var(--on-dark); font-weight: 800; letter-spacing: -0.02em; }
+  .stage { position: relative; background-image: var(--grid); background-size: 48px 48px; }
+  .stage .glow { position: absolute; left: 30px; top: 70px; width: 760px; height: 760px; background: var(--glow); }
+  .stage .circle { position: absolute; left: 130px; top: 170px; width: 520px; height: 520px; border-radius: 50%; background: var(--acc); }
+  .stage .circle2 { position: absolute; left: 520px; top: 770px; width: 200px; height: 200px; border-radius: 50%; background: var(--acc-2); }
+  .stage .house { position: absolute; left: 30px; top: 250px; width: 660px; height: 520px; background-image: url('../../stock/architect/glow-house.jpg'); background-size: cover; background-position: 50% 45%;
+                  filter: grayscale(1) contrast(1.15) brightness(1.05);
+                  -webkit-mask-image: radial-gradient(ellipse 62% 60% at 50% 52%, var(--mask) 58%, transparent 100%); mask-image: radial-gradient(ellipse 62% 60% at 50% 52%, var(--mask) 58%, transparent 100%); mix-blend-mode: luminosity; }
+  .stage .tint { position: absolute; left: 30px; top: 250px; width: 660px; height: 520px; background: var(--duo);
+                 -webkit-mask-image: radial-gradient(ellipse 62% 60% at 50% 52%, var(--mask) 58%, transparent 100%); mask-image: radial-gradient(ellipse 62% 60% at 50% 52%, var(--mask) 58%, transparent 100%); }
+  .tile { position: absolute; border-radius: var(--r); overflow: hidden; box-shadow: 0 30px 60px var(--sh), 0 0 0 1px var(--glass-line); }
+  .tile .cap { position: absolute; left: 10px; right: 10px; bottom: 10px; padding: 10px 12px; background: var(--glass); backdrop-filter: blur(10px); font-size: 13px; line-height: 1.35; color: var(--on-dark-2); border-radius: var(--r); }
+  .tile .cap b { display: block; color: var(--on-dark); font-size: 14px; }
+  .t1 { right: 40px; top: 128px; width: 190px; height: 250px; background-image: url('../../stock/architect/staircase.jpg'); background-size: cover; background-position: 50% 60%; }
+  .t2 { right: 70px; top: 560px; width: 230px; height: 160px; background-image: url('../../stock/architect/stone-house.jpg'); background-size: cover; background-position: 50% 30%; }
+  .badge { position: absolute; left: -64px; top: 600px; width: 128px; height: 128px; z-index: 5; }
+  .badge .ring { width: 128px; height: 128px; border-radius: 50%; background: var(--dark); box-shadow: 0 0 0 1px var(--glass-line); }
+  .badge svg.txt { position: absolute; inset: 0; width: 128px; height: 128px; }
+  .badge svg.txt text { font-size: 13px; font-weight: 700; letter-spacing: 2.6px; fill: var(--on-dark-2); font-family: "Schibsted Grotesk", sans-serif; }
+  .badge .dot { position: absolute; left: 50%; top: 50%; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%; background: var(--acc); color: var(--acc-ink); display: flex; align-items: center; justify-content: center; }
+  .prog { position: absolute; left: 110px; bottom: 50px; display: flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 700; color: var(--on-dark); background: var(--dark); padding: 8px 12px; }
+  .prog span { width: 110px; height: 1px; background: var(--on-dark-3); position: relative; } .prog span::before { content: ""; position: absolute; left: 0; top: -1px; width: 40px; height: 3px; background: var(--acc); }
+  .prog em { font-style: normal; color: var(--on-dark-3); }
+  .arrows { position: absolute; right: 40px; bottom: 44px; display: flex; gap: 10px; }
+  .arrows a { width: 52px; height: 52px; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--on-dark-3); color: var(--on-dark); display: flex; align-items: center; justify-content: center; background: var(--dark); }
+  .vind { position: absolute; right: 14px; top: 420px; display: flex; flex-direction: column; gap: 8px; }
+  .vind i { width: 3px; height: 18px; background: var(--on-dark-3); } .vind i.on { height: 40px; background: var(--acc); }
+
+  /* SERVICES: tabs */
+  .svc { background: var(--paper); }
+  .svc .top { display: flex; justify-content: space-between; align-items: flex-end; }
+  .svc .top p { margin: 0; width: 360px; font-size: 17px; line-height: 1.55; color: var(--ink-2); }
+  .tabs { margin-top: 52px; display: flex; border-bottom: 1px solid var(--line); }
+  .tabs a { height: 60px; display: inline-flex; align-items: center; gap: 12px; padding: 0 28px 0 0; margin-right: 28px; font-size: 18px; font-weight: 700; color: var(--ink-3); text-decoration: none; position: relative; }
+  .tabs a small { font-size: 13px; font-weight: 700; color: var(--ink-3); }
+  .tabs a.on { color: var(--ink); } .tabs a.on::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: var(--acc-2); }
+  .panel { margin-top: 44px; display: grid; grid-template-columns: 1fr 600px; gap: 56px; }
+  .panel h3 { margin: 0; font-size: 36px; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em; }
+  .panel > div > p { margin: 16px 0 0; font-size: 17px; line-height: 1.6; color: var(--ink-2); }
+  .panel ul { list-style: none; margin: 28px 0 0; padding: 0; border-top: 1px solid var(--line); }
+  .panel li { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 16px; color: var(--ink-2); }
+  .panel li b { font-size: 18px; color: var(--ink); }
+  .panel li em { font-style: normal; font-size: 14px; color: var(--ink-3); font-weight: 400; }
+  .panel .acts { margin-top: 30px; display: flex; gap: 12px; }
+  .panel .pic { height: 520px; border-radius: var(--r); position: relative; background-image: url('../../stock/architect/hill-house.jpg'); background-position: 50% 55%; }
+  .panel .pic .cap { position: absolute; left: 0; bottom: 0; padding: 14px 18px; background: var(--paper-2); font-size: 14px; color: var(--ink-2); }
+  .panel .pic .cap b { color: var(--ink); }
+
+  /* PROJECT: photo + facts */
+  .proj { background: var(--paper-2); display: grid; grid-template-columns: 700px 1fr; gap: 64px; align-items: center; }
+  .proj .pic { height: 600px; border-radius: var(--r); background-image: url('../../stock/architect/dining.jpg'); background-position: 50% 50%; }
+  .proj h2 { font-size: 52px; }
+  .proj p { margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: var(--ink-2); }
+  .facts { margin: 30px 0 0; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+  .facts div { padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .facts div:nth-child(odd) { padding-right: 20px; border-right: 1px solid var(--line); } .facts div:nth-child(even) { padding-left: 22px; }
+  .facts small { display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
+  .facts b { display: block; margin-top: 6px; font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
+
+  /* PROCESS: horizontal timeline */
+  .proc { background: var(--paper); background-image: var(--grid-light); background-size: 40px 40px; }
+  .proc .line { position: relative; margin-top: 70px; display: grid; grid-template-columns: repeat(5, 1fr); }
+  .proc .line::before { content: ""; position: absolute; left: 0; right: 0; top: 22px; height: 1px; background: var(--ink); }
+  .step { position: relative; padding-right: 24px; }
+  .step .n { width: 46px; height: 46px; border-radius: 50%; background: var(--paper-2); box-shadow: inset 0 0 0 1.5px var(--ink); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; position: relative; }
+  .step.on .n { background: var(--acc); color: var(--acc-ink); box-shadow: none; }
+  .step h3 { margin: 26px 0 0; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+  .step p { margin: 10px 0 0; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+  .step .dur { display: inline-block; margin-top: 14px; padding: 6px 10px; background: var(--paper-2); box-shadow: inset 0 0 0 1px var(--line); font-size: 13px; font-weight: 700; color: var(--ink-2); }
+
+  /* FOUNDER QUOTE (dark) */
+  .quote { background: var(--dark); color: var(--on-dark); display: grid; grid-template-columns: 420px 1fr; gap: 72px; align-items: center; }
+  .quote .pic { height: 520px; border-radius: var(--r); background-image: url('../../stock/architect/blueprint.jpg'); background-position: 30% 50%; position: relative; }
+  .quote .pic::after { content: ""; position: absolute; inset: 0; background: var(--duo); }
+  .quote .lab { color: var(--on-dark-3); }
+  .quote blockquote { margin: 22px 0 0; font-family: "Instrument Serif", serif; font-style: italic; font-size: 54px; line-height: 1.08; letter-spacing: -0.01em; }
+  .quote blockquote b { font-style: normal; font-family: "Schibsted Grotesk", sans-serif; font-weight: 800; font-size: 48px; letter-spacing: -0.04em; color: var(--acc); }
+  .quote .who { margin-top: 30px; font-size: 16px; color: var(--on-dark-2); } .quote .who b { color: var(--on-dark); }
+  .creds { margin-top: 34px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .creds span { height: 44px; display: inline-flex; align-items: center; padding: 0 16px; box-shadow: inset 0 0 0 1px var(--dark-line); font-size: 14px; font-weight: 600; color: var(--on-dark-2); background: var(--dark-2); }
+
+  /* STUDIO: map + hours */
+  .studio { background: var(--paper); display: grid; grid-template-columns: 1fr 640px; gap: 64px; }
+  .studio h2 { font-size: 52px; }
+  .studio .areas { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .studio .areas span { height: 44px; display: inline-flex; align-items: center; padding: 0 16px; background: var(--paper-2); box-shadow: inset 0 0 0 1px var(--line); font-size: 15px; font-weight: 600; color: var(--ink-2); }
+  .hours { margin-top: 34px; border-top: 1px solid var(--line); }
+  .hours div { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 16px; color: var(--ink-2); } .hours b { color: var(--ink); }
+  .map { position: relative; height: 470px; background: var(--dark); background-image: var(--grid); background-size: 32px 32px; border-radius: var(--r); overflow: hidden; }
+  .map svg.roads { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .map svg.roads path { fill: none; stroke: var(--on-dark-3); stroke-width: 2; opacity: 0.55; }
+  .map svg.roads path.sea { fill: var(--dark-3); stroke: none; opacity: 1; }
+  .map .pin { position: absolute; left: 330px; top: 190px; display: flex; align-items: center; gap: 12px; }
+  .map .pin i { width: 22px; height: 22px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 0 10px var(--halo); }
+  .map .pin span { background: var(--white); color: var(--ink); padding: 10px 14px; font-size: 14px; font-weight: 700; }
+  .map .lbl { position: absolute; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-dark-2); background: var(--dark); padding: 4px 8px; }
+
+  /* CTA: photo band with a glass panel */
+  .cta { padding: 0; height: 720px; background-image: url('../../stock/architect/glow-house.jpg'); background-size: cover; background-position: 50% 60%; color: var(--on-dark); }
+  .cta::before { content: ""; position: absolute; inset: 0; background: var(--band); }
+  .cta .panel-g { position: absolute; left: 56px; top: 96px; width: 620px; padding: 44px; background: var(--glass-strong); backdrop-filter: blur(16px); box-shadow: inset 0 0 0 1px var(--glass-line); border-radius: var(--r); }
+  .cta .lab { color: var(--on-dark-2); }
+  .cta h2 { font-size: 58px; } .cta h2 .it { color: var(--acc); }
+  .cta p { margin: 18px 0 0; font-size: 18px; line-height: 1.55; color: var(--on-dark-2); }
+  .cta .acts { margin-top: 30px; display: flex; align-items: center; gap: 14px; }
+  .cta .acts .btn { height: 58px; }
+  .cta .note { margin-top: 18px; font-size: 14px; color: var(--on-dark-2); }
+  .cta .tagp { position: absolute; right: 56px; bottom: 40px; padding: 10px 14px; background: var(--glass-strong); font-size: 14px; color: var(--on-dark-2); border-radius: var(--r); } .cta .tagp b { color: var(--on-dark); }
+  footer { background: var(--dark); color: var(--on-dark-2); padding: 44px 56px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+  footer .logo { font-size: 22px; } footer b { color: var(--on-dark); }
+</style></head>
+<body>
+
+<header class="hero">
+  <nav>
+    <div class="logo"><span class="mk">l<i>.</i></span>Lineform <small>Studio</small></div>
+    <div class="links"><a class="on" href="#">New homes</a><a href="#">Extensions</a><a href="#">Renovations</a><a href="#">Fees</a><a href="#">Projects</a></div>
+    <a class="btn acc" href="#">Book a site visit</a>
+  </nav>
+  <div class="hl">
+    <div class="eb">Lineform Studio · Architects in Cape Town</div>
+    <div class="acc-word it">drawn to fit.</div>
+    <h1>Residential architects in Cape Town.</h1>
+    <p class="sub">New homes, extensions and renovations, designed and taken through council approval. <b>Concept designs from R18&nbsp;500.</b></p>
+    <div class="toggle">
+      <a class="tg" href="#">Book a free site visit <span class="knob"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a class="wa" href="#" aria-label="WhatsApp Lineform Studio"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg></a>
+    </div>
+    <div class="proof">
+      <div><b>140+</b>homes designed</div>
+      <div><b>94%</b>plans approved first time</div>
+      <div><b>SACAP</b>registered architects</div>
+    </div>
+  </div>
+  <div class="stage">
+    <div class="glow"></div>
+    <div class="circle"></div>
+    <div class="circle2"></div>
+    <div class="house"></div>
+    <div class="tint"></div>
+    <div class="tile t1"><div class="cap"><b>Tamboerskloof stair</b>Renovation, 2025</div></div>
+    <div class="tile t2"><div class="cap"><b>Sea Point townhouse</b>New build, 2023</div></div>
+    <div class="badge" aria-hidden="true"><div class="ring"></div>
+      <svg class="txt" viewBox="0 0 128 128"><defs><path id="c" d="M64,64 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#c">SCROLL TO SEE THE WORK · </textPath></text></svg>
+      <div class="dot"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div></div>
+    <div class="prog">01 <span></span> <em>03</em></div>
+    <div class="arrows"><a href="#" aria-label="Previous project"><svg class="i" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><a href="#" aria-label="Next project"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="vind"><i class="on"></i><i></i><i></i></div>
+  </div>
+</header>
+
+<section class="svc">
+  <div class="top">
+    <div><div class="lab">Services</div><h2>Architectural services<br>in <span class="it">Cape Town</span></h2></div>
+    <p>One architect runs your project from the first sketch to the final site check. Fixed fees per stage.</p>
+  </div>
+  <div class="tabs"><a class="on" href="#">New homes <small>01</small></a><a href="#">Extensions <small>02</small></a><a href="#">Renovations <small>03</small></a><a href="#">Council plans <small>04</small></a></div>
+  <div class="panel">
+    <div>
+      <h3>A new home, designed around your site and the way you live.</h3>
+      <p>We study the slope, the wind and the afternoon sun before we draw a single wall.</p>
+      <ul>
+        <li><span>Concept design</span><b>from R18 500 <em>/ home</em></b></li>
+        <li><span>Council-ready plans</span><b>from R42 000 <em>/ home</em></b></li>
+        <li><span>Full service to handover</span><b>8–10% <em>of build cost</em></b></li>
+        <li><span>3D walk-through</span><b>R6 500 <em>/ project</em></b></li>
+      </ul>
+      <div class="acts"><a class="btn ink" href="#">Book a site visit</a><a class="btn line" href="#">See fee breakdown</a></div>
+    </div>
+    <div class="pic photo"><div class="cap"><b>Hout Bay hillside house</b> · 280 m² · 2024</div></div>
+  </div>
+</section>
+
+<section class="proj">
+  <div class="pic photo"></div>
+  <div>
+    <div class="lab">Selected project</div>
+    <h2>Constantia forest house, <span class="it">glass on three sides</span></h2>
+    <p>A family of five wanted the oaks inside the living room. We pulled the walls back and let the timber frame carry the roof.</p>
+    <div class="facts">
+      <div><small>Suburb</small><b>Constantia</b></div>
+      <div><small>Size</small><b>310 m²</b></div>
+      <div><small>Plans approved</small><b>9 weeks</b></div>
+      <div><small>Build budget</small><b>R6.2 million</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="proc">
+  <div class="lab">How it works</div>
+  <h2>Five stages, <span class="it">one fee</span> for each</h2>
+  <div class="line">
+    <div class="step on"><div class="n">01</div><h3>Site visit</h3><p>We walk the site with you and talk through budget and brief.</p><span class="dur">Free · 1 hour</span></div>
+    <div class="step"><div class="n">02</div><h3>Concept design</h3><p>Sketches, a 3D model and two layout options to choose from.</p><span class="dur">3–4 weeks</span></div>
+    <div class="step"><div class="n">03</div><h3>Council plans</h3><p>Full drawings submitted to the City of Cape Town for you.</p><span class="dur">8–12 weeks</span></div>
+    <div class="step"><div class="n">04</div><h3>Builder tender</h3><p>Three vetted builders quote on the same drawings.</p><span class="dur">3 weeks</span></div>
+    <div class="step"><div class="n">05</div><h3>Site checks</h3><p>We inspect the build every two weeks until handover.</p><span class="dur">Until handover</span></div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="pic photo"></div>
+  <div>
+    <div class="lab">The studio</div>
+    <blockquote>“We draw for how you live on a <b>Saturday morning,</b> not for a magazine cover.”</blockquote>
+    <div class="who"><b>Thandi Mokoena</b> · Founding architect, Pr. Arch</div>
+    <div class="creds"><span>SACAP registered</span><span>Green Star accredited</span><span>12 years in Cape Town</span></div>
+  </div>
+</section>
+
+<section class="studio">
+  <div>
+    <div class="lab">Visit the studio</div>
+    <h2>Our studio in <span class="it">Woodstock</span></h2>
+    <div class="areas"><span>Atlantic Seaboard</span><span>City Bowl</span><span>Southern Suburbs</span><span>Northern Suburbs</span><span>Winelands</span></div>
+    <div class="hours">
+      <div><span>Monday – Friday</span><b>08:00 – 17:00</b></div>
+      <div><span>Saturday site visits</span><b>09:00 – 13:00</b></div>
+      <div><span>Phone &amp; WhatsApp</span><b>+27 21 555 0148</b></div>
+    </div>
+  </div>
+  <div class="map">
+    <svg class="roads" viewBox="0 0 640 470" preserveAspectRatio="none" aria-hidden="true">
+      <path class="sea" d="M0 0 H640 V70 C520 110 430 60 330 120 C250 165 150 140 0 190 Z"/>
+      <path d="M0 260 C160 240 300 230 640 210"/><path d="M60 470 C120 360 220 260 360 200"/><path d="M640 330 C500 300 420 260 360 200"/><path d="M200 470 L290 230"/><path d="M450 470 C440 380 420 300 360 200"/>
+    </svg>
+    <div class="lbl" style="left:40px; top:40px">Table Bay</div>
+    <div class="lbl" style="left:40px; top:300px">City Bowl</div>
+    <div class="lbl" style="left:470px; top:380px">Observatory</div>
+    <div class="pin"><i></i><span>Lineform Studio, Woodstock</span></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="panel-g">
+    <div class="lab">Start your house</div>
+    <h2>Book a site visit with a <span class="it">Cape Town</span> architect</h2>
+    <p>Tell us the suburb and the project. An architect calls you back within one working day.</p>
+    <div class="acts"><a class="btn acc" href="#">Book a free site visit</a><a class="wa" href="#" aria-label="WhatsApp Lineform Studio"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg></a></div>
+    <div class="note">Free, no obligation · 1 hour on site · WhatsApp +27 21 555 0148</div>
+  </div>
+  <div class="tagp"><b>Bakoven house</b> · Lineform, 2025</div>
+</section>
+
+<footer>
+  <div class="logo"><span class="mk">l<i>.</i></span>Lineform <small>Studio</small></div>
+  <div>Residential architects in Cape Town · © 2026</div>
+  <div><b>Concept by CAAS Studios</b> · invented business</div>
+</footer>
+</body></html>

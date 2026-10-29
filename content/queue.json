@@ -393,16 +393,32 @@
       "seo_h1": "Home & office cleaning in Cape Town",
       "metricool_id": 408669255,
       "scheduled": "2026-10-28T10:30:00+02:00"
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "columns",
       "slug": "architect",
       "brand": "Lineform Studio",
       "industry": "residential architecture studio",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-29-columns-architect",
+      "layout": "split-screen",
+      "sections": [
+        "service-tabs",
+        "photo-facts",
+        "horizontal-timeline",
+        "founder-quote",
+        "map-hours",
+        "photo-band"
+      ],
+      "font": "mixed",
+      "shape": "sharp",
+      "mode": "tinted",
+      "accent": "#5B8CFF",
+      "ui_ref": "03+01+06",
+      "ui_sections": []
+    }
+  ],
+  "queue": [
     {
       "format": "landing",
       "slug": "boutique",
