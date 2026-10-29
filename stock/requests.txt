@@ -126,10 +126,10 @@ cleaning/stairs-caddy.jpg https://images.unsplash.com/photo-1646980241033-cd7abd
 cleaning/kitchen.jpg https://images.unsplash.com/photo-1757387240036-d7eb9b096c40 https://unsplash.com/photos/nTqR3B3dp-Q
 cleaning/ottoman.jpg https://images.unsplash.com/photo-1686178827149-6d55c72d81df https://unsplash.com/photos/5TXz228u4eo
 cleaning/spray-bottles.jpg https://images.unsplash.com/photo-1528740561666-dc2479dc08ab https://unsplash.com/photos/uooMllXe6gE
-architect/night-house.jpg https://images.unsplash.com/photo-1744094982586-c70f736bda12 https://unsplash.com/photos/a-modern-two-story-home-is-lit-at-night--qTD1leeLCw
 architect/hill-house.jpg https://images.unsplash.com/photo-1698994705178-d244d73ea573 https://unsplash.com/photos/a-house-on-a-hill-surrounded-by-trees-and-rocks-mcSZ1pNmUNU
 architect/stone-house.jpg https://images.unsplash.com/photo-1722421492323-eaf9c401befe https://unsplash.com/photos/modern-house-with-stone-cladding-QSXDXnYE8WQ
 architect/dining.jpg https://images.unsplash.com/photo-1659720879338-160d469a3b17 https://unsplash.com/photos/a-dining-room-table-in-front-of-a-window-1uJVd81R_dY
 architect/drafting.jpg https://images.unsplash.com/photo-1503387762-592deb58ef4e https://unsplash.com/photos/an-architect-working-on-a-draft-with-a-pencil-and-ruler-HtBlQdxfG9k
-architect/blueprints.jpg https://images.unsplash.com/photo-1608303588026-884930af2559 https://unsplash.com/photos/people-reviewing-architectural-blueprints-on-desk-3QzMBrvCeyQ
 architect/staircase.jpg https://images.unsplash.com/photo-1601993957728-1e56ab70c5a8 https://unsplash.com/photos/minimalist-concrete-staircase-with-vase-0B7ijYKaKcE
+architect/glow-house.jpg https://images.unsplash.com/photo-1748063578185-3d68121b11ff https://unsplash.com/photos/modern-house-exterior-glows-with-lights-4vioYQ9Nn9Y
+architect/blueprint.jpg https://images.unsplash.com/photo-1503387837-b154d5074bd2 https://unsplash.com/photos/person-drafting-on-blueprint--FPFq_trr2Y
