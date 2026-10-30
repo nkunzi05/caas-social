@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Atelier Nine concept slide</title>
+<link rel="stylesheet" href="../../brand/ui.css">
+<style>
+  .post { padding: 56px 48px 48px; }
+  .m { --ink: #1C1214; --ink-2: #4E3F42; --ink-3: #6E5E61; --paper: #F6F0ED; --card: #FFFFFF; --line: #E6D9D6;
+       --acc: #C21F47; --acc-ink: #FFFFFF; --acc-2: #F7CBD6; --acc-2-ink: #4A0E1D;
+       --dark: #170A0E; --dark-2: #261117; --on-dark: #FFFFFF; --on-dark-2: #E3D0D4; --on-dark-3: #C9AFB5;
+       --wa: #25D366; --wa-ink: #06301A;
+       --glass: rgba(38, 17, 23, 0.92); --mask: #000; --glass-line: rgba(255, 255, 255, 0.16); --ghost: rgba(255, 255, 255, 0.13);
+       --glow: rgba(194, 31, 71, 0.55); --glow-0: rgba(194, 31, 71, 0); --scrim: rgba(23, 10, 14, 0.84); --scrim-0: rgba(23, 10, 14, 0.05); color: var(--ink); }
+  .head { width: 100%; display: flex; justify-content: space-between; align-items: baseline; padding: 0 16px; }
+  .head .eyebrow { letter-spacing: 0.2em; }
+  .page { width: 984px; height: 1120px; margin-top: 28px; border-radius: 28px; background: var(--paper); overflow: hidden; display: flex; flex-direction: column; padding: 14px; }
+  svg.i { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font-size: 16px; font-weight: 700; text-decoration: none; }
+  .btn.wa { background: var(--wa); color: var(--wa-ink); } .btn.light { background: var(--on-dark); color: var(--ink); min-height: 44px; font-size: 14px; padding: 0 16px; }
+  .stage { position: relative; height: 700px; border-radius: 26px; background: var(--dark); overflow: hidden; color: var(--on-dark); flex-shrink: 0; }
+  .glow { position: absolute; left: 470px; top: 90px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, var(--glow) 0%, var(--glow-0) 68%); }
+  .giant { position: absolute; right: 14px; top: 110px; font-family: "Instrument Serif", serif; font-size: 290px; line-height: 1; letter-spacing: 0.01em; color: var(--ghost); white-space: nowrap; }
+  .model { position: absolute; left: 500px; top: 74px; width: 420px; height: 630px; background-size: cover; background-position: 50% 20%;
+           -webkit-mask-image: radial-gradient(ellipse 52% 64% at 50% 46%, var(--mask) 58%, transparent 92%); mask-image: radial-gradient(ellipse 52% 64% at 50% 46%, var(--mask) 58%, transparent 92%); }
+  .nav { position: absolute; left: 22px; right: 22px; top: 20px; height: 62px; border-radius: 999px; background: var(--glass); border: 1px solid var(--glass-line); display: flex; align-items: center; padding: 0 9px 0 22px; z-index: 3; }
+  .logo { font-family: "Instrument Serif", serif; font-size: 28px; display: flex; align-items: baseline; gap: 2px; }
+  .logo i { width: 8px; height: 8px; border-radius: 50%; background: var(--acc); display: inline-block; }
+  .logo span { font-family: "Schibsted Grotesk", sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.2em; margin-left: 10px; }
+  .nav ul { display: flex; gap: 24px; list-style: none; margin: 0 auto; padding: 0; font-size: 14px; font-weight: 600; color: var(--on-dark-2); }
+  .nav li.on { color: var(--on-dark); position: relative; } .nav li.on::after { content: ""; position: absolute; left: 0; bottom: -8px; width: 20px; height: 2px; background: var(--acc-2); }
+  .hcopy { position: absolute; left: 44px; top: 128px; width: 490px; z-index: 2; }
+  .eb { font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--on-dark-2); }
+  .script { display: block; margin-top: 24px; font-family: "Instrument Serif", serif; font-style: italic; font-size: 54px; line-height: 1; color: var(--acc-2); }
+  h1 { margin: 6px 0 0; font-size: 58px; line-height: 1.0; font-weight: 800; letter-spacing: -0.035em; }
+  .hcopy p { margin: 20px 0 0; font-size: 17px; line-height: 1.48; color: var(--on-dark-2); max-width: 420px; }
+  .ctas { display: flex; gap: 10px; margin-top: 26px; align-items: center; }
+  .toggle { display: inline-flex; align-items: center; gap: 14px; min-height: 54px; padding: 0 5px 0 22px; border-radius: 999px; background: var(--acc); color: var(--acc-ink); font-size: 16px; font-weight: 700; text-decoration: none; }
+  .toggle b { width: 44px; height: 44px; border-radius: 50%; background: var(--on-dark); color: var(--acc); display: grid; place-items: center; }
+  .badge { position: absolute; left: 430px; top: 440px; width: 124px; height: 124px; border-radius: 50%; background: var(--acc-2); color: var(--acc-2-ink); z-index: 2; }
+  .badge svg.t { position: absolute; inset: 0; } .badge .c { position: absolute; left: 41px; top: 41px; width: 42px; height: 42px; border-radius: 50%; background: var(--acc-2-ink); color: var(--acc-2); display: grid; place-items: center; }
+  .ncard { position: absolute; right: 24px; top: 470px; width: 250px; padding: 12px; border-radius: 16px; background: var(--glass); border: 1px solid var(--glass-line); display: flex; gap: 12px; z-index: 2; }
+  .ncard .th { width: 60px; height: 74px; border-radius: 10px; flex-shrink: 0; background-size: cover; background-position: 50% 30%; }
+  .ncard small { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--acc-2); }
+  .ncard strong { display: block; font-size: 15px; margin-top: 3px; } .ncard span { display: block; font-size: 13px; color: var(--on-dark-2); margin-top: 3px; }
+  .counter { position: absolute; left: 44px; bottom: 34px; display: flex; align-items: center; gap: 18px; z-index: 2; }
+  .counter .n { font-size: 14px; font-weight: 700; color: var(--acc-2); letter-spacing: 0.08em; } .counter .n span { color: var(--on-dark-3); }
+  .dots { display: flex; gap: 7px; } .dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--on-dark-3); } .dots i.on { width: 22px; border-radius: 9px; background: var(--acc-2); }
+  .arrows { position: absolute; right: 24px; bottom: 28px; display: flex; gap: 10px; z-index: 2; }
+  .arrows i { width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid var(--glass-line); display: grid; place-items: center; color: var(--on-dark); }
+  .lower { display: grid; grid-template-columns: 290px 1fr 1fr; gap: 14px; padding: 22px 10px 6px; flex-grow: 1; }
+  .about { display: flex; flex-direction: column; padding: 6px 0 10px; }
+  .caps { font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); }
+  .about h3 { margin: 12px 0 0; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 44px; line-height: 0.98; }
+  .about h3 em { color: var(--acc); }
+  .about p { font-size: 15px; line-height: 1.5; color: var(--ink-2); margin: 12px 0 0; }
+  .proof { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
+  .proof b { display: block; font-size: 26px; color: var(--ink); letter-spacing: -0.02em; }
+  .proof b span { color: var(--acc); }
+  .tile { position: relative; overflow: hidden; color: var(--on-dark); border-radius: 22px; }
+  .tile .ph { position: absolute; inset: 0; background-size: cover; }
+  .tile .shade { position: absolute; inset: 0; background: linear-gradient(180deg, var(--scrim) 0%, var(--scrim-0) 45%, var(--scrim) 100%); }
+  .tile .tt { position: absolute; left: 20px; right: 20px; top: 18px; }
+  .tile h4 { margin: 0; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 32px; }
+  .tile .tt p { margin: 2px 0 0; font-size: 15px; font-weight: 600; }
+  .tile .bt { position: absolute; left: 20px; right: 20px; bottom: 18px; display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; }
+  .tile .bt span { font-size: 15px; font-weight: 600; } .tile .bt span b { display: block; font-size: 22px; }
+  .tile .go { color: var(--on-dark); white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px; border: 1px solid var(--on-dark-3); border-radius: 999px; font-size: 15px; font-weight: 700; text-decoration: none; }
+</style></head>
+<body><div class="post pal-espresso">
+  <div class="head"><span class="eyebrow">Concept 06 &mdash; Boutique website</span><span class="eyebrow">Atelier Nine</span></div>
+  <div class="page m shadow">
+    <div class="stage">
+      <div class="glow"></div>
+      <div class="giant" aria-hidden="true">NINE</div>
+      <div class="model" style="background-image:url('../../stock/boutique/model-green.jpg')"></div>
+      <div class="nav"><div class="logo">a9<i></i><span>ATELIER NINE</span></div>
+        <ul><li class="on">New in</li><li>Dresses</li><li>Fittings</li><li>Prices</li></ul>
+        <a class="btn light" href="#">Book a fitting</a></div>
+      <div class="hcopy">
+        <div class="eb">Women&rsquo;s boutique &middot; Kloof Street</div>
+        <span class="script">dressed for it.</span>
+        <h1>Women&rsquo;s clothing boutique in Cape Town.</h1>
+        <p>Dresses, tailoring and local labels in sizes 6&ndash;22. Free 30-minute fittings.</p>
+        <div class="ctas">
+          <a class="toggle" href="#">Book a fitting <b><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></b></a>
+          <a class="btn wa" href="#"><svg class="i" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg>WhatsApp</a>
+        </div>
+      </div>
+      <div class="badge" aria-hidden="true"><svg class="t" viewBox="0 0 124 124"><defs><path id="bc" d="M62 62 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs>
+        <text fill="currentColor" font-family="Schibsted Grotesk" font-size="12" font-weight="800" letter-spacing="2.2"><textPath href="#bc">FREE FITTINGS &middot; KLOOF STREET &middot;</textPath></text></svg>
+        <div class="c"><svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></div></div>
+      <div class="ncard"><div class="th" style="background-image:url('../../stock/boutique/maroon-dress.jpg')"></div>
+        <div><small>New this week</small><strong>Rosette tulle gown</strong><span>R4,900 &middot; hire R950</span></div></div>
+      <div class="counter"><div class="n">02 <span>/ 04</span></div><div class="dots"><i></i><i class="on"></i><i></i><i></i></div></div>
+      <div class="arrows"><i><svg class="i" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></i><i><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></div>
+    </div>
+    <div class="lower">
+      <div class="about">
+        <span class="caps">Personal styling</span>
+        <h3>A stylist, a rail, <em>your size.</em></h3>
+        <p>Sizes 6&ndash;22 in every style, and a tailor on site.</p>
+        <div class="proof"><b>4.9 <span>&#9733;</span></b>from 380 Google reviews</div>
+      </div>
+      <div class="tile"><div class="ph" style="background-image:url('../../stock/boutique/white-blazer.jpg'); background-position: 50% 35%"></div><div class="shade"></div>
+        <div class="tt"><h4>Tailoring</h4><p>Suits and blazers, hemmed in 3 days</p></div>
+        <div class="bt"><span>from<b>R2,850</b></span><a class="go" href="#">Shop suits <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+      <div class="tile"><div class="ph" style="background-image:url('../../stock/boutique/store-purple.jpg'); background-position: 50% 55%"></div><div class="shade"></div>
+        <div class="tt"><h4>Occasion fitting</h4><p>90 min, fee back off your buy</p></div>
+        <div class="bt"><span>from<b>R650</b></span><a class="go" href="#">Book yours <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </div>
+  </div>
+  <div class="sig"><b>CAAS STUDIOS</b><span>Concept site &middot; DM &ldquo;SITE&rdquo; for yours</span></div>
+</div></body></html>

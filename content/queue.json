@@ -420,16 +420,35 @@
       "hook": "Would you hire this architect from his site?",
       "metricool_id": 409781215,
       "scheduled": "2026-10-29T10:30:00+02:00"
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "landing",
       "slug": "boutique",
       "brand": "Atelier Nine",
       "industry": "clothing boutique",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-10-30-landing-boutique",
+      "layout": "inset-card",
+      "sections": [
+        "horizontal-scroller",
+        "price-table",
+        "masonry-gallery",
+        "review-cards",
+        "faq-accordion",
+        "split-form"
+      ],
+      "font": "serif",
+      "shape": "round",
+      "mode": "light",
+      "palette": "espresso",
+      "accent": "#C21F47",
+      "ui_ref": "03+01+04",
+      "ui_sections": [],
+      "type": "reel",
+      "hook": "Would you book a fitting from this site?"
+    }
+  ],
+  "queue": [
     {
       "format": "before-after",
       "slug": "construction",

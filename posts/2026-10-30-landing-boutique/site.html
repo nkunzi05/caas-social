@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Women's Clothing Boutique in Cape Town | Atelier Nine</title>
+<meta name="description" content="Atelier Nine is a women's clothing boutique on Kloof Street, Cape Town: dresses, tailoring and local labels in sizes 6–22. Free fittings, alterations from R150.">
+<link rel="stylesheet" href="../../brand/fonts.css">
+<style>
+  /* Atelier Nine: layout inset-card, font serif, shape round, mode light. 1280px desktop page. */
+  :root {
+    --ink: #1C1214; --ink-2: #4E3F42; --ink-3: #6E5E61; --paper: #F6F0ED; --card: #FFFFFF; --line: #E6D9D6;
+    --acc: #C21F47; --acc-ink: #FFFFFF; --acc-2: #F7CBD6; --acc-2-ink: #4A0E1D;
+    --dark: #170A0E; --dark-2: #261117; --on-dark: #FFFFFF; --on-dark-2: #E3D0D4; --on-dark-3: #C9AFB5;
+    --wa: #25D366; --wa-ink: #06301A; --star: #E8A317; --star-d: #8F5B00;
+    --glass: rgba(38, 17, 23, 0.92); --mask: #000; --glass-line: rgba(255, 255, 255, 0.16); --ghost: rgba(255, 255, 255, 0.13);
+    --glow: rgba(194, 31, 71, 0.55); --glow-0: rgba(194, 31, 71, 0); --scrim: rgba(23, 10, 14, 0.86); --scrim-0: rgba(23, 10, 14, 0);
+    --r: 28px; --r-s: 18px; --gut: 64px;
+  }
+  * { box-sizing: border-box; } html, body { margin: 0; }
+  body { width: 1280px; background: var(--paper); font-family: "Schibsted Grotesk", sans-serif; color: var(--ink); }
+  a { color: inherit; text-decoration: none; }
+  .photo { background-size: cover; background-position: center; }
+  .serif { font-family: "Instrument Serif", serif; font-weight: 400; }
+  .caps { font-size: 14px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2); }
+  .btn { display: inline-flex; align-items: center; gap: 12px; min-height: 54px; padding: 0 26px; border-radius: 999px; font-size: 17px; font-weight: 700; }
+  .btn.acc { background: var(--acc); color: var(--acc-ink); }
+  .btn.wa { background: var(--wa); color: var(--wa-ink); }
+  .btn.ink { background: var(--ink); color: var(--paper); }
+  .btn.line { border: 1.5px solid var(--ink); color: var(--ink); }
+  .btn.light { background: var(--on-dark); color: var(--ink); }
+  svg.i { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .wrap { padding: 0 var(--gut); }
+  section { padding: 110px var(--gut) 0; }
+  h2 { margin: 14px 0 0; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 72px; line-height: 0.98; letter-spacing: -0.02em; }
+  h2 em { color: var(--acc); }
+  .sub { margin: 16px 0 0; font-size: 19px; line-height: 1.5; color: var(--ink-2); max-width: 560px; }
+  .shead { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
+
+  /* ---------- hero: rounded dark card inset on the paper page ---------- */
+  .stage { margin: 20px 20px 0; height: 820px; border-radius: 36px; background: var(--dark); position: relative; overflow: hidden; color: var(--on-dark); }
+  .stage .glow { position: absolute; left: 640px; top: 120px; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle, var(--glow) 0%, var(--glow-0) 68%); }
+  .giant { position: absolute; right: 24px; top: 128px; font-family: "Instrument Serif", serif; font-size: 400px; line-height: 1; letter-spacing: 0.01em; color: var(--ghost); white-space: nowrap; }
+  .model { position: absolute; left: 650px; top: 70px; width: 500px; height: 750px; background-size: cover; background-position: 50% 20%;
+           -webkit-mask-image: radial-gradient(ellipse 52% 64% at 50% 46%, var(--mask) 58%, transparent 92%); mask-image: radial-gradient(ellipse 52% 64% at 50% 46%, var(--mask) 58%, transparent 92%); }
+  /* floating glass pill nav */
+  .nav { position: absolute; left: 40px; right: 40px; top: 28px; height: 74px; border-radius: 999px; background: var(--glass); border: 1px solid var(--glass-line);
+         display: flex; align-items: center; padding: 0 12px 0 28px; z-index: 3; }
+  .logo { font-family: "Instrument Serif", serif; font-size: 34px; display: flex; align-items: baseline; gap: 2px; }
+  .logo i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--acc); }
+  .logo span { font-family: "Schibsted Grotesk", sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.2em; margin-left: 12px; text-transform: uppercase; }
+  .nav ul { display: flex; gap: 34px; list-style: none; margin: 0 auto; padding: 0; font-size: 15px; font-weight: 600; color: var(--on-dark-2); }
+  .nav li.on { color: var(--on-dark); position: relative; }
+  .nav li.on::after { content: ""; position: absolute; left: 0; width: 22px; bottom: -9px; height: 2px; background: var(--acc-2); }
+  .nav .btn { min-height: 50px; font-size: 15px; }
+  /* hero copy */
+  .hcopy { position: absolute; left: 72px; top: 170px; width: 600px; z-index: 2; }
+  .hcopy .eyebrow { font-size: 14px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--on-dark-2); }
+  .hcopy .script { display: block; margin-top: 30px; font-family: "Instrument Serif", serif; font-style: italic; font-size: 64px; line-height: 1; color: var(--acc-2); }
+  .hcopy h1 { margin: 6px 0 0; font-size: 70px; line-height: 1.0; font-weight: 800; letter-spacing: -0.035em; }
+  .hcopy p { margin: 24px 0 0; font-size: 19px; line-height: 1.5; color: var(--on-dark-2); max-width: 540px; }
+  .hcopy .ctas { display: flex; gap: 12px; margin-top: 32px; align-items: center; }
+  .toggle { display: inline-flex; align-items: center; gap: 16px; min-height: 58px; padding: 0 6px 0 26px; border-radius: 999px; background: var(--acc); color: var(--acc-ink); font-size: 17px; font-weight: 700; }
+  .toggle b { width: 46px; height: 46px; border-radius: 50%; background: var(--on-dark); color: var(--acc); display: grid; place-items: center; }
+  .counter { position: absolute; left: 72px; bottom: 48px; display: flex; align-items: center; gap: 22px; z-index: 2; }
+  .counter .n { font-size: 15px; font-weight: 700; color: var(--acc-2); letter-spacing: 0.08em; }
+  .counter .n span { color: var(--on-dark-3); }
+  .dots { display: flex; gap: 8px; } .dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--on-dark-3); } .dots i.on { background: var(--acc-2); width: 26px; border-radius: 99px; }
+  .counter .desc { font-size: 15px; color: var(--on-dark-2); max-width: 300px; line-height: 1.45; border-left: 1px solid var(--glass-line); padding-left: 22px; }
+  .arrows { position: absolute; right: 40px; bottom: 44px; display: flex; gap: 12px; z-index: 2; }
+  .arrows a { width: 54px; height: 54px; border-radius: 50%; border: 1.5px solid var(--glass-line); display: grid; place-items: center; color: var(--on-dark); }
+  .vind { position: absolute; right: 52px; top: 330px; display: flex; flex-direction: column; gap: 10px; z-index: 2; }
+  .vind i { width: 3px; height: 26px; border-radius: 3px; background: var(--on-dark-3); } .vind i.on { background: var(--acc-2); height: 44px; }
+  .badge { position: absolute; left: 600px; top: 520px; width: 150px; height: 150px; border-radius: 50%; background: var(--acc-2); color: var(--acc-2-ink); z-index: 2; }
+  .badge svg.t { position: absolute; inset: 0; }
+  .badge .c { position: absolute; left: 50px; top: 50px; width: 50px; height: 50px; border-radius: 50%; background: var(--acc-2-ink); color: var(--acc-2); display: grid; place-items: center; }
+  .ncard { position: absolute; right: 90px; top: 520px; width: 330px; padding: 14px; border-radius: var(--r-s); background: var(--glass); border: 1px solid var(--glass-line); display: flex; gap: 14px; z-index: 2; }
+  .ncard .th { width: 72px; height: 88px; border-radius: 12px; flex-shrink: 0; background-position: 50% 30%; }
+  .ncard small { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--acc-2); }
+  .ncard strong { display: block; font-size: 17px; margin-top: 4px; }
+  .ncard span { display: block; font-size: 15px; color: var(--on-dark-2); margin-top: 4px; }
+
+  /* trust strip under the card */
+  .strip { display: flex; justify-content: space-between; padding: 30px var(--gut) 0; font-size: 15px; font-weight: 600; color: var(--ink-2); }
+  .strip b { color: var(--ink); }
+
+  /* ---------- new in: horizontal scroller ---------- */
+  .scroller { display: flex; gap: 22px; margin-top: 48px; margin-right: calc(-1 * var(--gut)); overflow: hidden; }
+  .prod { width: 300px; flex-shrink: 0; }
+  .prod .ph { height: 400px; border-radius: var(--r); position: relative; }
+  .prod .tag { position: absolute; left: 14px; top: 14px; font-size: 13px; font-weight: 700; padding: 7px 12px; border-radius: 999px; background: var(--card); color: var(--ink); }
+  .prod h3 { margin: 16px 0 0; font-size: 19px; font-weight: 700; }
+  .prod p { margin: 4px 0 0; font-size: 15px; color: var(--ink-3); display: flex; justify-content: space-between; }
+  .prod p b { color: var(--ink); font-size: 17px; }
+  .circ { display: flex; gap: 10px; }
+  .circ a { width: 54px; height: 54px; border-radius: 50%; border: 1.5px solid var(--ink); display: grid; place-items: center; }
+  .circ a.on { background: var(--ink); color: var(--paper); }
+
+  /* ---------- fittings: price-comparison table on a blush inset card ---------- */
+  .pricing { margin: 110px 20px 0; padding: 96px 44px 80px; border-radius: 36px; background: var(--acc-2); color: var(--ink); }
+  .pricing .top { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; padding: 0 20px; }
+  .pricing .caps { color: var(--acc-2-ink); }
+  .pricing h2 { color: var(--ink); max-width: 640px; } .pricing h2 em { color: var(--acc-2-ink); }
+  .seg { display: inline-flex; padding: 5px; border-radius: 999px; background: var(--card); }
+  .seg span { min-height: 44px; display: inline-flex; align-items: center; padding: 0 22px; border-radius: 999px; font-size: 15px; font-weight: 700; color: var(--ink-2); }
+  .seg span.on { background: var(--ink); color: var(--paper); }
+  table.cmp { width: 100%; margin-top: 48px; border-collapse: separate; border-spacing: 0; background: var(--card); border-radius: var(--r); overflow: hidden; font-size: 16px; }
+  .cmp th, .cmp td { padding: 20px 26px; text-align: left; border-bottom: 1px solid var(--line); }
+  .cmp thead th { padding-top: 30px; vertical-align: top; }
+  .cmp thead th h3 { margin: 0; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 38px; }
+  .cmp thead th .price { margin-top: 6px; font-size: 40px; font-weight: 800; letter-spacing: -0.03em; }
+  .cmp thead th .price small { font-size: 15px; font-weight: 600; color: var(--ink-3); letter-spacing: 0; }
+  .cmp tbody th { font-weight: 600; color: var(--ink-2); width: 300px; }
+  .cmp td { color: var(--ink); font-weight: 600; }
+  .cmp .feat { background: var(--dark); color: var(--on-dark); border-bottom-color: var(--glass-line); }
+  .cmp .feat .price small { color: var(--on-dark-2); }
+  .cmp .chip { display: inline-block; margin-bottom: 10px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 12px; border-radius: 999px; background: var(--acc); color: var(--acc-ink); }
+  .cmp .no { color: var(--ink-3); font-weight: 500; }
+  .cmp tr:last-child td, .cmp tr:last-child th { border-bottom: 0; padding-bottom: 28px; }
+  .cmp .btn { min-height: 50px; font-size: 15px; }
+  .pricing .note { margin-top: 26px; padding: 0 20px; font-size: 16px; color: var(--acc-2-ink); font-weight: 600; }
+
+  /* ---------- the shop: masonry gallery ---------- */
+  .masonry { margin-top: 48px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; grid-template-rows: 300px 300px; gap: 18px; }
+  .masonry .t { border-radius: var(--r); position: relative; overflow: hidden; }
+  .masonry .t1 { grid-row: span 2; } .masonry .t4 { grid-column: span 2; }
+  .masonry .cap { position: absolute; left: 16px; bottom: 16px; padding: 10px 16px; border-radius: 999px; background: var(--scrim); color: var(--on-dark); font-size: 15px; font-weight: 600; }
+  .visit { margin-top: 26px; display: flex; gap: 48px; font-size: 16px; color: var(--ink-2); padding-top: 22px; border-top: 1px solid var(--line); }
+  .visit b { display: block; color: var(--ink); font-size: 17px; margin-bottom: 4px; }
+
+  /* ---------- reviews ---------- */
+  .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+  .rev { background: var(--card); border-radius: var(--r); padding: 32px; border: 1px solid var(--line); display: flex; flex-direction: column; }
+  .rev .stars { color: var(--star-d); letter-spacing: 3px; font-size: 18px; }
+  .rev q { display: block; margin-top: 16px; font-family: "Instrument Serif", serif; font-size: 30px; line-height: 1.15; quotes: none; }
+  .rev .who { margin-top: auto; padding-top: 24px; display: flex; gap: 12px; align-items: center; font-size: 15px; color: var(--ink-3); }
+  .rev .who b { display: block; color: var(--ink); }
+  .rev .who i { width: 44px; height: 44px; border-radius: 50%; background: var(--acc-2); color: var(--acc-2-ink); display: grid; place-items: center; font-style: normal; font-weight: 800; }
+
+  /* ---------- FAQ accordion ---------- */
+  .faq .shead { margin-bottom: 44px; }
+  .faq .rows { grid-template-columns: 1fr 1fr; align-items: start; }
+  .rows { display: grid; gap: 12px; }
+  .row { background: var(--card); border-radius: var(--r-s); border: 1px solid var(--line); padding: 0 28px; }
+  .row .q { min-height: 74px; display: flex; justify-content: space-between; align-items: center; font-size: 19px; font-weight: 700; }
+  .row .q span { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--ink-3); display: grid; place-items: center; font-weight: 400; font-size: 22px; flex-shrink: 0; }
+  .row.open { border-color: var(--acc); }
+  .row.open .q span { background: var(--acc); border-color: var(--acc); color: var(--acc-ink); }
+  .row .a { margin: -6px 0 0; padding-bottom: 24px; font-size: 16px; line-height: 1.55; color: var(--ink-2); max-width: 600px; }
+
+  /* ---------- split CTA with a short form ---------- */
+  .split { margin: 110px 20px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .formcard { background: var(--dark); color: var(--on-dark); border-radius: 36px; padding: 64px 56px; }
+  .formcard h2 { color: var(--on-dark); font-size: 64px; } .formcard h2 em { color: var(--acc-2); }
+  .formcard p { margin: 16px 0 0; font-size: 18px; line-height: 1.5; color: var(--on-dark-2); }
+  .fields { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .field { min-height: 60px; border-radius: var(--r-s); background: var(--dark-2); border: 1px solid var(--glass-line); padding: 10px 18px; }
+  .field small { display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-dark-3); }
+  .field span { font-size: 16px; color: var(--on-dark); }
+  .field.wide { grid-column: span 2; }
+  .formcard .ctas { display: flex; gap: 12px; margin-top: 22px; }
+  .splitph { border-radius: 36px; position: relative; overflow: hidden; background-position: 50% 40%; }
+  .splitph .cap { position: absolute; left: 24px; right: 24px; bottom: 24px; padding: 18px 22px; border-radius: var(--r-s); background: var(--scrim); color: var(--on-dark); font-size: 16px; line-height: 1.45; }
+  .splitph .cap b { display: block; font-size: 18px; }
+
+  footer { margin-top: 90px; padding: 56px var(--gut) 48px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; font-size: 15px; color: var(--ink-2); line-height: 1.7; }
+  footer .logo { color: var(--ink); }
+  footer b { color: var(--ink); display: block; margin-bottom: 6px; }
+  .legal { padding: 22px var(--gut) 36px; display: flex; justify-content: space-between; font-size: 14px; color: var(--ink-3); border-top: 1px solid var(--line); }
+  .legal b { color: var(--ink); }
+</style></head>
+<body>
+
+<!-- HERO: inset dark card, boards 03 + 01 + 04 -->
+<header class="stage">
+  <div class="glow"></div>
+  <div class="giant" aria-hidden="true">NINE</div>
+  <div class="model photo" role="img" aria-label="Model in a dark green satin blouse and black wide-leg trousers" style="background-image:url('../../stock/boutique/model-green.jpg')"></div>
+  <nav class="nav">
+    <a class="logo" href="#">a9<i></i><span>Atelier Nine</span></a>
+    <ul><li class="on">New in</li><li>Dresses</li><li>Tailoring</li><li>Fittings</li><li>Prices</li></ul>
+    <a class="btn light" href="#">Book a fitting <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  </nav>
+  <div class="vind" aria-hidden="true"><i></i><i class="on"></i><i></i><i></i></div>
+  <div class="hcopy">
+    <div class="eyebrow">Atelier Nine &middot; Women&rsquo;s boutique, Kloof Street</div>
+    <span class="script">dressed for it.</span>
+    <h1>Women&rsquo;s clothing boutique in Cape Town.</h1>
+    <p>Dresses, tailoring and local labels in sizes 6&ndash;22. Free 30&#8209;minute fittings, alterations from R150.</p>
+    <div class="ctas">
+      <a class="toggle" href="#">Book a fitting <b><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></b></a>
+      <a class="btn wa" href="#"><svg class="i" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg>WhatsApp us</a>
+    </div>
+  </div>
+  <div class="badge" aria-hidden="true"><svg class="t" viewBox="0 0 150 150"><defs><path id="bc" d="M75 75 m-56 0 a56 56 0 1 1 112 0 a56 56 0 1 1 -112 0"/></defs>
+    <text fill="currentColor" font-family="Schibsted Grotesk" font-size="14" font-weight="800" letter-spacing="2.4"><textPath href="#bc">FREE FITTINGS &middot; KLOOF STREET &middot;</textPath></text></svg>
+    <div class="c"><svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></div></div>
+  <div class="ncard"><div class="th photo" style="background-image:url('../../stock/boutique/maroon-dress.jpg')"></div>
+    <div><small>New this week</small><strong>Rosette tulle gown</strong><span>R4,900 &middot; or hire R950 / night</span></div></div>
+  <div class="counter">
+    <div class="n">02 <span>/ 04</span></div>
+    <div class="dots" aria-hidden="true"><i></i><i class="on"></i><i></i><i></i></div>
+    <div class="desc">Satin, tailoring and evening wear, picked for Cape Town summers.</div>
+  </div>
+  <div class="arrows"><a href="#" aria-label="Previous look"><svg class="i" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><a href="#" aria-label="Next look"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</header>
+<div class="strip"><span><b>4.9 &#9733;</b> from 380 Google reviews</span><span><b>Sizes 6&ndash;22</b> in every style</span><span><b>Free alterations</b> on buys over R1,200</span><span><b>Open 7 days</b> &middot; Kloof Street</span></div>
+
+<!-- NEW IN: horizontal scroller -->
+<section>
+  <div class="shead">
+    <div><span class="caps">New in</span><h2>This week at our <em>Cape Town boutique.</em></h2></div>
+    <div class="circ"><a href="#" aria-label="Previous"><svg class="i" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a><a class="on" href="#" aria-label="Next"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+  <div class="scroller">
+    <div class="prod"><div class="ph photo" role="img" aria-label="Ivory linen suit" style="background-image:url('../../stock/boutique/white-blazer.jpg'); background-position: 50% 30%"><span class="tag">Sizes 6&ndash;18</span></div><h3>Ivory linen suit</h3><p>Blazer + trousers <b>R2,850</b></p></div>
+    <div class="prod"><div class="ph photo" role="img" aria-label="Rosette tulle gown" style="background-image:url('../../stock/boutique/maroon-dress.jpg'); background-position: 50% 30%"><span class="tag">Hire or buy</span></div><h3>Rosette tulle gown</h3><p>Hire from R950 / night <b>R4,900</b></p></div>
+    <div class="prod"><div class="ph photo" role="img" aria-label="Rust knit cardigan" style="background-image:url('../../stock/boutique/racks-neutral.jpg'); background-position: 40% 80%"><span class="tag">Local label</span></div><h3>Rust knit cardigan</h3><p>Merino blend <b>R1,150</b></p></div>
+    <div class="prod"><div class="ph photo" role="img" aria-label="Cropped leather jacket" style="background-image:url('../../stock/boutique/model-jacket.jpg'); background-position: 30% 30%"><span class="tag">Last 4 left</span></div><h3>Cropped leather jacket</h3><p>Lamb nappa <b>R3,200</b></p></div>
+    <div class="prod"><div class="ph photo" role="img" aria-label="Silk slip dress" style="background-image:url('../../stock/boutique/store-purple.jpg'); background-position: 45% 60%"><span class="tag">Sizes 8&ndash;22</span></div><h3>Silk slip dress</h3><p>Champagne <b>R1,690</b></p></div>
+  </div>
+</section>
+
+<!-- FITTINGS: price table, board 08 -->
+<div class="pricing">
+  <div class="top">
+    <div><span class="caps">Personal styling</span><h2>Fitting prices <em>in Cape Town.</em></h2></div>
+    <div class="seg"><span class="on">In the boutique</span><span>At your home</span></div>
+  </div>
+  <table class="cmp">
+    <thead><tr><th><span class="caps">Compare fittings</span></th>
+      <th><h3>Quick fitting</h3><div class="price">Free <small>/ 30 min</small></div></th>
+      <th class="feat"><span class="chip">Most booked</span><h3>Occasion fitting</h3><div class="price">R650 <small>/ 90 min</small></div></th>
+      <th><h3>Wardrobe fitting</h3><div class="price">R1,800 <small>/ half day</small></div></th></tr></thead>
+    <tbody>
+      <tr><th>Your own stylist</th><td><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></td><td class="feat"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></td><td><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></td></tr>
+      <tr><th>Rails pulled before you arrive</th><td class="no">&ndash;</td><td class="feat"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></td><td><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></td></tr>
+      <tr><th>Private room and bubbles</th><td class="no">&ndash;</td><td class="feat"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></td><td><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></td></tr>
+      <tr><th>Edit of your own wardrobe</th><td class="no">&ndash;</td><td class="no feat">&ndash;</td><td>12 outfits planned</td></tr>
+      <tr><th>Fee back off your buy</th><td class="no">Nothing to pay</td><td class="feat">R650 back</td><td>R500 back</td></tr>
+      <tr><th></th><td><a class="btn line" href="#">Book a quick fitting</a></td><td class="feat"><a class="btn acc" href="#">Book an occasion fitting</a></td><td><a class="btn line" href="#">Book a wardrobe fitting</a></td></tr>
+    </tbody>
+  </table>
+  <div class="note">Alterations from R150 / item, ready in 3 days.</div>
+</div>
+
+<!-- THE SHOP: masonry gallery -->
+<section>
+  <div class="shead">
+    <div><span class="caps">The boutique</span><h2>Visit us on <em>Kloof Street.</em></h2></div>
+    <p class="sub">Two floors of rails, three fitting rooms and a tailor on site.</p>
+  </div>
+  <div class="masonry">
+    <div class="t t1 photo" style="background-image:url('../../stock/boutique/store-purple.jpg')"><span class="cap">The fitting lounge</span></div>
+    <div class="t photo" style="background-image:url('../../stock/boutique/racks-grey.jpg')"><span class="cap">Tailoring rail</span></div>
+    <div class="t photo" style="background-image:url('../../stock/boutique/browsing.jpg'); background-position: 60% 50%"><span class="cap">Local labels</span></div>
+    <div class="t t4 photo" style="background-image:url('../../stock/boutique/swatches.jpg'); background-position: 50% 40%"><span class="cap">Our tailors pick your fabric</span></div>
+  </div>
+  <div class="visit">
+    <span><b>124 Kloof Street, Gardens</b>Free parking behind the shop</span>
+    <span><b>Mon&ndash;Fri 9:00&ndash;18:00</b>Sat 9:00&ndash;16:00 &middot; Sun 10:00&ndash;14:00</span>
+    <span><b>Alterations in 3 days</b>Same day from R250 / item</span>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+  <span class="caps">Reviews</span><h2>Clients who left <em>dressed for it.</em></h2>
+  <div class="reviews">
+    <div class="rev"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><q>Found my sister&rsquo;s wedding dress in one fitting, hemmed by Thursday.</q><div class="who"><i>N</i><span><b>Nomsa K.</b>Occasion fitting</span></div></div>
+    <div class="rev"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><q>A size 20 boutique that doesn&rsquo;t hide the good stuff in the back.</q><div class="who"><i>L</i><span><b>Leanne v.d.M.</b>Quick fitting</span></div></div>
+    <div class="rev"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><q>They cleared out half my cupboard and I still had 12 new outfits.</q><div class="who"><i>A</i><span><b>Ayesha P.</b>Wardrobe fitting</span></div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="shead"><div><span class="caps">Questions</span><h2>Before your <em>first fitting.</em></h2></div><p class="sub">Anything else? WhatsApp the shop and a stylist replies within the hour.</p></div>
+  <div class="rows">
+    <div class="row open"><div class="q" role="button" tabindex="0">Do I have to buy anything at a fitting?<span>&minus;</span></div><p class="a">No. Quick fittings are free. The R650 occasion fee comes off anything you buy on the day, and wardrobe fittings get R500 back.</p></div>
+    <div class="row"><div class="q" role="button" tabindex="0">Which sizes do you carry?<span>+</span></div></div>
+    <div class="row"><div class="q" role="button" tabindex="0">How long do alterations take?<span>+</span></div></div>
+    <div class="row"><div class="q" role="button" tabindex="0">Can I hire a dress instead of buying?<span>+</span></div></div>
+    <div class="row"><div class="q" role="button" tabindex="0">Can I return or swap an item?<span>+</span></div></div>
+    <div class="row"><div class="q" role="button" tabindex="0">Is there parking on Kloof Street?<span>+</span></div></div>
+  </div>
+</section>
+
+<!-- SPLIT CTA WITH FORM -->
+<div class="split">
+  <div class="formcard">
+    <span class="caps" style="color: var(--on-dark-2)">Book a fitting</span>
+    <h2>Book a fitting in <em>Cape Town.</em></h2>
+    <p>Pick a time, tell us the occasion. We&rsquo;ll pull the rails before you arrive.</p>
+    <div class="fields">
+      <div class="field"><small>Name</small><span>Thandi M.</span></div>
+      <div class="field"><small>Date</small><span>Sat 7 Nov, 10:30</span></div>
+      <div class="field wide"><small>Occasion</small><span>Wedding guest, size 12</span></div>
+    </div>
+    <div class="ctas">
+      <a class="btn acc" href="#">Book my fitting <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn wa" href="#"><svg class="i" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg>WhatsApp us</a>
+    </div>
+  </div>
+  <div class="splitph photo" style="background-image:url('../../stock/boutique/white-blazer.jpg')"><div class="cap"><b>Fittings 7 days a week</b>Free 30-minute fittings, no need to buy.</div></div>
+</div>
+
+<footer>
+  <div><a class="logo" href="#">a9<i></i><span>Atelier Nine</span></a><p style="margin:14px 0 0">Women&rsquo;s clothing boutique in Cape Town. Dresses, tailoring and local labels, sizes 6&ndash;22.</p></div>
+  <div><b>Shop</b>New in<br>Dresses<br>Tailoring<br>Evening hire</div>
+  <div><b>Fittings</b>Quick fitting<br>Occasion fitting<br>Wardrobe fitting<br>Alterations</div>
+  <div><b>Visit</b>124 Kloof Street, Gardens<br>Cape Town<br>WhatsApp 066 598 9442</div>
+</footer>
+<div class="legal"><span>&copy; 2026 Atelier Nine (invented business)</span><span>Concept by <b>CAAS Studios</b></span></div>
+</body></html>
