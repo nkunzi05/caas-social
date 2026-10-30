@@ -130,3 +130,12 @@ architect/drafting.jpg | https://images.unsplash.com/photo-1503387762-592deb58ef
 architect/staircase.jpg | https://images.unsplash.com/photo-1601993957728-1e56ab70c5a8 | https://unsplash.com/photos/minimalist-concrete-staircase-with-vase-0B7ijYKaKcE
 architect/glow-house.jpg | https://images.unsplash.com/photo-1748063578185-3d68121b11ff | https://unsplash.com/photos/modern-house-exterior-glows-with-lights-4vioYQ9Nn9Y
 architect/blueprint.jpg | https://images.unsplash.com/photo-1503387837-b154d5074bd2 | https://unsplash.com/photos/person-drafting-on-blueprint--FPFq_trr2Y
+boutique/model-green.jpg | https://images.unsplash.com/photo-1704775983313-756dd3ac2569 | https://unsplash.com/photos/woman-in-dark-green-top-and-black-pants-_o7hEZJXVxo
+boutique/model-jacket.jpg | https://images.unsplash.com/photo-1779911915533-51df473c20d2 | https://unsplash.com/photos/woman-in-black-jacket-poses-in-a-dark-moody-setting-HQ2SZRcEB9k
+boutique/racks-grey.jpg | https://images.unsplash.com/photo-1441984904996-e0b6ba687e04 | https://unsplash.com/photos/clothing-boutique-interior-with-hanging-racks-qnKhZJPKFD8
+boutique/racks-neutral.jpg | https://images.unsplash.com/photo-1603400521630-9f2de124b33b | https://unsplash.com/photos/clothing-racks-with-neutral-toned-garments-mwa_nzFpnJw
+boutique/store-purple.jpg | https://images.unsplash.com/photo-1769107805511-0bb7075fca27 | https://unsplash.com/photos/a-boutique-clothing-store-interior-with-dresses-and-accessories-wNudbCFp78k
+boutique/browsing.jpg | https://images.unsplash.com/photo-1525562723836-dca67a71d5f1 | https://unsplash.com/photos/woman-standing-selecting-clothes-knKm7u_7Ihw
+boutique/swatches.jpg | https://images.unsplash.com/photo-1777923311853-d14b7beb9fec | https://unsplash.com/photos/two-women-collaborating-at-a-desk-with-fabric-swatches-ITlbzevlInQ
+boutique/white-blazer.jpg | https://images.unsplash.com/photo-1629726343583-d9718b3e8f3f | https://unsplash.com/photos/woman-in-white-blazer-and-white-pants-standing-beside-white-table-c7kxs1aA4v8
+boutique/maroon-dress.jpg | https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb | https://unsplash.com/photos/woman-in-maroon-dress--NyPn9up_7o
