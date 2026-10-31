@@ -25,3 +25,14 @@ Choices (design:design-system, pick): layout `inset-card` (last 4: editorial-spl
 - SEO: one H1 "Women's clothing boutique in Cape Town." + keyword subline with sizes and price fact (16 words); eyebrow names brand + category + street; nav uses service words; title "Women's Clothing Boutique in Cape Town | Atelier Nine" (53 chars); meta description 160 chars; H2s carry "Cape Town boutique", "Fitting prices in Cape Town", "Book a fitting in Cape Town".
 - All colours in `:root` (incl. --mask for the photo mask); 0 hex/rgba values in the rules (script-checked).
 - Fonts Instrument Serif + Schibsted; gutter 64px, sections 110px; radius 28/18px + full pills (round). Must-haves: nav CTA, CTA repeated in the split form, WhatsApp buttons, Rand prices, footer "Concept by CAAS Studios". Queue item records layout, sections, font, shape, mode.
+
+## v2 (2026-10-31): Prosper, "improve the site and make it look less like AI"
+What read as generated, and what replaced it:
+- Hero stacked every board widget at once (glass pill nav, glow + masked cut-out, ghost "NINE", rotating badge, 02/04 counter, dots, vertical bars, arrows, floating glass card, knob CTA). → A plain shop header (announcement bar, centred serif wordmark, Bag (0)), and a hero that is just a wine panel beside the uncropped studio photo, with a product caption on the photo. No glow, masks or decorative controls.
+- Every H2 had an italic accent half in colour ("…at our *Cape Town boutique.*"). → Plain serif sentence-case headings; italic only once, in the H1.
+- SaaS patterns (4-stat trust strip, 3 star-rated review cards with initial avatars, comparison table with ticks, +/− accordion). → One customer quote, a typographic fitting list with time and price, plain two-column Q&A.
+- Generic copy. → Specific shop details: owners' note (Lindi & Mei, the old shoe-repair shop, sizes 6–22, tailor upstairs), parking off Rheede Street, Card/SnapScan/Zapper, 14-day returns, "four left", "knitted in Woodstock", new-in emails.
+- Everything 28px-round with pills on photos. → 6px images, 14px cards, pills only for buttons; captions under photos, not on scrims.
+- New-in is a plain 4-up product grid; "See all 64 pieces" link. White-blazer no longer used twice (booking photo is browsing.jpg).
+- Checks: a11y_check 0 contrast failures (WhatsApp link green darkened to #17733F for 4.5:1); one H1 with the keyword; title/meta unchanged; all colours in :root. Note: the fitting price list is a typographic list, like the photographer site's price list (4 posts back); the rest of the page differs.
+- shape changed round → soft. Reel re-rendered in the repo; the published Instagram Reel (Metricool 410914907, 30 Oct) is not replaced.

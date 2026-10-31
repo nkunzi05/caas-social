@@ -430,24 +430,26 @@
       "post": "posts/2026-10-30-landing-boutique",
       "layout": "inset-card",
       "sections": [
-        "horizontal-scroller",
-        "price-table",
-        "masonry-gallery",
-        "review-cards",
-        "faq-accordion",
+        "product-grid",
+        "founder-letter",
+        "menu-list",
+        "big-testimonial",
+        "map-hours",
+        "faq-list",
         "split-form"
       ],
       "font": "serif",
-      "shape": "round",
+      "shape": "soft",
       "mode": "light",
       "palette": "espresso",
       "accent": "#C21F47",
-      "ui_ref": "03+01+04",
+      "ui_ref": "03+01",
       "ui_sections": [],
       "type": "reel",
       "hook": "Would you book a fitting from this site?",
       "metricool_id": 410914907,
-      "scheduled": "2026-10-30T10:30:00+02:00"
+      "scheduled": "2026-10-30T10:30:00+02:00",
+      "revised": "2026-10-31 less-AI pass (site/slide/reel in repo only; live reel unchanged)"
     }
   ],
   "queue": [
