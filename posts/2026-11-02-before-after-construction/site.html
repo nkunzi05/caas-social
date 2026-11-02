@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Home builders in Cape Town | Bedrock Build</title>
+<meta name="description" content="NHBRC-registered home builders in Cape Town. New homes, extensions and renovations from R8 900 per m², with a fixed quote in 5 days. Book a free site visit.">
+<link rel="stylesheet" href="../../brand/fonts.css">
+<style>
+  /* Layout: bento · font: condensed (Anton display + Schibsted body) · shape: sharp · mode: tinted
+     Hero: boards 03 + 01 + 05 (cut-out subject on a dark gradient stage, stepped condensed caps, 01/07 progress pill,
+     italic accent word, glass bar nav with accent underline, toggle CTA with knob, rotating badge, glow behind subject).
+     Pricing: board 08 (featured middle card glows). FAQ: board 09 (dark rows, accent glow from the left, thin +/-). */
+  :root {
+    --ink: #15170F; --ink-2: #3F4335; --ink-3: #5E6253;
+    --paper: #ECEEE4; --paper-2: #F7F8F2; --line: #CFD3C2;
+    --acc: #C6F135; --acc-ink: #141A02; --acc-2: #4C6400;
+    --dark: #111310; --dark-2: #1A1D17; --dark-3: #262A21; --dark-line: #353A2E;
+    --on-dark: #F2F4EC; --on-dark-2: #C3C8B7; --on-dark-3: #9EA393;
+    --glow: rgba(198,241,53,0.42); --glow-soft: rgba(198,241,53,0.14); --glow-clear: rgba(198,241,53,0);
+    --olive: #2C3A12; --glass: rgba(26,29,23,0.82);
+    --wa: #25D366; --wa-ink: #0B1F12;
+    --scrim: linear-gradient(180deg, rgba(17,19,16,0.1) 0%, rgba(17,19,16,0.92) 100%);
+    --r: 4px; --mask: #000;
+  }
+  * { box-sizing: border-box; } html, body { margin: 0; }
+  body { width: 1280px; background: var(--paper); font-family: "Schibsted Grotesk", sans-serif; color: var(--ink); }
+  a { color: inherit; text-decoration: none; }
+  .photo { background-size: cover; background-position: center; }
+  .label { font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-3); }
+  .disp { font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.005em; }
+  .disp small { text-transform: none; }
+  .it { font-family: "Instrument Serif", serif; font-style: italic; text-transform: none; letter-spacing: 0; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; height: 56px; padding: 0 24px; border-radius: var(--r); font-weight: 700; font-size: 16px; white-space: nowrap; }
+  .btn.acc { background: var(--acc); color: var(--acc-ink); }
+  .btn.dk { background: var(--dark); color: var(--on-dark); }
+  .wa { width: 56px; height: 56px; border-radius: 50%; background: var(--wa); display: inline-flex; align-items: center; justify-content: center; flex: none; }
+  .wa svg { width: 26px; height: 26px; fill: var(--wa-ink); }
+  svg.a { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  section { padding: 104px 56px; }
+  h2 { margin: 14px 0 0; font-size: 72px; line-height: 0.98; }
+
+  /* HERO: bento on a dark stage */
+  .hero { background: var(--dark); padding: 24px 56px 56px; color: var(--on-dark); }
+  nav { height: 64px; border-radius: var(--r); background: var(--glass); box-shadow: inset 0 0 0 1px var(--dark-line); display: flex; align-items: center; justify-content: space-between; padding: 0 8px 0 24px; }
+  .logo { font-size: 26px; display: flex; align-items: center; gap: 2px; height: 44px; }
+  .logo i { display: inline-block; width: 8px; height: 8px; background: var(--acc); margin-left: 3px; }
+  nav .links { display: flex; gap: 30px; font-size: 15px; font-weight: 500; color: var(--on-dark-2); }
+  nav .links a { position: relative; height: 44px; display: inline-flex; align-items: center; }
+  nav .links a.on { color: var(--on-dark); }
+  nav .links a.on::after { content: ""; position: absolute; left: 0; bottom: 4px; width: 20px; height: 2px; background: var(--acc); }
+  nav .btn { height: 48px; font-size: 15px; padding: 0 20px; }
+  .bento { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 150px; gap: 14px; margin-top: 18px; }
+  .t { border-radius: var(--r); position: relative; overflow: hidden; background: var(--dark-2); box-shadow: inset 0 0 0 1px var(--dark-line); }
+  .stage { grid-column: span 7; grid-row: span 4; padding: 44px 48px; background: radial-gradient(120% 90% at 100% 100%, var(--olive) 0%, var(--dark-2) 60%); display: flex; flex-direction: column; }
+  .stage .eb { font-size: 14px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--on-dark-3); }
+  .stage .acc-word { margin-top: 30px; font-size: 50px; line-height: 1; color: var(--acc); }
+  .stage h1 { margin: 4px 0 0; font-size: 92px; line-height: 0.92; white-space: nowrap; }
+  .stage h1 .s2 { display: block; padding-left: 72px; }
+  .stage .sub { margin: 26px 0 0; font-size: 19px; line-height: 1.45; color: var(--on-dark-2); max-width: 500px; }
+  .stage .ctas { margin-top: 34px; display: flex; gap: 12px; align-items: center; }
+  .stage .facts { margin-top: auto; display: flex; gap: 28px; padding-top: 18px; border-top: 1px solid var(--dark-line); font-size: 14px; color: var(--on-dark-3); }
+  .stage .facts b { color: var(--on-dark); font-weight: 700; }
+  .toggle { display: inline-flex; align-items: center; background: var(--dark-3); border-radius: var(--r); padding: 6px 6px 6px 24px; height: 64px; font-weight: 700; font-size: 17px; box-shadow: inset 0 0 0 1px var(--dark-line); }
+  .toggle span { margin-right: 22px; }
+  .toggle .knob { width: 52px; height: 52px; border-radius: 50%; background: var(--acc); color: var(--acc-ink); display: flex; align-items: center; justify-content: center; }
+  .stage .wa { width: 64px; height: 64px; }
+  .prog { position: absolute; right: 22px; top: 44px; width: 44px; height: 178px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--dark-line); display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 14px 0; font-size: 13px; font-weight: 700; color: var(--on-dark-3); }
+  .prog b { color: var(--acc); }
+  .prog i { width: 2px; flex: 1; margin: 8px 0; background: linear-gradient(var(--acc) 0 30%, var(--dark-line) 30% 100%); }
+  .subject { grid-column: span 5; grid-row: span 3; background: radial-gradient(60% 55% at 55% 55%, var(--glow) 0%, var(--glow-soft) 45%, var(--glow-clear) 75%), var(--dark); }
+  .subject .cut { position: absolute; inset: 0; background-position: 30% 40%; background-size: 175% auto; -webkit-mask-image: radial-gradient(46% 60% at 52% 52%, var(--mask) 38%, transparent 82%); mask-image: radial-gradient(46% 60% at 52% 52%, var(--mask) 38%, transparent 82%); }
+  .badge { position: absolute; right: 18px; bottom: 18px; width: 118px; height: 118px; }
+  .chip { position: absolute; left: 18px; top: 18px; background: var(--dark-2); box-shadow: inset 0 0 0 1px var(--dark-line); border-radius: var(--r); padding: 10px 14px; font-size: 14px; color: var(--on-dark-2); display: flex; gap: 10px; align-items: center; }
+  .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 0 4px var(--glow-soft); }
+  .chip b { color: var(--on-dark); }
+  .rate { grid-column: span 2; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+  .rate .n { font-size: 52px; line-height: 1; }
+  .rate .st { color: var(--acc); letter-spacing: 2px; font-size: 15px; }
+  .rate p, .price p { margin: 0; font-size: 13px; color: var(--on-dark-3); line-height: 1.35; }
+  .price { grid-column: span 3; padding: 20px 22px; background: var(--acc); color: var(--acc-ink); box-shadow: none; display: flex; flex-direction: column; justify-content: space-between; }
+  .price .n { font-size: 50px; line-height: 1; }
+  .price .n small { font-family: "Schibsted Grotesk", sans-serif; font-size: 16px; font-weight: 700; }
+  .price p { color: var(--acc-ink); font-weight: 600; font-size: 14px; }
+  .hours { grid-column: span 4; padding: 22px 24px; }
+  .hours .row { display: flex; justify-content: space-between; font-size: 15px; color: var(--on-dark-2); padding: 7px 0; border-bottom: 1px solid var(--dark-line); }
+  .hours .row b { color: var(--on-dark); font-weight: 600; }
+  .done { grid-column: span 8; }
+  .done .cap { position: absolute; inset: 0; padding: 0 24px 18px; background: var(--scrim); display: flex; justify-content: space-between; align-items: end; }
+  .done .cap b { display: block; font-size: 20px; }
+  .done .cap span { font-size: 14px; color: var(--on-dark-2); }
+  .done .cap .k { font-size: 44px; line-height: 1; color: var(--acc); }
+
+  /* SERVICES BENTO */
+  .svc-head { display: flex; justify-content: space-between; align-items: end; }
+  .svc-head p { margin: 0; max-width: 360px; font-size: 17px; line-height: 1.5; color: var(--ink-2); }
+  .sv { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 230px; gap: 14px; margin-top: 48px; }
+  .c { border-radius: var(--r); background: var(--paper-2); box-shadow: inset 0 0 0 1px var(--line); padding: 26px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+  .c .no { font-size: 13px; font-weight: 700; color: var(--ink-3); letter-spacing: 0.1em; }
+  .c h3 { margin: auto 0 0; font-size: 34px; line-height: 1; }
+  .c p { margin: 10px 0 0; font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+  .c .pr { margin-top: 14px; font-size: 15px; font-weight: 700; display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 12px; }
+  .c.big { grid-column: span 3; grid-row: span 2; padding: 0; }
+  .c.big .ph { flex: 1; }
+  .c.big .in { padding: 26px; }
+  .c.w3 { grid-column: span 3; }
+  .c.w2 { grid-column: span 2; }
+  .c.dk { background: var(--dark); color: var(--on-dark); box-shadow: none; }
+  .c.dk p { color: var(--on-dark-2); } .c.dk .no { color: var(--on-dark-3); } .c.dk .pr { border-color: var(--dark-line); }
+  .c.dk .pr b { color: var(--acc); }
+  .c .tag { position: absolute; right: 22px; top: 22px; font-size: 13px; font-weight: 700; background: var(--acc); color: var(--acc-ink); padding: 6px 10px; border-radius: var(--r); }
+  .c.ph-tile { padding: 0; background-position: 50% 30%; }
+
+  /* PRICING (board 08) */
+  .pricing { background: var(--dark); color: var(--on-dark); text-align: center; position: relative; overflow: hidden; }
+  .pricing::after { content: ""; position: absolute; left: 50%; bottom: -520px; width: 1400px; height: 700px; margin-left: -700px; border-radius: 50%; box-shadow: 0 -2px 0 var(--acc), 0 -40px 120px var(--glow-soft); }
+  .pricing .label { color: var(--on-dark-3); }
+  .pricing h2 { color: var(--on-dark); }
+  .seg { display: inline-flex; margin-top: 32px; background: var(--dark-2); box-shadow: inset 0 0 0 1px var(--dark-line); border-radius: var(--r); padding: 5px; }
+  .seg span { height: 46px; padding: 0 22px; display: inline-flex; align-items: center; font-size: 15px; font-weight: 600; color: var(--on-dark-2); border-radius: var(--r); }
+  .seg span.on { background: var(--acc); color: var(--acc-ink); box-shadow: 0 0 30px var(--glow); }
+  .ptab { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr 1fr 1fr 1fr; margin-top: 52px; text-align: left; border-top: 1px solid var(--dark-line); }
+  .pc { padding: 0 22px; }
+  .pc .ph { height: 74px; display: flex; align-items: center; justify-content: space-between; font-size: 17px; font-weight: 700; color: var(--on-dark); }
+  .pc .ph em { font-style: normal; font-size: 13px; background: var(--acc); color: var(--acc-ink); padding: 5px 9px; border-radius: var(--r); }
+  .pc .rw { height: 58px; display: flex; align-items: center; border-top: 1px solid var(--dark-line); font-size: 16px; color: var(--on-dark-2); }
+  .pc .rw.amt { height: 88px; font-size: 48px; color: var(--on-dark); }
+  .pc .rw.amt small { font-family: "Schibsted Grotesk", sans-serif; font-size: 15px; color: var(--on-dark-3); margin-left: 8px; }
+  .pc .rw.dim { color: var(--on-dark-3); }
+  .pc .rw.end { height: 100px; border-top: 1px solid var(--dark-line); }
+  .pc.lab { padding-left: 0; } .pc.lab .rw { color: var(--on-dark-3); font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .pc.lab .rw:nth-child(2) { height: 88px; }
+  .pc.feat { background: radial-gradient(100% 50% at 50% 105%, var(--glow) 0%, var(--dark-3) 70%); box-shadow: inset 0 0 0 1px var(--acc); }
+  .pc.feat .rw { color: var(--on-dark); border-color: var(--dark-line); }
+  .pc .btn { width: 100%; justify-content: center; }
+  .pc .btn.ghost { color: var(--on-dark); box-shadow: inset 0 0 0 1.5px var(--dark-line); }
+  .pricing .note { position: relative; z-index: 1; margin-top: 30px; font-size: 14px; color: var(--on-dark-3); }
+
+  /* BEFORE/AFTER STRIP + QUOTE */
+  .proof { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .ba { height: 440px; border-radius: var(--r); position: relative; overflow: hidden; }
+  .ba .lb { position: absolute; left: 18px; top: 18px; background: var(--dark); color: var(--on-dark); font-size: 14px; font-weight: 700; padding: 8px 12px; border-radius: var(--r); }
+  .ba .lb.acc { background: var(--acc); color: var(--acc-ink); }
+  .quote { display: grid; grid-template-columns: 1fr 300px; gap: 56px; margin-top: 64px; align-items: end; }
+  .quote blockquote { margin: 0; font-size: 46px; line-height: 1.08; }
+  .quote blockquote .it { color: var(--acc-2); }
+  .quote .who { font-size: 16px; line-height: 1.5; color: var(--ink-2); border-left: 2px solid var(--ink); padding-left: 18px; }
+  .quote .who b { color: var(--ink); display: block; font-size: 18px; }
+
+  /* BIG NUMBERS */
+  .nums { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .nums .grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 44px; }
+  .nums .k { padding: 0 32px; border-left: 1px solid var(--line); }
+  .nums .k:first-child { border-left: 0; padding-left: 0; }
+  .nums .k .n { font-size: 132px; line-height: 0.9; }
+  .nums .k .n small { font-size: 46px; }
+  .nums .k b { display: block; margin-top: 16px; font-size: 20px; }
+  .nums .k p { margin: 8px 0 0; font-size: 16px; line-height: 1.5; color: var(--ink-2); max-width: 300px; }
+
+  /* FAQ (board 09) */
+  .fhead { display: flex; justify-content: space-between; align-items: end; }
+  .faq .lead { margin: 0; max-width: 360px; font-size: 17px; line-height: 1.5; color: var(--ink-2); }
+  .fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 44px; }
+  .q { background: linear-gradient(90deg, var(--olive) 0%, var(--dark) 45%); color: var(--on-dark); border-radius: var(--r); padding: 30px 32px; position: relative; min-height: 200px; }
+  .q::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--acc); box-shadow: 0 0 24px var(--glow); }
+  .q .hd { display: flex; justify-content: space-between; align-items: start; gap: 24px; font-size: 22px; font-weight: 600; line-height: 1.3; }
+  .q .pm { width: 22px; height: 22px; position: relative; flex: none; margin-top: 4px; }
+  .q .pm::before, .q .pm::after { content: ""; position: absolute; left: 0; right: 0; top: 10px; height: 1.5px; background: var(--on-dark); }
+  .q .pm::after { transform: rotate(90deg); }
+  .q .pm::after { display: none; }
+  .q p { margin: 14px 0 0; font-size: 16px; line-height: 1.55; color: var(--on-dark-2); max-width: 640px; }
+
+  /* SPLIT FORM CTA */
+  .cta { display: grid; grid-template-columns: 1fr 1fr; padding: 0; }
+  .cta .l { background: var(--dark); color: var(--on-dark); padding: 96px 56px; position: relative; overflow: hidden; }
+  .cta .l::after { content: ""; position: absolute; right: -200px; bottom: -200px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, var(--glow) 0%, var(--glow-clear) 65%); }
+  .cta .l .label { color: var(--on-dark-3); }
+  .cta .l h2 { font-size: 80px; }
+  .cta .l p { margin: 22px 0 0; font-size: 18px; color: var(--on-dark-2); line-height: 1.5; max-width: 440px; }
+  .cta .l .contact { position: relative; z-index: 1; margin-top: 40px; display: flex; gap: 14px; align-items: center; font-size: 16px; color: var(--on-dark-2); }
+  .cta .l .contact b { color: var(--on-dark); display: block; font-size: 18px; }
+  .cta .r { background: var(--acc); color: var(--acc-ink); padding: 96px 56px; }
+  .f { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .fld { background: var(--paper-2); border-radius: var(--r); padding: 12px 16px; min-height: 64px; }
+  .fld.full { grid-column: span 2; }
+  .fld span { display: block; font-size: 13px; font-weight: 700; color: var(--ink-3); }
+  .fld b { display: block; margin-top: 4px; font-size: 17px; font-weight: 500; color: var(--ink); }
+  .opts { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .opts i { font-style: normal; font-size: 14px; font-weight: 600; padding: 0 14px; height: 44px; display: inline-flex; align-items: center; border-radius: var(--r); box-shadow: inset 0 0 0 1px var(--line); color: var(--ink-2); }
+  .opts i.on { background: var(--dark); color: var(--on-dark); box-shadow: none; }
+  .cta .r .btn { margin-top: 18px; width: 100%; justify-content: center; height: 64px; font-size: 18px; }
+  .cta .r .fine { margin-top: 14px; font-size: 14px; font-weight: 600; }
+
+  footer { background: var(--dark); color: var(--on-dark-3); padding: 40px 56px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; border-top: 1px solid var(--dark-line); }
+  footer .logo { color: var(--on-dark); font-size: 22px; }
+  footer b { color: var(--on-dark); }
+</style></head>
+<body>
+
+<header class="hero">
+  <nav>
+    <a class="logo disp" href="#">Bedrock<i></i></a>
+    <div class="links"><a class="on" href="#">New homes</a><a href="#">Renovations</a><a href="#">Extensions</a><a href="#">Prices</a><a href="#">Projects</a></div>
+    <a class="btn acc" href="#">Book a site visit</a>
+  </nav>
+  <div class="bento">
+    <div class="t stage">
+      <div class="eb">Bedrock Build &middot; Building contractor in Cape Town</div>
+      <div class="acc-word it">built on rock,</div>
+      <h1 class="disp">Home builders<span class="s2">in Cape Town.</span></h1>
+      <p class="sub">New homes, extensions and renovations, priced per m² before we start. NHBRC-registered. Renovations from R8&nbsp;900&nbsp;/&nbsp;m².</p>
+      <div class="ctas">
+        <a class="toggle" href="#"><span>Book a free site visit</span><span class="knob"><svg class="a" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="wa" href="#" aria-label="WhatsApp us"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+      </div>
+      <div class="facts"><span><b>146</b> homes handed over</span><span><b>5-year</b> structural warranty</span><span><b>Friday</b> photo reports</span></div>
+      <div class="prog" aria-hidden="true"><b>01</b><i></i><span>07</span></div>
+    </div>
+    <div class="t subject">
+      <div class="cut photo" style="background-image:url('../../stock/construction/frame-worker.jpg')"></div>
+      <div class="chip"><i></i><span><b>3 crews</b> on site this week</span></div>
+      <svg class="badge" viewBox="0 0 140 140" aria-hidden="true">
+        <defs><path id="c" d="M70 70 m-52 0 a52 52 0 1 1 104 0 a52 52 0 1 1 -104 0"/></defs>
+        <circle cx="70" cy="70" r="70" style="fill:var(--acc)"/>
+        <text font-family="Schibsted Grotesk" font-size="13" font-weight="800" letter-spacing="3.2" style="fill:var(--acc-ink)"><textPath href="#c">FREE SITE VISIT &#183; FIXED QUOTE &#183;</textPath></text>
+        <path d="M58 82 L82 58 M64 58 H82 V76" style="stroke:var(--acc-ink)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="t rate"><div class="n disp">4.9</div><div><div class="st">★★★★★</div><p>212 Google reviews</p></div></div>
+    <div class="t price"><div class="n disp">R8 900 <small>/ m²</small></div><p>Renovations from &middot; quote in 5 days</p></div>
+    <div class="t hours">
+      <div class="label" style="color:var(--on-dark-3)">Site office</div>
+      <div class="row"><span>Mon&ndash;Fri</span><b>07:00&ndash;17:00</b></div>
+      <div class="row"><span>Saturday</span><b>08:00&ndash;12:00</b></div>
+    </div>
+    <div class="t done photo" style="background-image:url('../../stock/construction/pool-house.jpg'); background-position: 50% 45%">
+      <div class="cap"><div><b>Latest handover: Bloubergstrand</b><span>4-bed new build &middot; 38 weeks, on budget</span></div><div class="k disp">146 homes</div></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="svc-head">
+    <div><div class="label">What we build</div><h2 class="disp">Building services<br>in Cape Town</h2></div>
+    <p>One team from plans to keys. Every price per m², in writing.</p>
+  </div>
+  <div class="sv">
+    <div class="c big">
+      <div class="ph photo" style="background-image:url('../../stock/construction/grey-house.jpg'); background-position: 50% 60%"></div>
+      <div class="in"><span class="no">01 &middot; Most booked</span><h3 class="disp" style="margin-top:10px">New homes</h3><p>Plans, council approval and build, handed over with a 5-year structural warranty.</p><div class="pr"><span>From</span><b>R14 500 / m²</b></div></div>
+    </div>
+    <div class="c w3 dk"><span class="no">02</span><span class="tag">Fastest quote</span><h3 class="disp">Renovations</h3><p>Kitchens, bathrooms, open-plan walls and re-roofing.</p><div class="pr"><span>From</span><b>R8 900 / m²</b></div></div>
+    <div class="c w3"><span class="no">03</span><h3 class="disp">Extensions &amp; second storeys</h3><p>Engineer-signed slabs, matched to your existing house.</p><div class="pr"><span>From</span><b>R11 200 / m²</b></div></div>
+    <div class="c w2"><span class="no">04</span><h3 class="disp">Plans &amp; approval</h3><p>Architect drawings, submitted to the City for you.</p><div class="pr"><span>From</span><b>R38 000</b></div></div>
+    <div class="c w2 ph-tile photo" style="background-image:url('../../stock/construction/rebar.jpg'); background-position: 45% 72%" role="img" aria-label="Site manager checking rebar before a slab pour"></div>
+    <div class="c w2"><span class="no">05</span><h3 class="disp">Walls &amp; paving</h3><p>Boundary walls, driveways and retaining walls.</p><div class="pr"><span>From</span><b>R1 850 / m</b></div></div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="label">Prices per m²</div>
+  <h2 class="disp">Building prices in Cape Town</h2>
+  <div class="seg"><span class="on">New build</span><span>Renovation</span><span>Extension</span></div>
+  <div class="ptab">
+    <div class="pc lab"><div class="ph"></div>
+      <div class="rw">Price per m²</div><div class="rw">Walls &amp; roof</div><div class="rw">Floors</div><div class="rw">Kitchen tops</div><div class="rw">Windows &amp; doors</div><div class="rw">Interior designer</div><div class="rw">Site manager</div><div class="rw end"></div></div>
+    <div class="pc"><div class="ph">Standard finish</div>
+      <div class="rw amt disp">R14 500 <small>/ m²</small></div><div class="rw">Face brick or plaster</div><div class="rw">Porcelain tiles</div><div class="rw">Granite</div><div class="rw">Aluminium, standard</div><div class="rw dim">Not included</div><div class="rw">Shared, 2 visits / week</div><div class="rw end"><a class="btn ghost" href="#">Price my plan</a></div></div>
+    <div class="pc feat"><div class="ph">Mid finish <em>Most booked</em></div>
+      <div class="rw amt disp">R18 900 <small>/ m²</small></div><div class="rw">Plaster, insulated roof</div><div class="rw">Engineered oak</div><div class="rw">Quartz</div><div class="rw">Aluminium, thermal</div><div class="rw">3 sessions</div><div class="rw">Daily on site</div><div class="rw end"><a class="btn acc" href="#">Price my plan</a></div></div>
+    <div class="pc"><div class="ph">Premium finish</div>
+      <div class="rw amt disp">R26 000 <small>/ m²</small></div><div class="rw">Off-shutter concrete</div><div class="rw">Polished screed</div><div class="rw">Custom stone</div><div class="rw">Steel, slimline</div><div class="rw">Full design</div><div class="rw">Dedicated, full-time</div><div class="rw end"><a class="btn ghost" href="#">Price my plan</a></div></div>
+  </div>
+  <div class="note">Prices exclude plot, VAT included. Your fixed quote comes after the free site visit.</div>
+</section>
+
+<section>
+  <div class="label">Build progress</div>
+  <div class="proof" style="margin-top:28px">
+    <div class="ba photo" style="background-image:url('../../stock/construction/site-pointing.jpg'); background-position: 50% 40%"><span class="lb">Week 3 &middot; foundations</span></div>
+    <div class="ba photo" style="background-image:url('../../stock/construction/pool-house.jpg'); background-position: 30% 55%"><span class="lb acc">Week 38 &middot; keys handed over</span></div>
+  </div>
+  <div class="quote">
+    <blockquote class="disp">&ldquo;They quoted per m², sent photos every Friday, and finished <span class="it">two weeks early.</span>&rdquo;</blockquote>
+    <div class="who"><b>Thandi M., Bloubergstrand</b>4-bed new build, mid finish. Google review, 5 stars.</div>
+  </div>
+</section>
+
+<section class="nums">
+  <div class="label">Our promises</div>
+  <h2 class="disp">Three promises, in writing</h2>
+  <div class="grid">
+    <div class="k"><div class="n disp">5 <small>days</small></div><b>Fixed quote after the site visit</b><p>Itemised per m², so you can compare it line by line.</p></div>
+    <div class="k"><div class="n disp">52 <small>/ year</small></div><b>Friday photo reports</b><p>Progress, spend and next week&rsquo;s work, on WhatsApp.</p></div>
+    <div class="k"><div class="n disp">5 <small>years</small></div><b>Structural warranty</b><p>NHBRC-registered, plus our own snag visit at 3 months.</p></div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="fhead"><div><div class="label">Questions</div><h2 class="disp">Before you build</h2></div><p class="lead">Straight answers from our site managers. Ask anything else on WhatsApp.</p></div>
+  <div class="fgrid">
+    <div class="q"><div class="hd">How much does it cost to build a house in Cape Town?<span class="pm"></span></div><p>From R14 500 / m² for a standard finish. A 180 m² family home lands near R2.6 million, plus plans and plot.</p></div>
+    <div class="q"><div class="hd">Do you handle plans and council approval?<span class="pm"></span></div><p>Yes. Our architect draws the plans and submits them to the City. Approval takes 8 to 12 weeks.</p></div>
+    <div class="q"><div class="hd">Can we live at home during a renovation?<span class="pm"></span></div><p>Usually, yes. We phase the work room by room and seal off dust. Kitchens take about 3 weeks.</p></div>
+    <div class="q"><div class="hd">How do payments work?<span class="pm"></span></div><p>Five staged payments, each one after a milestone you can see in the Friday photo report.</p></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="l">
+    <div class="label">Free site visit</div>
+    <h2 class="disp">Book a site visit in Cape Town this week</h2>
+    <p>A site manager measures up. Your fixed quote follows in 5 days.</p>
+    <div class="contact"><a class="wa" href="#" aria-label="WhatsApp us"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a><div><b>Prefer WhatsApp?</b>Send your plans to 021 555 0148</div></div>
+  </div>
+  <div class="r">
+    <div class="f">
+      <div class="fld"><span>Your name</span><b>Thandi Mokoena</b></div>
+      <div class="fld"><span>Suburb</span><b>Durbanville</b></div>
+      <div class="fld full"><span>Project</span><div class="opts"><i class="on">New home</i><i>Renovation</i><i>Extension</i><i>Walls &amp; paving</i></div></div>
+      <div class="fld full"><span>Budget</span><div class="opts"><i>Under R1m</i><i class="on">R1m&ndash;R3m</i><i>R3m+</i></div></div>
+      <div class="fld full"><span>Best day for the visit</span><b>Thursday morning</b></div>
+    </div>
+    <a class="btn dk" href="#">Book my site visit</a>
+    <div class="fine">No cost, no obligation. We reply within one working day.</div>
+  </div>
+</section>
+
+<footer><span class="logo disp">Bedrock<i style="display:inline-block;width:7px;height:7px;background:var(--acc);margin-left:3px"></i></span><span>Bedrock Build &middot; Building contractor, Cape Town &middot; NHBRC-registered</span><span>Concept by <b>CAAS Studios</b></span></footer>
+</body></html>

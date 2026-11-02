@@ -450,16 +450,42 @@
       "metricool_id": 410914907,
       "scheduled": "2026-10-30T10:30:00+02:00",
       "revised": "2026-10-31 less-AI pass (site/slide/reel in repo only; live reel unchanged)"
-    }
-  ],
-  "queue": [
+    },
     {
       "format": "before-after",
       "slug": "construction",
       "brand": "Bedrock Build",
       "industry": "construction company",
-      "status": "todo"
-    },
+      "status": "posted",
+      "post": "posts/2026-11-02-before-after-construction",
+      "palette": "sage",
+      "accent": "#C6F135",
+      "dark": "#111310",
+      "ui_ref": "03+01+05",
+      "ui_sections": [
+        "08",
+        "09"
+      ],
+      "layout": "bento",
+      "sections": [
+        "bento-services",
+        "price-table",
+        "before-after-strip",
+        "big-testimonial",
+        "big-numbers",
+        "faq-tiles",
+        "split-form"
+      ],
+      "font": "condensed",
+      "shape": "sharp",
+      "mode": "tinted",
+      "music": "upbeat",
+      "seo_h1": "Home builders in Cape Town",
+      "type": "reel",
+      "hook": "Which builder would you hire for your home?"
+    }
+  ],
+  "queue": [
     {
       "format": "ab",
       "slug": "tattoo",
